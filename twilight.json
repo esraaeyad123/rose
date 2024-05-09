@@ -806,6 +806,13 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "a5053e9f-fac6-4ceb-b258-66580f06d2d5",
+            "title": "photos-show",
+            "icon": "sicon-store",
+            "path": "home.photos-show",
+            "fields": []
         }
     ],
     "support_url": null,
