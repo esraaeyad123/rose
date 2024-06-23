@@ -857,6 +857,13 @@
                     "maxLength": "3"
                 }
             ]
+        },
+        {
+            "key": "9acb5bcc-7ed9-41f2-90a9-cd29a7cf90a5",
+            "title": "show-square-photos.twig",
+            "icon": "sicon-store",
+            "path": "home.show-square-photos",
+            "fields": []
         }
     ],
     "support_url": null,
