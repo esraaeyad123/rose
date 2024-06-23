@@ -869,7 +869,7 @@
                     "type": "static",
                     "format": "title",
                     "label": "Title",
-                    "value": "<div class=\"items-center flex flex-col  justify-center\" >       <h2 class=\" text-2xl max-w-s md:max-w-2xl  md:text-start md:text-4xl font-bold md:!leading-12\">     !   ابتكارات جديدة تنتظرك      </h2>",
+                    "value": null,
                     "variant": "h2",
                     "icon": "sicon-format-text"
                 },
@@ -878,24 +878,9 @@
                     "type": "static",
                     "format": "description",
                     "label": "Description",
-                    "value": "<p class=\" max-w-xl md:max-w-3/4 mt-4 relative md:text-start text-sm leading-8 sm:max-w-md\">       تعرف على آخر المنتجات التي تم إضافتها إلى مجموعتنا. احصل على أحدث التقنيات والصيحات بأسعار منافسة </p>",
+                    "value": null,
                     "variant": "h1",
                     "icon": "sicon-format-size"
-                },
-                {
-                    "id": "url",
-                    "type": "string",
-                    "format": "url",
-                    "inputType": "url",
-                    "label": "URL",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "e.g. https://salla.sa",
-                    "icon": "sicon-link",
-                    "value": null,
-                    "required": false,
-                    "minLength": 6,
-                    "maxLength": 30
                 },
                 {
                     "id": "collection",
@@ -917,7 +902,7 @@
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false
+                            "required": true
                         }
                     ],
                     "value": [],
