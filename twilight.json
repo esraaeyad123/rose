@@ -844,6 +844,13 @@
                     "public": true
                 }
             ]
+        },
+        {
+            "key": "f5cedae9-c39d-469e-aa75-7a8a7505123c",
+            "title": "معرض صور مربعة",
+            "icon": "sicon-store",
+            "path": "home.show-square-photos",
+            "fields": []
         }
     ],
     "support_url": null,
