@@ -855,7 +855,7 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "collection.sor",
+                            "id": "collection.img",
                             "type": "string",
                             "format": "image",
                             "label": "صور",
@@ -864,7 +864,7 @@
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false
+                            "required": true
                         }
                     ],
                     "value": [],
