@@ -11,64 +11,6 @@
 | position          | Int    | Sorting number start from zero                                   |
 #}
 {{ component|json_encode }}
-<section class="bg-white">
-  <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
- 
-<div class="grid lg:grid-cols-2 gap-3">
-  <div class="grid grid-cols-2 lg:grid-cols-1 gap-3">
-    <div class="relative w-full h-60">
-      <a href="{{item.url}}" class="group flex px-4 pb-4 pt-40 ">
-          <img class="absolute inset-0 h-full w-full object-cover rounded-xl
-           group-hover:scale-105 transition-transform duration-500 ease-in-out" src="{{items[].image.url}} " alt="{{items[].image.alt}}">   
-        </a>
-        <div class="absolute bottom-0 px-2 py-2 bg-gray-400/50 w-full">
-          <p class="text-gray-200 text-2xl text-center">
-       {{items[].text }}
-          </p>
-        </div>
-    </div>
-    <div class="relative w-full h-60">
-      <a href="{{item.url}}" class="group flex px-4 pb-4 pt-40 ">
-          <img class="absolute inset-0 h-full w-full object-cover rounded-xl
-           group-hover:scale-105 transition-transform duration-500 ease-in-out" 
-
-          
-          src="{{items[].image.url}}" alt="{{items[].image.alt}}">
-        
-        
-          <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Wines</h3>
-      </a>
-      <div class="absolute bottom-0 px-2 py-2 bg-gray-400/50 w-full">
-          <p class="text-gray-200 text-2xl text-center">
-            {{items[].text }}
-
-          </p>
-        </div>
-    </div>
-  </div>
-  <dicv class="relative  w-full h-72 sm:h-96 lg:h-full">
-      
-      <a href="{{item.url}}" class="group flex px-4 pb-4 pt-40 ">
-          <img class="absolute inset-0 h-full w-full object-cover rounded-xl
-           group-hover:scale-105 transition-transform duration-500 ease-in-out" 
-
-          
-          src="{{items[].image.url}} " alt="{{items[].image.alt}}">
-        
-      </a>
-      <div class="absolute bottom-0 px-2 py-2 bg-gray-400/50 w-full">
-          <p class="text-gray-200 text-2xl text-center">
-            {{items[].text }}
-
-          </p>
-        </div>
-      </div>
-
-  
-</div>
-
-</div>
-
-</section>
 
 
+{{ component.string }}
