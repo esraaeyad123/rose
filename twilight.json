@@ -815,33 +815,46 @@
             "path": "home.photos-show",
             "fields": [
                 {
-                    "id": "string",
-                    "type": "string",
-                    "format": "text",
-                    "label": "String",
-                    "description": null,
+                    "id": "collection",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "Collection",
+                    "description": "هذا العنصر غير مناسب لعرض البنرات، يمكنك استخدام عنصر صور متحركة بدلاً من عنصر صور متحركة محسنة لتظهر صورة البنر بشكل كامل",
                     "labelHTML": null,
-                    "placeholder": "Placeholder text ..",
-                    "icon": "sicon-format-text-alt",
-                    "value": "ساعات",
-                    "multilanguage": true,
-                    "required": true,
-                    "minLength": 6,
-                    "maxLength": 30,
-                    "public": true
-                },
-                {
-                    "id": "image",
-                    "type": "string",
-                    "format": "image",
-                    "label": "Image",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "e.g. https://hostname.com/image.png",
-                    "icon": "sicon-image",
-                    "value": null,
-                    "required": true,
-                    "public": true
+                    "item_label": "معرض صور",
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "collection.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": "صور",
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": true
+                        },
+                        {
+                            "id": "collection.string",
+                            "type": "string",
+                            "format": "text",
+                            "label": "String",
+                            "description": "صور",
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": 30
+                        }
+                    ],
+                    "value": [],
+                    "minLength": "2",
+                    "maxLength": "3"
                 }
             ]
         }
