@@ -807,8 +807,6 @@
                     ]
                 }
             ]
-<<<<<<< HEAD
-=======
         },
         {
             "key": "a5053e9f-fac6-4ceb-b258-66580f06d2d5",
@@ -817,102 +815,35 @@
             "path": "home.photos-show",
             "fields": [
                 {
-                    "id": "collection",
-                    "type": "collection",
-                    "format": "collection",
-                    "label": "Collection",
-                    "description": "هذا العنصر غير مناسب لعرض البنرات، يمكنك استخدام عنصر صور متحركة بدلاً من عنصر صور متحركة محسنة لتظهر صورة البنر بشكل كامل",
-                    "labelHTML": null,
-                    "item_label": "معرض صور",
-                    "icon": "sicon-list-add",
-                    "fields": [
-                        {
-                            "id": "collection.image",
-                            "type": "string",
-                            "format": "image",
-                            "label": "Image",
-                            "description": "صور",
-                            "labelHTML": null,
-                            "placeholder": "e.g. https://hostname.com/image.png",
-                            "icon": "sicon-image",
-                            "value": null,
-                            "required": true
-                        },
-                        {
-                            "id": "collection.string",
-                            "type": "string",
-                            "format": "text",
-                            "label": "String",
-                            "description": "صور",
-                            "labelHTML": null,
-                            "placeholder": "Placeholder text ..",
-                            "icon": "sicon-format-text-alt",
-                            "value": null,
-                            "multilanguage": false,
-                            "required": true,
-                            "minLength": 6,
-                            "maxLength": 30
-                        }
-                    ],
-                    "value": [],
-                    "minLength": "2",
-                    "maxLength": "3"
-                }
-            ]
-        },
-        {
-            "key": "9acb5bcc-7ed9-41f2-90a9-cd29a7cf90a5",
-            "title": "معرض صور مربعة",
-            "icon": "sicon-store",
-            "path": "home.show-square-photos",
-            "fields": [
-                {
-                    "id": "title",
-                    "type": "static",
-                    "format": "title",
-                    "label": "Title",
-                    "value": null,
-                    "variant": "h2",
-                    "icon": "sicon-format-text"
-                },
-                {
-                    "id": "description",
-                    "type": "static",
-                    "format": "description",
-                    "label": "Description",
-                    "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-size"
-                },
-                {
-                    "id": "collection",
-                    "type": "collection",
-                    "format": "collection",
-                    "label": "Collection",
+                    "id": "string",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String",
                     "description": null,
                     "labelHTML": null,
-                    "item_label": "image",
-                    "icon": "sicon-list-add",
-                    "fields": [
-                        {
-                            "id": "collection.image",
-                            "type": "string",
-                            "format": "image",
-                            "label": "Image",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "e.g. https://hostname.com/image.png",
-                            "icon": "sicon-image",
-                            "value": null,
-                            "required": true
-                        }
-                    ],
-                    "value": [],
-                    "minLength": "4",
-                    "maxLength": "4"
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "ساعات",
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "public": true
+                },
+                {
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": true,
+                    "public": true
                 }
             ]
->>>>>>> 731f479e9a1f7d1cc0f23c73bc0e69047faa49c7
         }
     ],
     "support_url": null,
