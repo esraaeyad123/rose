@@ -813,7 +813,65 @@
             "title": "معرض صور مربعة",
             "icon": "sicon-store",
             "path": "home.show-square-photos",
-            "fields": []
+            "fields": [
+                {
+                    "id": "item",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان رئيسي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "يمكنك اضافة العنوان الرئيسي",
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "item_1",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص توضيحي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "يمكنك اضافة نص توضيحي",
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": "300"
+                },
+                {
+                    "id": "collection",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "معرض صور",
+                    "description": "* المقاس المناسب للصورة هو 1233×500 بكسل",
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "collection.sor",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صور",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "minLength": "4",
+                    "maxLength": "4"
+                }
+            ]
         }
     ],
     "support_url": null,
