@@ -852,22 +852,34 @@
             "path": "home.show-square-photos",
             "fields": [
                 {
-                    "id": "title",
-                    "type": "static",
-                    "format": "title",
-                    "label": "Title",
+                    "id": "string",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
                     "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-text"
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 },
                 {
-                    "id": "description",
-                    "type": "static",
-                    "format": "description",
-                    "label": "Description",
+                    "id": "string_1",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String 1",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
                     "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-size"
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 },
                 {
                     "id": "collection",
