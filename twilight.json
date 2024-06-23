@@ -878,14 +878,14 @@
                     "value": null,
                     "multilanguage": false,
                     "required": true,
-                    "minLength": 6,
-                    "maxLength": "500"
+                    "minLength": "80",
+                    "maxLength": "300"
                 },
                 {
                     "id": "collection",
                     "type": "collection",
                     "format": "collection",
-                    "label": "Collection",
+                    "label": "صور الخلفية",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -895,7 +895,7 @@
                             "id": "collection.image",
                             "type": "string",
                             "format": "image",
-                            "label": "صور",
+                            "label": null,
                             "description": "* المقاس المناسب للصورة هو 2670 * 17800 بكسل",
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
