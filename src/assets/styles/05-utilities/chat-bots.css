@@ -1,0 +1,86 @@
+body.mm-ocd-opened,
+body.modal-is-open,
+body.fancybox-open {
+  overflow: hidden;
+}
+body.mm-ocd-opened #tidio-chat,
+body.mm-ocd-opened [id^=gb-widget],
+body.mm-ocd-opened [class$=__feedback],
+body.mm-ocd-opened #fb-root,
+body.mm-ocd-opened .fb_reset,
+body.mm-ocd-opened #chat-widget-container,
+body.modal-is-open #tidio-chat,
+body.modal-is-open [id^=gb-widget],
+body.modal-is-open [class$=__feedback],
+body.modal-is-open #fb-root,
+body.modal-is-open .fb_reset,
+body.modal-is-open #chat-widget-container,
+body.fancybox-open #tidio-chat,
+body.fancybox-open [id^=gb-widget],
+body.fancybox-open [class$=__feedback],
+body.fancybox-open #fb-root,
+body.fancybox-open .fb_reset,
+body.fancybox-open #chat-widget-container {
+  display: none !important;
+}
+
+/* CSS specific to iOS devices */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 767px) {
+    .mobile #button {
+      transform: translateY(-58px);
+      margin-left: 5px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  body.dropdown--is-opened {
+    overflow: hidden;
+  }
+  body.dropdown--is-opened #tidio-chat,
+  body.dropdown--is-opened [id^=gb-widget],
+  body.dropdown--is-opened [class$=__feedback],
+  body.dropdown--is-opened #fb-root,
+  body.dropdown--is-opened .fb_reset,
+  body.dropdown--is-opened #chat-widget-container {
+    display: none !important;
+  }
+  #tidio-chat {
+    z-index: 9999999999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  #tidio-chat #tidio-chat-iframe {
+    bottom: 0 !important;
+    pointer-events: auto;
+  }
+  [id^=gb-widget] {
+    bottom: 20px !important;
+    z-index: 9999 !important;
+  }
+  #fb-root .fb_dialog iframe[data-testid=bubble_iframe] {
+    bottom: 20px !important;
+  }
+  iframe.tawk-widget {
+    bottom: 20px !important;
+  }
+  #chat-widget-container {
+    height: 100%;
+    bottom: 0 !important;
+  }
+}
+iframe.tawk-widget {
+  display: block;
+  bottom: 20px;
+}
+
+.is-sticky-product-bar.product-single [id^=gb-widget],
+.is-sticky-product-bar.product-single iframe.tawk-widget,
+.is-sticky-product-bar.product-single #fb-root .fb_dialog iframe[data-testid=bubble_iframe],
+.is-sticky-product-bar.product-single iframe.tawk-widget {
+  bottom: 70px !important;
+}/*# sourceMappingURL=chat-bots.css.map */

@@ -1,0 +1,73 @@
+@media (max-width: 768px) {
+  .single-order-header-item {
+    @apply flex justify-between items-center;
+  }
+}
+
+/* tags */
+.tag {
+  @apply px-3 pt-0.5 pb-1 inline-block text-sm rounded-2xl border border-gray-200;
+}
+.tag--primary {
+  @apply text-primary border-primary;
+}
+
+/* Profile Header section */
+.profile-header {
+  @apply relative lg:h-48 overflow-hidden;
+}
+@screen lg {
+  .profile-header .breadcrumbs {
+    @apply mt-2.5;
+  }
+}
+.profile-header .breadcrumbs a {
+  @apply text-primary-reverse hover:opacity-80;
+}
+.profile-header .breadcrumbs span {
+  @apply text-primary-reverse opacity-80;
+}
+.profile-header .breadcrumbs .arrow {
+  @apply text-primary-reverse opacity-70;
+}
+
+.rating-header {
+  @apply relative from-primary to-primary-d p-5 text-primary-reverse rounded-md;
+}
+
+/* Profile additional fields */
+.form--user-profile .s-file-upload-wrapper {
+  min-height: 120px;
+}
+.form--user-profile .s-file-upload-wrapper .filepond--list-scroller {
+  overflow-y: inherit !important;
+}
+.form--user-profile .s-file-upload-wrapper .filepond--drop-label {
+  min-height: 120px !important;
+  @apply bg-white cursor-pointer border-dashed rounded-md border border-gray-200;
+}
+.form--user-profile .s-file-upload-wrapper .profile-filepond-placholder {
+  @apply flex flex-col justify-center items-center;
+}
+.form--user-profile .s-file-upload-wrapper .profile-filepond-placholder-icon {
+  @apply mb-1;
+}
+.form--user-profile .s-file-upload-wrapper .profile-filepond-placholder-icon i {
+  color: #7c8082;
+  @apply text-xl;
+}
+
+/* 
+* thank you page 
+*/
+.thankyou-block {
+  @apply duration-500 hover:shadow-default flex-1 bg-white p-8 rounded-md mb-6 md:mb-8 flex flex-col items-center justify-center;
+}
+.thankyou-block.sent {
+  @apply text-green-500 font-bold;
+}
+.thankyou-block.sent:before {
+  @apply w-16 h-16 bg-green-100 text-green-500 flex items-center justify-center text-2xl rounded-full mb-2;
+  content: "\ea9d";
+  font-family: "sallaicons";
+}/*# sourceMappingURL=user-pages.css.map */
