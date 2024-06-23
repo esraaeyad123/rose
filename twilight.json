@@ -807,6 +807,43 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "a5053e9f-fac6-4ceb-b258-66580f06d2d5",
+            "title": "photos-show",
+            "icon": "sicon-store",
+            "path": "home.photos-show",
+            "fields": [
+                {
+                    "id": "string",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "ساعات",
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "public": true
+                },
+                {
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": true,
+                    "public": true
+                }
+            ]
         }
     ],
     "support_url": null,
