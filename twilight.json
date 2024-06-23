@@ -815,7 +815,7 @@
             "path": "home.show-square-photos",
             "fields": [
                 {
-                    "id": "string",
+                    "id": "item",
                     "type": "string",
                     "format": "text",
                     "label": "عنوان رئيسي",
@@ -830,7 +830,7 @@
                     "maxLength": 30
                 },
                 {
-                    "id": "string_1",
+                    "id": "item_1",
                     "type": "string",
                     "format": "text",
                     "label": "نص توضيحي",
