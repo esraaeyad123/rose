@@ -878,22 +878,23 @@
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
-                    "fields": [],
+                    "fields": [
+                        {
+                            "id": "collection.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        }
+                    ],
                     "value": [],
                     "minLength": "4",
                     "maxLength": "4"
-                },
-                {
-                    "id": "image",
-                    "type": "string",
-                    "format": "image",
-                    "label": "Image",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "e.g. https://hostname.com/image.png",
-                    "icon": "sicon-image",
-                    "value": null,
-                    "required": false
                 }
             ]
         }
