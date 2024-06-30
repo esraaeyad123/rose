@@ -39,6 +39,10 @@
      <a href="#_"> 
         <img src="{{img.url}}" alt="#_">
      </a>
+
+     <a href="{{ url }}" class="banner banner--fixed overflow-hidden" aria-label="Banner {{ img.alt }}">
+        <img width="1200" height="300" src="{{ img.url }}" alt="{{ img.alt|trim ? img.alt : 'fixed banner' }}"/>
+    </a>
      
      <!--- Ends component -->
      {% endfor %}
