@@ -34,7 +34,15 @@
                </div> 
           </div>
              <div class="flex flex-col sm:flex-row mx-auto">
-           
+                <!--- Starts component --> 
+                {% for index, img in component.collection.img %}
+     <a href="#_"> 
+        <img src="{{collection.img.image}}" alt="#_">
+     </a>
+     
+     <!--- Ends component -->
+     {% endfor %}
+
              </div> 
              
             </div>
