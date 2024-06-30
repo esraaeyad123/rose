@@ -807,6 +807,13 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "f47d5a34-fb88-4f1e-85f8-284832e6d1c8",
+            "title": "معرض صور مربعة",
+            "icon": "sicon-store",
+            "path": "home.show-square-photos",
+            "fields": []
         }
     ],
     "support_url": null,
