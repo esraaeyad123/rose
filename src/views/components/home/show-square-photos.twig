@@ -35,20 +35,25 @@
           </div>
              <div class="flex flex-col sm:flex-row mx-auto">
                 <!--- Starts component --> 
+                {{component.collection.img.url}}
+                {{ component.collection.img.image.url}}
                 <a href="{{component.collection.img.url}}"> 
                     <img src="{{component.collection.img.image}}" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_">
                  </a>
                
-                 <a href="{{component.collection.img.url}}"> 
+                 <a href="{{component.collection.img.image.url}}"> 
                     <img src="{{component.collection.img}}" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_">
                  </a>
-                 <a href="{{component.collection.img.url}}"> 
+                 <a href="{{collection.img.url}}"> 
                     <img src="{{component.collection.img.image.img.url}}" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_">
                  </a>
-                 <a href="{{component.collection.img.url}}"> 
-                    <img src="{{component.collection.img.url}}" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_">
+                 <a href="{{component.collection.img.image}}"> 
+                    <img src="{{component.collection.img.image}}" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_">
                  </a>
                  <!--- Ends component -->
+                 <a href="{{ component.collection.img.image}}" >
+              </a>
+              <img src="{{component.collection.img}}" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="">
 
              </div> 
              
