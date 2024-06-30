@@ -860,7 +860,7 @@
                     "maxLength": 30
                 },
                 {
-                    "id": "collection.img",
+                    "id": "gallery-photo",
                     "type": "collection",
                     "format": "collection",
                     "label": "صور",
@@ -870,7 +870,7 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "collection.img.image",
+                            "id": "gallery-photo.photo",
                             "type": "string",
                             "format": "image",
                             "label": "صورة",
