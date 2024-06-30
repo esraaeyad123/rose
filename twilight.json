@@ -855,6 +855,7 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
+            
                             "id": "gellary_photo",
                             "type": "string",
                             "format": "image",
