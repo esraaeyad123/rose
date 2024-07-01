@@ -852,11 +852,9 @@
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
-                    
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-            
                             "id": "gellary_photo",
                             "type": "string",
                             "format": "image",
@@ -874,6 +872,13 @@
                     "maxLength": "4"
                 }
             ]
+        },
+        {
+            "key": "801c67e4-0ff5-4973-92fd-b87b88db69bc",
+            "title": "خصومات",
+            "icon": "sicon-store",
+            "path": "home.discounts",
+            "fields": []
         }
     ],
     "support_url": null,
