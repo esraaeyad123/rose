@@ -920,6 +920,21 @@
                             "maxLength": 255
                         },
                         {
+                            "id": "code.item_3",
+                            "type": "string",
+                            "format": "text",
+                            "label": "الكود الخصم",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
                             "id": "code.itme_2",
                             "type": "string",
                             "format": "datetime",
