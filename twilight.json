@@ -852,6 +852,7 @@
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
+                    
                     "icon": "sicon-list-add",
                     "fields": [
                         {
