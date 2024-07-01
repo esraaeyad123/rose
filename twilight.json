@@ -878,7 +878,65 @@
             "title": "خصومات",
             "icon": "sicon-store",
             "path": "home.discounts",
-            "fields": []
+            "fields": [
+                {
+                    "id": "item",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان رئيسي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": "100"
+                },
+                {
+                    "id": "code",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "الخصومات",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "code.item_1",
+                            "type": "string",
+                            "format": "textarea",
+                            "label": "الوصف",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Your text here",
+                            "icon": "sicon-typography",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 20,
+                            "maxLength": 255
+                        },
+                        {
+                            "id": "code.itme_2",
+                            "type": "string",
+                            "format": "datetime",
+                            "inputType": "datetime-local",
+                            "label": "تاريخ انتهاء الكوبون",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-calendar-time",
+                            "value": "2021-10-01T15:23",
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "2"
+                }
+            ]
         }
     ],
     "support_url": null,
