@@ -966,20 +966,36 @@
                     "label": "قائمة الصور",
                     "description": null,
                     "labelHTML": null,
-                    "item_label": null,
+                    "item_label": "صورة",
                     "icon": "sicon-list-add",
                     "fields": [
                         {
                             "id": "photo.2_item",
                             "type": "string",
                             "format": "image",
-                            "label": "صورة",
+                            "label": "صورة البنر",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false
+                            "required": true
+                        },
+                        {
+                            "id": "photo.url",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "url",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": true,
+                            "required": false,
+                            "value": []
                         },
                         {
                             "id": "photo.item_1",
