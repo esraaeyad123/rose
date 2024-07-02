@@ -1,24 +1,20 @@
-
-
 <section class="bg-white">
 
     <div class="text-center ">
-        <h2 class="text-4xl font-bold mb-2">{{ component.item }}  </h2>
+        <h2 class="text-4xl font-bold mb-2">Portfolio Showcase</h2>
+        <p class="text-lg text-indigo-500 font-semibold">Discover our latest projects and success stories</p>
     </div>
-    {% for me in component.code %}
-
-
     <div class="flex  flex-col items-center justify-center space-y-6  px-4 sm:flex-row sm:space-x-6 sm:space-y-0">
        
         <div class="w-full max-w-m overflow-hidden rounded-lg shadow-s duration-300 hover:scale-105 hover:shadow-s">
             <div class="flex i justify-center mb-3">
                 <div class="bg-gradient-to-br from-purple-600 to-indigo-600 text-white text-center py-10 px-20 rounded-lg shadow-md relative">
-                <h3 class="text-2xl font-semibold mb-4">{{me.item_1}}</h3>
+                <h3 class="text-2xl font-semibold mb-4">خصم ثابت بنسبة 0% على جميع الرحلات داخل المدينة باستخدام بطاقة HDFC الائتمانية</h3>
                 <div class="flex items-center space-x-2 mb-6">
-                    <span id="cpnCode" class="border-dashed border text-white px-4 py-2 rounded-l">{{me.item_3}}</span>
+                    <span id="cpnCode" class="border-dashed border text-white px-4 py-2 rounded-l">STEALDEAL20</span>
                     <span id="cpnBtn" class="border border-white bg-white text-purple-600 px-4 py-2 rounded-r cursor-pointer">Copy Code</span>
                 </div>
-                <p class="text-sm">لغاية {{me.itme_2}}</p>
+                <p class="text-sm">Valid Till: 20Dec, 2021</p>
                 
             <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 left-0 -ml-6"></div>
             <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 right-0 -mr-6"></div>
@@ -27,12 +23,23 @@
         </div>
         
         </div>
+        <div class="w-full max-w-m overflow-hidden rounded-lg  shadow-s duration-300 hover:scale-105 hover:shadow-s">
+            <div class="flex justify-center mb-3">
+                <div class="bg-gradient-to-br from-purple-600 to-indigo-600 text-white text-center py-10 px-20 rounded-lg shadow-md relative">
+                <h3 class="text-2xl font-semibold mb-4">2خصم ثابت بنسبة 20% على جميع الرحلات داخل المدينة باستخدام بطاقة  الائتمانية </h3>
+                <div class="flex items-center space-x-2 mb-6">
+                    <span id="cpnCode" class="border-dashed border text-white px-4 py-2 rounded-l">STEALDEAL20</span>
+                    <span id="cpnBtn" class="border border-white bg-white text-purple-600 px-4 py-2 rounded-r cursor-pointer">Copy Code</span>
+                </div>
+                <p class="text-sm">Valid Till: 20Dec, 2021</p>
+                
+            <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 left-0 -ml-6"></div>
+            <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 right-0 -mr-6"></div>
+            
+            </div>
+        </div>
         
+         
+        </div>
       </div>
-
-      {% endfor %}
-
-
       </section>
-  
-      
