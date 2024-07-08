@@ -952,6 +952,13 @@
                     "maxLength": "2"
                 }
             ]
+        },
+        {
+            "key": "ca90af29-2498-4905-8866-27c1cba3669f",
+            "title": "معرض صور مربعة ( محسنة )",
+            "icon": "sicon-store",
+            "path": "enhanced-square-photo",
+            "fields": []
         }
     ],
     "support_url": null,
