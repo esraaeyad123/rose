@@ -952,56 +952,6 @@
                     "maxLength": "2"
                 }
             ]
-        },
-        {
-            "key": "7ac6aad4-bc09-494c-8b0b-f9c9b334870d",
-            "title": "صور مربعة صغيرة",
-            "icon": "sicon-store",
-            "path": "home.square-banners",
-            "fields": [
-                {
-                    "id": "photo",
-                    "type": "collection",
-                    "format": "collection",
-                    "label": "قائمة الصور",
-                    "description": null,
-                    "labelHTML": null,
-                    "item_label": null,
-                    "icon": "sicon-list-add",
-                    "fields": [
-                        {
-                            "id": "photo.2_item",
-                            "type": "string",
-                            "format": "image",
-                            "label": "صورة",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "e.g. https://hostname.com/image.png",
-                            "icon": "sicon-image",
-                            "value": null,
-                            "required": false
-                        },
-                        {
-                            "id": "photo.item_1",
-                            "type": "string",
-                            "format": "text",
-                            "label": "نص توضيحي",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "Placeholder text ..",
-                            "icon": "sicon-format-text-alt",
-                            "value": null,
-                            "multilanguage": false,
-                            "required": false,
-                            "minLength": 6,
-                            "maxLength": 30
-                        }
-                    ],
-                    "value": [],
-                    "minLength": "2",
-                    "maxLength": "3"
-                }
-            ]
         }
     ],
     "support_url": null,
