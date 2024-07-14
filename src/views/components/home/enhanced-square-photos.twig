@@ -1,10 +1,11 @@
 <section class="s-block s-block--banners container with-gradient-overlay">
+    <h2></h2>
 
     <div class="banners-grid banners-grid--10">
     
         {% for item in component.item %}
 
-        <div class="banner-entry-two rounded lazy " style="background-color: #f3f4f6"> <a href="#" class="  !opacity-100 h-auto relative overflow-hidden">
+        <div class="banner-entry-two rounded lazy "> <a href="#" class="  !opacity-100 h-auto relative overflow-hidden">
         <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
         <div class="banner-entry__text flex flex-col items-center" style="color: #fff">
             {% for cat in component.categories %}
