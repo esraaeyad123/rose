@@ -992,7 +992,7 @@
                             "selected": [],
                             "options": [],
                             "source": "Categories",
-                            "multichoice": true,
+                            "multichoice": false,
                             "searchable": true,
                             "required": false,
                             "value": []
