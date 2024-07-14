@@ -957,7 +957,7 @@
             "key": "ca90af29-2498-4905-8866-27c1cba3669f",
             "title": "معرض صور مربعة ( محسنة )",
             "icon": "sicon-store",
-            "path": "enhanced-square-photo",
+            "path": "home.enhanced-square-photo",
             "fields": [
                 {
                     "id": "item",
