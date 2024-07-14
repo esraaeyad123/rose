@@ -1,0 +1,31 @@
+<section class="s-block s-block--banners container with-gradient-overlay">
+
+    <div class="banners-grid banners-grid--10">
+    
+        {% for item in component.item %}
+
+        <div class="banner-entry-two rounded lazy " style="background-color: #f3f4f6"> <a href="#" class="  !opacity-100 h-auto relative overflow-hidden">
+        <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
+        <div class="banner-entry__text flex flex-col items-center" style="color: #fff">
+            {% for cat in component.categories %}
+
+            <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">
+                        <a href="{{ cat.url }}" class="slide--cat-entry">
+                            
+                            <h2>{{ cat.name }}</h2>
+                        </a>
+                    </div>
+                {% endfor %} 
+
+            
+        </h3>
+        <div class="banner__desc"><p>{{item.description}}</p></div> </div>
+        </a>
+       
+        {% endfor %}
+
+           
+        </div>
+    
+    </section>
+    
