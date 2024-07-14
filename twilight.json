@@ -954,32 +954,47 @@
             ]
         },
         {
-            "key": "ca90af29-2498-4905-8866-27c1cba3669f",
+            "key": "7f6a7d73-2cae-4d2d-b0ba-d719d036673e",
             "title": "معرض صور مربعة ( محسنة )",
             "icon": "sicon-store",
-            "path": "home.enhanced-square-photo",
+            "path": "home.enhanced-square-photos",
             "fields": [
                 {
                     "id": "item",
                     "type": "collection",
                     "format": "collection",
-                    "label": "قائمة الصور",
+                    "label": "مجموعة صور",
                     "description": null,
                     "labelHTML": null,
                     "item_label": "صورة",
                     "icon": "sicon-list-add",
                     "fields": [
                         {
+                            "id": "item.description",
+                            "type": "string",
+                            "format": "text",
+                            "label": "توضيح بسيط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
                             "id": "item.photo",
                             "type": "string",
                             "format": "image",
-                            "label": "صور",
-                            "description": "* المقاس المناسب للصورة هو 427×427 بكسل",
+                            "label": "صورة",
+                            "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": true
+                            "required": false
                         },
                         {
                             "id": "item.categories",
@@ -992,25 +1007,10 @@
                             "selected": [],
                             "options": [],
                             "source": "Categories",
-                            "multichoice": true,
+                            "multichoice": false,
                             "searchable": true,
-                            "required": false,
+                            "required": true,
                             "value": []
-                        },
-                        {
-                            "id": "item.description",
-                            "type": "string",
-                            "format": "text",
-                            "label": "نص إضافي",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "Placeholder text ..",
-                            "icon": "sicon-format-text-alt",
-                            "value": null,
-                            "multilanguage": false,
-                            "required": false,
-                            "minLength": 6,
-                            "maxLength": 30
                         }
                     ],
                     "value": [],
