@@ -6211,12 +6211,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
   gap: .625rem
 }
 
-.s-block--features-products.two-cols .banners-grid .product-entry__title a {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1
-}
+
 
 @media(min-width: 768px) {
   .banners-grid {
@@ -6603,7 +6598,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
   }
 }
 
-.banner-entry-two__text {
+.banner-entry__text {
   position: absolute;
   bottom: 1.5rem;
   z-index: 1;
@@ -6620,15 +6615,15 @@ lite-youtube.lyt-activated > .lty-playbtn {
   transition-duration: 300ms
 }
 
-input[type=radio].sr-only div.banner-entry-two__text {
+input[type=radio].sr-only div.banner-entry__text {
   transition: all .3s
 }
 
-input[type=radio].sr-only:checked~div.banner-entry-two__text {
+input[type=radio].sr-only:checked~div.banner-entr__text {
   border-color: var(--color-main)
 }
 
-.with-gradient-overlay .banner-entry-two__text:before {
+.with-gradient-overlay .banner-entry__text:before {
   position: absolute;
   bottom: -1.5rem;
   left: 0;
@@ -6644,15 +6639,15 @@ input[type=radio].sr-only:checked~div.banner-entry-two__text {
   content: var(--tw-content)
 }
 
-input[type=radio].sr-only div.with-gradient-overlay .banner-entry-two__text:before {
+input[type=radio].sr-only div.with-gradient-overlay .banner-entry__text:before {
   transition: all .3s
 }
 
-input[type=radio].sr-only:checked~div.with-gradient-overlay .banner-entry-two__text:before {
+input[type=radio].sr-only:checked~div.with-gradient-overlay .banner-entry__text:before {
   border-color: var(--color-main)
 }
 
-.banner-entry-two__text h3 {
+.banner-entry__text h3 {
   bottom: 100%;
   margin: 0;
   font-size: 1.125rem;
@@ -6660,12 +6655,12 @@ input[type=radio].sr-only:checked~div.with-gradient-overlay .banner-entry-two__t
 }
 
 @media(min-width: 768px) {
-  .banner-entry-two__text h3 {
+  .banner-entry__text h3 {
       font-size:22px
   }
 }
 
-.banner-entry-two__text .banner__desc {
+.banner-entry__text .banner__desc {
   margin-top: .25rem;
   font-size: .875rem;
   line-height: 1.25rem;
@@ -6676,14 +6671,14 @@ input[type=radio].sr-only:checked~div.with-gradient-overlay .banner-entry-two__t
 }
 
 @media(max-width: 992px) {
-  .banner-entry-two__text {
+  .banner-entry__text {
       --tw-translate-y: 0px;
       transform: translate(var(--tw-translate-x),0px) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
       transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
       opacity: 1
   }
 
-  .banner-entry-two__text .banner__desc {
+  .banner-entry__text .banner__desc {
       opacity: .8
   }
 }
@@ -6692,15 +6687,16 @@ input[type=radio].sr-only:checked~div.with-gradient-overlay .banner-entry-two__t
   padding: 15px 20px!important
 }
 
-.banner-entry-two.without-img .banner-entry-two__text {
+.banner-entry-two.without-img .banner-entry__text {
   position: static;
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x),0px) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x
+  .),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   padding: 0
 }
 
-.banner-entry-two.without-img .banner-entry-two__text::before {
+.banner-entry-two.without-img .banner-entry__text::before {
   content: var(--tw-content);
   display: none
 }
@@ -6719,14 +6715,14 @@ input[type=radio].sr-only:checked~div.with-gradient-overlay .banner-entry-two__t
   opacity: .95
 }
 
-.banner-entry-two:hover .banner-entry-two__text {
+.banner-entry-two:hover .banner-entry__text {
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x),0px) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   opacity: 1
 }
 
-.banner-entry-two:hover .banner-entry-two__text .banner__desc {
+.banner-entry-two:hover .banner-entry__text .banner__desc {
   opacity: .8
 }
 

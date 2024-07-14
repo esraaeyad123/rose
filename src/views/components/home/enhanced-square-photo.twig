@@ -1,49 +1,32 @@
+<section class="s-block s-block--banners container with-gradient-overlay">
 
+    <div class="banners-grid banners-grid--10">
+    
+        {% for item in component.item %}
 
-   
-<section class="s-block s-block--banners container">
+        <div class="banner-entry-two rounded lazy " style="background-color: #f3f4f6"> <a href="#" class="  !opacity-100 h-auto relative overflow-hidden">
+        <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
+        <div class="banner-entry__text flex flex-col items-center" style="color: #fff">
+            {% for cat in component.categories %}
 
-  <div class="grid grid-cols-4 md:grid-cols-4 gap-4">
-      <div class="grid gap-2">
-          <a href="/">
-             <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
-          </a>
-          <div>
-              <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-          </div>
+            <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">
+                        <a href="{{ cat.url }}" class="slide--cat-entry">
+                            
+                            <h2>{{ cat.name }}</h2>
+                        </a>
+                    </div>
+                {% endfor %} 
+
+            
+        </h3>
+        <div class="banner__desc"><p>{{item.description}}</p></div> </div>
+        </a>
        
-      </div>
-      <div class="grid gap-4">
-          <div>
-              <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-          </div>
-          <div>
-              <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-          </div>
-          
-      </div>
-      <div class="grid gap-4">
-          <div>
-              <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-          </div>
-          
-          <div>
-              <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-          </div>
-      </div>
-      <div class="grid gap-4">
-          <div>
-              <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-          </div>
-          <div>
-              <img class="h-auto max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-              <div class="banner-entry__text flex flex-col " style="color: #ffffff">
-                <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">زهور الفخامة</h3>
-                <div class="banner__desc"><p>الزهور الكبيرة والرائعة.</p></div> </div>
+        {% endfor %}
 
-          </div>
-          
-      </div>
-  </div>
-  
-        </section>
+           
+        </div>
+    
+    </section>
+    
+    
