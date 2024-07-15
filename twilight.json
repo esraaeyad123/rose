@@ -1006,7 +1006,13 @@
                             "icon": "sicon-keyboard_arrow_down",
                             "selected": [],
                             "options": [],
-                            "source": "Categories",
+                            "source": [
+                                {
+                                    "label": "تصنيف",
+                                    "key": "categories",
+                                    "value": "categories"
+                                } 
+                             ],
                             "multichoice": false,
                             "searchable": true,
                             "required": true,

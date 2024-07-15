@@ -3,7 +3,6 @@
 <section class="s-block s-block--banners container with-gradient-overlay">
 
     <div class="banners-grid banners-grid--{{ component.item|length }}">
-        {{  component|json_encode }}
 
         {% for item in component.item %}
 
@@ -12,6 +11,7 @@
             <a href="" class="!opacity-100 h-auto relative overflow-hidden">
                 <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
                 <div class="banner-entry__text flex flex-col items-center" style="color: #fff">
+                    {{  cat|json_encode }}
 
                     {% for cat in item.categories %}
 
