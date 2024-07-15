@@ -833,7 +833,7 @@
                     "type": "items",
                     "icon": "sicon-link",
                     "label": "الرابط",
-                    "id": "banners.url",
+                    "id": "item_3",
                     "value": null,
                     "description": "",
                     "required": false,
