@@ -1228,6 +1228,13 @@
                     "maxLength": "4"
                 }
             ]
+        },
+        {
+            "key": "ab9ec31b-f655-48e3-aafb-fdc6e0d105d9",
+            "title": "خلفية مع العد التنازلي",
+            "icon": "sicon-store",
+            "path": "home.banner-with-countdown",
+            "fields": []
         }
     ],
     "support_url": null,
