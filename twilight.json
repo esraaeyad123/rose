@@ -997,11 +997,27 @@
                             "required": false
                         },
                         {
+                            "id": "item.cats",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "التصنيفات",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": true,
+                            "required": true,
+                            "value": []
+                        },
+                        {
                             "type": "items",
                             "icon": "sicon-link",
                             "label": "الرابط",
                             "id": "item.categories",
-                            "value": null,
+                            "value": [],
                             "description": null,
                             "required": false,
                             "format": "variable-list",
