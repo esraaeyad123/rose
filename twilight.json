@@ -1151,7 +1151,53 @@
             "title": "الاسئلة الشائعة",
             "icon": "sicon-store",
             "path": "home.faq",
-            "fields": []
+            "fields": [
+                {
+                    "id": "faq",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "قائمة الاسئلة",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": "القائمة",
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "faq.item_1",
+                            "type": "string",
+                            "format": "text",
+                            "label": "سؤال",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "faq.item",
+                            "type": "string",
+                            "format": "text",
+                            "label": "الجواب",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "4"
+                }
+            ]
         }
     ],
     "support_url": null,
