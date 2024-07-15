@@ -1,43 +1,35 @@
 
 
-<section class="s-block s-block--faqs s-block--full-bg s-block--anime relative py-8 lg:py-16 bg-gray-200/20 overflow-hidden"><span class="s-design-before s-design-invisible-dom" id="edit-1735992716"></span>
-    <div data-bg="" class="lazy absolute inset-0 w-full h-full entered exited" loading="lazy" style="background-color: #ffffff;background-image:url();" id="faqs-block-23" data-ll-status="entered"></div>
-    <div class="container relative px-6 lg:px-8 md:flex">
-    <div class="basis-1/2 pt-6">
-    <div class="anime-item" style="opacity: 1; transform: translateY(0px);">
-    <div class="s-block__title relative">
-    <div class="right-side">
-    <h2 class="">{{component.title}}</h2>
-    <div class=""><p>{{component.description}}</p></div> </div>
-    </div>
-    </div>
+
+<section class=" bg-white   relative py-8 lg:py-16 overflow-hidden">
+   
   
+  <div class="container relative px-6 lg:px-8 md:flex">
+    <div class="flex flex-col  basis-1/2">
+        <p class="inline-block font-semibold text-primary mb-4">{{component.title}}</p>
+        <p class="sm:text-4xl text-3xl font-extrabold text-base-content">{{component.description}}</p>
     </div>
-    <dl class="basis-1/2 pt-2 pb-4 md:border-r space-y-6 divide-y divide-gray-900/10">
-    <div class="pt-6 overflow-hidden px-4 anime-item" style="opacity: 1; transform: translateY(0px);">
+    <ul class="basis-1/2">
         {% for item in component.faq %}
 
-    
-    <button type="button" data-show="faq-{{item.index}}" class="collapse-trigger flex w-full items-start justify-between text-start text-gray-900 is-opened text-primary" aria-controls="faq-0" aria-expanded="false" fdprocessedid="ytocr">
-    <span class="text-base font-semibold leading-7">
-
-        {{item.item_1}}
-    </span>
-    <span class="ltr:ml-6 rtl:mr-6 flex h-7 items-center">
-    <span class="sicon-add"></span>
-    </span>
-    </button>
-    </dt>
-    <dd class="ltr:xs:pr-12 rtl:xs:pl-12 opacity-0 h-0 is-opened text-primary" id="faq-0" style="height: 64px; opacity: 1;">
-    <p class="text-base leading-7 text-gray-600 pt-2">        {{item.item}}
-
-
-
-        </p>
-    </dd>
-    </div>
- 
-    </div>
-    </section>
-
-    {% endfor %}
+        <div class="py-5">
+            <details class="group">
+                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+                    <span class="text-base font-semibold leading-7">        {{item.item_1}}
+                    </span>
+                    <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                <path d="M6 9l6 6 6-6"></path>
+                            </svg>
+                        </span>
+                </summary>
+                <p class="text-base leading-7 pt-2 group-open:animate-fadeIn mt-3 text-neutral-600">{{item.item}}
+                </p>
+            </details>
+        </div>
+        {% endfor %}
+    </ul>
+</div>
+</section>
