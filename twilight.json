@@ -1273,7 +1273,7 @@
                             "required": false
                         },
                         {
-                            "id": "banner.alaadd_altnazle",
+                            "id": "banner.countdown",
                             "type": "string",
                             "format": "datetime",
                             "inputType": "datetime-local",
