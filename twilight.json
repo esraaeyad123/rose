@@ -1298,7 +1298,7 @@
                             "required": false,
                             "minLength": 6,
                             "maxLength": 30
-                        }
+                        },
                         {
                             "type": "items",
                             "icon": "sicon-link",
