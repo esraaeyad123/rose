@@ -1,0 +1,43 @@
+
+
+<section class="s-block s-block--faqs s-block--full-bg s-block--anime relative py-8 lg:py-16 bg-gray-200/20 overflow-hidden"><span class="s-design-before s-design-invisible-dom" id="edit-1735992716"></span>
+    <div data-bg="" class="lazy absolute inset-0 w-full h-full entered exited" loading="lazy" style="background-color: #ffffff;background-image:url();" id="faqs-block-23" data-ll-status="entered"></div>
+    <div class="container relative px-6 lg:px-8 md:flex">
+    <div class="basis-1/2 pt-6">
+    <div class="anime-item" style="opacity: 1; transform: translateY(0px);">
+    <div class="s-block__title relative">
+    <div class="right-side">
+    <h2 class="">{{component.title}}</h2>
+    <div class=""><p>{{component.description}}</p></div> </div>
+    </div>
+    </div>
+  
+    </div>
+    <dl class="basis-1/2 pt-2 pb-4 md:border-r space-y-6 divide-y divide-gray-900/10">
+    <div class="pt-6 overflow-hidden px-4 anime-item" style="opacity: 1; transform: translateY(0px);">
+        {% for item in component.faq %}
+
+    
+    <button type="button" data-show="faq-{{item.index}}" class="collapse-trigger flex w-full items-start justify-between text-start text-gray-900 is-opened text-primary" aria-controls="faq-0" aria-expanded="false" fdprocessedid="ytocr">
+    <span class="text-base font-semibold leading-7">
+
+        {{item.item_1}}
+    </span>
+    <span class="ltr:ml-6 rtl:mr-6 flex h-7 items-center">
+    <span class="sicon-add"></span>
+    </span>
+    </button>
+    </dt>
+    <dd class="ltr:xs:pr-12 rtl:xs:pl-12 opacity-0 h-0 is-opened text-primary" id="faq-0" style="height: 64px; opacity: 1;">
+    <p class="text-base leading-7 text-gray-600 pt-2">        {{item.item}}
+
+
+
+        </p>
+    </dd>
+    </div>
+ 
+    </div>
+    </section>
+
+    {% endfor %}
