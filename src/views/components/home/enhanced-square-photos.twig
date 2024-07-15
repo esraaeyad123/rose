@@ -8,7 +8,7 @@
 
         <div class="banner-entry-two rounded lazy " > 
             {% for cat in item.categories %}
-            
+
 
             <a href="https://salla.design/dev-1iiwsgtysyjbpyfb/*/{{cat}}" class="!opacity-100 h-auto relative overflow-hidden">
                 <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
@@ -17,7 +17,6 @@
 
             <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">{{cat}}</h3> 
             {% endfor %}
-
 
             <div class="banner__desc"><p>{{item.description}}</p></div> </div>
             </a>

@@ -997,20 +997,23 @@
                             "required": false
                         },
                         {
-                            "id": "item.categories",
                             "type": "items",
-                            "format": "dropdown-list",
-                            "label": "حدد التصنيفات",
+                            "icon": "sicon-link",
+                            "label": "الرابط",
+                            "id": "item.categories",
+                            "value": null,
                             "description": null,
-                            "labelHTML": null,
-                            "icon": "sicon-keyboard_arrow_down",
-                            "selected": [],
-                            "options": [],
-                            "source": "Categories",
-                            "multichoice": false,
+                            "required": false,
+                            "format": "variable-list",
                             "searchable": true,
-                            "required": true,
-                            "value": []
+                            "source": "custom",
+                            "sources": [
+                                {
+                                    "label": "تصنيف",
+                                    "key": "categories",
+                                    "value": "categories"
+                                }
+                            ]
                         }
                     ],
                     "value": [],
