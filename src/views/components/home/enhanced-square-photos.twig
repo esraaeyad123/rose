@@ -1,117 +1,35 @@
 
 
-
 <section class="s-block s-block--banners container with-gradient-overlay">
-    <h2></h2>
 
-    <div class="banners-grid banners-grid--10">
+    <div class="banners-grid banners-grid--{{ component.item|length }}">
+       
     
         {% for item in component.item %}
-
-        <div class="banner-entry-two rounded lazy "> <a href="#" class="  !opacity-100 h-auto relative overflow-hidden">
-        <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
-        <div class="banner-entry__text flex flex-col items-center" >
-            {% for cat in component.categories %}
-
-            <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">
-                        <a href="{{ cat.url }}" >
-                            
-                            <h2>{{ cat.name }}</h2>
-                        </a>
-                    </div>
-                {% endfor %} 
-
-            
-        </h3>
-        <div class="banner__desc"><p>{{item.description}}</p></div> </div>
-        </a>
        
+        <div class="banner-entry-two rounded lazy " > 
+            
+            <a href="{{ cat.url }}" class="!opacity-100 h-auto relative overflow-hidden">
+                <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
+                <div class="banner-entry__text flex flex-col items-center" style="color: #fff">
+                    {% for cat in component.categories %}
+
+            <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">{{ cat.name }}</h3>
+            {% endfor %}
+
+            <div class="banner__desc"><p>{{item.description}}</p></div> </div>
+            </a>
+            </div>
+
+
+
+
 
            
-        </div>
         {% endfor %}
 
+ 
+    </div>
+
     </section>
-    <section class="banner-images mb-[56px] md:mb-[111px]" id="f48ff22f-9d69-47da-87f6-1cf42eecaad9"><span class="s-design-before s-design-invisible-dom" id="edit-155276127"></span>
-        <div class="content-image container flex gap-[24px] flex-wrap justify-end">
-        <div class="cat rounded-md relative !max-h-[250px] h-[250px] overflow-hidden xl:overflow-visible">
-        <a href="">
-        <div class="photo w-full !h-[390px]">
-        <img loading="lazy" class="object-cover rounded-md" width="100%" height="100%" src="https://cdn.salla.sa/form-builder/w22LPnH8RLHjd5bQ7Ip9iMBP5D0h8037c9mXB6Yq.jpg" alt="هواتف محمولة">
-        </div>
-        <div style="color: #004956" class="box-text-cat pt-[24px] rtl:pr-[24px] ltr:pl-[24px] absolute top-0 rtl:right-0 ltr:left-0">
-        <h2 class="title flex items-center gap-[9px] text-[15px] md:text-[19px] xl:text-[24px] mb-1 md:mb-[6px] font-bold">
-        هواتف محمولة
-        <span class="pt-2 text-inherit"><i class="sicon-arrow-left"></i></span>
-        </h2>
-        <p class="desc font-normal text-[13px] md:text-[14px ] xl:text-[16px] leading-normal text-inherit">أحدث الاجهزة بأحسن الاسعار</p>
-        </div> </a>
-        </div>
-        <div class="cat rounded-md relative !max-h-[250px] h-[250px] overflow-hidden xl:overflow-visible">
-        <a href="https://s.salla.sa/design/component/edit/155276127">
-        <div class="photo w-full h-full">
-        <img loading="lazy" class="object-cover rounded-md" width="100%" height="100%" src="https://cdn.salla.sa/form-builder/Dw4ZYHgka3kNNeENvjUNAXGc1D62giBIdoRYR2u0.jpg" alt="ملحقات الكمبيوتر">
-        </div>
-        <div style="color: #004956" class="box-text-cat pt-[24px] rtl:pr-[24px] ltr:pl-[24px] absolute top-0 rtl:right-0 ltr:left-0">
-        <h2 class="title flex items-center gap-[9px] text-[15px] md:text-[19px] xl:text-[24px] mb-1 md:mb-[6px] font-bold">
-        ملحقات الكمبيوتر
-        <span class="pt-2 text-inherit"><i class="sicon-arrow-left"></i></span>
-        </h2>
-        <p class="desc font-normal text-[13px] md:text-[14px ] xl:text-[16px] leading-normal text-inherit">أحدث الاجهزة بأحسن الاسعار</p>
-        </div> </a>
-        </div>
-        <div class="cat rounded-md relative !max-h-[250px] h-[250px] overflow-hidden xl:overflow-visible">
-        <a href="https://s.salla.sa/design/component/edit/155276127">
-        <div class="photo w-full h-full">
-        <img loading="lazy" class="object-cover rounded-md" width="100%" height="100%" src="https://cdn.salla.sa/form-builder/fPR7sq9cFAt4pZOxCn4uMiRO7zrsE1ZCK7WgwLUm.jpg" alt="ساعات">
-        </div>
-        <div style="color: #ffffff" class="box-text-cat pt-[24px] rtl:pr-[24px] ltr:pl-[24px] absolute top-0 rtl:right-0 ltr:left-0">
-        <h2 class="title flex items-center gap-[9px] text-[15px] md:text-[19px] xl:text-[24px] mb-1 md:mb-[6px] font-bold">
-        ساعات
-        <span class="pt-2 text-inherit"><i class="sicon-arrow-left"></i></span>
-        </h2>
-        <p class="desc font-normal text-[13px] md:text-[14px ] xl:text-[16px] leading-normal text-inherit">أحدث الاجهزة بأحسن الاسعار</p>
-        </div> </a>
-        </div>
-        <div class="cat rounded-md relative !max-h-[250px] h-[250px] overflow-hidden xl:overflow-visible">
-        <a href="https://s.salla.sa/design/component/edit/155276127">
-        <div class="photo w-full h-full">
-        <img loading="lazy" class="object-cover rounded-md" width="100%" height="100%" src="https://cdn.salla.sa/form-builder/tWDwitejgPMnPSduP3twmnRasj3o4ssVUIFCqD3t.jpg" alt="سماعات أذن">
-        </div>
-        <div style="color: #004956" class="box-text-cat pt-[24px] rtl:pr-[24px] ltr:pl-[24px] absolute top-0 rtl:right-0 ltr:left-0">
-        <h2 class="title flex items-center gap-[9px] text-[15px] md:text-[19px] xl:text-[24px] mb-1 md:mb-[6px] font-bold">
-        سماعات أذن
-        <span class="pt-2 text-inherit"><i class="sicon-arrow-left"></i></span>
-        </h2>
-        <p class="desc font-normal text-[13px] md:text-[14px ] xl:text-[16px] leading-normal text-inherit">أحدث الاجهزة بأحسن الاسعار</p>
-        </div> </a>
-        </div>
-        <div class="cat rounded-md relative !max-h-[250px] h-[250px] overflow-hidden xl:overflow-visible">
-        <a href="https://s.salla.sa/design/component/edit/155276127">
-        <div class="photo w-full h-full">
-        <img loading="lazy" class="object-cover rounded-md" width="100%" height="100%" src="https://cdn.salla.sa/form-builder/uOFnlAPKm0yP2Ji8YCfAUvGt2LP31x5Wc6ixsJis.jpg" alt="سماعات">
-        </div>
-        <div style="color: #ffffff" class="box-text-cat pt-[24px] rtl:pr-[24px] ltr:pl-[24px] absolute top-0 rtl:right-0 ltr:left-0">
-        <h2 class="title flex items-center gap-[9px] text-[15px] md:text-[19px] xl:text-[24px] mb-1 md:mb-[6px] font-bold">
-        سماعات
-        <span class="pt-2 text-inherit"><i class="sicon-arrow-left"></i></span>
-        </h2>
-        <p class="desc font-normal text-[13px] md:text-[14px ] xl:text-[16px] leading-normal text-inherit">أحدث الاجهزة بأحسن الاسعار</p>
-        </div> </a>
-        </div>
-        <div class="cat rounded-md relative !max-h-[250px] h-[250px] overflow-hidden xl:overflow-visible">
-        <a href="https://s.salla.sa/design/component/edit/155276127">
-        <div class="photo w-full h-full">
-        <img loading="lazy" class="object-cover rounded-md" width="100%" height="100%" src="https://cdn.salla.sa/form-builder/Ya8Xi6HRGxWEmcPn1IU712dR12txeL0Xmw73KoYV.jpg" alt="أجهزة لابتوب">
-        </div>
-        <div style="color: #ffffff" class="box-text-cat pt-[24px] rtl:pr-[24px] ltr:pl-[24px] absolute top-0 rtl:right-0 ltr:left-0">
-        <h2 class="title flex items-center gap-[9px] text-[15px] md:text-[19px] xl:text-[24px] mb-1 md:mb-[6px] font-bold">
-        أجهزة لابتوب
-        <span class="pt-2 text-inherit"><i class="sicon-arrow-left"></i></span>
-        </h2>
-        <p class="desc font-normal text-[13px] md:text-[14px ] xl:text-[16px] leading-normal text-inherit">أحدث الاجهزة بأحسن الاسعار</p>
-        </div> </a>
-        </div>
-        </div>
-        <span id="after-155276127" class="s-design-invisible-dom s-design-after"></span></section>
-    
+ 
