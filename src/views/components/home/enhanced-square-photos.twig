@@ -3,19 +3,21 @@
 <section class="s-block s-block--banners container with-gradient-overlay">
 
     <div class="banners-grid banners-grid--{{ component.item|length }}">
-       
-    
+        {{  component|json_encode }}
+
         {% for item in component.item %}
-       
+
         <div class="banner-entry-two rounded lazy " > 
             
-            <a href="{{ cat.url }}" class="!opacity-100 h-auto relative overflow-hidden">
+            <a href="" class="!opacity-100 h-auto relative overflow-hidden">
                 <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
                 <div class="banner-entry__text flex flex-col items-center" style="color: #fff">
-                    {% for cat in component.categories %}
 
-            <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">{{ cat.name }}</h3>
+                    {% for cat in item.categories %}
+
+            <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">{{cat}}</h3> 
             {% endfor %}
+
 
             <div class="banner__desc"><p>{{item.description}}</p></div> </div>
             </a>
