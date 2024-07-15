@@ -880,19 +880,19 @@
             "path": "home.discounts",
             "fields": [
                 {
-                    "id": "item",
-                    "type": "string",
-                    "format": "text",
-                    "label": "عنوان رئيسي",
-                    "description": null,
+                    "id": "item.cats",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "طريقة عرض الصور في سليدر صور المنتج",
+                    "description": "",
                     "labelHTML": null,
-                    "placeholder": "Placeholder text ..",
-                    "icon": "sicon-format-text-alt",
-                    "value": null,
-                    "multilanguage": true,
-                    "required": true,
-                    "minLength": 6,
-                    "maxLength": "100"
+                    "icon": "sicon-list",
+                    "selected": [],
+                    "options": [],
+                    "source": "categories",
+                    "multichoice": false,
+                    "searchable": true,
+                    "required": true
                 },
                 {
                     "id": "code",
