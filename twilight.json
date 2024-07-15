@@ -1049,6 +1049,21 @@
                             "maxLength": 30
                         },
                         {
+                            "id": "item.title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "العنوان الرئيسي",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
                             "id": "item.photo",
                             "type": "string",
                             "format": "image",
@@ -1059,22 +1074,6 @@
                             "icon": "sicon-image",
                             "value": null,
                             "required": false
-                        },
-                        {
-                            "id": "item.cats",
-                            "type": "items",
-                            "format": "dropdown-list",
-                            "label": "التصنيفات",
-                            "description": null,
-                            "labelHTML": null,
-                            "icon": "sicon-keyboard_arrow_down",
-                            "selected": [],
-                            "options": [],
-                            "source": "Categories",
-                            "multichoice": false,
-                            "searchable": true,
-                            "required": true,
-                            "value": []
                         },
                         {
                             "type": "items",
