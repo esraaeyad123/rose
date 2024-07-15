@@ -1145,6 +1145,13 @@
                     "maxLength": "10"
                 }
             ]
+        },
+        {
+            "key": "5b9d73f9-b41b-40bc-9f47-fc71b2ea82a7",
+            "title": "الاسئلة الشائعة",
+            "icon": "sicon-store",
+            "path": "home.faq",
+            "fields": []
         }
     ],
     "support_url": null,
