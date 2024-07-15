@@ -1234,7 +1234,77 @@
             "title": "خلفية مع العد التنازلي",
             "icon": "sicon-store",
             "path": "home.banner-with-countdown",
-            "fields": []
+            "fields": [
+                {
+                    "id": "banner",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": null,
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "banner.description",
+                            "type": "string",
+                            "format": "text",
+                            "label": "نص إضافي",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "banner.photo",
+                            "type": "string",
+                            "format": "image",
+                            "label": "الخلفية",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        },
+                        {
+                            "id": "banner.alaadd_altnazle",
+                            "type": "string",
+                            "format": "datetime",
+                            "inputType": "datetime-local",
+                            "label": "العدد التنازلي",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-calendar-time",
+                            "value": "2021-10-01T15:23",
+                            "required": false
+                        },
+                        {
+                            "id": "banner.title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "عنوان رئيسي",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": null,
