@@ -22,14 +22,14 @@ style="background-image: url({{ banner.photo }});" class="overlay-bg bg-cover bg
 </div>
 </div>
 <salla-count-down class="flex-1 anime-item s-count-down-wrapper hydrated" 
- date="{{banner.countdown}}" boxed="" labeled="">
+ date="{{ banner.countdown|date("HH:mm:ss")  }}" boxed="" labeled="">
 <ul class="s-count-down-list s-count-down-boxed s-count-down-md s-count-down-dark">
-  <li class="s-count-down-item"><div class="s-count-down-item-value">٥٩</div>
+  <li class="s-count-down-item"><div class="s-count-down-item-value">{{ dateTime | date('d') }}</div>
     <div class="s-count-down-item-label">ثانية</div></li><li class="s-count-down-item">
-      <div class="s-count-down-item-value">١</div><div class="s-count-down-item-label">دقيقة</div>
+      <div class="s-count-down-item-value">{{ dateTime | date('i') }}</div><div class="s-count-down-item-label">دقيقة</div>
     </li><li class="s-count-down-item">
-      <div class="s-count-down-item-value">٨</div><div class="s-count-down-item-label">ساعة</div>
-    </li><li class="s-count-down-item"><div class="s-count-down-item-value">١٦٧</div>
+      <div class="s-count-down-item-value">{{ dateTime | date('h') }}</div><div class="s-count-down-item-label">ساعة</div>
+    </li><li class="s-count-down-item"><div class="s-count-down-item-value">{{ dateTime | date('s') }}</div>
   <div class="s-count-down-item-label">يوم</div></li></ul></salla-count-down>
 </div>
 </div>
