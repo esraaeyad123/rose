@@ -4,8 +4,9 @@
   " id="today-deal-7" style="color: #ffffff;"><span class="s-design-before s-design-invisible-dom" id="edit-858056982"></span>
 <div class="container relative overflow-hidden lg:rounded">
 <div 
+{% for banner in component.banner %}
 
-style="background-image: url({{ photo }});" class="overlay-bg bg-cover bg-center absolute inset-0"
+style="background-image: url({{ banner.photo }});" class="overlay-bg bg-cover bg-center absolute inset-0"
 ></div>
 <div class="absolute inset-0 bg-dark " style="opacity: 0.9;">
 </div>
@@ -17,28 +18,55 @@ style="background-image: url({{ photo }});" class="overlay-bg bg-cover bg-center
   {{ banner.description }}
 </p>
 <div class="mt-6 flex items-center gap-x-6 anime-item" style="opacity: 1; transform: translateY(0px);">
-<salla-button class="btn--main group s-button-wrap hydrated" href="{{links.url}}" shape="btn" color="primary" fill="solid" size="medium" width="normal" type="button"><!---->
-  <a href="{{links.url}}"><button class="btn--main group s-button-element s-button-btn s-button-solid s-button-primary s-button-loader-after" href="{{links.url}}" type="button" fdprocessedid="bregt">
-  <span class="s-button-text">
-<span class="text"></span>
-<i class="arrow-icon sicon-arrow-up-left"></i>
-</span></button></a></salla-button>
+  <button class="w-[200px] mt-[32px] h-[56px] text-[16px] font-bold rounded-lg  hover:opacity-75 duration-300 bg-[var(--f-color)] text-white" fdprocessedid="wjdwdr">اكتشفي المزيد</button>
 </div>
 </div>
 <salla-count-down class="flex-1 anime-item s-count-down-wrapper hydrated" 
- date="{{ banner.countdown }}" boxed=""
-  labeled=""><ul class="s-count-down-list s-count-down-boxed s-count-down-md s-count-down-dark">
-    <li class="s-count-down-item"><div class="s-count-down-item-value">٥٩</div>
-        <div class="s-count-down-item-label">ثانية</div></li><li class="s-count-down-item">
-            <div class="s-count-down-item-value">٣٥</div><div class="s-count-down-item-label">دقيقة</div></li>
-            <li class="s-count-down-item"><div class="s-count-down-item-value">٥
-
-            </div><div class="s-count-down-item-label">ساعة</div></li><li class="s-count-down-item">
-                <div class="s-count-down-item-value">١٧٠</div><div class="s-count-down-item-label">يوم
-
-                </div></li></ul>
-              </salla-count-down>
+ date="{{banner.countdown}}" boxed="" labeled="">
+<ul class="s-count-down-list s-count-down-boxed s-count-down-md s-count-down-dark">
+  <li class="s-count-down-item"><div class="s-count-down-item-value">٥٩</div>
+    <div class="s-count-down-item-label">ثانية</div></li><li class="s-count-down-item">
+      <div class="s-count-down-item-value">١</div><div class="s-count-down-item-label">دقيقة</div>
+    </li><li class="s-count-down-item">
+      <div class="s-count-down-item-value">٨</div><div class="s-count-down-item-label">ساعة</div>
+    </li><li class="s-count-down-item"><div class="s-count-down-item-value">١٦٧</div>
+  <div class="s-count-down-item-label">يوم</div></li></ul></salla-count-down>
 </div>
 </div>
 <div class="hidden text-[100px] md:text-[180px] lg:text-[270px]"></div>
 </span></section>
+
+{% endfor %}
+
+
+ <script>
+    // Set the date we're counting down to
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get todays date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now an the count down date
+      var distance = tomorrow - now;
+    
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the result in the element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    
+      // If the count down is finished, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>
