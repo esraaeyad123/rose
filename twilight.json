@@ -1281,7 +1281,7 @@
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-calendar-time",
-                            "value": "2021-10-01T15:23",
+                            "value": "2025-02-24T15:23",
                             "required": false
                         },
                         {
@@ -1303,8 +1303,8 @@
                             "type": "items",
                             "icon": "sicon-link",
                             "label": "الرابط",
-                            "id": "links.url",
-                            "value": null,
+                            "id": "banner.links.url",
+                            "value": [],
                             "description": null,
                             "required": false,
                             "format": "variable-list",
