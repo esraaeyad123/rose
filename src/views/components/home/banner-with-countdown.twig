@@ -21,16 +21,11 @@ style="background-image: url({{ banner.photo }});" class="overlay-bg bg-cover bg
   <button class="w-[200px] mt-[32px] h-[56px] text-[16px] font-bold rounded-lg  hover:opacity-75 duration-300 bg-[var(--f-color)] text-white" fdprocessedid="wjdwdr">اكتشفي المزيد</button>
 </div>
 </div>
-<salla-count-down class="flex-1 anime-item s-count-down-wrapper hydrated" 
- date="{{ banner.countdown|date(" MM DD, YYYY HH:mm:ss ")  }}" boxed="" labeled="">
-<ul class="s-count-down-list s-count-down-boxed s-count-down-md s-count-down-dark">
-  <li class="s-count-down-item"><div class="s-count-down-item-value">{{ dateTime | date('h') }}</div>
-    <div class="s-count-down-item-label">ثانية</div></li><li class="s-count-down-item">
-      <div class="s-count-down-item-value">{{ dateTime | date('m') }}</div><div class="s-count-down-item-label">دقيقة</div>
-    </li><li class="s-count-down-item">
-      <div class="s-count-down-item-value">{{ dateTime | date('H') }}</div><div class="s-count-down-item-label">ساعة</div>
-    </li><li class="s-count-down-item"><div class="s-count-down-item-value">{{ dateTime | date('D') }}</div>
-  <div class="s-count-down-item-label">يوم</div></li></ul></salla-count-down>
+
+
+<salla-count-down date="${this.parseDate(this.banner.countdown)}"  boxed>
+  
+</salla-count-down>
 </div>
 </div>
 <div class="hidden text-[100px] md:text-[180px] lg:text-[270px]"></div>
@@ -38,4 +33,21 @@ style="background-image: url({{ banner.photo }});" class="overlay-bg bg-cover bg
 
 {% endfor %}
 
+
+{% block scripts %}
+    <script defer src="{{ 'product.js' | asset }}">
+     
+
+      parseDate(date) {
+    const parsedDate = new Date(date * 1000);
+    const year = parsedDate.getFullYear();
+    const month = String(parsedDate.getMonth() + 1).padStart(2, "0");
+    const day = String(parsedDate.getDate()).padStart(2, "0");
+    const outputDate = ${year}/${month}/${day};
+    return outputDate;
+  }
+    </script>
+   
+  
+{% endblock %}
 
