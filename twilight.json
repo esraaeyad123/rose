@@ -944,21 +944,6 @@
             "path": "home.discounts",
             "fields": [
                 {
-                    "id": "item.cats",
-                    "type": "items",
-                    "format": "dropdown-list",
-                    "label": "طريقة عرض الصور في سليدر صور المنتج",
-                    "description": "",
-                    "labelHTML": null,
-                    "icon": "sicon-list",
-                    "selected": [],
-                    "options": [],
-                    "source": "categories",
-                    "multichoice": false,
-                    "searchable": true,
-                    "required": true
-                },
-                {
                     "id": "code",
                     "type": "collection",
                     "format": "collection",
