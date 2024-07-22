@@ -5,8 +5,8 @@
 | item_1           | string  | Desecription                                                |
   collection.img    |img      |img                    |
 #}
- 
-     
+
+
 
 <section class=" bg-white s-block--full-bg  py-8 sm:py-16 ">
   <div class="max-w-screen-xl 
@@ -33,13 +33,13 @@
                </salla-button>
                </div>
                </div> 
-               {% for banner in component.gellary %}
-
+=
                <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-3 md:grid-cols-3">
-    
+                {% for banner in component.gellary %}
+
                 <div class="">
                   <img class="object-cover object-center w-full h-40 max-w-full rounded-lg
-                  shadow-s m-4 duration-300 hover:scale-105 hover:shadow-s"
+                  duration-300 hover:scale-105 hover:shadow-s"
                     src="{{banner.gellary_photo}}"
                     alt="" />
                 </div>
@@ -57,6 +57,3 @@
 
             
               </section>
-         
-     
-            
