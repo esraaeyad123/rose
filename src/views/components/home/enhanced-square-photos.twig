@@ -1,6 +1,6 @@
 
 
-<section class="bg-white  container ">
+<section class="bg-white  s-block s-block--banners container ">
 
     <div class="banners-grid banners-grid--{{ component.item|length }}">
 
@@ -29,4 +29,8 @@
     </div>
 
     </section>
- 
+    {% block scripts %}
+    <script defer src="{{ 'custom.css' | asset }}"></script>
+    
+{% endblock %}
+
