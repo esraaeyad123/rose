@@ -8,16 +8,18 @@
  
      
 
-<section class=" bg-white s-block s-block--full-bg  bg-white py-8 sm:py-16 ">
-  <div class="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-uto py-12 lg:py-24 space-y-24 h-svh flex flex-col justify-center">
+<section class=" bg-white s-block--full-bg  py-8 sm:py-16 ">
+  <div class="max-w-screen-xl 
+  2xl:max-w-screen-3xl px-5 lg:py-24  justify-center">
+
              <div class="px-6 py-0 md:py-14 md:rtl:pl-0 md:ltr:pr-0 flex-1">
-               <div class="items-center flex flex-col  justify-center" >
+               <div class=" items-center text-center flex flex-col" >
                <h2 class=" text-2xl max-w-s md:max-w-2xl  md:text-start md:text-4xl font-bold md:!leading-12">
                 {{ component.item }}
 
-               </h2>
+ </h2>
 
-               <p class=" max-w-xl md:max-w-3/4 mt-4 relative md:text-start text-sm leading-8 sm:max-w-md">
+               <p class=" mx-auto mt-6 max-w-xl text-lg md:text-xl leading-8 text-slate-400">
                 
                 {{ component.item_1 }}
                 
@@ -31,8 +33,9 @@
                </salla-button>
                </div>
                </div> 
+               {% for banner in component.gellary %}
+
                <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-3 md:grid-cols-3">
-                {% for banner in component.gellary %}
     
                 <div class="">
                   <img class="object-cover object-center w-full h-40 max-w-full rounded-lg
@@ -56,5 +59,4 @@
               </section>
          
      
-
-              
+            

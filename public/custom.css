@@ -664,3 +664,28 @@ input[type=radio].sr-only:checked~div.has-overlay a:after {
 
 
 
+
+
+/* HTML: <div class="ribbon">Your text content</div> */
+.ribbon {
+  --tw-bg-opacity:1;
+  border-block: .3em solid #0000;
+  padding-inline: calc(var(--r) + .25em) .9em;
+  line-height: 2;
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%,var(--r) calc(100% - .25em),0 50%,var(--r) .25em);
+  background:
+   radial-gradient(.2em 50% at right,#000a,#0000) border-box,
+   #BD1550 padding-box; /* the color  */
+  width: fit-content;
+  --f: 10px; /* control the folded part*/
+  --r: 15px; /* control the ribbon shape */
+  --t: 10px; /* the top offset */
+  position: absolute;
+  inset: var(--t) calc(-1*var(--f)) auto auto;
+  padding: 0 20px var(--f) calc(10px + var(--r));
+   font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+ 
+  
+}
