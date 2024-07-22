@@ -1126,7 +1126,7 @@
                         }
                     ],
                     "value": [],
-                    "minLength": 1,
+                    "minLength": "5",
                     "maxLength": 10
                 }
             ]
