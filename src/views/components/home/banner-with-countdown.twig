@@ -1,3 +1,22 @@
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
 
 <div class="bg-gray-900  flex flex-col items-center justify-center text-white">
   <!-- Logo or Header -->
@@ -57,6 +76,10 @@
       document.getElementById("countdown").innerHTML = "EXPIRED";
     }
   }, 1000);
+
+
+  // Initialization for ES Users
+
 </script>
 
 
@@ -64,13 +87,16 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script defer src="{{ 'product.js' | asset }}">
-      formatDate(date) {
-        let d = new Date(date*1000);
-        return ${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()};
-    }
+      $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
 
     
     </script>
-   
+    <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
   
 {% endblock %}
