@@ -4,7 +4,7 @@
     <div class="flex items-center justify-center min-h-screen ">
         <div class="bg-white w-1/2  rounded shadow-md bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 max-w-sm">
             <div class="relative">
-                <img class=" w-full"  src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Product Image">
+                <img class=" w-full"  src="{{component.item_1}}" alt="Product Image">
                 <div class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
                     <button class="" fdprocessedid="quhb0i">
 
@@ -19,9 +19,8 @@
                 </div>
                 
             <div class="p-4">
-                <h3 class="text-lg font-medium mb-2">احصل على خصمك فوراً</h3>
-                <p class="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ante
-                    vel eros fermentum faucibus sit amet euismod lorem.</p>
+                <h3 class="text-lg font-medium mb-2">{{component.item_2}}</h3>
+                <p class="text-gray-600 text-sm mb-4">{{component.item_3}}</p>
                 <div class="flex items-center justify-between">
                     <button style="background-color: rgb(84, 17, 18); padding: 1em 2em; border-radius: 4px; min-width: 70%; border: medium; font-weight: bold; color: rgb(255, 255, 255); cursor: pointer; letter-spacing: 0px;">احصل على خصمك فوراًاحصل على كود الخصم </button>                   </div>
             </div>
@@ -59,7 +58,7 @@ function closeModal(){
 function updateTime(){
   time_count++;  
   span_tag.innerHTML = time_count;
-  if(time_count == 21){
+  if(time_count == 10){
     clearInterval(countdown_call);
     closeModal();
   }
