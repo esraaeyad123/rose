@@ -1354,6 +1354,13 @@
                     "maxLength": 1
                 }
             ]
+        },
+        {
+            "key": "ffef8791-e715-4b8f-8726-2e4ef0736afa",
+            "title": "إعلانات منبثقة",
+            "icon": "sicon-store",
+            "path": "home.ads-popups",
+            "fields": []
         }
     ],
     "support_url": null,
