@@ -1360,7 +1360,50 @@
             "title": "إعلانات منبثقة",
             "icon": "sicon-store",
             "path": "home.ads-popups",
-            "fields": []
+            "fields": [
+                {
+                    "id": "item_1",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "item_2",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص التوضيحي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "item_3",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان الرئيسي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ]
         }
     ],
     "support_url": null,
