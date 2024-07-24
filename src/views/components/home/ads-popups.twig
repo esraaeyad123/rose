@@ -1,36 +1,60 @@
-<div id="my_modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
-    <span id="show_time">0.00</span>
 
-    <div class="flex items-center justify-center min-h-screen ">
-        <div class="bg-white w-1/2  rounded shadow-md bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 max-w-sm">
-            <div class="relative">
-                <img class=" w-full"  src="{{component.item_1}}" alt="Product Image">
-                <div class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">
-                    <button class="" fdprocessedid="quhb0i">
+<div id="my_modal" 
+    class="bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex">
+    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <span id="show_time">0.00</span>
 
+        <div class="relative bg-white rounded-lg shadow  rounded shadow-md bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-red-500 ring-opacity-40 max-w-sm">
+            <button type="button"
+                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center popup-close"><svg
+                    aria-hidden="true" class="w-5 h-5" fill="#c6c7c7" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        cliprule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Close popup</span>
+            </button>
+            <img class=" w-full"  src="{{component.item_1}}" alt="Product Image">
 
-                        <svg xmlns="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-close-128.png" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 56.92 56.92" style="enable-background:new 0 0 56.92 56.92;" xml:space="preserve">
-                        <g>
-                        <path class="st3" d="M45.77,46.01c-5.18-6.21-10.73-12.24-16.65-18.08c-0.21-0.21-0.42-0.41-0.63-0.62l0,0   c-5.16-5.06-10.6-9.97-16.33-14.73c-0.66-0.55-1.33-1.1-2.01-1.65"></path>
-                        <path class="st3" d="M11.26,46.06c5.34-6.41,10.87-12.45,16.59-18.14c0.21-0.21,0.42-0.42,0.63-0.63l0,0   c5.27-5.22,10.7-10.14,16.27-14.78c0.67-0.56,1.34-1.11,2.01-1.65"></path>
-                        </g>
-                        </svg>
-                        </button>
+            <div class="p-5">
+                <h3 class="text-2xl mb-0.5 font-medium"></h3>
+                <p class="mb-4 text-sm font-normal text-gray-800"></p>
+
+                <div class="text-center">
+                    <p class="mb-3 text-2xl font-semibold leading-5 text-slate-900">
+                        {{component.item_2}}
+                    </p>
+                    <p class="mt-2 text-sm leading-4 text-slate-600">
+                        {{component.item_3}}
+                    </p>
                 </div>
-                
-            <div class="p-4">
-                <h3 class="text-lg font-medium mb-2">{{component.item_2}}</h3>
-                <p class="text-gray-600 text-sm mb-4">{{component.item_3}}</p>
-                <div class="flex items-center justify-between">
-                    <button style="background-color: rgb(84, 17, 18); padding: 1em 2em; border-radius: 4px; min-width: 70%; border: medium; font-weight: bold; color: rgb(255, 255, 255); cursor: pointer; letter-spacing: 0px;">احصل على خصمك فوراًاحصل على كود الخصم </button>                   </div>
+
+
+
+              
+
+                <div class="mt-6 text-center text-sm text-slate-600">
+                    <button style="background-color: rgb(84, 17, 18); padding: 1em 2em; border-radius: 4px; min-width: 70%; border: medium; font-weight: bold; color: rgb(255, 255, 255); cursor: pointer; letter-spacing: 0px;">احصل على خصمك فوراًاحصل على كود الخصم </button>  
+
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-</div>
 
-  <script type="text/javascript">
+
+
+
+
+
+
+
+
+
+
+  <script type"text/javascript">
     
     var my_modal = document.getElementById('my_modal');
 var span_tag = document.getElementById('show_time');
@@ -63,18 +87,6 @@ function updateTime(){
     closeModal();
   }
 
-   // JavaScript to toggle the modal
-   const openContactFormButton = document.getElementById('openContactForm');
-    const closeContactFormButton = document.getElementById('closeContactForm');
-    const contactFormModal = document.getElementById('contactFormModal');
-
-    openContactFormButton.addEventListener('click', () => {
-        contactFormModal.classList.remove('hidden');
-    });
-
-    closeContactFormButton.addEventListener('click', () => {
-        contactFormModal.classList.add('hidden');
-    });
 
 }
 </script>

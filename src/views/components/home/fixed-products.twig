@@ -11,8 +11,8 @@
 <section class="s-block container">
     {% if title %}
       <div class="s-block__title">
-        <div class="right-side">
-          <h2>{{ title }}</h2>
+        <div class="">
+          <h2 class="text-center text-store-text-primary text-2xl lg:text-3xl font-bold leading-tight ">{{ title }}</h2>
           {# <p>عنوان فرعي توصيفي صغير</p> #}
         </div>
         {% if display_all_url %}
@@ -27,6 +27,7 @@
       source-value="[{{ products|map((product) => product.id)|join(',') }}]"
       class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
       {{is_vertical ? '' : 'horizontal-cards'}}
+      style="transition-duration: 0ms; transform: translate3d(612px, 0px, 0px);"
       >
     </salla-products-list>
 </section>
