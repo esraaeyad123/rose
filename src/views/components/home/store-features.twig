@@ -10,13 +10,19 @@
 <section class="s-block s-block--features container">
     <div class="grid grid-cols-[repeat(2,minmax(0,1fr))] md:grid-cols-[repeat(3,minmax(0,1fr))] gap-4 sm:gap-6 xl:gap-8">
       {% for item in items %}
-          <div class="s-block--features__item">
-            <div class="feature-icon">
-              <i class="{{ item.icon }}"></i>
-            </div>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.text }}</p>
-          </div>
+      
+      <div class="swiper-wrapper s-slider-swiper-wrapper duration-200 hover:-translate-y-3 parent pb-4
+      relative rounded-xl " id="swiper-wrapper-bb4bad112241fc3b" aria-live="polite" >
+        <div class="flex flex-col gap-6 text-center justify-center items-center swiper-slide swiper-slide-active" style="width: auto !important; min-width: 200px !important" role="group" aria-label="1 / 5">
+      <span class="bg-[var(--color-primary)] text-[var(--color-primary-reverse)] {{ item.icon }} text-4xl text-white bg-[#bc8a7e] rounded-[10px] mx-auto w-[100px] h-[100px] flex justify-center items-center"></span>
+      <h4 class="text-[var(--color-primary-dark)] text-[22px] font-[500]">
+        {{ item.title }}
+      </h4>
+      <p>{{ item.text }}</p>
+      </div>
+    </div>
       {% endfor %}
     </div>
 </section>
+
+
