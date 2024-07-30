@@ -8,7 +8,7 @@
 | position      | Int    | Sorting number start from zero                                   |
 #}
 
-<section class="yasmeen-features dark:bg-[#14141f]"><span class="s-design-before s-design-invisible-dom" id="edit-554386487"></span>
+<section class="s-block s-block--features container ">
   <div class="container mx-auto">
   <div class="xl:px-20 lg:px-6 py-10">
     <div class=" items-center text-center flex flex-col" >
@@ -29,10 +29,9 @@
 
 
   <div class="yasmeen-features-slider">
-  <salla-slider id="thumbs" loop="false" show-controls="false" type="carousel" class="s-slider-wrapper carousel-slider s-slider-has-notitle s-slider-v-centered s-slider-horizontal hydrated" block-title="" block-subtitle="" display-all-url="" direction="rtl"><!---->
-  <div class="swiper s-slider-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl swiper-backface-hidden" dir="rtl">
-    {% for item in  component.features %}
-      
+    <salla-slider id="thumbs" loop="false" show-controls="false" type="carousel" >
+      {% for item in  component.features %}
+
       <div class="swiper-wrapper s-slider-swiper-wrapper duration-200 hover:-translate-y-3 parent pb-4
       relative rounded-xl " id="swiper-wrapper-bb4bad112241fc3b" aria-live="polite" >
         <div class="flex flex-col gap-6 text-center justify-center items-center swiper-slide swiper-slide-active" style="width: auto !important; min-width: 200px !important" role="group" aria-label="1 / 5">
@@ -43,18 +42,26 @@
       <p>{{ item.text }}</p>
       </div>
     </div>
-      {% endfor %}
+      
+    {% endfor %}
+
+    
+    </salla-slider>
+
   
 
-</div>
-  
-  
   
   </div>
+
+
   </div>
   </div>
-  
+
+
 </section>
+
+
+
 <style>
 
   .yasmeen-features .yasmeen-features-slider .swiper-wrapper
