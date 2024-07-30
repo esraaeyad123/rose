@@ -10,8 +10,8 @@
 | component.links[].url              | string   |                                                                              |
 | position                           | int      | Sorting number start from zero                                               |
 #}
-<section class="s-block s-block--categories {{ component.merge_with_top_component and position ?'merge-with-top-component' : '' }} {{ not component.title and component.merge_with_top_component ? 'merged-has-no-title' : '' }}">
-    <div class="container">
+<section class="s-block s-block--categories    {{ component.merge_with_top_component and position ?'merge-with-top-component' : '' }} {{ not component.title and component.merge_with_top_component ? 'merged-has-no-title' : '' }}">
+    <div class="container  bg-transparent standard-title-color">
       <salla-slider  
         type="carousel"
         {% if(component.title) or (component.merge_with_top_component) %}
@@ -23,7 +23,7 @@
           <div slot="items">
               {% if component.show_cats %}
                 {% for cat in component.categories %}
-                    <div class="swiper-slide slide--one-sixth">
+                    <div class="swiper-slide slide--one-sixth ">
                         <a href="{{ cat.url }}" class="slide--cat-entry">
                             {% if cat.image %}
                               <img src="{{ cat.image ? cat.image : 'images/placeholder.png' | asset }}" class="w-16 h-16 object-cover rounded-full mb-2.5 {{ cat.image ? '' : 'has-placeholder'}}" width="64" height="64" alt="{{ menu.title }}"/>
@@ -37,10 +37,20 @@
               {% else %}
                 {% for link in component.links %}
                   {% if link.title %}
-                    <div class="swiper-slide slide--one-sixth">
-                        <a href="{{ link.url }}" class="slide--cat-entry">
-                            <i class="{{ link.icon }}"></i>
-                            <h2>{{ link.title }}</h2>
+                  
+                    <div class="swiper-slide slide--one-sixth  vertical swiper-slide-active 
+                    duration-200 hover:-translate-y-3 parent pb-4
+      relative rounded-xl" >
+                      <a href="{{ link.url }}" class="slide--cat-entry flex 
+                      bg-[color:var(--components-bg-color)] rectangular-shape !rounded-[30px] !p-0" >
+
+                      
+                        <div class="flex justify-center items-center  w-full h-full rounded-[30px]   ">
+                          <i class="{{ link.icon }} text-7xl text-main-text-color "></i>
+                          </div>
+                              <div class="link_title-container   bottom-2 z-0 bg-[var(--color-primary)] absolute right-1/2 translate-x-1/2 flex-nowrap min-w-[80%] hover:opacity-100 rounded-xl  ">
+                              <h4 class="link_title   text-[color:var(--secondary-text-color)]">{{ link.title }}</h4>
+                              </div>
                         </a>
                     </div>
                   {% endif %}
@@ -49,6 +59,21 @@
           </div>
       </salla-slider>
     </div>
-</section> 
 
+</section> 
+<style>
+  .link_title{
+    display:flex;
+    height:auto;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    padding-top:.5rem;padding-bottom:.5rem}
+.link_title-container
+{opacity:.8;transition-property:all;
+  transition-timing-function:cubic-bezier(.4,0,.2,1);
+  transition-duration:200ms;
+  transition-timing-function:cubic-bezier(0,0,.2,1)}
+  .new-main-links salla-slider .swiper .swiper-wrapper .swiper-slide .slide--cat-entry .link_title-container .link_title{display:flex;height:auto;width:100%;align-items:center;justify-content:center;padding-top:.5rem;padding-bottom:.5rem}.new-main-links salla-slider .swiper .swiper-wrapper .swiper-slide .slide--cat-entry:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(1.05) scaleY(1.05);transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:300ms;transition-timing-function:cubic-bezier(0,0,.2,1)}.new-main-links salla-slider .swiper .swiper-wrapper .swiper-slide .slide--cat-entry:hover .link_title-container{opacity:1;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:200ms;transition-timing-function:cubic-bezier(0,0,.2,1)}
+  </style>
 

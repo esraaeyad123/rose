@@ -34,6 +34,28 @@
 
 </div>
 
+
+<div class="card w-40">
+  <div class="card__content text-center relative p-20 transition-transform duration-1000 text-white font-bold">
+    
+    <div class="card__front absolute top-0 bottom-0 right-0 left-0 p-8 bg-pink-600 flex items-center justify-center">
+      <h2>Front</h2>
+    </div>
+    <div class="card__back absolute top-0 bottom-0 right-0 left-0 p-8 bg-teal-500 flex items-center justify-center">
+      <h2>Back</h2>
+    </div>
+    
+  </div>
+</div>
+<style>
+  .card { perspective: 800px;}
+.card__content {transform-style: preserve-3d;}
+.card:hover .card__content {transform: rotateY(.5turn);}
+
+.card__front,
+.card__back { backface-visibility: hidden;}
+.card__back{ transform: rotateY(.5turn);}
+</style>
 <script>
   // Set the date we're counting down to (adjust the date and time)
   const countDownDate = new Date("Dec 30, 2025 00:00:00").getTime();
