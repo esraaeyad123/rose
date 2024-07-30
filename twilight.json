@@ -1410,7 +1410,67 @@
             "title": "مميزات المتجر محسنة",
             "icon": "sicon-store",
             "path": "home.enhanced-store-features",
-            "fields": []
+            "fields": [
+                {
+                    "id": "item",
+                    "type": "static",
+                    "format": "title",
+                    "label": "عنوان رئيسي",
+                    "value": null,
+                    "variant": "h1",
+                    "icon": "sicon-format-text"
+                },
+                {
+                    "id": "item_1",
+                    "type": "static",
+                    "format": "description",
+                    "label": "نص توضيحي",
+                    "value": null,
+                    "variant": "h1",
+                    "icon": "sicon-format-size"
+                },
+                {
+                    "id": "features",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "Collection",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "features.icon",
+                            "type": "string",
+                            "format": "icon",
+                            "label": null,
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-user-circle",
+                            "value": "sicon-store",
+                            "required": false
+                        },
+                        {
+                            "id": "features.title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "العنوان الرئيسي",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        }
+                    ],
+                    "value": [],
+                    "minLength": "5",
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": null,
