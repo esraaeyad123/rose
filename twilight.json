@@ -1436,7 +1436,7 @@
                     "label": "Collection",
                     "description": null,
                     "labelHTML": null,
-                    "item_label": null,
+                    "item_label": "ميزة",
                     "icon": "sicon-list-add",
                     "fields": [
                         {
