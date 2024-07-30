@@ -1404,6 +1404,13 @@
                     "maxLength": 30
                 }
             ]
+        },
+        {
+            "key": "fb4ec16f-4ed0-48ed-974d-3172c92d9a28",
+            "title": "مميزات المتجر محسنة",
+            "icon": "sicon-store",
+            "path": "home.enhanced-store-features",
+            "fields": []
         }
     ],
     "support_url": null,
