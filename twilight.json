@@ -1412,22 +1412,34 @@
             "path": "home.enhanced-store-features",
             "fields": [
                 {
-                    "id": "item_1",
-                    "type": "static",
-                    "format": "description",
-                    "label": "نص توضيحي",
+                    "id": "item",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان رئيسي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
                     "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-size"
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 },
                 {
-                    "id": "item",
-                    "type": "static",
-                    "format": "title",
-                    "label": "عنوان رئيسي",
+                    "id": "item_1",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص توضيحي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
                     "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-text"
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 },
                 {
                     "id": "features",
