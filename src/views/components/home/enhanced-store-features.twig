@@ -8,7 +8,9 @@
 | position      | Int    | Sorting number start from zero                                   |
 #}
 
-<section class="s-block s-block--features container bg-white py-8 sm:py-16  px-10 lg:py-24  justify-center">
+<section class="s-block s-block--features container bg-white py-8 sm:py-16  px-10 lg:py-24 justify-center">
+  <div class="container mx-auto">
+  <div class="xl:px-20 lg:px-6 py-10">
   <div class=" items-center text-center flex flex-col" >
     <h2 class=" text-2xl max-w-s md:max-w-2xl  md:text-start md:text-4xl font-bold md:!leading-12">
      {{ component.item }}
@@ -23,41 +25,48 @@
       </p>
     
     </div> 
+</div>
 
-
-
-<div class="yasmeen-features-slider">
-  <salla-slider id="thumbs" loop="false" show-controls="false" type="carousel" >
-    {% for item in  component.features %}
-
-    <div class="swiper-wrapper s-slider-swiper-wrapper duration-200 hover:-translate-y-3 parent pb-4
-    relative rounded-xl " id="swiper-wrapper-bb4bad112241fc3b" aria-live="polite" >
-      <div class="flex flex-col gap-6 text-center justify-center items-center swiper-slide swiper-slide-active" style="width: auto !important; min-width: 200px !important" role="group" aria-label="1 / 5">
-    <span class="bg-[var(--color-primary)] text-[var(--color-primary-reverse)] {{ item.icon }} text-4xl text-white  rounded-[10px] mx-auto w-[100px] h-[100px] flex justify-center items-center"></span>
-    <h4 class="text-[var(--color-primary-dark)] text-[22px] font-[500]">
-      {{ item.title }}
-    </h4>
-    <p>{{ item.text }}</p>
-    </div>
-  </div>
-    
-  {% endfor %}
-
+<div class="pt-2">
+  <salla-slider  
+  id="thumbs"
+  show-controls="true" 
+  type="carousel"
+  block-title="{{ component.title }}"
+  controls-outer
   
-  </salla-slider>
+  class="s-slider-wrapper carousel-slider s-slider-has-notitle s-slider-v-centered s-slider-horizontal hydrated">
 
+  <div class="swiper s-slider-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl swiper-backface-hidden" dir="rtl">
+      
+      <div class="swiper-wrapper s-slider-swiper-wrapper"  >
+      {% for item in  component.features %}
 
+        <div class="flex flex-col gap-6 text-center justify-center items-center swiper-slide swiper-slide-active" style="width: auto !important; min-width: 200px !important" >
+      <span class="bg-[var(--color-primary)] text-[var(--color-primary-reverse)] {{ item.icon }} text-4xl text-white  rounded-[10px] mx-auto w-[100px] h-[100px] flex justify-center items-center"></span>
+      <h4 class="text-[var(--color-primary-dark)] text-[22px] font-[500]">
+        {{ item.title }}
+      </h4>
+      </div>
 
+      {% endfor %}
+
+    </div>
+  
 
 </div>
 
 
+
+  </salla-slider>
+
+</div>
+
 </section>
 
 
-
 <style>
-
+ 
   .yasmeen-features .yasmeen-features-slider .swiper-wrapper
   {justify-content:space-between!important}
 </style>
