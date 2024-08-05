@@ -7,21 +7,21 @@
 | items[].text  | string | Subtitle for the feature                                         |
 | position      | Int    | Sorting number start from zero                                   |
 #}
-<section class="s-block s-block--features container">
-    <div class="grid grid-cols-[repeat(2,minmax(0,1fr))] md:grid-cols-[repeat(3,minmax(0,1fr))] gap-4 sm:gap-6 xl:gap-8">
-      {% for item in items %}
-      
-      <div class="swiper-wrapper s-slider-swiper-wrapper duration-200 hover:-translate-y-3 parent pb-4
-      relative rounded-xl " id="swiper-wrapper-bb4bad112241fc3b" aria-live="polite" >
-        <div class="flex flex-col gap-6 text-center justify-center items-center swiper-slide swiper-slide-active" style="width: auto !important; min-width: 200px !important" role="group" aria-label="1 / 5">
-      <span class="bg-[var(--color-primary)] text-[var(--color-primary-reverse)] {{ item.icon }} text-4xl text-white  rounded-[10px] mx-auto w-[100px] h-[100px] flex justify-center items-center"></span>
-      <h4 class="text-[var(--color-primary-dark)] text-[22px] font-[500]">
-        {{ item.title }}
-      </h4>
-      <p>{{ item.text }}</p>
-      </div>
-    </div>
-      {% endfor %}
-    </div>
-</section>
+<section  class="px-2 md:px-0 py-4">
+  <div class="flex flex-col lg:flex-row rounded-2xl gap-16 md:gap-8 lg:py-16 lg:px-12 px-6 py-14 lg:justify-between">
+    {% for item in items %}
 
+  <div class="feature_item flex items-center gap-3 sal-animate" data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease-out-bounce">
+  <div class="image">
+  <i class="{{ item.icon }} text-title-size text-primary"></i>
+  </div>
+  <div class="content flex flex-col gap-2 ">
+  <span class="text-gray-900 dark:text-white font-bold text-xl ">{{ item.title }}</span>
+  <span class="text-base font-medium text-gray-700 dark:text-gray-200">{{ item.text }}</span>
+  </div>
+  </div>
+  {% endfor %}
+
+  </div>
+
+</section>
