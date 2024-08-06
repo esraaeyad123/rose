@@ -7,32 +7,6 @@
 | position        | Int       | Sorting number start from zero                                   |
 #}
 
-<section id="best-offers-{{ position }}-slider" class="s-block s-block--best-offers container overflow-hidden 
-">
-
-  {% if products|length %}
-
-    <salla-products-slider   shadow-on-hover         
-            source="selected"
-            limit="{{ limit }}"
-            autoplay
-            source-value="[{{ products|map((product) => product.id)|join(',') }} ] "
-            display-all-url="{{display_all_url}}"
-            block-title= "{{ title }}"
-            block-subTitle="{{ sub_title|raw }}"
-            slider-id=" slider-with-bg-{{ position }}  "
-            
-    >
-    </salla-products-slider>
-  {% endif %}
-
-</section>
-
-
-
-
-
-
 <section id="swiper squared-products-slider-{{ position }}" class="s-block s-block--best-offers container overflow-hidden">
 
 
