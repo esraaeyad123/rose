@@ -16,23 +16,25 @@
           {# <p>عنوان فرعي توصيفي صغير</p> #}
         </div>
         {% if display_all_url %}
-       <div>   <a href="{{ display_all_url }}" class="s-block__display-all">{{ trans('blocks.home.display_all') }} <i class="sicon-arrow-left"></i></a>
+       <div>   
+        <a href="{{ display_all_url }}" class="s-block__display-all">{{ trans('blocks.home.display_all') }} <i class="sicon-arrow-left"></i></a>
         {% endif %}
       </div>
     {% endif %}
 
+  </div>
   
-  
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 products-grid-section gap-2 md:gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 
       {% for product in products %}
 
 
        <div class="duration-200 hover:-translate-y-3 parent pb-4" >
-             <custom-salla-product-card horizontal="true" showwishlist="true" >
+             <custom-salla-product-card 
+             horizontal="true" showwishlist="true" >
 
 
-             <div class="animate-fade animate-duration-1000 relative flex w-full flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg h-full justify-between">
+         <div class="animate-fade animate-duration-1000 relative flex w-full flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg h-full justify-between">
         <div class="flex flex-col gap-2 md:gap-4">
           <a class="relative mx-2 mt-3 flex overflow-hidden rounded-xl aspect-square  product-card-image-1144" href="{{ product.url }}">
           <img class=" object-cover w-full" src="{{ product.image.url }}" alt="{{ product.image.alt }}"/ loading="lazy">
@@ -102,7 +104,7 @@
           
         
       
-           </custom-salla-product-card>
+            </custom-salla-product-card>
        </div>
 
       {% endfor %}

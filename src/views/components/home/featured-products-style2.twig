@@ -19,11 +19,11 @@
 <section class="s-block s-block-tabs s-block--tabs-produtcs s-block--full-bg {{ is_slider ? 'as-slider':'as-grid' }} bg-withe-100 py-8 sm:py-16" id="{{ component_id }}">
   <div class="container">
 
-      <div class="tabs hide-scroll text-center border-b border-gray-200 mb-4">
+      <div class="tabs hide-scroll text-center">
           {% for section in items %}
               <custom-tabs  
                 class="tab-trigger {{ loop.first?'is-active':'' }} 
-                inline-block p-4 rounded-t-lg hover:text-primary hover:border-primary text-lg is-active"
+                inline-block font-bold text-xl p-4 border-b-4 border-transparent rounded-t-lg hover:text-primary hover:border-primary dark:hover:text-primary"
                 data-target="{{ component_id }}-{{ section.id }}"
                 data-component-id="{{ component_id }}"
                 fill="outline">
@@ -50,9 +50,12 @@
                       {{is_vertical ? '' : 'horizontal-cards'}}
                       >
                     </salla-products-list>
+
+                   
                 {% endif %}
             </div>
         {% endfor %}
       </div>
   </div>
 </section> 
+
