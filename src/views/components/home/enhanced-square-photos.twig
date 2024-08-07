@@ -1,6 +1,8 @@
 
 
-<section class="s-block s-block--full-bg as-grid bg-white py-8 ">
+<section class="s-block s-block--full-bg as-grid bg-white py-8   
+
+my-1 md:my-4 sm:py-16 py-8 sm:py-16  px-10 lg:py-24">
 
     <div class="banners-grid banners-grid--{{ component.item|length }}">
 
@@ -9,8 +11,8 @@
         <div class="banner-entry-two rounded lazy " > 
 
             <a href="{{item.categories}}" class="!opacity-100 h-auto relative overflow-hidden">
-                <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" loading="lazy" data-ll-status="loaded">
-                <div class="banner-entry__text flex flex-col items-center" style="color: #fff">
+                <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" >
+                <div class="banner-entry__text flex flex-col items-center" >
 
             <h3 class="banner__title absolute font-bold z-1 mb-1 leading-6 rounded-upto-5">{{item.title}}</h3> 
 

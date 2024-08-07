@@ -526,8 +526,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-2{margin-left:0.5rem;margin-right:0.5rem}
 .mx-3{margin-left:0.75rem;margin-right:0.75rem}
 .mx-auto{margin-left:auto;margin-right:auto}
-.my-1{margin-top:0.25rem;margin-bottom:0.25rem}
 .my-2{margin-top:0.5rem;margin-bottom:0.5rem}
+.my-1{margin-top:0.25rem;margin-bottom:0.25rem}
 .-mb-52{margin-bottom:-13rem}
 .-ml-6{margin-left:-1.5rem}
 .-mr-6{margin-right:-1.5rem}
@@ -550,6 +550,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mb-8{margin-bottom:2rem}
 .me-2{margin-right:0.5rem}
 .me-2\.5{margin-right:0.625rem}
+.ml-2{margin-left:0.5rem}
 .ml-4{margin-left:1rem}
 .ml-auto{margin-left:auto}
 .mr-0{margin-right:0px}
@@ -567,7 +568,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-5{margin-top:1.25rem}
 .mt-6{margin-top:1.5rem}
 .mt-8{margin-top:2rem}
-.ml-2{margin-left:0.5rem}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .block{display:block}
@@ -628,6 +628,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .w-18{width:4.5rem}
 .w-20{width:5rem}
 .w-24{width:6rem}
+.w-4{width:1rem}
 .w-4\/6{width:66.666667%}
 .w-40{width:10rem}
 .w-5{width:1.25rem}
@@ -638,7 +639,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .w-\[100px\]{width:100px}
 .w-fit{width:-moz-fit-content;width:fit-content}
 .w-full{width:100%}
-.w-4{width:1rem}
 .min-w-0{min-width:0px}
 .min-w-\[80\%\]{min-width:80%}
 .min-w-\[84px\]{min-width:84px}
@@ -865,7 +865,6 @@ to{transform:rotate(360deg)}}
 .text-7xl{font-size:4.5rem;line-height:1}
 .text-\[12px\]{font-size:12px}
 .text-\[14px\]{font-size:14px}
-.text-\[16px\]{font-size:16px}
 .text-\[22px\]{font-size:22px}
 .text-base{font-size:1rem;line-height:1.5rem}
 .text-lg{font-size:1.125rem;line-height:1.75rem}
@@ -899,6 +898,7 @@ to{transform:rotate(360deg)}}
 .text-amber-400{--tw-text-opacity:1;color:rgba(251, 191, 36, 1);color:rgba(251, 191, 36, var(--tw-text-opacity))}
 .text-danger{--tw-text-opacity:1;color:rgba(174, 10, 10, 1);color:rgba(174, 10, 10, var(--tw-text-opacity))}
 .text-dark{--tw-text-opacity:1;color:rgba(29, 31, 31, 1);color:rgba(29, 31, 31, var(--tw-text-opacity))}
+.text-gray-200{--tw-text-opacity:1;color:rgba(229, 231, 235, 1);color:rgba(229, 231, 235, var(--tw-text-opacity))}
 .text-gray-400{--tw-text-opacity:1;color:rgba(156, 163, 175, 1);color:rgba(156, 163, 175, var(--tw-text-opacity))}
 .text-gray-500{--tw-text-opacity:1;color:rgba(107, 114, 128, 1);color:rgba(107, 114, 128, var(--tw-text-opacity))}
 .text-gray-600{--tw-text-opacity:1;color:rgba(75, 85, 99, 1);color:rgba(75, 85, 99, var(--tw-text-opacity))}
@@ -917,7 +917,6 @@ to{transform:rotate(360deg)}}
 .text-slate-600{--tw-text-opacity:1;color:rgba(71, 85, 105, 1);color:rgba(71, 85, 105, var(--tw-text-opacity))}
 .text-slate-900{--tw-text-opacity:1;color:rgba(15, 23, 42, 1);color:rgba(15, 23, 42, var(--tw-text-opacity))}
 .text-white{--tw-text-opacity:1;color:rgba(255, 255, 255, 1);color:rgba(255, 255, 255, var(--tw-text-opacity))}
-.text-gray-200{--tw-text-opacity:1;color:rgba(229, 231, 235, 1);color:rgba(229, 231, 235, var(--tw-text-opacity))}
 .underline{text-decoration-line:underline}
 .line-through{text-decoration-line:line-through}
 .\!opacity-100{opacity:1 !important}
@@ -6677,19 +6676,19 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:table-row{display:table-row}
 .md\:h-20{height:5rem}
 .md\:h-24{height:6rem}
+.md\:h-5{height:1.25rem}
 .md\:h-\[400px\]{height:400px}
 .md\:h-auto{height:auto}
-.md\:h-5{height:1.25rem}
 .md\:\!w-2\/4{width:50% !important}
 .md\:w-2\/4{width:50%}
 .md\:w-24{width:6rem}
 .md\:w-40{width:10rem}
+.md\:w-5{width:1.25rem}
 .md\:w-5\/6{width:83.333333%}
 .md\:w-7\/12{width:58.333333%}
 .md\:w-72{width:18rem}
 .md\:w-96{width:24rem}
 .md\:w-auto{width:auto}
-.md\:w-5{width:1.25rem}
 .md\:max-w-2xl{max-width:42rem}
 .md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}

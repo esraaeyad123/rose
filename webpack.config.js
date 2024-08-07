@@ -10,7 +10,7 @@ module.exports = {
     entry  : {
         app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js')],
         home    : asset('js/home.js'),
-        'my-product-card':'/js/my-custom-product-card.js',
+        'my-product-card':'/js/partials/my-custom-product-card.js',
         'product-card' : asset('js/partials/product-card.js'),
         'main-menu' : asset('js/partials/main-menu.js'),
         checkout: [asset('js/cart.js'), asset('js/thankyou.js')],
