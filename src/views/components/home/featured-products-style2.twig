@@ -44,7 +44,7 @@
                       >
                     </salla-products-slider>
                 {% else %}
-                    <salla-products-list  
+                    <salla-products-list 
                       source="selected" 
                       source-value="[{{ section.products|map((product) => product.id)|join(',') }}]"
                       {{is_vertical ? '' : 'horizontal-cards'}}
