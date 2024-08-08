@@ -13,8 +13,8 @@
 | menus[].products     | ?Product[] *Collection | List of selected products or null                  |
 #}
 
-<nav id="mobile-menu" class="mobile-menu">
-    <ul class="main-menu">
+<nav id="mobile-menu" class="mobile-menu hidden lg:block mm-spn--light mm-spn--navbar mm-spn">
+    <ul class="main-menu mm-spn--open">
         {% for menu_id, menu in menus %}
             {% include 'components.header._menu-item' with {is_root_menu:true} %}
         {% endfor %}
