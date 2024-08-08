@@ -62,7 +62,11 @@
                             <h2 class="sr-only">{{ store.name }}</h2>
                           {% endif %}
                       </a>
-                      <custom-main-menu></custom-main-menu>
+                  </div>
+                  <div class="lg:flex gap-3 hidden items-center justify-center h-full ">
+
+                    <custom-main-menu></custom-main-menu>
+
                   </div>
                   <div class="flex items-center justify-end">
                       {% if user.type=='user' %}
@@ -73,13 +77,14 @@
                           </button>
                       {% endif %}
                       <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
-                        <i slot="icon" class="header-btn__icon icon sicon-shopping-bag"></i>
+                        <i slot="icon" class="header-btn__icon  icon sicon-shopping-basket"></i>
                       </salla-cart-summary>
                   </div>
               </div>
           </div>
       </div>
   </div>
+ 
 </header>
 {% if store.scope %}
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
