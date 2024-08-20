@@ -108,30 +108,6 @@ class ProductCard extends HTMLElement {
           <div class="relative wide donating-wrap">
             <div class="product-block__info">
             
-            <div class="counter-section">
-            ${this.product.quantity
-              ? `<div class="product-quantity-card flash-deals-hide product-quantity-card-available">
-                   <div class="trans-words">
-                     <div>${this.product.quantity}</div>
-                     <div></div>
-                   </div>
-                 </div>`
-              : this.product.is_out_of_stock
-                ? `<div class="product-quantity-card flash-deals-hide product-quantity-card-unavailable">
-                     <div class="trans-words">
-                       <div></div>
-                       <div></div>
-                     </div>
-                   </div>`
-                : 
-                `<div class="product-quantity-card flash-deals-hide product-quantity-card-available product-quantity-card-available-uncountable">
-                   <div class="trans-words">
-                     <div></div>
-                     <div></div>
-                   </div>
-                 </div>`
-            }              
-            </div>
             
             <div class="product-main-info">
             <div class="product-title-section">
