@@ -20,22 +20,22 @@
 	</div>
 	<div class="grid grid-col-1 lg:grid-cols-5 gap-8 lg:gap-6">
 		<div class=" rtl:lg:pl-20 ltr:lg:pr-20"></div>
-		<div class="flex flex-col items-center md:block [&>div]:w-1/2  md:[&>div]:w-auto">
+		<div class="flex flex-col items-center  md:pr-0 md:[&>div]:w-auto">
 			<h3 >{{ trans('blocks.footer.pages_links') }}</h3>
 			<salla-menu source="footer"></salla-menu>
 		</div>
-		<div class="flex flex-col items-center md:block [&>div]:w-1/2  md:[&>div]:w-auto">
+		<div class="flex flex-col items-center  md:[&>div]:w-auto">
 			<salla-contacts></salla-contacts>
 
 		</div>
-		<div class="flex flex-col items-center md:block [&>div]:w-1/2  md:[&>div]:w-auto">
+		<div class="flex flex-col items-center    md:[&>div]:w-auto">
 			<salla-apps-icons ></salla-apps-icons>
 
 		</div>
 
 
 
-		<div class="flex flex-col items-center md:block [&>div]:w-1/2  md:[&>div]:w-auto">
+		<div class="flex flex-col items-center   md:[&>div]:w-auto">
 			{% if store.settings.tax.number %}
             <div class="flex rtl:space-x-reverse space-x-2 items-end">
               {% if store.settings.tax.certificate %}
