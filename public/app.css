@@ -860,9 +860,6 @@ to{transform:rotate(360deg)}}
 .pt-5{padding-top:1.25rem}
 .pt-6{padding-top:1.5rem}
 .pt-8{padding-top:2rem}
-.pr-20{padding-right:5rem}
-.pr-0{padding-right:0px}
-.pr-10{padding-right:2.5rem}
 .text-center{text-align:center}
 .text-start{text-align:left}
 .text-end{text-align:right}
@@ -6684,7 +6681,6 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:mb-9{margin-bottom:2.25rem}
 .md\:mt-0{margin-top:0px}
 .md\:mt-4{margin-top:1rem}
-.md\:block{display:block}
 .md\:flex{display:flex}
 .md\:table-row{display:table-row}
 .md\:h-20{height:5rem}
@@ -6729,11 +6725,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:pb-0{padding-bottom:0px}
 .md\:pb-16{padding-bottom:4rem}
 .md\:pl-0{padding-left:0px}
-.md\:pr-4{padding-right:1rem}
 .md\:pr-0{padding-right:0px}
-.md\:pr-20{padding-right:5rem}
-.md\:pr-80{padding-right:20rem}
-.md\:pl-4{padding-left:1rem}
 .md\:text-start{text-align:left}
 .md\:text-2xl{font-size:1.5rem;line-height:2rem}
 .md\:text-4xl{font-size:2.25rem;line-height:2.5rem}
@@ -6898,6 +6890,5 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .rtl\:lg\:pr-20:where([dir="rtl"], [dir="rtl"] *){padding-right:5rem}}
 @media (min-width: 480px){
 .rtl\:xs\:left-5:where([dir="rtl"], [dir="rtl"] *){left:1.25rem}}
-.\[\&\>div\]\:w-1\/2>div{width:50%}
 @media (min-width: 768px){
 .md\:\[\&\>div\]\:w-auto>div{width:auto}}
