@@ -76,7 +76,8 @@ class ProductCard extends HTMLElement {
         
           <div class="product-block__thumb ">
             ${this.product.promotion_title
-              ? `<span class="badge badge--ribbon badge--primary">${this.product.promotion_title}</span>`
+              ? `<span class="badge badge--ribbon badge--primary">
+              ${this.product.promotion_title}</span>`
               : this.showQuantity && this.product.quantity
                 ? `<span class="badge badge--ribbon badge--primary">${remained} ${this.product.quantity}</span>`
                 : this.showQuantity && this.product.is_out_of_stock
@@ -89,10 +90,17 @@ class ProductCard extends HTMLElement {
                   }" data-src="${this.product.image.url
               }" alt="${this.product.image.alt}" />
                     </a>
+
+                 
                   </div>
             
                   ${this.showWishlist
-                ? `<span class="btn--product-like">
+                    
+                    ?  
+                    `
+                    
+                    
+                    <span class="btn--product-like">
                           <salla-button loader-position="center" shape="icon" size="small" color="danger" class="btn--delete" onclick="salla.wishlist.remove(${this.product.id})">
                           </salla-button>
                           
@@ -101,7 +109,10 @@ class ProductCard extends HTMLElement {
                 <salla-button loader-position="center" shape="icon" class="btn--delete" onclick="salla.wishlist.add(${this.product.id})">
                 </salla-button>
                 
-              </span>`
+              </span>
+                
+              
+              `
               }
 
         </div>
@@ -149,6 +160,7 @@ class ProductCard extends HTMLElement {
               </div>`
         : ''
       }
+      
         <div class="card-footer">
             <div class="price-wrapper s-product-card-sale-price">
               ${this.product.is_on_sale ?
@@ -158,10 +170,13 @@ class ProductCard extends HTMLElement {
               }
            </div>
 
+
     
 
           ${!this.hideAddBtn ?
-          `<div class="btn btn--floated btn--add-to-cart btn--add-to-cart add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
+          `
+          
+          <div class="btn btn--floated btn--add-to-cart btn--add-to-cart add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
                     <salla-add-product-button
                         product-id="${this.product.id}"
                         product-status="${this.product.status}"
