@@ -117,13 +117,13 @@ class ProductCard extends HTMLElement {
 
         </div>
           <div class="relative wide donating-wrap">
-            <div class="product-block__info">
+            <div class="product-block__info px-6 py-2 text-center  ">
             
             
-            <div class="product-main-info">
-            <div class="product-title-section">
+            <div class="product-main-info  ">
+            <div class="product-title-section flex flex-col mt-4">
               <a href="${this.product.url}" class="product-title">
-                <h2 class="title title--primary title--small">${this.product.name ? this.product.name :  ''}</h2>
+                <h2 class="font-semibold text-base text-zinc-700 mt-0.1 mb-0.1 cursor-pointer">${this.product.name ? this.product.name :  ''}</h2>
                 ${!!this.product.subtitle ? `<p>` +  this.product.subtitle + `</p>` : `<p class="mt-8"></p>`}
               </a>
               </div>
@@ -141,7 +141,7 @@ class ProductCard extends HTMLElement {
         </div>
       ${this.product.is_donation ?
       `{% component 'product.donation-progress-bar' with {'product': product, 'is_cart': is_cart} %}
-              <div class="form mt-10 mb-10">
+              <div class="form mt-2 mb-2">
                 <div class="form-group">
                   {{ csrf_field() }}
                   <div class="input-group input-group--end">
@@ -161,10 +161,10 @@ class ProductCard extends HTMLElement {
         : ''
       }
       
-        <div class="card-footer">
+        <div class="product-bottom-details px-6 py-2 text-center">
             <div class="price-wrapper s-product-card-sale-price">
               ${this.product.is_on_sale ?
-                `<span>${salla.money(this.product.regular_price)}</span>
+                `<span class="text-sm">${salla.money(this.product.regular_price)}</span>
                 <h4 class="total-price text-red-400 font-bold text-xl inline-block ">${salla.money(this.product.sale_price)}</h4>` :
                 `<span></span><h4 class="total-price text-black font-bold text-xl inline-block mt-5">${salla.money(this.product.price)}</h4>`
               }
@@ -176,8 +176,9 @@ class ProductCard extends HTMLElement {
           ${!this.hideAddBtn ?
           `
           
-          <div class="btn btn--floated btn--add-to-cart btn--add-to-cart add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
+          <div class="flex items-center w-full gap-2 add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
                     <salla-add-product-button
+                        class="btn--add-product hover:rounded-lg hover:border-none hover:bg-gray-800 hydrated"
                         product-id="${this.product.id}"
                         product-status="${this.product.status}"
                         product-type="${this.product.type}">
@@ -188,6 +189,28 @@ class ProductCard extends HTMLElement {
                       </div>`
             : ''
           }
+
+
+          ${this.showWishlist
+                    
+            ?  
+            `
+            
+            
+            <span class="btn--product-like">
+                  <salla-button loader-position="center" shape="icon" size="small" color="danger" class="btn--delete" onclick="salla.wishlist.remove(${this.product.id})">
+                  </salla-button>
+                  
+                </span>`
+        : `<span class="btn--product-like">
+        <salla-button loader-position="center" shape="icon" class="btn--delete" onclick="salla.wishlist.add(${this.product.id})">
+        </salla-button>
+        
+      </span>
+        
+      
+      `
+      }
       </div>
       </div>
          

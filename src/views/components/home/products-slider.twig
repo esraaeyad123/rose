@@ -23,39 +23,7 @@
     ></salla-products-slider>
   {% endif %}
 </section>
-<div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden bg-white">
-  <a class="relative flex h-80 w-72 overflow-hidden" href="#">
-    <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1578996953841-b187dbe4bc8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGJsYXplcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="product image" />
-    <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-      <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-      <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-      <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-    </div>
-    <div class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-      <button class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-        </svg>
-      </button>
-      <button class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-        </svg>
-      </button>
-    </div>
-  </a>
-  <div class="mt-4 pb-5">
-    <a href="#">
-      <h5 class="text-center tracking-tight text-gray-500">Piped Linen Blend Blazer</h5>
-    </a>
-    <div class="mb-5 flex justify-center">
-      <p>
-        <span class="text-sm font-bold text-gray-900">$179</span>
-        <span class="text-sm text-gray-400 line-through">$499</span>
-      </p>
-    </div>
-  </div>
-</div>
+
 
 <style>
   .product-block .product{
@@ -132,7 +100,6 @@ background-color: #F3F4F6;
 .product-block__info{
   display: flex; 
 flex-direction: column; 
-align-items: center; 
 
 gap: 0.5rem; 
 padding-bottom: 1.25rem; 
@@ -144,13 +111,10 @@ margin-top: 1rem;
 
 .product-title-section .product-title{
 
-  font-size: 1.125rem;
-line-height: 1.75rem; 
-font-weight: 600; 
-text-align: center; 
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap; 
+  display: flex; 
+margin-top: 1rem; 
+flex-direction: column; 
+
 
 
 
@@ -175,35 +139,19 @@ box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06
  color: #ffffff; 
 opacity: 0.8; 
  }
- .card-footer{
-  overflow: hidden;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-
-
-
+ .product-bottom-details{
 
 }
-.card-footer div {
-    float: left;
-    width: 50%;
+
+.product-bottom-details .price-wrapper{
+ 
+ 
 
 }
 
 
-.price-wrapper .s-product-card-sale-price{
-  font-size: 18px;
-    color: #fbb72c;
-    font-weight: 600; 
-    float: left;
-    width: 50%;
-
-}
-
-.card-footer .btn{
-
-  text-align: right;
-
+.product-bottom-details .product-links{
+ 
 }
 </style>
 
