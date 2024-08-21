@@ -71,15 +71,17 @@ class ProductCard extends HTMLElement {
         
       }
       this.innerHTML = `
-      <div class="duration-200 hover:-translate-y-3 parent pb-4">
 
-      <div class="product">
+      <div class="product animate-fade animate-duration-1000 relative flex w-full flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg h-full justify-between">
         <div class="p-relative">
         
           <div class="product-block__thumb ">
             ${this.product.promotion_title
-              ? `<span class="badge badge--ribbon badge--primary">
-              ${this.product.promotion_title}</span>`
+              ? `
+              <span class="absolute top-3 right-3">
+              <span class="text-xs w-fit block px-3 font-thin py-1 my-2 bg-gray-100 rounded-md">
+              ${this.product.promotion_title}</span>
+              </span>`
               : this.showQuantity && this.product.quantity
                 ? `<span class="badge badge--ribbon badge--primary">${remained} ${this.product.quantity}</span>`
                 : this.showQuantity && this.product.is_out_of_stock
@@ -87,8 +89,8 @@ class ProductCard extends HTMLElement {
                   : ''
             }
             
-                <a href="${this.product.url}" class="thumb-wrapper" aria-label="${this.product.name}">
-                  <img class="lazy-load" width="200" height="200" src="${this.product.image.url
+                <a class"mx-2 mt-3 flex overflow-hidden rounded-xl aspect-square" href="${this.product.url}" class="thumb-wrapper" aria-label="${this.product.name}">
+                  <img class="object-cover w-full" width="200" height="200" src="${this.product.image.url
                   }" data-src="${this.product.image.url
               }" alt="${this.product.image.alt}" />
                     </a>
@@ -96,7 +98,7 @@ class ProductCard extends HTMLElement {
                  
                   </div>
         </div>
-          <div class="relative wide donating-wrap">
+          <div class="relative wide donating-wrap ">
             <div class="product-block__info ">
         
             <div class="product-main-info ">
@@ -141,15 +143,16 @@ class ProductCard extends HTMLElement {
               </div>`
         : ''
       }
-        <div class="price-wrapper s-product-card-sale-price ">
+        <div class="price-wrapper s-product-card-sale-price mt-1 mb-3 w-full text-center  items-center  ">
               ${this.product.is_on_sale ?
-                `<span class="text-sm">${salla.money(this.product.regular_price)}</span>
+                `            
+                <span class="text-sm">${salla.money(this.product.regular_price)}</span>
                 <h4 class="total-price text-red-400 font-bold text-xl inline-block ">${salla.money(this.product.sale_price)}</h4>` :
                 `<span></span><h4 class="total-price text-black font-bold text-xl inline-block mt-5">${salla.money(this.product.price)}</h4>`
               }
            </div>
       
-        <div class="product-bottom-details px-6 py-2 text-center">
+        <div class="product-bottom-details px-6 py-2 text-center flex flex-col justify-between h-min ">
             
 
 
@@ -158,14 +161,15 @@ class ProductCard extends HTMLElement {
           ${!this.hideAddBtn ?
           `
           
-          <div class="flex items-center w-full gap-2 add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
+          <div class="flex items-center w-full gap-2  add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
                     <salla-add-product-button
                         class="btn--add-product w-full  flex gap-2 justify-center items-center pt-2 pb-[10px] px-8 rounded-lg  "
                         product-id="${this.product.id}"
                         product-status="${this.product.status}"
                         product-type="${this.product.type}">
                         ${this.product.type == 'booking' ? '<i class="sicon-calendar-date"></i>' : '<i class="sicon-add"></i>'}
-                        <span class="s-button-text"><span>إضافة للسلة</span></span>
+                       
+                         <span class="s-button-text"><span>إضافة للسلة</span></span>
                         
                     </g>
                 </svg>
@@ -208,7 +212,6 @@ class ProductCard extends HTMLElement {
       }
       </div>
       </div>
-        </div> 
             `;
       document.lazyLoadInstance?.update(document.querySelectorAll('.product-block__thumb .lazy-load'));
     }
