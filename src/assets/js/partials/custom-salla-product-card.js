@@ -71,6 +71,8 @@ class ProductCard extends HTMLElement {
         
       }
       this.innerHTML = `
+      <div class="duration-200 hover:-translate-y-3 parent pb-4">
+
       <div class="product">
         <div class="p-relative">
         
@@ -93,37 +95,16 @@ class ProductCard extends HTMLElement {
 
                  
                   </div>
-            
-                  ${this.showWishlist
-                    
-                    ?  
-                    `
-                    
-                    
-                    <span class="btn--product-like">
-                          <salla-button loader-position="center" shape="icon" size="small" color="danger" class="btn--delete" onclick="salla.wishlist.remove(${this.product.id})">
-                          </salla-button>
-                          
-                        </span>`
-                : `<span class="btn--product-like">
-                <salla-button loader-position="center" shape="icon" class="btn--delete" onclick="salla.wishlist.add(${this.product.id})">
-                </salla-button>
-                
-              </span>
-                
-              
-              `
-              }
-
         </div>
           <div class="relative wide donating-wrap">
-            <div class="product-block__info px-6 py-2 text-center  ">
-            
-            
-            <div class="product-main-info  ">
-            <div class="product-title-section flex flex-col mt-4">
+            <div class="product-block__info ">
+        
+            <div class="product-main-info ">
+
+
+            <div class="product-title-section">
               <a href="${this.product.url}" class="product-title">
-                <h2 class="font-semibold text-base text-zinc-700 mt-0.1 mb-0.1 cursor-pointer">${this.product.name ? this.product.name :  ''}</h2>
+                <h2 class="text-lg text-center opacity-95 truncate font-semibold ">${this.product.name ? this.product.name :  ''}</h2>
                 ${!!this.product.subtitle ? `<p>` +  this.product.subtitle + `</p>` : `<p class="mt-8"></p>`}
               </a>
               </div>
@@ -160,15 +141,16 @@ class ProductCard extends HTMLElement {
               </div>`
         : ''
       }
-      
-        <div class="product-bottom-details px-6 py-2 text-center">
-            <div class="price-wrapper s-product-card-sale-price">
+        <div class="price-wrapper s-product-card-sale-price ">
               ${this.product.is_on_sale ?
                 `<span class="text-sm">${salla.money(this.product.regular_price)}</span>
                 <h4 class="total-price text-red-400 font-bold text-xl inline-block ">${salla.money(this.product.sale_price)}</h4>` :
                 `<span></span><h4 class="total-price text-black font-bold text-xl inline-block mt-5">${salla.money(this.product.price)}</h4>`
               }
            </div>
+      
+        <div class="product-bottom-details px-6 py-2 text-center">
+            
 
 
     
@@ -178,15 +160,19 @@ class ProductCard extends HTMLElement {
           
           <div class="flex items-center w-full gap-2 add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
                     <salla-add-product-button
-                        class="btn--add-product hover:rounded-lg hover:border-none hover:bg-gray-800 hydrated"
+                        class="btn--add-product w-full  flex gap-2 justify-center items-center pt-2 pb-[10px] px-8 rounded-lg  "
                         product-id="${this.product.id}"
                         product-status="${this.product.status}"
                         product-type="${this.product.type}">
                         ${this.product.type == 'booking' ? '<i class="sicon-calendar-date"></i>' : '<i class="sicon-add"></i>'}
+                        <span class="s-button-text"><span>إضافة للسلة</span></span>
+                        
+                    </g>
+                </svg>
                     </salla-add-product-button>
                    
 
-                      </div>`
+                      `
             : ''
           }
 
@@ -195,25 +181,34 @@ class ProductCard extends HTMLElement {
                     
             ?  
             `
-            
-            
-            <span class="btn--product-like">
-                  <salla-button loader-position="center" shape="icon" size="small" color="danger" class="btn--delete" onclick="salla.wishlist.remove(${this.product.id})">
+          <div class="product-card-btn--wishlist xxxs:hidden xxs:hidden sm:hidden md:flex ">
+                  <salla-button loader-position="center" shape="icon" size="small" color="danger" class="btn--delete"
+                  <span class="s-button-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
+                </svg>
+              </span>
                   </salla-button>
                   
-                </span>`
-        : `<span class="btn--product-like">
-        <salla-button loader-position="center" shape="icon" class="btn--delete" onclick="salla.wishlist.add(${this.product.id})">
+                </div>`
+        : `<div class="product-card-btn--wishlist xxxs:hidden xxs:hidden sm:hidden md:flex">
+        <salla-button  loader-position="center" shape="icon" size="small" color="danger" class="btn--delete"
+        onclick="salla.wishlist.add(${this.product.id})">
+        <span class="s-button-text">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
+                </svg>
+              </span>
         </salla-button>
         
-      </span>
+      </div>
         
-      
+     </div> 
       `
       }
       </div>
       </div>
-         
+        </div> 
             `;
       document.lazyLoadInstance?.update(document.querySelectorAll('.product-block__thumb .lazy-load'));
     }
