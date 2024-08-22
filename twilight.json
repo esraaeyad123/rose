@@ -1489,7 +1489,44 @@
             "title": "full-background",
             "icon": "sicon-store",
             "path": "home.full-bacground",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "static",
+                    "format": "title",
+                    "label": "Title",
+                    "value": "يفضل استخدامه كأول عنصر في الصفحة الرئيسية",
+                    "variant": "h1",
+                    "icon": "sicon-format-text"
+                },
+                {
+                    "id": "alkhlfet",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "الخلفية",
+                    "description": "تنبيه: هذا العنصر مصمم لعرض خلفيات وصور طبيعية وليست مصممة مثل البنرات برجاء تجنب استخدام صور تحتوي على نصوص لتجنب قص المحتوى مع مختلف الشاشات لان الصور تأخد ارتفاع وعرض الشاشة كاملة بغض النظر عن المقاس",
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "alkhlfet.switch",
+                            "type": "boolean",
+                            "format": "switch",
+                            "label": "الخلفية",
+                            "description": "عرض فيديو",
+                            "labelHTML": null,
+                            "icon": "sicon-toggle-off",
+                            "value": true,
+                            "selected": true,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "1"
+                }
+            ]
         }
     ],
     "support_url": null,
