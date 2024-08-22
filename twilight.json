@@ -1483,6 +1483,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "a2175a26-abe2-478c-8d33-92c029c60af9",
+            "title": "full-background",
+            "icon": "sicon-store",
+            "path": "home.full-bacground",
+            "fields": []
         }
     ],
     "support_url": null,
