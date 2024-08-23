@@ -13,7 +13,6 @@
 
 <section id="best-offers-{{ position }}-slider" class="s-block s-block--best-offers container overflow-hidden">
   {% if products|length %}
-<div class="animate-fade animate-duration-1000 relative flex w-full flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg h-full justify-between">
     <salla-products-slider
             source="selected"
             limit="{{ limit }}"
@@ -24,13 +23,29 @@
             block-subTitle="{{ sub_title|raw }}"
             slider-id="slider-with-bg-{{ position }}"
     ></salla-products-slider>
-  </div>
   {% endif %}
 
   
 </section>
 
+
 <style>
+  .product{
+    display: flex; 
+overflow: hidden; 
+position: relative; 
+flex-direction: column; 
+justify-content: space-between; 
+border-radius: 0.75rem; 
+border-width: 1px; 
+border-color: #F3F4F6; 
+width: 100%; 
+height: 100%; 
+background-color: #ffffff; 
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+
+
+  }
   .product-block{
     display: flex;
     justify-content: space-between;
