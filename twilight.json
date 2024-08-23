@@ -1522,70 +1522,6 @@
                             "required": false
                         },
                         {
-                            "type": "items",
-                            "icon": "sicon-link",
-                            "label": "الرابط",
-                            "id": "background.link",
-                            "value": null,
-                            "description": null,
-                            "required": false,
-                            "format": "variable-list",
-                            "searchable": true,
-                            "source": "custom",
-                            "sources": [
-                                {
-                                    "label": "منتج",
-                                    "key": "products",
-                                    "value": "products"
-                                },
-                                {
-                                    "label": "تصنيف",
-                                    "key": "categories",
-                                    "value": "categories"
-                                },
-                                {
-                                    "label": "ماركة تجارية",
-                                    "key": "brands",
-                                    "value": "brands"
-                                },
-                                {
-                                    "label": "صفحة تعريفية",
-                                    "key": "pages",
-                                    "value": "pages"
-                                },
-                                {
-                                    "label": "مقالة",
-                                    "key": "blog_articles",
-                                    "value": "blog_articles"
-                                },
-                                {
-                                    "label": "تصنيف ضمن المدونة",
-                                    "key": "blog_categories",
-                                    "value": "blog_categories"
-                                },
-                                {
-                                    "label": "التخفيضات",
-                                    "key": "offers_link",
-                                    "value": "offers_link"
-                                },
-                                {
-                                    "label": "الماركات التجارية",
-                                    "key": "brands_link",
-                                    "value": "brands_link"
-                                },
-                                {
-                                    "label": "المدونة",
-                                    "key": "blog_link",
-                                    "value": "blog_link"
-                                },
-                                {
-                                    "label": "رابط خارجي",
-                                    "key": "custom",
-                                    "value": "custom"
-                                }
-                            ]
-                        },
-                        {
                             "id": "background.url",
                             "type": "string",
                             "format": "url",
@@ -1622,7 +1558,7 @@
                             "label": "صورة الشاشات الكبيرة",
                             "description": null,
                             "labelHTML": null,
-                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "placeholder": null,
                             "icon": "sicon-image",
                             "value": "في حال كان العنصر بارتفاع الشاشة كاملة ف المقاس الأكثر شيوعا في هذي الحالة هو 1920x1080 بكسل",
                             "required": false
@@ -1634,7 +1570,7 @@
                             "label": "صورة الجوال",
                             "description": null,
                             "labelHTML": null,
-                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "placeholder": null,
                             "icon": "sicon-image",
                             "value": "في حالة عدم رفع صورة هنا سيتم عرض صورة الشاشات الكبيرة في الجوال -- المقاس المناسب للصورة هو 800x1200 بكسل",
                             "required": false
