@@ -152,12 +152,11 @@ class ProductCard extends HTMLElement {
               }
            </div>
       
-        <div class="product-bottom-details px-6 py-2 text-center flex flex-col justify-between h-min ">
+        <div class="product-bottom-details px-6 py-2 text-center flex flex-col justify-between h-min  flex items-center justify-between mt-4
+        ">
             
 
-
-    
-
+        
           ${!this.hideAddBtn ?
           `
           
