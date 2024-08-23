@@ -1491,31 +1491,16 @@
             "path": "home.full-bacground",
             "fields": [
                 {
-                    "id": "title",
+                    "id": "des",
                     "type": "static",
                     "format": "title",
                     "label": "Title",
                     "value": "يفضل استخدامه كأول عنصر في الصفحة الرئيسية",
-                    "variant": "h1",
+                    "variant": "h6",
                     "icon": "sicon-format-text"
                 },
                 {
-                    "id": "string",
-                    "type": "string",
-                    "format": "text",
-                    "label": "String",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "Placeholder text ..",
-                    "icon": "sicon-format-text-alt",
-                    "value": null,
-                    "multilanguage": false,
-                    "required": false,
-                    "minLength": 6,
-                    "maxLength": 30
-                },
-                {
-                    "id": "alkhlfet",
+                    "id": "background",
                     "type": "collection",
                     "format": "collection",
                     "label": "الخلفية",
@@ -1525,7 +1510,7 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "alkhlfet.switch",
+                            "id": "background.title",
                             "type": "boolean",
                             "format": "switch",
                             "label": "الخلفية",
@@ -1537,7 +1522,7 @@
                             "required": false
                         },
                         {
-                            "id": "alkhlfet.url",
+                            "id": "background.url",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -1552,7 +1537,7 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "alkhlfet.alaanoan",
+                            "id": "background.adderss",
                             "type": "string",
                             "format": "text",
                             "label": "العنوان",
@@ -1567,7 +1552,7 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "alkhlfet.sort_alkhlfet",
+                            "id": "background.bigimage",
                             "type": "string",
                             "format": "image",
                             "label": "صورة الشاشات الكبيرة",
@@ -1579,7 +1564,7 @@
                             "required": false
                         },
                         {
-                            "id": "alkhlfet.sort_algoal",
+                            "id": "background.smallimage",
                             "type": "string",
                             "format": "image",
                             "label": "صورة الجوال",
@@ -1591,7 +1576,7 @@
                             "required": false
                         },
                         {
-                            "id": "alkhlfet.alosf",
+                            "id": "background.desc",
                             "type": "string",
                             "format": "text",
                             "label": "الوصف",
