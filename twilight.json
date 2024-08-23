@@ -1510,7 +1510,7 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "background.title",
+                            "id": "background.istrue",
                             "type": "boolean",
                             "format": "switch",
                             "label": "الخلفية",
