@@ -1,18 +1,37 @@
-<section class="relative h-screen flex flex-col items-center justify-center text-center text-white ">
+
+    {% set value = 'component.background.istrue' %}
+    {% switch value %}
+
+ <section class="relative h-screen flex flex-col items-center justify-center text-center text-white ">
     
-    
-    {% set value = 'background.title' %}
+    {% case 'component.background.url' %}
 
     <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
         <video class="min-w-full min-h-full absolute object-cover"
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+            src="{{component.background.url}}" 
             type="video/mp4" autoplay muted loop></video>
     </div>
+
+    {% endswitch %}
+
+    {% case 'component.background.bigimage' %}
+
+    <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+        <img src="{{component.background.bigimage}}" 
+        alt="Background Image" class="absolute inset-0 w-full h-full object-cover filter blur-sm">
+
+    </div>
+
+    {% endswitch %}
     <div class="video-content space-y-2 z-10">
-        <h1 class="font-light text-6xl">full Hero Video</h1>
-        <h3 class="font-light text-3xl">with TailwindCSS</h3>
+        <h1 class="font-light text-6xl">"{{component.background.adderss}}"</h1>
+        <h3 class="font-light text-3xl">{{component.background.desc}}</h3>
     </div>
   </section>
+  
+
+
+
 
   <style>
   .video-docker video {
