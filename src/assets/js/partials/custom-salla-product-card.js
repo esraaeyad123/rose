@@ -163,7 +163,9 @@ class ProductCard extends HTMLElement {
           
           <div class="flex items-center w-full gap-2  add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
                     <salla-add-product-button
-                        class="btn--add-product w-full  flex gap-2 justify-center items-center pt-2 pb-[10px] px-8 rounded-lg  "
+                        class="btn--add-product
+                        mb-3 flex w-full  rounded-md bg-primary px-2 py-1 text-center text-[14px] font-normal text-white hover:opacity-95 focus:outline-none  hover:text-white 
+                           pt-2 pb-[10px]   "
                         product-id="${this.product.id}"
                         product-status="${this.product.status}"
                         product-type="${this.product.type}">
