@@ -1491,16 +1491,16 @@
             "path": "home.full-bacground",
             "fields": [
                 {
-                    "id": "title",
+                    "id": "des",
                     "type": "static",
                     "format": "title",
                     "label": "Title",
                     "value": "يفضل استخدامه كأول عنصر في الصفحة الرئيسية",
-                    "variant": "h1",
+                    "variant": "h6",
                     "icon": "sicon-format-text"
                 },
                 {
-                    "id": "alkhlfet",
+                    "id": "background",
                     "type": "collection",
                     "format": "collection",
                     "label": "الخلفية",
@@ -1510,7 +1510,7 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "alkhlfet.switch",
+                            "id": "background.title",
                             "type": "boolean",
                             "format": "switch",
                             "label": "الخلفية",
@@ -1520,6 +1520,75 @@
                             "value": true,
                             "selected": true,
                             "required": false
+                        },
+                        {
+                            "id": "background.url",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "رابط الفيديو",
+                            "description": "روابط اليوتيوب وقوقل درايف وفيميو وغيرها من المنصات غير مدعومة, يجب ارفاق رابط مباشر للفيديو, يمكنك استخدام خدمة مثل top4top",
+                            "labelHTML": null,
+                            "placeholder": null,
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "background.adderss",
+                            "type": "string",
+                            "format": "text",
+                            "label": "العنوان",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": "العنوان",
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "background.bigimage",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صورة الشاشات الكبيرة",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": "في حال كان العنصر بارتفاع الشاشة كاملة ف المقاس الأكثر شيوعا في هذي الحالة هو 1920x1080 بكسل",
+                            "required": false
+                        },
+                        {
+                            "id": "background.smallimage",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صورة الجوال",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": "في حالة عدم رفع صورة هنا سيتم عرض صورة الشاشات الكبيرة في الجوال -- المقاس المناسب للصورة هو 800x1200 بكسل",
+                            "required": false
+                        },
+                        {
+                            "id": "background.desc",
+                            "type": "string",
+                            "format": "text",
+                            "label": "الوصف",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": "الوصف",
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
                         }
                     ],
                     "value": [],
