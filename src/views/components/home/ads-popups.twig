@@ -2,7 +2,7 @@
 <div id="my_modal" 
     class="bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-        <span id="show_time">0.00</span>
+        <span  class="hidden" id="show_time">0.00</span>
 
         <div class="relative bg-white rounded-lg  overflow-hidden shadow-lg ring-4 ring-[var(--color-primary-dark)] ring-opacity-40 max-w-sm">
             <button onclick="closeModal()" type="button"
@@ -35,7 +35,8 @@
               
 
                 <div class="mt-6 text-center text-sm text-slate-600">
-                    <button style="background-color: rgb(84, 17, 18); padding: 1em 2em; border-radius: 4px; min-width: 70%; border: medium; font-weight: bold; color: rgb(255, 255, 255); cursor: pointer; letter-spacing: 0px;">احصل على خصمك فوراًاحصل على كود الخصم </button>  
+                    <button 
+                    class=" bg-[var(--color-primary)]  font-bold text-white cursor-pointer tracking-normal  md:text-[20px] text-[17px] flex gap-4 justify-center items-center shadow rounded-[0.25rem] h-12 w-full py-2 px-8 duration-100" >احصل على خصمك فورا </button>  
 
                 </div>
             </div>
