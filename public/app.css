@@ -646,6 +646,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .min-w-full{min-width:100%}
 .max-w-16{max-width:4rem}
 .max-w-3xl{max-width:48rem}
+.max-w-4xl{max-width:56rem}
 .max-w-\[200px\]{max-width:200px}
 .max-w-\[92\%\]{max-width:92%}
 .max-w-\[95\%\]{max-width:95%}
@@ -657,7 +658,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-w-sm{max-width:24rem}
 .max-w-xl{max-width:36rem}
 .max-w-xs{max-width:20rem}
-.max-w-4xl{max-width:56rem}
 .flex-1{flex:1 1 0%}
 .flex-none{flex:none}
 .shrink-0{flex-shrink:0}
