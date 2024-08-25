@@ -1619,7 +1619,7 @@
                     "multilanguage": true,
                     "required": true,
                     "minLength": 6,
-                    "maxLength": 30
+                    "maxLength": "100"
                 },
                 {
                     "id": "item",
@@ -1635,7 +1635,7 @@
                             "id": "item.title2",
                             "type": "string",
                             "format": "text",
-                            "label": "عنوان مبسط",
+                            "label": "شرح بسيط",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
@@ -1644,13 +1644,13 @@
                             "multilanguage": true,
                             "required": true,
                             "minLength": 6,
-                            "maxLength": 30
+                            "maxLength": "100"
                         },
                         {
                             "id": "item.icon_picker",
                             "type": "string",
                             "format": "icon",
-                            "label": "Icon Picker",
+                            "label": "icon",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-user-circle",
@@ -1661,7 +1661,7 @@
                             "id": "item.desc",
                             "type": "string",
                             "format": "text",
-                            "label": "شرح بسيط",
+                            "label": "عنوان",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
