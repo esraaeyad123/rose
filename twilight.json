@@ -1500,7 +1500,7 @@
                     "icon": "sicon-format-text"
                 },
                 {
-                    "id": "sort_alkhlfet",
+                    "id": "item",
                     "type": "collection",
                     "format": "collection",
                     "label": "صورة الخلفية",
@@ -1508,61 +1508,77 @@
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
-                    "fields": [],
+                    "fields": [
+                        {
+                            "id": "item.item1",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صورة",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": null,
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        },
+                        {
+                            "id": "item.switch",
+                            "type": "boolean",
+                            "format": "switch",
+                            "label": "background_image",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-toggle-off",
+                            "value": true,
+                            "selected": false,
+                            "required": false
+                        }
+                    ],
                     "value": [],
                     "minLength": 1,
                     "maxLength": "1"
                 },
                 {
-                    "id": "switch",
-                    "type": "boolean",
-                    "format": "switch",
-                    "label": "background_image",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-toggle-off",
-                    "value": true,
-                    "selected": false,
-                    "required": false
-                },
-                {
-                    "id": "item1",
-                    "type": "string",
-                    "format": "image",
-                    "label": "صورة",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": null,
-                    "icon": "sicon-image",
-                    "value": null,
-                    "required": false
-                },
-                {
-                    "id": "item2",
+                    "id": "item-2",
                     "type": "collection",
                     "format": "collection",
-                    "label": "Collection",
+                    "label": "فيديو الخلفية",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "item2.video_bacground",
+                            "id": "item-2.viedo_backgrounf",
                             "type": "boolean",
                             "format": "switch",
-                            "label": "video_bacground",
+                            "label": "viedo_backgrounf",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-toggle-off",
                             "value": true,
                             "selected": true,
                             "required": false
+                        },
+                        {
+                            "id": "item-2.link",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "الرابط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
                         }
                     ],
                     "value": [],
                     "minLength": 1,
-                    "maxLength": 5
+                    "maxLength": "1"
                 }
             ]
         }
