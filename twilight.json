@@ -1605,7 +1605,79 @@
             "title": "احصائيات",
             "icon": "sicon-store",
             "path": "home.statistics",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "ألعنوان",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "item",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "عناصر الاحصائيات",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "item.title2",
+                            "type": "string",
+                            "format": "text",
+                            "label": "عنوان مبسط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "item.icon_picker",
+                            "type": "string",
+                            "format": "icon",
+                            "label": "Icon Picker",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-user-circle",
+                            "value": "sicon-store",
+                            "required": false
+                        },
+                        {
+                            "id": "item.desc",
+                            "type": "string",
+                            "format": "text",
+                            "label": "شرح بسيط",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": true,
+                            "minLength": 6,
+                            "maxLength": 30
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": "4"
+                }
+            ]
         }
     ],
     "support_url": null,
