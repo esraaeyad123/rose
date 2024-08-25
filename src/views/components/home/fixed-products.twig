@@ -11,10 +11,11 @@
 <section class="s-block container">
     {% if title %}
       <div class="s-block__title">
-        <div class="right-side">
-          <h2>{{ title }}</h2>
-          {# <p>عنوان فرعي توصيفي صغير</p> #}
-        </div>
+        <div class="mb-10">
+          <div class="mx-auto max-w-4xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ title }}</h2>
+          </div>
+          </div>
         {% if display_all_url %}
             <a href="{{ display_all_url }}" class="s-block__display-all">{{ trans('blocks.home.display_all') }} <i class="sicon-arrow-left"></i></a>
         {% endif %}
