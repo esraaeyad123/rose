@@ -1669,8 +1669,8 @@
                             "value": null,
                             "multilanguage": true,
                             "required": true,
-                            "minLength": 6,
-                            "maxLength": 30
+                            "minLength": "1",
+                            "maxLength": "10"
                         }
                     ],
                     "value": [],
