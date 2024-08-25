@@ -155,17 +155,14 @@ class ProductCard extends HTMLElement {
               }
            </div>
       
-        <div class="px-6 py-2 text-center flex h-min items-center mt-4
-        ">
+        <div class="flex px-6 py-2 text-center h-min  justify-between mt-4">
             
-
-        
           ${!this.hideAddBtn ?
           `
           
-          <div class="add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
+          <div class=" flex  w-full gap-2 add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
                     <salla-add-product-button
-                        class=" rounded-lg p-0.5 w-5/6 bg-[color:var(--color-primary)]  "
+                        class="p-0.5 w-5/6 rounded-lg border-none  bg-[color:var(--color-primary)] md:w-2/3 sm:w-2/3 "
                         product-id="${this.product.id}"
                         product-status="${this.product.status}"
                         product-type="${this.product.type}">
@@ -187,7 +184,7 @@ class ProductCard extends HTMLElement {
                     
             ?  
             `
-          <div class="inline-block uppercase items-center rounded-lg tracking-[1px] text-[white] cursor-pointer w-[22%] bg-[color:var(--color-primary)] -m-px p-2.5 
+          <div class="inline-block uppercase items-center rounded-lg tracking-[1px] text-[white] cursor-pointer w-[22%] bg-[color:var(--color-primary)] -m-px p-2.5 border-0
   outline: 0 xxxs:hidden xxs:hidden sm:hidden md:flex">
                   <button loader-position="center" shape="icon" size="small" color="danger" class="btn--delete"
                   <span class="s-button-text">
@@ -198,9 +195,10 @@ class ProductCard extends HTMLElement {
                   </button>
                   
                 </div>`
-        : `<div class="inline-block uppercase items-center rounded-lg tracking-[1px] text-[white] cursor-pointer w-[22%] bg-[color:var(--color-primary)] -m-px p-2.5 
+        : `<div class="inline-block uppercase items-center rounded-lg tracking-[1px] text-[white] cursor-pointer w-[22%] bg-[color:var(--color-primary)] -m-px p-2.5 border-0
   outline: 0 xxxs:hidden xxs:hidden sm:hidden md:flex">
-        <button  loader-position="center" shape="icon" size="small" color="danger" class="btn--delete"
+        <button class=""
+        loader-position="center" shape="icon" size="small" color="danger" class="btn--delete"
         onclick="salla.wishlist.add(${this.product.id})">
         <span class="s-button-text">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 item-center">
