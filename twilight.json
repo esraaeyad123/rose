@@ -1599,6 +1599,13 @@
                     "maxLength": "1"
                 }
             ]
+        },
+        {
+            "key": "2e65d77c-0add-40d4-ae9f-4636ffa4e675",
+            "title": "احصائيات",
+            "icon": "sicon-store",
+            "path": "home.statistics",
+            "fields": []
         }
     ],
     "support_url": null,
