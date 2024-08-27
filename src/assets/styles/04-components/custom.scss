@@ -657,3 +657,234 @@
     transition-duration: 150ms
   }
   
+  
+  .button-custom {
+    --color: var(--color-primary);
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 4px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color-primary-light);
+    z-index: 1;
+   }
+   
+   .button-custom::before, .button-custom::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+   }
+   
+   .button-custom::before {
+    top: -1em;
+    left: -1em;
+   }
+   
+   .button-custom::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+   }
+   
+   .button-custom:hover::before, .button-custom:hover::after {
+    height: 410px;
+    width: 410px;
+   }
+   
+   .button-custom:hover {
+    color:  var(--color-primary-reverse);;
+   }
+   
+   .button-custom:active {
+    filter: brightness(.8);
+   }
+   
+   
+
+
+.save {
+  transition: 0.2s ease-in-out;
+  border-radius: 10px;
+  margin: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save button  svg{
+  transition: 0.2s ease-in-out;
+  width: 25px;
+  height: 25px;
+  fill: var(--color-primary);
+ 
+}
+
+.save:hover button svg{
+  fill: red;
+}
+
+/* From Uiverse.io by andrew-demchenk0 */ 
+.button-add {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.button-add, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button-add .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button-add .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-add .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button-add:hover {
+  background: var(--color-primary);
+}
+
+.button-add:hover .button__text {
+  color: transparent;
+}
+
+.button-add:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button-add:active .button__icon {
+  background-color: var(--color-primary);
+}
+
+.button-add:active {
+  border: 1px solid var(--color-primary);
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+
+.s-slider-block__title-nav {
+  display: flex }
+  .s-slider-block__title-nav>:not([hidden])~:not([hidden]) {
+  --tw-space-x-reverse: 0; margin-right: calc(0.625rem * 0); margin-right: calc(0.625rem * var(--tw-space-x-reverse)); margin-left: calc(0.625rem * (1 - 0)); margin-left: calc(0.625rem * (1 - var(--tw-space-x-reverse))); margin-left: calc(0.625rem * calc(1 - 0)); margin-left: calc(0.625rem * calc(1 - var(--tw-space-x-reverse))) }
+  [dir=ltr] .s-slider-block__title-nav {
+  margin-left: 1.5rem; flex-direction: row-reverse }
+  [dir=rtl] .s-slider-block__title-nav {
+  margin-right: 1.5rem }
+  [dir=rtl] .s-slider-block__title-nav>:not([hidden])~:not([hidden]) {
+  --tw-space-x-reverse: 1 }
+  salla-slider[direction=ltr] .s-slider-block__title-nav {
+  flex-direction: row-reverse }
+  .carousel-slider .s-slider-block__title-nav {
+  display: none }
+ 
+  
+  .s-slider-block__title-left a {
+    font-size: 18px;
+    color: var(--color-primary);
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .s-slider-block__title-left a:focus,
+  .s-slider-block__title-left a:hover {
+    color: var(--color-primary-reverse);
+  }
+  
+  .s-slider-block__title-left a:focus:after,
+  .s-slider-block__title-left a:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .s-slider-block__title-left a:after {
+    content: "";
+    pointer-events: none;
+    bottom: -6px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-primary-reverse);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+  .s-slider-block__title-right{
+    padding-right:2rem;
+    font-size: 1.875rem;
+line-height: 2.25rem; 
+font-weight: 700; 
+
+  }[dir=rtl]
+  .s-slider-block__title-right{
+    padding-left:2rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem; 
+    font-weight: 700; 
+    }
+  .s-slider-block__title-left{display:flex;align-items:center;justify-content:flex-end}

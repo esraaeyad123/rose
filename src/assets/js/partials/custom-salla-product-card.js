@@ -79,6 +79,31 @@ class ProductCard extends HTMLElement {
         <div class="p-relative ">
         
           <div class="product-block__thumb flex overflow-hidden relative mt-3 mx-2 rounded-xl">
+ 
+        
+<div class="save absolute  left-3">
+          ${this.showWishlist
+? `
+
+       <button loader-position="center" shape="icon" size="small" class="" onclick="salla.wishlist.remove(${this.product.id})">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="" class="w-6 h-6 justify-center">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
+                </svg>
+              </span>
+                  </button>
+                  `
+        :
+      `
+      <button loader-position="center" shape="icon" size="small" class="" onclick="salla.wishlist.add(${this.product.id})">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="" class="w-6 h-6 justify-center">
+                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
+                </svg>
+              </span>
+                  </button>
+
+      `
+      }
+        </div> 
             ${this.product.promotion_title
               ? `
               <span class="absolute top-3 right-3">
@@ -160,17 +185,17 @@ class ProductCard extends HTMLElement {
           ${!this.hideAddBtn ?
           `
           
-          <div class=" flex  w-full gap-2 add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
+          <div class="flex w-full  add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
                     <salla-add-product-button
-                        class="p-0.5 w-5/6 rounded-lg border-none  bg-[color:var(--color-primary)] md:w-2/3 sm:w-2/3 "
+                       class="button-add" shape="btn" color="primary" fill="none" size="medium" width="wide" type="button" 
                         product-id="${this.product.id}"
                         product-status="${this.product.status}"
                         product-type="${this.product.type}">
-                        ${this.product.type == 'booking' ? '<i class="sicon-calendar-date"></i>' : '<i class="sicon-add"></i>'}
+                        ${this.product.type == 'booking' ? '' : ''}
                        
-                         <span class="s-button-text"><span>إضافة للسلة</span></span>
-                        
-                    </g>
+                        <span class="button__text">اضافة للسلة </span>
+  <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                     
                 </svg>
                     </salla-add-product-button>
                    
@@ -180,38 +205,7 @@ class ProductCard extends HTMLElement {
           }
 
 
-          ${this.showWishlist
-                    
-            ?  
-            `
-          <div class="inline-block uppercase items-center rounded-lg tracking-[1px] text-[white] cursor-pointer w-[22%] bg-[color:var(--color-primary)] -m-px p-2.5 border-0
-  outline: 0 xxxs:hidden xxs:hidden sm:hidden md:flex">
-                  <button loader-position="center" shape="icon" size="small" color="danger" class="btn--delete"
-                  <span class="s-button-text">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 justify-center">
-                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
-                </svg>
-              </span>
-                  </button>
-                  
-                </div>`
-        : `<div class="inline-block uppercase items-center rounded-lg tracking-[1px] text-[white] cursor-pointer w-[22%] bg-[color:var(--color-primary)] -m-px p-2.5 border-0
-  outline: 0 xxxs:hidden xxs:hidden sm:hidden md:flex">
-        <button class=""
-        loader-position="center" shape="icon" size="small" color="danger" class="btn--delete"
-        onclick="salla.wishlist.add(${this.product.id})">
-        <span class="s-button-text">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 item-center">
-                  <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path>
-                </svg>
-              </span>
-        </button>
         
-      </div>
-        
-     </div> 
-      `
-      }
       </div>
       </div>
             `;
