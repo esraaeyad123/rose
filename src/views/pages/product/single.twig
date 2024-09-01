@@ -83,7 +83,7 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    <div class="container">
+    <div class="lg:mt-4 lg:container">
         {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
         <nav class="breadcrumbs w-full py-5">
             <salla-breadcrumb></salla-breadcrumb>
@@ -100,7 +100,11 @@
                         listen-to-thumbnails-option
                         show-thumbs-controls="false">
                     {% if product.promotion_title %}
-                        <div class="promotion-title">{{ product.promotion_title }}</div>
+                            <span class="promotion-title-custom absolute top-3 right-3">
+                                <span class="text-xs w-fit block px-3 font-thin py-1 my-2 bg-gray-100 rounded-md">
+                                    {{ product.promotion_title }}
+                                </span>
+                                </span>                        
                     {% endif %}
 
                     <salla-button
@@ -178,7 +182,7 @@
                 </salla-slider>
             </div>
 
-            <div class="main-content md:sticky md:overflow-hidden top-24 w-full md:w-2/4 md:pb-16">
+            <div class=" yasmeen-main-content  md:sticky md:overflow-hidden top-24 w-full md:w-2/4 md:pb-16">
 
                 {% hook 'product:single.description.start' %}
 
@@ -401,6 +405,9 @@
                 <salla-quick-order class="mt-5 md:-mb-2 block"></salla-quick-order>
             </div>
         </div>
+      
+            
+        </div>
         <salla-offer></salla-offer>
     </div>
 
@@ -418,5 +425,7 @@
     {% if product.has_3d_image %}
         <script type="module" defer src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 {% endblock %}
+
 
