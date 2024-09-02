@@ -128,7 +128,7 @@
                     <div slot="items">
                         {% for image in product.images %}
                             {% if image.three_d_image_url %}
-                                <model-viewer style="min-height: 500px;" class="swiper-slide model-entry w-full h-full"
+                                <model-viewer style="min-height: 500px;" class="swiper s-slider-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl swiper-backface-hidden"
                                     loading="eager" camera-controls
                                     touch-action="pan-y" auto-rotate
                                     poster="{{ image.url }}"
@@ -160,7 +160,7 @@
                     </div>
 
                     {% if has_many_images %}
-                        <div slot="thumbs">
+                        <div slot="thumbs" >
                             {% for image in product.images %}
                                 <div class="slide--one-fourth {{ image.video_url?'video-entry':'' }} {{ image.three_d_image_url?'model-entry':'' }}">
                                     {% if loop.index < 5 %}
@@ -196,6 +196,10 @@
                         </a>
                     </div>
                 {% endif %}
+                {% if product.rating %}
+                <salla-rating-stars value="{{ product.rating.stars }}"
+                                    reviews="{{ product.rating.count }}"></salla-rating-stars>
+            {% endif %}
 
                 {% if product.is_taxable %}
                     <small class="color-grey">{{ trans('pages.products.tax_included') }}</small>
@@ -214,6 +218,25 @@
                                         reviews="{{ product.rating.count }}"></salla-rating-stars>
                 {% endif %}
 
+                {% if product.sold_quantity or product.can_show_remained_quantity %}
+                <div class=" py-2.5 mb-5 rounded-md inline-flex text-sm">
+                    {% if product.sold_quantity %}
+                        <div class="px-4 !text-red-800">
+                            <i class="sicon-fire rtl:ml-1.5 ltr:mr-1.5"></i> {{ trans('pages.products.sold') }}
+                            <span>{{ pluralize('pages.products.sold_times', product.sold_quantity)|raw }}</span>
+                        </div>
+                    {% endif %}
+                    {% if product.can_show_remained_quantity %}
+                        <div class="px-4 rtl:even:border-r ltr:even:border-l even:border-gray-200">
+                            <i class="!text-red-800 sicon-box-bankers rtl:ml-1.5 ltr:mr-1.5"></i>
+                            {{ trans('pages.products.remained') }}
+                            <span>{{ product.quantity }}</span>
+                        </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            
+
                 {# Price #}
                 <div class="flex whitespace-nowrap gap-4 items-center">
                   <div class="{{ product.is_on_sale ? '' : 'hidden' }} space-x-2 rtl:space-x-reverse whitespace-nowrap">
@@ -226,78 +249,10 @@
                       {% endif %} 
                           <h2 class=" font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>
                   </div>
+                
+                 
                 </div>
 
-                <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
-                    {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
-                    {% if product.has_read_more %}
-                        <article class="article article--main relative overflow-hidden transition-all max-h-0 duration-300 py-4"
-                            id="more-content" style="max-height:5.25rem">
-                            {{ product_desc|raw }}
-                        </article>
-
-                        {# Read More Button #}
-                        <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
-                            {{ trans('pages.products.read_more') }}
-                        </a>
-                    {% else %}
-                        <article class="article--main pb-1">
-                            {{ product_desc|raw }}
-                        </article>
-                    {% endif %}
-                </div>
-
-                {% if product.tags|length and theme.settings.get('show_tags', true) %}
-                    <div class="mb-3">
-                        {% for tag in product.tags %}
-                            <a href="{{ tag.url }}"
-                               class="rtl:ml-2 ltr:mr-2 inline-flex  text-gray-500 hover:text-primary underline text-sm mb-1">{{ tag.name }}
-                                ,</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-                <div class="flex rtl:space-x-reverse space-x-3">
-                    <salla-social-share class="inline-flex mb-5" aria-label="social share"></salla-social-share>
-
-                    <salla-button
-                            class="btn--wishlist animated hidden sm:inline-flex"
-                            data-id="{{ product.id }}"
-                            onclick="salla.wishlist.toggle({{ product.id }})"
-                            shape="icon"
-                            fill="outline"
-                            color="light"
-							aria-label="add to wishlist">
-                        <i class="sicon-heart"></i>
-                    </salla-button>
-                </div>
-
-                {% if product.sold_quantity or product.can_show_remained_quantity %}
-                    <div class="bg-white py-2.5 mb-5 rounded-md inline-flex text-sm">
-                        {% if product.sold_quantity %}
-                            <div class="px-4 !text-red-800">
-                                <i class="sicon-fire rtl:ml-1.5 ltr:mr-1.5"></i> {{ trans('pages.products.sold') }}
-                                <span>{{ pluralize('pages.products.sold_times', product.sold_quantity)|raw }}</span>
-                            </div>
-                        {% endif %}
-                        {% if product.can_show_remained_quantity %}
-                            <div class="px-4 rtl:even:border-r ltr:even:border-l even:border-gray-200">
-                                <i class="!text-red-800 sicon-box-bankers rtl:ml-1.5 ltr:mr-1.5"></i>
-                                {{ trans('pages.products.remained') }}
-                                <span>{{ product.quantity }}</span>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% endif %}
-                {% if product.sku %}
-                    <div class="mb-4 flex justify-between sm:grid sm:grid-cols-3 bg-white rounded-md px-4 py-2">
-                        <div class="flex items-center">
-                            <i class="sicon-barcode mx-1"></i>
-                            {{ trans('pages.products.sku') }}
-                        </div>
-                        <div class="text-unicode">{{ product.sku }}</div>
-                    </div>
-                {% endif %}
                 {% hook 'product:single.description' %}
 
                 {# Installment Methods #}
@@ -395,6 +350,46 @@
                                 {% endif %}>
                             {{ product.add_to_cart_label }}
                         </salla-add-product-button>
+                        
+                           <div class="custom-bar mt-3 py-2 border-2 border-primary text-primary rounded-md ">
+            <h3 class="text-center text-xl md:text-2xl font-bold mb-2.5">اعجبك المنتج؟</h3>
+              <div class="flex justify-center items-center">
+             <div class="flex rtl:space-x-reverse space-x-3">
+                    <salla-social-share class="inline-flex mb-5" aria-label="social share"></salla-social-share>
+
+                    <salla-button
+                            class="btn--wishlist animated hidden sm:inline-flex"
+                            data-id="{{ product.id }}"
+                            onclick="salla.wishlist.toggle({{ product.id }})"
+                            shape="icon"
+                            fill="outline"
+                            color="light"
+							aria-label="add to wishlist">
+                        <i class="sicon-heart"></i>
+                    </salla-button>
+                </div>
+           </div>
+                           </div>
+
+
+                           <div class="p-0.5 mt-3">
+                            {% if product.sku %}
+                                <div class="flex text-base mt-2">
+                                    <i class="sicon-barcode mx-1"></i>
+                                    {{ trans('pages.products.sku') }}
+                                    <div class="text-unicode">{{ product.sku }}</div>
+                            </div>
+                           {% endif %}
+                           {% if product.tags|length and theme.settings.get('show_tags', true) %}
+                           <div class="mt-2">
+                               {% for tag in product.tags %}
+                                   <a href="{{ tag.url }}"
+                                      class="rtl:ml-2 ltr:mr-2 inline-flex text-gray-500 hover:text-primary text-sm mb-1 s-button-element s-button-btn s-button-outline s-button-small">{{ tag.name }}
+                                       </a>
+                               {% endfor %}
+                           </div>
+                       {% endif %}
+                            </div>
                     </section>
                     {% if product.is_giftable %}
                         <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}"></salla-gifting>
@@ -403,17 +398,58 @@
 
                 {% hook 'product:single.description.end' %}
                 <salla-quick-order class="mt-5 md:-mb-2 block"></salla-quick-order>
+              
+                   
+                    </div>
             </div>
+            <div class= "product-tabs">
+                <salla-tabs class="tabs border-b colored-border">
+                    <!-- Tab One -->
+                    <salla-tab-header class="flex justify-center items-center text-center " 
+                    slot="header" name="tab_one"><span>الوصف</span>
+                   </salla-tab-header>
+                     <salla-tab-content  slot="content" name="tab_one">
+                        <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
+                            {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
+                            {% if product.has_read_more %}
+                                <article class="article article--main relative overflow-hidden transition-all max-h-0 duration-300 py-4"
+                                    id="more-content" style="max-height:5.25rem">
+                                    {{ product_desc|raw }}
+                                </article>
+        
+                                {# Read More Button #}
+                                <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
+                                    {{ trans('pages.products.read_more') }}
+                                </a>
+                            {% else %}
+                                <article class="article--main pb-1">
+                                    {{ product_desc|raw }}
+                                </article>
+                            {% endif %}
+                        </div>               
+                     </salla-tab-content>
+                    <!-- Tab Two -->
+                    <salla-tab-header slot="header" name="tab_two" 
+                    class="flex justify-center items-center text-center">
+                    <span>التعليقات</span></salla-tab-header
+                    >
+                    <salla-tab-content slot="content" name="tab_two">
+                        <div class="s-tabs-content">
+                            {% component 'comments' %}
+    
+                            </div>
+                    </salla-tab-content>
+                  
+                  </salla-tabs>
+            </div>
+
         </div>
-      
-            
-        </div>
+       
         <salla-offer></salla-offer>
     </div>
 
-    {# Comments Area #}
-    {% component 'comments' %}
-    
+
+ 
     {# Similar Products Area #}
     <div class="container">
         <salla-products-slider source="related" source-value="{{product.id}}" block-title="{{trans('pages.products.similar_products')}}" display-all-url></salla-products-slider>

@@ -30,7 +30,7 @@
                       data-target="{{ component_id }}-{{ section.id }}"
                       data-component-id="{{ component_id }}"
                       class="tab-trigger {{ loop.first?'is-active' : '' }}">
-                  {{ section.title }}
+                  {{ section.title }} jjjjjmnkkoo
               </salla-button>
           {% endfor %}
       </div>
@@ -39,7 +39,9 @@
     <div class="grid grid-cols-1 {{ main_product?'lg:grid-cols-2':''}} gap-8">
         {% if main_product %}
             <div class="flex flex-col">
-                <custom-salla-product-card shadow-on-hover product="{{main_product.product}}" isSpecial></custom-salla-product-card>  
+                <custom-salla-product-card shadow-on-hover product="{{main_product.product}}" isSpecial
+                class="custom--count-down-border is-custom-product-card-special s-product-card-entry s-product-card-vertical s-product-card-special s-product-card-shadow "
+                ></custom-salla-product-card>  
             </div>
         {% endif %}
         <div class="flex flex-col">
@@ -54,11 +56,12 @@
                 {% endfor %}
             </div>
 
-            <div class="tabs-wrapper flex flex-1">
+            <div class="tabs-wrapper flex flex-1 px-2">
                 {% for section in items %}
                     <div id="{{ component_id }}-{{ section.id }}" class="tabs__item grid-cols-2 {{ main_product?'':'lg:grid-cols-4'}} {{ loop.first?'is-active':'' }}">
                         {% for product in section.products|slice(0,main_product?4:8) %}
-                            <custom-salla-product-card product="{{product}}"></custom-salla-product-card>
+                            <custom-salla-product-card class="thumb product-block__thumb"
+                            product="{{product}}"></custom-salla-product-card>
                         {% endfor %}
                     </div>
                 {% endfor %}
@@ -66,3 +69,33 @@
         </div>
     </div>
 </section> 
+ 
+
+
+    <style>
+
+
+.is-custom-product-card-special  {
+display: flex; 
+overflow: hidden; 
+position: relative; 
+margin-left: 0.5rem;
+margin-right: 0.5rem; 
+margin-top: 0.75rem; 
+border-radius: 0.75rem; 
+
+
+}
+
+.is-custom-product-card-special  img{
+width: 250%;
+
+object-fit: cover;
+
+}
+.custom--s-block--features-products .s-product-card-full-image img {
+    -o-object-fit: contain;
+    object-fit: contain
+}
+        
+        </style>

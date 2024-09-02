@@ -135,7 +135,7 @@ class ProductCard extends HTMLElement {
             <div class="product-title-section">
               <a href="${this.product.url}" class="product-title">
                 <h2 class="text-lg text-center opacity-95 truncate font-semibold ">${this.product.name ? this.product.name :  ''}</h2>
-                ${!!this.product.subtitle ? `<p>` +  this.product.subtitle + `</p>` : `<p class="mt-8"></p>`}
+                ${!!this.product.subtitle ? `<p class="text-center">` +  this.product.subtitle + `</p>` : `<p class="mt-4 text-center opacity-95 truncate font-semibold "></p>`}
               </a>
               </div>
          
