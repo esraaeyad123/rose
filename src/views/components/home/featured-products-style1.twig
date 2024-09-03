@@ -36,11 +36,11 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 {{ main_product?'lg:grid-cols-2':''}} gap-8">
+    <div class=" grid grid-cols-1 {{ main_product?'lg:grid-cols-2':''}} gap-8">
         {% if main_product %}
-            <div class="flex flex-col">
+            <div class="flex flex-col px-2">
                 <custom-salla-product-card shadow-on-hover product="{{main_product.product}}" isSpecial
-                class="custom--count-down-border is-custom-product-card-special s-product-card-entry s-product-card-vertical s-product-card-special s-product-card-shadow "
+               class="custom--count-down-border  s-product-card-entry s-product-card-vertical s-product-card-special "
                 ></custom-salla-product-card>  
             </div>
         {% endif %}
@@ -72,30 +72,3 @@
  
 
 
-    <style>
-
-
-.is-custom-product-card-special  {
-display: flex; 
-overflow: hidden; 
-position: relative; 
-margin-left: 0.5rem;
-margin-right: 0.5rem; 
-margin-top: 0.75rem; 
-border-radius: 0.75rem; 
-
-
-}
-
-.is-custom-product-card-special  img{
-width: 250%;
-
-object-fit: cover;
-
-}
-.custom--s-block--features-products .s-product-card-full-image img {
-    -o-object-fit: contain;
-    object-fit: contain
-}
-        
-        </style>
