@@ -614,6 +614,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-lg-banner{height:428px}
 .h-min{height:-moz-min-content;height:min-content}
 .h-px{height:1px}
+.h-screen{height:100vh}
 .max-h-0{max-height:0px}
 .max-h-8{max-height:2rem}
 .max-h-\[150px\]{max-height:150px}
@@ -890,6 +891,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .font-\[500\]{font-weight:500}
 .font-bold{font-weight:700}
 .font-extrabold{font-weight:800}
+.font-light{font-weight:300}
 .font-medium{font-weight:500}
 .font-normal{font-weight:400}
 .font-semibold{font-weight:600}
@@ -10299,7 +10301,6 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .dark .dark\:hover\:text-primary:hover{color:#414042;color:var(--color-primary)}
 @media (min-width: 640px){
 .sm\:col-span-2{grid-column:span 2 / span 2}
-.sm\:col-span-6{grid-column:span 6 / span 6}
 .sm\:row-span-2{grid-row:span 2 / span 2}
 .sm\:mb-0{margin-bottom:0px}
 .sm\:mb-24{margin-bottom:6rem}
@@ -10407,8 +10408,6 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:sticky{position:sticky}
 .lg\:top-20{top:5rem}
 .lg\:col-span-2{grid-column:span 2 / span 2}
-.lg\:col-span-4{grid-column:span 4 / span 4}
-.lg\:col-span-5{grid-column:span 5 / span 5}
 .lg\:col-span-6{grid-column:span 6 / span 6}
 .lg\:col-start-7{grid-column-start:7}
 .lg\:-mt-28{margin-top:-7rem}
