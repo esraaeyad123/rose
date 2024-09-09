@@ -1500,103 +1500,165 @@
                     "icon": "sicon-format-text"
                 },
                 {
-                    "id": "background",
-                    "type": "collection",
-                    "format": "collection",
-                    "label": "عناصر الخلفية",
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "لاستبدال الفيديو بصورة",
+                    "description": "",
+                    "id": "videotoimg",
+                    "format": "switch",
+                    "required": false,
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "url",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "الرابط الفيديو",
                     "description": null,
                     "labelHTML": null,
-                    "item_label": null,
-                    "icon": "sicon-list-add",
-                    "fields": [
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "conditions": [
                         {
-                            "id": "background.is_back_video",
-                            "type": "boolean",
-                            "format": "switch",
-                            "label": "عرض فيديو",
-                            "description": null,
-                            "labelHTML": null,
-                            "icon": "sicon-toggle-off",
-                            "value": true,
-                            "selected": true,
-                            "required": true
-                        },
-                        {
-                            "id": "background.url",
-                            "type": "string",
-                            "format": "url",
-                            "inputType": "url",
-                            "label": "الرابط الفيديو",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "e.g. https://salla.sa",
-                            "icon": "sicon-link",
-                            "value": null,
-                            "required": false,
-                            "minLength": 6,
-                            "maxLength": 30
-                        },
-                        {
-                            "id": "background.background_image",
-                            "type": "string",
-                            "format": "image",
-                            "label": "صورة الخلفية",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": null,
-                            "icon": "sicon-image",
-                            "value": null,
-                            "required": false
-                        },
-                        {
-                            "id": "background.title",
-                            "type": "string",
-                            "format": "text",
-                            "label": "العنوان",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "Placeholder text ..",
-                            "icon": "sicon-format-text-alt",
-                            "value": null,
-                            "multilanguage": false,
-                            "required": false,
-                            "minLength": 6,
-                            "maxLength": 30
-                        },
-                        {
-                            "id": "background.desc",
-                            "type": "string",
-                            "format": "textarea",
-                            "label": "الوصف",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "Your text here",
-                            "icon": "sicon-typography",
-                            "value": null,
-                            "multilanguage": false,
-                            "required": false,
-                            "minLength": 20,
-                            "maxLength": 255
-                        },
-                        {
-                            "id": "background.titleButton",
-                            "type": "string",
-                            "format": "text",
-                            "label": "نص الزر",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "Placeholder text ..",
-                            "icon": "sicon-format-text-alt",
-                            "value": null,
-                            "multilanguage": false,
-                            "required": false,
-                            "minLength": 6,
-                            "maxLength": 30
+                            "id": "videotoimg",
+                            "operation": "=",
+                            "value": false
                         }
-                    ],
+                    ]
+                },
+                {
+                    "id": "background_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة الخلفية",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": null,
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false,
+                    "conditions": [
+                        {
+                            "id": "videotoimg",
+                            "operation": "=",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "desc",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Your text here",
+                    "icon": "sicon-typography",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 20,
+                    "maxLength": 255
+                },
+                {
+                    "id": "titleButton",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص الزر",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                } ,
+                {
+                    "type": "items",
+                    "icon": "sicon-link",
+                    "label": "الرابط",
+                    "id": "link",
                     "value": [],
-                    "minLength": 1,
-                    "maxLength": "1"
+                    "description": null,
+                    "required": false,
+                    "format": "variable-list",
+                    "searchable": true,
+                    "source": "custom",
+                    "sources": [
+                        {
+                            "label": "منتج",
+                            "key": "products",
+                            "value": "products"
+                        },
+                        {
+                            "label": "تصنيف",
+                            "key": "categories",
+                            "value": "categories"
+                        },
+                        {
+                            "label": "ماركة تجارية",
+                            "key": "brands",
+                            "value": "brands"
+                        },
+                        {
+                            "label": "صفحة تعريفية",
+                            "key": "pages",
+                            "value": "pages"
+                        },
+                        {
+                            "label": "مقالة",
+                            "key": "blog_articles",
+                            "value": "blog_articles"
+                        },
+                        {
+                            "label": "تصنيف ضمن المدونة",
+                            "key": "blog_categories",
+                            "value": "blog_categories"
+                        },
+                        {
+                            "label": "التخفيضات",
+                            "key": "offers_link",
+                            "value": "offers_link"
+                        },
+                        {
+                            "label": "الماركات التجارية",
+                            "key": "brands_link",
+                            "value": "brands_link"
+                        },
+                        {
+                            "label": "المدونة",
+                            "key": "blog_link",
+                            "value": "blog_link"
+                        },
+                        {
+                            "label": "رابط خارجي",
+                            "key": "custom",
+                            "value": "custom"
+                        }
+                    ]
                 }
             ]
         },
