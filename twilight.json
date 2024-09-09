@@ -1488,7 +1488,7 @@
             "key": "a2175a26-abe2-478c-8d33-92c029c60af9",
             "title": "full-background",
             "icon": "sicon-store",
-            "path": "home.full-bacground",
+            "path": "home.full-background",
             "fields": [
                 {
                     "id": "des",
@@ -1503,7 +1503,7 @@
                     "type": "boolean",
                     "icon": "sicon-toggle-off",
                     "label": "لاستبدال الفيديو بصورة",
-                    "description": "",
+                    "description": null,
                     "id": "videotoimg",
                     "format": "switch",
                     "required": false,
@@ -1595,7 +1595,7 @@
                     "required": false,
                     "minLength": 6,
                     "maxLength": 30
-                } ,
+                },
                 {
                     "type": "items",
                     "icon": "sicon-link",
