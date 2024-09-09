@@ -1523,7 +1523,7 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30,
+                    "maxLength": 350,
                     "conditions": [
                         {
                             "id": "videotoimg",
