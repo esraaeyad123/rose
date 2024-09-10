@@ -1,21 +1,31 @@
-<!-- forked from: https://codepen.io/cuonoj/pen/JjPmMaB -->
 
 <section class="relative h-screen flex flex-col items-center justify-center text-center text-white ">
     <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-        {% if component.videotoimg  %}
-        <video class="min-w-full min-h-full absolute object-cover"
+        {% if component.videotoimg    %}
+        <img src="{{component.background_image}}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover filter blur-sm">
+
+            {% else %}
+
+            <video class="min-w-full min-h-full absolute "
             src="{{component.url}}"
             type="video/mp4" autoplay muted loop></video>
-            {% else %}
-            <img src="{{component.background_image}}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover filter blur-sm">
             {% endif %}
 
-
     </div>
+
+  
     <div class="video-content space-y-2 z-10">
         <h1 class="font-light text-6xl">{{component.title}}</h1>
         <h3 class="font-light text-3xl">{{component.desc}}</h3>
     </div>
+
+    <div class="mt-4 md:mt-4 flex md:justify-start items-center gap-x-6">
+        <button class="button-custom md:text-[20px] text-[17px] flex gap-4 justify-center items-center shadow rounded-[0.25rem] h-12 w-full py-2 px-8 duration-100" href="{{component.link}}" type="button" >
+        <span class="text"> {{component.titleButton}}</span>
+
+      <i class="arrow-icon sicon-arrow-up-left"></i>
+      </button>
+      </div>
 </section>
 
 <style>
