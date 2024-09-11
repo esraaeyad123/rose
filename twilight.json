@@ -1746,7 +1746,98 @@
             "title": "منتجات متحركة مميزة",
             "icon": "sicon-store",
             "path": "home.enhanced-slider-products",
-            "fields": []
+            "fields": [
+                {
+                    "id": "item1",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون خلفية المحتوى",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#004956",
+                    "required": false
+                },
+                {
+                    "id": "photo",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة خلفية المحتوى",
+                    "description": "المقاس المناسب للصورة هو 600×800 بكسل",
+                    "labelHTML": null,
+                    "placeholder": null,
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "item2",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون النصوص",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#e1e9ea",
+                    "required": false
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان الرئيسي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "desc",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "نص إضافي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Your text here",
+                    "icon": "sicon-typography",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 20,
+                    "maxLength": 255
+                },
+                {
+                    "id": "item4",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون خلفية الزر",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#004956",
+                    "required": false
+                },
+                {
+                    "id": "item3",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون نص الزر",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#004956",
+                    "required": false
+                }
+            ]
         }
     ],
     "support_url": null,
