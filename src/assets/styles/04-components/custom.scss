@@ -4364,3 +4364,16 @@ box-sizing:border-box;
 -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
+
+@media (min-width: 1024px) {
+  .s-block--special-products-slider {
+      top: 0;
+      width: 100%;
+      --tw-translate-y: 0px;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
+.s-block--special-products-slider {
+  position: relative;
+}
