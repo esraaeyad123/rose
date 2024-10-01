@@ -1,6 +1,5 @@
 
 
-
 <section class=" s-block--special-products-slider--{{ position }}  s-block--special-products-slider  ">
  
   <div class="min-h-[600px] w-full flex flex-col lg:flex-row justify-center items-stretch p-0 relative h-full space-y-5 lg:space-y-0 lg:space-x-10 rtl:space-x-reverse">
@@ -16,10 +15,11 @@
 <span style="color: #ffffff">اكتشفي المزيد</span>
 </a>
 </div>
-</div>
+  </div>
     <div class="slider-wrap relative lg:w-2/3 pb-20 lg:pt-20 lg:pb-28 2xl:px-2.5">
       <salla-products-slider
-         class="simplified-products fit-slider-products s-products-slider-wrapper  "
+         class="simplified-products fit-slider-products s-products-slider-wrapper
+          s-products-slider-slider s-slider-wrapper carousel-slider  "
          type="carousel" 
          {% if component.products|length %}
            source="selected" 
@@ -36,6 +36,49 @@
   
   </div>
 </section> 
+
+
+<section class=" s-block--special-products-slider--8  s-block--special-products-slider reversed  ">
+ 
+    <div class="">
+        <div class="lg:w-1/3 flex items-center justify-center bg-cover bg-no-repeat text-center relative min-h-[250px] max-h-[350px] md:max-h-[700px]
+    has-overlay--before
+    
+    has-overlay--opacity-option has-overlay--opacity-40" style="background-color: #0D0C0C; color: #ffffff">
+<video playsinline="" class="object-cover object-center w-full h-full min-h-[250px] max-h-[350px] lg:max-h-[700px]" loop="loop" autoplay="autoplay" muted="muted" src="https://github-production-user-asset-6210df.s3.amazonaws.com/32875906/277474661-1960a180-d7d3-41ba-abb2-87a054855477.mp4"></video>
+<div class="space-y-4 lg:space-y-8 absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2.5 py-10 lg:p-10 z-[1]">
+<h2 class="text-2xl md:text-4xl font-bold !leading-[1.15]">العطور</h2>
+<p class="description max-w-[400px] text-sm sm:text-base">لا تضيعي الفرصة للمزج بين الروائح وإيجاد توقيع رائحتك الخاصة. اكتشفي معنا عالم العطور وجمال الروائح. تسوقي اليوم واستمتعي بتجربة تحول كل يوم إلى لحظة ساحرة."</p>
+<a class="advanced-slider__caption__inner__content__button outlined" href="https://salla.sa/dev-flormi3pb6t1cfo7/redirect/categories/1232998349" tabindex="-1" style="background-color: transparent;border: 1px solid #ffffff">
+<span style="color: #ffffff">اكتشفي المزيد</span>
+</a>
+</div>
+        </div>
+        <div class="slider-wrap relative lg:w-2/3 pb-20 lg:pt-20 lg:pb-28 2xl:px-2.5">
+            <salla-products-slider
+               class="simplified-products fit-slider-products s-products-slider-wrapper
+                s-products-slider-slider s-slider-wrapper carousel-slider  "
+               type="carousel" 
+               {% if component.products|length %}
+                 source="selected" 
+                 source-value="[{{ component.products|map((product) => product.id)|join(',') }}]" 
+               {% endif %}
+               {% if display_all != '' and  display_all != '#' %}
+                   display-all-url="{{display_all}}" 
+               {% endif %}
+               block-title=" " 
+               slider-id="slider-with-bg-{{ position }}"
+           ></salla-products-slider>
+         
+         </div>
+    
+    </div>
+  </section> 
+  
+  
+
+
+
    <style>
     .s-block--special-products .tabs {
     margin-bottom: 1rem;
@@ -801,4 +844,22 @@ input[type=radio].sr-only:checked~div.s-slider-v-centered .s-slider-block__title
     --tw-bg-opacity: 1;
     background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
 }
+
+.fit-slider-products .s-slider-swiper-wrapper .swiper-slide {
+    align-items: stretch;
+    display: flex;
+    align-self: stretch;
+}
+.fit-slider-products .s-slider-swiper-wrapper .swiper-slide custom-salla-product-card {
+    flex: 1 1 0%}
+@media(max-width:991px) {
+    .fit-slider-products .s-slider-swiper-wrapper .swiper-slide .product-card--vertical.product-card--fit-height .product-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%}
+
+}
+
+
 </style>
