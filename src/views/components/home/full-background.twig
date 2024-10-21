@@ -2,8 +2,8 @@
 <section class="relative h-screen flex flex-col items-center justify-center text-center text-white ">
     <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
         {% if component.videotoimg    %}
-        <img src="{{component.background_image}}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover filter blur-sm">
-
+        <img class="lazy w-full h-full object-cover object-center min-h-[250px] max-h-[350px] lg:max-h-[700px] loaded" data-src="{{component.photo}}"
+         data-ll-status="loaded">
             {% else %}
 
             <video class="min-w-full min-h-full absolute "
