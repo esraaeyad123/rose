@@ -1747,7 +1747,6 @@
             "icon": "sicon-store",
             "path": "home.enhanced-slider-products",
             "fields": [
-
                 {
                     "id": "item1",
                     "type": "string",
@@ -1968,6 +1967,13 @@
                     "value": []
                 }
             ]
+        },
+        {
+            "key": "1f3285c4-5349-4d41-94fe-d38edafdd89d",
+            "title": "منتجات ثابتة مميزة",
+            "icon": "sicon-store",
+            "path": "home.new-featured-products-style",
+            "fields": []
         }
     ],
     "support_url": null,
