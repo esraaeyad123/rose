@@ -4398,13 +4398,42 @@ salla-slider.details-slider .swiper-slide {
 }
 
 @media (min-width: 1024px) {
-  .s-block--special-products-slider {
+  .s-block--special-products-slider2 {
     top: 0;
     width: 100%;
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
-.s-block--special-products-slider {
+.s-block--special-products-slider2 {
   position: relative;
 }/*# sourceMappingURL=custom.css.map */
+
+
+.s-block--special-products-slider2 {
+  padding: 20px; /* مساحة داخلية */
+ 
+}
+
+/* تنسيق للفيديو */
+.s-block--special-products-slider2 video {
+  border-radius: 10px; /* زوايا مدورة للفيديو */
+}
+
+/* تنسيق العناوين */
+.s-block--special-products-slider2 h2 {
+ 
+  margin-bottom: 10px; /* مسافة أسفل العنوان */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* تأثير ظل خفيف */
+}
+
+/* تنسيق الوصف */
+.s-block--special-products-slider2 .description {
+  color: #555; /* لون النص */
+  font-size: 1rem; /* حجم النص */
+  line-height: 1.5; /* ارتفاع السطر */
+}
+
+
+
+

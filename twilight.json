@@ -1747,6 +1747,7 @@
             "icon": "sicon-store",
             "path": "home.enhanced-slider-products",
             "fields": [
+
                 {
                     "id": "item1",
                     "type": "string",
@@ -1758,6 +1759,39 @@
                     "icon": "sicon-format-fill",
                     "value": "#004956",
                     "required": false
+                },
+                {
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "لاستبدال الفيديو بصورة",
+                    "description": null,
+                    "id": "videotoimg",
+                    "format": "switch",
+                    "required": false,
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "url",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "الرابط الفيديو",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 350,
+                    "conditions": [
+                        {
+                            "id": "videotoimg",
+                            "operation": "=",
+                            "value": false
+                        }
+                    ]
                 },
                 {
                     "id": "photo",
