@@ -1,16 +1,16 @@
 <section class="s-blockl fixed-products-with-image">
     <div aria-hidden="true" class="flex items-center justify-center h-96 overflow-hidden relative w-full">
       <video class="bg-cover w-full origin-center" autoplay="" loop="" muted="">
-        <source src="https://dl.dropboxusercontent.com/scl/fi/z3ubibunavhxhbbeedylr/5743177-hd_1366_720_25fps.mp4?rlkey=3diaroib5wgmwkw7vttqmfxs0&amp;st=wwv09tzx&amp;dl=0?raw=1" type="video/mp4">
+        <source src="{{component.url}}" type="video/mp4">
       </video>
       <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
   
       <!-- النص وزر -->
       <div class="absolute bottom-20 left-5 right-5 text-right">
-        <h4 class="text-black text-2xl font-bold">تألق بتشكيلة الملابس الأنيقة لكل المناسبات.</h4>
-        <p class="text-black text-sm opacity-70">اكتشف مجموعة الملابس الأنيقة لدينا التي تم تصميمها لتلبية كافة احتياجاتك اليومية</p>
+        <h4 class="text-black text-2xl font-bold">{{component.title}}</h4>
+        <p class="text-black text-sm opacity-70"> {{component.desc}}</p>
         <a href="https://salla.sa/dev-0dvixz52swmu55m6/redirect/categories/97219664" class="flex py-3 px-6 mt-3 gap-2 font-semibold items-center justify-center button-style transition-all rounded">
-          <span class="font-semibold">أكتشف المزيد</span>
+          <span class="font-semibold">{{component.item}}</span>
         </a>
       </div>
     </div>
