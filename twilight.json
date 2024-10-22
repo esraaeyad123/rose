@@ -1967,6 +1967,13 @@
                     "value": []
                 }
             ]
+        },
+        {
+            "key": "65a4af88-512d-44ec-8ddb-f6bfb8f954fd",
+            "title": "new-featured-products",
+            "icon": "sicon-store",
+            "path": "home.new-featured-products",
+            "fields": []
         }
     ],
     "support_url": null,
