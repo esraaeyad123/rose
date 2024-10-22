@@ -10,57 +10,44 @@
 | component.links[].url              | string   |                                                                              |
 | position                           | int      | Sorting number start from zero                                               |
 #}
-<section class="s-block s-block--categories    {{ component.merge_with_top_component and position ?'merge-with-top-component' : '' }} {{ not component.title and component.merge_with_top_component ? 'merged-has-no-title' : '' }}">
-    <div class="container  bg-transparent standard-title-color">
+<section class="s-block s-block--categories {{ component.merge_with_top_component and position ? 'merge-with-top-component' : '' }} {{ not component.title and component.merge_with_top_component ? 'merged-has-no-title' : '' }}">
+  <div class="container bg-transparent standard-title-color">
+      <h2 class="text-2xl font-bold text-center mb-4">{{ component.title }}</h2>
       <salla-slider  
-        type="carousel"
-        {% if(component.title) or (component.merge_with_top_component) %}
-            block-title="{{ component.title }}"
-        {% endif %}
-        controls-outer
-        show-controls="{{ component.show_controls ? 'true' : 'false'}}" 
-        id="main-links-{{ position }}">
+          type="carousel"
+          controls-outer
+          show-controls="{{ component.show_controls ? 'true' : 'false' }}" 
+          id="main-links-{{ position }}">
           <div slot="items">
               {% if component.show_cats %}
-                {% for cat in component.categories %}
-                    <div class="swiper-slide slide--one-sixth ">
-                        <a href="{{ cat.url }}" class="slide--cat-entry">
-                            {% if cat.image %}
-                              <img src="{{ cat.image ? cat.image : 'images/placeholder.png' | asset }}" class="w-16 h-16 object-cover rounded-full mb-2.5 {{ cat.image ? '' : 'has-placeholder'}}" width="64" height="64" alt="{{ menu.title }}"/>
-                            {% else %}
-                              <i class="{{ cat.icon }}"></i>
-                            {% endif %}
-                            <h2>{{ cat.name }}</h2>
-                        </a>
-                    </div>
-                {% endfor %}
+                  {% for cat in component.categories %}
+                      <div class="swiper-slide slide--one-sixth flex flex-col items-center">
+                          <a href="{{ cat.url }}" class="slide--cat-entry flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transition-transform duration-200 hover:scale-105">
+                              {% if cat.image %}
+                                  <img src="{{ cat.image ? cat.image : 'images/placeholder.png' | asset }}" class="w-20 h-20 object-cover rounded-full mb-2 {{ cat.image ? '' : 'has-placeholder' }}" width="80" height="80" alt="{{ cat.name }}"/>
+                              {% else %}
+                                  <i class="{{ cat.icon }} text-4xl text-gray-500 mb-2"></i>
+                              {% endif %}
+                              <h2 class="text-md font-semibold text-center">{{ cat.name }}</h2>
+                          </a>
+                      </div>
+                  {% endfor %}
               {% else %}
-                {% for link in component.links %}
-                  {% if link.title %}
-                  
-                    <div class="swiper-slide slide--one-sixth  vertical swiper-slide-active 
-                    duration-200 hover:-translate-y-3 parent pb-4
-                      relative rounded-xl" >
-                      <a href="{{ link.url }}" class="slide--cat-entry flex 
-                      bg-[color:var(--components-bg-color)] rectangular-shape !rounded-[30px] !p-0" >
-
-                      
-                        <div class="flex justify-center items-center  w-full h-full rounded-[30px]   ">
-                          <i class="{{ link.icon }} text-7xl text-main-text-color "></i>
+                  {% for link in component.links %}
+                      {% if link.title %}
+                          <div class="swiper-slide slide--one-sixth flex flex-col items-center">
+                              <a href="{{ link.url }}" class="slide--cat-entry flex flex-col items-center bg-gray-100 shadow-lg rounded-lg p-4 transition-transform duration-200 hover:scale-105">
+                                  <i class="{{ link.icon }} text-6xl text-main-text-color mb-2"></i>
+                                  <h4 class="link_title text-center text-md font-semibold">{{ link.title }}</h4>
+                              </a>
                           </div>
-                              <div class="link_title-container   bottom-2 z-0 bg-[var(--color-primary)] absolute right-1/2 translate-x-1/2 flex-nowrap min-w-[80%] hover:opacity-100 rounded-xl  ">
-                              <h4 class="link_title   text-[color:var(--secondary-text-color)]">{{ link.title }}</h4>
-                              </div>
-                        </a>
-                    </div>
-                  {% endif %}
-                {% endfor %}
+                      {% endif %}
+                  {% endfor %}
               {% endif %}
           </div>
       </salla-slider>
-    </div>
-
-</section> 
+  </div>
+</section>
 
 
 <style>

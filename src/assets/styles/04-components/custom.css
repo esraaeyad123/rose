@@ -4434,6 +4434,11 @@ salla-slider.details-slider .swiper-slide {
   line-height: 1.5; /* ارتفاع السطر */
 }
 
+.s-slider-block__title h2 {
+  font-size: 10px !important;
+  font-weight: 200 !important;
+}
+
 
 
 
