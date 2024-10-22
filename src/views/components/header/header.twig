@@ -5,6 +5,14 @@
 | cart.items_count | int     |                                 |
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
+<div class="promo-banner" id="promoBanner">
+  <div class="banner-content">
+      <p class="promo-text">🌟 عرض خاص: احصل على 20% خصم على أول طلب لك! 🌟</p>
+  </div>
+  <button class="close-button" onclick="closeBanner()">✖</button>
+</div>
+
+
 {% set important_links = theme.settings.get('important_links') %}
 <header class="custom-store-header store-header dark:bg-[var(--color-dark-primary)] dark:text-white">
   {# Top Nav #}
@@ -116,7 +124,115 @@
     </div>
     </div>
  
+    <button class="back-to-top" id="backToTop">رجوع للأعلى</button>
+
 </header>
 {% if store.scope %}
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
+
+<!-- إعلان ترويجي -->
+
+<!-- CSS -->
+<!-- CSS -->
+<style>
+    .promo-banner {
+        background-color: #ff5733; /* لون الخلفية */
+        color: white; /* لون النص */
+        padding: 15px; /* حشوة */
+        text-align: center; /* محاذاة النص */
+        position: fixed; /* يجعل الشريط ثابتًا في أعلى الصفحة */
+        top: 0; /* الموضع من الأعلى */
+        left: 0; /* الموضع من اليسار */
+        right: 0; /* الموضع من اليمين */
+        z-index: 1000; /* لضمان ظهور الشريط فوق كل العناصر */
+        overflow: hidden; /* لإخفاء المحتوى الزائد */
+        display: flex; /* لجعل المحتوى في سطر واحد */
+        justify-content: space-between; /* توزيع المسافات */
+        align-items: center; /* محاذاة العمود */
+    }
+
+    .banner-content {
+        display: flex;
+        animation: slide 10s linear infinite; /* تأثير الحركة */
+        white-space: nowrap; /* لمنع التفاف النص */
+    }
+
+    .promo-text {
+        margin-right: 20px; /* مسافة بين النص والزر */
+    }
+
+    .close-button {
+        background: none; /* إزالة الخلفية */
+        border: none; /* إزالة الحدود */
+        color: white; /* لون النص */
+        font-size: 20px; /* حجم الخط */
+        cursor: pointer; /* شكل المؤشر */
+        margin-left: 20px; /* مسافة بين النص وزر الإغلاق */
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(100%); /* يبدأ من خارج الشاشة من اليمين */
+        }
+        100% {
+            transform: translateX(-100%); /* ينتهي خارج الشاشة من اليسار */
+        }
+    }
+
+    .promo-button {
+        background-color: #ffffff; /* لون الزر */
+        color: #ff5733; /* لون النص */
+        padding: 10px 20px; /* حشوة الزر */
+        border: none; /* إزالة الحدود */
+        border-radius: 5px; /* زوايا دائرية */
+        text-decoration: none; /* إزالة الخط السفلي */
+        transition: background-color 0.3s; /* تأثير عند المرور */
+    }
+
+    .promo-button:hover {
+        background-color: #f0f0f0; /* تغيير لون الخلفية عند المرور */
+    }
+
+    .back-to-top {
+            position: fixed;
+            bottom: 20px; /* المسافة من أسفل الصفحة */
+            right: 20px; /* المسافة من اليمين */
+            background-color: #007bff; /* لون الخلفية */
+            color: white; /* لون النص */
+            padding: 10px 15px; /* الحشو */
+            border: none; /* بدون حدود */
+            border-radius: 5px; /* زوايا دائرية */
+            cursor: pointer; /* شكل المؤشر */
+            display: none; /* مخفي في البداية */
+            transition: background-color 0.3s; /* تأثير تغيير اللون */
+        }
+
+        .back-to-top:hover {
+            background-color: #0056b3; /* لون الخلفية عند التمرير فوق الزر */
+        }
+
+    
+</style>
+
+<!-- JavaScript -->
+<script>
+    function closeBanner() {
+        document.getElementById('promoBanner').style.display = 'none'; // إخفاء الشريط
+    }
+
+// إظهار الزر عند التمرير لأسفل
+window.onscroll = function() {
+    const button = document.getElementById('backToTop');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        button.style.display = "block"; // إظهار الزر
+    } else {
+        button.style.display = "none"; // إخفاء الزر
+    }
+};
+
+// وظيفة الرجوع للأعلى
+document.getElementById('backToTop').onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'}); // الانتقال لأعلى الصفحة بسلاسة
+};
+</script>

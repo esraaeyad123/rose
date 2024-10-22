@@ -9,20 +9,25 @@
 | component.banners[].description | ?string  |                                                                              |
 | position                        | int      | Sorting number start from zero                                               |
 #}
-
-<section class="s-block s-block--banners container">
-    <div class="grid {{ component.banners|length <= 3 ? 'md:grid-cols-' ~ component.banners|length : 'md:grid-cols-3 two-row' }} grid-flow-row gap-3 sm:gap-8">
-        {% for index, banner in component.banners %}
-            <a  href="{{banner.url}}" aria-label={{banner.title ? banner.title : 'square-banner-' ~ index }} 
-            class="banner-entry lazy {{banner.title ? 'has-overlay' : ''}} {{ component.banners|length <= 3 ? "h-lg-banner" : "h-banner" }}" data-bg="{{ banner.image }}">
-                <article class="banner-entry__text text-with-border">
-                    <h3 class="banner__title font-bold mb-1 leading-6">{{banner.title}}</h3>
-                    <p class="banner__description">{{banner.description}}</p>
-                </article>
-            </a>
-
-        
-        {% endfor %}
+<div class="py-10 xl:px-28 lg:px-18 px-5">
+    <div class="container mx-auto w-full h-full {{ component.banners|length <= 3 ? 'md:grid-cols-' ~ component.banners|length : 'md:grid-cols-3 two-row' }}">
+        <div class="w-full flex justify-center items-center">
+            <div class="flex flex-wrap lg:flex-nowrap gap-5 justify-center">
+                {% for index, banner in component.banners %}
+                <div class="lg:flex-1 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="100">
+                    <a href="{{ banner.url }}" aria-label="{{ banner.title ? banner.title : 'square-banner-' ~ index }}">
+                        <div class="relative">
+                            <img src="{{ banner.image }}" alt="" class="w-full h-full object-cover relative z-10 {{ banner.title ? 'has-overlay' : '' }} {{ component.banners|length <= 3 ? 'h-lg-banner' : 'h-banner' }}">
+                            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-20"></div> <!-- إضافة ظل أسود -->
+                            <div class="absolute top-0 right-0 w-full h-full flex flex-col justify-end items-start p-4 text-white z-30">
+                                <h3 class="text-3xl font-bold w-full py-2 leading-tight">{{ banner.title }}</h3>
+                                <p class="banner__description">{{ banner.description }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-</section>
-
+</div>
