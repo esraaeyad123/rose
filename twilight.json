@@ -1977,7 +1977,7 @@
                 {
                     "type": "items",
                     "icon": "sicon-link",
-                    "label": "الرابط",
+                    "label": "منتجات",
                     "id": "products",
                     "value": null,
                     "description": null,
