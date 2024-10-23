@@ -18,36 +18,21 @@
       </div>
     </div>
     
-    <div class="relative -mt-12 container">
-      
-    </div>
-  </section>
   
-
-
-
-  <section class="s-blockl fixed-products-with-image">
-    <div aria-hidden="true" class="flex items-center justify-center h-96 overflow-hidden relative w-full">
-      <video class="bg-cover w-full origin-center" autoplay="" loop="" muted="">
-        <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/32875906/277474661-1960a180-d7d3-41ba-abb2-87a054855477.mp4" type="video/mp4">
-      </video>
-      <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
-  
-      <!-- النص وزر -->
-      <div class="absolute bottom-20 left-5 right-5 text-right">
-        <h4 class="text-black text-2xl font-bold">hhhhhhhhhhhhhhhhhhhhh</h4>
-        <p class="text-black text-sm opacity-70"> kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</p>
-        <a href="https://salla.sa/dev-0dvixz52swmu55m6/redirect/categories/97219664" class="flex py-3 px-6 mt-3 gap-2 font-semibold items-center justify-center button-style transition-all rounded">
-          <span class="font-semibold">hhhhhhhhhhhhhhhhhhh</span>
-        </a>
-      </div>
-    </div>
-    
     <div class="relative -mt-12 container">
       <div class="mt-6">       
-       
-       
+        
+        {% for product in component.products %}
+        <custom-salla-product-card
+            product-id="{{ product.id }}"
+            horizontal-cards="true">
+        </custom-salla-product-card>
+    {% endfor %}
       </div>
     </div>
   </section>
-  
+
+
+
+
+ 
