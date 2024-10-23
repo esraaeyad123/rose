@@ -65,13 +65,13 @@
   <div class="relative -mt-12 container">
     <div class="mt-6">       
       <salla-products-list
-    source="selected"
-    limit="{{ limit }}"
-    source-value="[{{ products|map((products) => product.id)|join(',') }}]"
-    class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
-    {{is_vertical ? '' : 'horizontal-cards'}}
-    >
-  </salla-products-list>
+      source="selected"
+      limit="{{ limit }}"
+      source-value="[{{ products|map((product) => product.id)|join(',') }}]"
+      class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
+      {{is_vertical ? '' : 'horizontal-cards'}}
+      >
+    </salla-products-list>
      
     </div>
   </div>
