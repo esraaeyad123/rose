@@ -1,3 +1,4 @@
+
 <section class="s-blockl fixed-products-with-image">
     <div aria-hidden="true" class="flex items-center justify-center h-96 overflow-hidden relative w-full">
       <video class="bg-cover w-full origin-center" autoplay="" loop="" muted="">
@@ -17,14 +18,13 @@
     
     <div class="relative -mt-12 container">
       <div class="mt-6">       
-        <salla-products-list
-      source="selected"
-      limit="{{ limit }}"
-      source-value="[{{ products|map((products) => product.id)|join(',') }}]"
-      class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}"
-      {{is_vertical ? '' : 'horizontal-cards'}}
-      >
-    </salla-products-list>
+        <salla-products-list 
+                      source="selected" 
+                      source-value="[{{ section.products|map((product) => product.id)|join(',') }}]"
+                      {{is_vertical ? '' : 'horizontal-cards'}}
+                      >
+                    </salla-products-list>
+      </salla-products-list>
        
       </div>
     </div>
