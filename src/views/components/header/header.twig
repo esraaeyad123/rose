@@ -150,11 +150,6 @@
     </div>
  
    
-  <div class="scroll-to-top animated right fadeInUp" style="display: block;" id="scrollToTop">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 14.135;"></path>
-    </svg>
-</div>
 
 </header>
 {% if store.scope %}
@@ -225,26 +220,7 @@
     }
 
  
-        /* مثال على الهيدر والفوتر */
-        .scroll-to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1000;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.7); /* لون الخلفية */
-    border-radius: 50%;
-    width: 50px; /* حجم الزر */
-    height: 50px; /* حجم الزر */
-    display: none; /* إخفاء الزر بشكل افتراضي */
-    justify-content: center;
-    align-items: center;
-}
 
-/* تأثير عند التحويم */
-.scroll-to-top:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-}
 
     
 </style>
@@ -268,11 +244,7 @@ window.onscroll = function() {
     }
 };
 
-// الرجوع للأعلى عند النقر
-document.getElementById("scrollToTop").onclick = function(event) {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+
 
 window.onload = function() {
     const countdownElement = document.querySelector('.salla-count-down');

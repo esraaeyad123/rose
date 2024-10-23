@@ -76,21 +76,27 @@
 
      </div>
 	<span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-1 md:grid-cols-2 md:grid-cols-3"></span>
-	<div class="progress-wrap">
-		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-		</svg>
-	</div>
+	
 </footer>
+
+
 
 <a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
     <span class="whatsapp-text">تواصل معنا</span>
 </a>
 
-
+<div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14">
+  <i class="sicon-caret-up-double"></i>
+</div>
 
   <script type"text/javascript">
+    document.querySelector('.scroll-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // تأثير التمرير الناعم
+    });
+});
 
 	
 
@@ -126,6 +132,20 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style>
+  .scroll-top {
+    background-color: black; /* اللون الأسود */
+    border-radius: 0; /* مربع بدون زوايا مدورة */
+}
+
+.scroll-top i {
+    color: white; /* لون السهم الأبيض */
+    font-size: 1.5rem; /* حجم السهم */
+}
+
+.scroll-top:hover {
+    background-color: #333; /* لون أغمق عند التمرير فوق الزر */
+}
+
 
   .whatsapp-button {
     display: flex;
@@ -137,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
     text-decoration: none; /* إزالة خط التسطير */
     position: fixed; /* جعل الزر ثابت */
     left: 20px; /* المسافة من اليسار */
-    bottom: 20px; /* المسافة من الأسفل */
+    bottom: 55px; /* المسافة من الأسفل */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل */
 }
 
