@@ -2098,7 +2098,7 @@
                     "type": "items",
                     "icon": "sicon-new-products",
                     "label": " المنتجات",
-                    "id": "",
+                    "id": "roseproduct",
                     "value": [],
                     "description": "اختر أحدث المنتجات، التخفيضات، ومنتجات من تصنيف محدد",
                     "required": false,
