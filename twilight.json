@@ -2099,7 +2099,7 @@
         "type": "items",
         "icon": "sicon-link",
         "label": "منتجات",
-        "id": "roseproduct",
+        "id": "products",
         "value": [],
         "description": "أضف منتجات",
         "required": false,
