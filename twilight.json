@@ -2098,10 +2098,10 @@
      {
         "type": "items",
         "icon": "sicon-link",
-        "label": "الرابط",
-        "id": "",
+        "label": "منتجات",
+        "id": "roseproduct",
         "value": [],
-        "description": "أضف الرابط",
+        "description": "أضف منتجات",
         "required": false,
         "format": "variable-list",
         "searchable": true,
