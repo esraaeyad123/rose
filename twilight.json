@@ -2072,25 +2072,40 @@
                 },
                 {
                     "type": "items",
-                    "icon": "sicon-link",
-                    "label": "products",
-                    "id": "products",
+                    "icon": "sicon-new-products",
+                    "label": " المنتجات",
+                    "id": "",
                     "value": [],
-                    "description": "اضافة المنتجات'",
+                    "description": "اختر أحدث المنتجات، التخفيضات، ومنتجات من تصنيف محدد",
                     "required": false,
                     "format": "variable-list",
                     "searchable": true,
                     "source": "custom",
                     "sources": [
                         {
-                            "label": "منتج",
-                            "key": "products",
-                            "value": "products"
+                            "label": "أحدث المنتجات",
+                            "key": "latest_products",
+                            "value": "latest_products"
+                        },
+                        {
+                            "label": "التخفيضات",
+                            "key": "offers",
+                            "value": "offers"
+                        },
+                        {
+                            "label": "منتجات من تصنيف",
+                            "key": "category_products",
+                            "value": "category_products"
                         },
                         {
                             "label": "تصنيف",
                             "key": "categories",
                             "value": "categories"
+                        },
+                        {
+                            "label": "منتج",
+                            "key": "products",
+                            "value": "products"
                         },
                         {
                             "label": "ماركة تجارية",
@@ -2113,11 +2128,6 @@
                             "value": "blog_categories"
                         },
                         {
-                            "label": "التخفيضات",
-                            "key": "offers_link",
-                            "value": "offers_link"
-                        },
-                        {
                             "label": "الماركات التجارية",
                             "key": "brands_link",
                             "value": "brands_link"
@@ -2134,6 +2144,7 @@
                         }
                     ]
                 }
+                
             ]
         }
     ],

@@ -1,112 +1,55 @@
-
-
-<script type="text/javascript">
-    $(window).on('load',function(){
-        $('#myModal').modal('show');
-    });
-</script>
-
-<div class="bg-gray-900  flex flex-col items-center justify-center text-white">
-  <!-- Logo or Header -->
-  <h1 class="text-4xl font-bold mb-6">Coming Soon
-
-    {{banner.countdown}}
-    {{ banner.countdown|date("MM DD, YYYY HH:mm:ss")  }}
-  </h1>
-
-  <!-- Countdown Timer -->
-  <div class="flex text-2xl mb-6">
-    <div class="mr-2">
-      <span id="days" class="font-semibold">00</span> Days
-    </div>
-    <div class="mr-2">
-      <span id="hours" class="font-semibold">00</span> Hours
-    </div>
-    <div class="mr-2">
-      <span id="minutes" class="font-semibold">00</span> Minutes
-    </div>
-    <div>
-      <span id="seconds" class="font-semibold">00</span> Seconds
-    </div>
+<section class="art-countdown bg-gray-300 h-screen w-full relative bg-no-repeat bg-center bg-cover bg-origin-border overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/20 after:z-10 lg:px-10 md:px-5 px-1 lg:py-20 md:py-10 py-5" style="background-image: url( 'https://cdn.salla.sa/form-builder/yrLsNz44b9tu2YU0RnuLWHSHbu9kYuBnCLZuG7cz.jpg' );">
+  <div class="container mx-auto w-full h-full relative z-20">
+  <div class="grid md:grid-cols-2 grid-cols-1 justify-between items-center w-full h-full lg:gap-20 md:gap-10">
+  <div class="flex flex-col gap-6 lg:px-10 md:order-last">
+  <span class="art-text-subtitle capitalize text-[16px] font-[200] ltr:tracking-[1px]" style="color: #ffffff">احصل عليها قبل انتهاء العرض</span>
+  <h2 class="art-text-title capitalize md:text-[34px] text-[28px] font-medium leading-[45px] ltr:tracking-[1px]" style="color: #ffffff" data-aos="zoom-out-up" data-aos-duration="800" data-aos-once="true">
+  تخفيض حصري: شنط جلدية فاخرة
+  </h2>
+  <p class="art-text-description text-[17px]" style="color: #ffffff">سارعوا واستفيدوا من تخفيضنا المحدود على الشنط الجلدية الفاخرة. تقدم مجموعتنا تشكيلة من التصاميم التي تجمع بين العملية والأناقة، مما يجعل كل شنطة قطعة مميزة. مصنوعة من الجلد الفاخر</p>
+  <div class="flex gap-2 group" data-aos="zoom-out" data-aos-duration="800" data-aos-once="true">
+  <a href="https://salla.sa/dev-oqggslwyq7yuaskf/redirect/products/1285593759" target="_self">
+  <button style="color: var(--color-primary-reverse); border-color: var(--color-primary);" class="art-text-button ltr:tracking-[3px] relative py-4 px-8 border-[1px] uppercase text-[16px] overflow-hidden duration-300 z-50 bg-transparent" fdprocessedid="k334vn">
+  <span class="relative z-50">تسوقىىى الان</span>
+  <span class="absolute block top-0 left-0 w-full h-full scale-x-100 rtl:origin-right ltr:origin-left after:z-[-1] group-hover:scale-x-0 duration-500" style="background-color: var(--color-primary)"></span>
+  </button>
+  </a>
   </div>
-
-
-
-</div>
-
-
-<div class="card w-40">
-  <div class="card__content text-center relative p-20 transition-transform duration-1000 text-white font-bold">
-    
-    <div class="card__front absolute top-0 bottom-0 right-0 left-0 p-8 bg-pink-600 flex items-center justify-center">
-      <h2>Front</h2>
-    </div>
-    <div class="card__back absolute top-0 bottom-0 right-0 left-0 p-8 bg-teal-500 flex items-center justify-center">
-      <h2>Back</h2>
-    </div>
-    
   </div>
-</div>
-<style>
-  .card { perspective: 800px;}
-.card__content {transform-style: preserve-3d;}
-.card:hover .card__content {transform: rotateY(.5turn);}
-
-.card__front,
-.card__back { backface-visibility: hidden;}
-.card__back{ transform: rotateY(.5turn);}
-</style>
-<script>
-  // Set the date we're counting down to (adjust the date and time)
-  const countDownDate = new Date("Dec 30, 2025 00:00:00").getTime();
-
-  // Update the countdown every 1 second
-  const x = setInterval(function () {
-    // Get the current date and time
-    const now = new Date().getTime();
-
-    // Calculate the time remaining
-    const distance = countDownDate - now;
-
-    // Calculate days, hours, minutes, and seconds
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Display the countdown in the HTML
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-
-    // If the countdown is over, display a message
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("countdown").innerHTML = "EXPIRED";
-    }
-  }, 1000);
-
-
-  // Initialization for ES Users
-
-</script>
-
-
-{% block scripts %}
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <script defer src="{{ 'product.js' | asset }}">
-      $(window).on('load',function(){
-        $('#myModal').modal('show');
-    });
-
-    
-    </script>
-    <script type="text/javascript">
-    $(window).on('load',function(){
-        $('#myModal').modal('show');
-    });
-</script>
+  <div class="flex justify-center items-center relative z-30 md:order-first">
   
-{% endblock %}
+  <salla-count-down color="#ffffff" labeled="true" date="2024-11-26" boxed="false" digits="ar" dir="rtl" size="lg" class="s-count-down-wrapper hydrated">
+  <ul class="s-count-down-list s-count-down-lg s-count-down-#ffffff">
+    <li class="s-count-down-item"><div class="s-count-down-item-value">8</div>
+      <div class="s-count-down-item-label">ثانية</div></li><li class="s-count-down-item"><div class="s-count-down-item-value">17</div><div class="s-count-down-item-label">دقيقة</div></li><li class="s-count-down-item"><div class="s-count-down-item-value">0</div><div class="s-count-down-item-label">ساعة</div></li><li class="s-count-down-item"><div class="s-count-down-item-value">35</div><div class="s-count-down-item-label">يوم</div></li></ul>
+    
+    </salla-count-down>
+  </div>
+  </div>
+  </div>
+  </section>
+ 
+  <section class="art-countdown bg-gray-300 h-screen w-full relative bg-no-repeat bg-center bg-cover bg-origin-border overflow-hidden" style="background-image: url('https://cdn.salla.sa/form-builder/yrLsNz44b9tu2YU0RnuLWHSHbu9kYuBnCLZuG7cz.jpg');">
+    <div class="container mx-auto w-full h-full relative z-20">
+        <div class="grid md:grid-cols-2 grid-cols-1 justify-between items-center w-full h-full lg:gap-20 md:gap-10">
+            <div class="flex flex-col gap-6 lg:px-10 md:order-last">
+                <span class="art-text-subtitle capitalize text-[16px] font-[200] ltr:tracking-[1px]" style="color: #ffffff">احصل عليها قبل انتهاء العرض</span>
+                <h2 class="art-text-title capitalize md:text-[34px] text-[28px] font-medium leading-[45px] ltr:tracking-[1px]" style="color: #ffffff">
+                    تخفيض حصري: شنط جلدية فاخرة
+                </h2>
+                <p class="art-text-description text-[17px]" style="color: #ffffff">سارعوا واستفيدوا من تخفيضنا المحدود على الشنط الجلدية الفاخرة. تقدم مجموعتنا تشكيلة من التصاميم التي تجمع بين العملية والأناقة، مما يجعل كل شنطة قطعة مميزة.</p>
+                <div class="flex gap-2">
+                    <a href="https://salla.sa/dev-oqggslwyq7yuaskf/redirect/products/1285593759" target="_self">
+                        <button style="color: var(--color-primary-reverse); border-color: var(--color-primary);" class="art-text-button ltr:tracking-[3px] relative py-4 px-8 border-[1px] uppercase text-[16px] overflow-hidden duration-300 z-50 bg-transparent">
+                            <span class="relative z-50">تسوق الان</span>
+                            <span class="absolute block top-0 left-0 w-full h-full scale-x-100 rtl:origin-right ltr:origin-left after:z-[-1] group-hover:scale-x-0 duration-500" style="background-color: var(--color-primary)"></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center items-center relative z-30 md:order-first">
+                <salla-count-down color="#ffffff" labeled="true" date="2024-11-26T00:00:00" boxed="false" digits="ar" dir="rtl" size="lg" class="s-count-down-wrapper hydrated"></salla-count-down>
+            </div>
+        </div>
+    </div>
+</section>

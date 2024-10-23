@@ -4442,3 +4442,22 @@ salla-slider.details-slider .swiper-slide {
 
 
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px; /* المسافة من الأسفل */
+  right: 20px; /* المسافة من اليمين */
+  background-color: #25D366; /* لون خلفية واتساب */
+  border-radius: 50%; /* شكل دائري */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* تأثير ظل */
+  padding: 10px; /* حجم الزر */
+  transition: transform 0.3s; /* تأثير عند التحويم */
+}
+
+.whatsapp-button img {
+  width: 40px; /* حجم الأيقونة */
+  height: 40px; /* حجم الأيقونة */
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1); /* تكبير عند التحويم */
+}

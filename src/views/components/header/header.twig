@@ -124,7 +124,12 @@
     </div>
     </div>
  
-    <button class="back-to-top" id="backToTop">رجوع للأعلى</button>
+   
+  <div class="scroll-to-top animated right fadeInUp" style="display: block;" id="scrollToTop">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 14.135;"></path>
+    </svg>
+</div>
 
 </header>
 {% if store.scope %}
@@ -194,23 +199,27 @@
         background-color: #f0f0f0; /* تغيير لون الخلفية عند المرور */
     }
 
-    .back-to-top {
-            position: fixed;
-            bottom: 20px; /* المسافة من أسفل الصفحة */
-            right: 20px; /* المسافة من اليمين */
-            background-color: #007bff; /* لون الخلفية */
-            color: white; /* لون النص */
-            padding: 10px 15px; /* الحشو */
-            border: none; /* بدون حدود */
-            border-radius: 5px; /* زوايا دائرية */
-            cursor: pointer; /* شكل المؤشر */
-            display: none; /* مخفي في البداية */
-            transition: background-color 0.3s; /* تأثير تغيير اللون */
-        }
+ 
+        /* مثال على الهيدر والفوتر */
+        .scroll-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7); /* لون الخلفية */
+    border-radius: 50%;
+    width: 50px; /* حجم الزر */
+    height: 50px; /* حجم الزر */
+    display: none; /* إخفاء الزر بشكل افتراضي */
+    justify-content: center;
+    align-items: center;
+}
 
-        .back-to-top:hover {
-            background-color: #0056b3; /* لون الخلفية عند التمرير فوق الزر */
-        }
+/* تأثير عند التحويم */
+.scroll-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
 
     
 </style>
@@ -221,18 +230,23 @@
         document.getElementById('promoBanner').style.display = 'none'; // إخفاء الشريط
     }
 
-// إظهار الزر عند التمرير لأسفل
+
+
+
+        // إظهار الزر عند التمرير
 window.onscroll = function() {
-    const button = document.getElementById('backToTop');
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        button.style.display = "block"; // إظهار الزر
+    const button = document.getElementById("scrollToTop");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        button.style.display = "flex"; // إظهار الزر
     } else {
         button.style.display = "none"; // إخفاء الزر
     }
 };
 
-// وظيفة الرجوع للأعلى
-document.getElementById('backToTop').onclick = function() {
-    window.scrollTo({top: 0, behavior: 'smooth'}); // الانتقال لأعلى الصفحة بسلاسة
+// الرجوع للأعلى عند النقر
+document.getElementById("scrollToTop").onclick = function(event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
 </script>

@@ -82,48 +82,85 @@
 		</svg>
 	</div>
 </footer>
+
+<a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
+    <span class="whatsapp-text">تواصل معنا</span>
+</a>
+
+
+
   <script type"text/javascript">
 
 	
-//Scroll back to top
 
-(function($) { "use strict";
 
-	$(document).ready(function(){"use strict";
-		
-		var progressPath = document.querySelector('.progress-wrap path');
-		var pathLength = progressPath.getTotalLength();
-		progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-		progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-		progressPath.style.strokeDashoffset = pathLength;
-		progressPath.getBoundingClientRect();
-		progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';		
-		var updateProgress = function () {
-			var scroll = $(window).scrollTop();
-			var height = $(document).height() - $(window).height();
-			var progress = pathLength - (scroll * pathLength / height);
-			progressPath.style.strokeDashoffset = progress;
-		}
-		updateProgress();
-		$(window).scroll(updateProgress);	
-		var offset = 50;
-		var duration = 550;
-		jQuery(window).on('scroll', function() {
-			if (jQuery(this).scrollTop() > offset) {
-				jQuery('.progress-wrap').addClass('active-progress');
-			} else {
-				jQuery('.progress-wrap').removeClass('active-progress');
-			}
-		});				
-		jQuery('.progress-wrap').on('click', function(event) {
-			event.preventDefault();
-			jQuery('html, body').animate({scrollTop: 0}, duration);
-			return false;
-		})
-		
-		
-	});
-	
-})(jQuery); 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const whatsappButton = document.getElementById('whatsapp-button');
+
+    whatsappButton.addEventListener('click', function(event) {
+        event.preventDefault(); // منع التصرف الافتراضي للرابط
+
+        let message = "مرحبًا! أود الاستفسار عن ";
+        const productLink = window.location.href; // الحصول على رابط الصفحة الحالية
+
+        // تحقق من نوع الصفحة
+        if (document.title.includes("منتج")) { 
+            const productName = document.querySelector('h1').innerText; // اسم المنتج
+            message += `${productName}. يمكنك زيارة الرابط: ${productLink}`;
+        } else if (document.title.includes("طلب")) { 
+            const orderNumber = "رقم الطلب"; // هنا يمكنك استبداله برقم الطلب الفعلي
+            message += `طلبتي رقم ${orderNumber}. يمكنك زيارة الرابط: ${productLink}`;
+        } else {
+            message += "معلومات إضافية.";
+        }
+
+        const phoneNumber = "96659668246"; // أدخل رقم هاتفك هنا
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank'); // فتح الرابط في نافذة جديدة
+    });
+});
+
 
 </script>
+
+<style>
+
+	.whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* المسافة من الأسفل */
+    left: 20px; /* المسافة من اليسار */
+    background-color: #25D366; /* لون خلفية واتساب */
+    border-radius: 50%; /* شكل دائري */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* تأثير ظل */
+    padding: 10px; /* حجم الزر */
+    transition: transform 0.3s, background-color 0.3s; /* تأثير عند التحويم */
+    z-index: 1000; /* تأكد أن الزر يظهر فوق العناصر الأخرى */
+    display: flex; /* لتمكين استخدام flexbox */
+    align-items: center; /* توسيط العمود */
+}
+
+.whatsapp-button img {
+    width: 40px; /* حجم الأيقونة */
+    height: 40px; /* حجم الأيقونة */
+    margin-right: 5px; /* مسافة بين الأيقونة والنص */
+}
+
+.whatsapp-text {
+    color: white; /* لون النص */
+    font-size: 14px; /* حجم النص */
+    display: none; /* إخفاء النص بشكل افتراضي */
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1); /* تكبير عند التحويم */
+    background-color: #128C7E; /* تغيير اللون عند التحويم */
+}
+
+.whatsapp-button:hover .whatsapp-text {
+    display: block; /* إظهار النص عند التحويم */
+}
+
+
+</style>
