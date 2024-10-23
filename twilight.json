@@ -2029,7 +2029,7 @@
                     "maxLength": 255
                 },
                 {
-                    "id": "alrabt_alfedeo",
+                    "id": "url",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
@@ -2041,7 +2041,7 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30
+                    "maxLength": "9000"
                 },
                 {
                     "id": "textButton",
@@ -2097,7 +2097,7 @@
                 {
                     "type": "items",
                     "icon": "sicon-new-products",
-                    "label": " المنتجات",
+                    "label": "المنتجات",
                     "id": "roseproduct",
                     "value": [],
                     "description": "اختر أحدث المنتجات، التخفيضات، ومنتجات من تصنيف محدد",
@@ -2168,7 +2168,6 @@
                         }
                     ]
                 }
-                
             ]
         }
     ],
