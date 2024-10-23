@@ -127,25 +127,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <style>
 
-	.whatsapp-button {
-    position: fixed;
-    bottom: 20px; /* المسافة من الأسفل */
+  .whatsapp-button {
+    display: flex;
+    align-items: center; /* توسيط المحتوى عمودياً */
+    background-color: #25D366; /* لون الخلفية الأخضر */
+    color: white; /* لون النص */
+    padding: 10px 15px; /* مساحة داخلية */
+    border-radius: 5px; /* زوايا مستديرة قليلاً */
+    text-decoration: none; /* إزالة خط التسطير */
+    position: fixed; /* جعل الزر ثابت */
     left: 20px; /* المسافة من اليسار */
-    background-color: #25D366; /* لون خلفية واتساب */
-    border-radius: 50%; /* شكل دائري */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* تأثير ظل */
-    padding: 10px; /* حجم الزر */
-    transition: transform 0.3s, background-color 0.3s; /* تأثير عند التحويم */
-    z-index: 1000; /* تأكد أن الزر يظهر فوق العناصر الأخرى */
-    display: flex; /* لتمكين استخدام flexbox */
-    align-items: center; /* توسيط العمود */
+    bottom: 20px; /* المسافة من الأسفل */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل */
 }
 
 .whatsapp-button img {
-    width: 40px; /* حجم الأيقونة */
-    height: 40px; /* حجم الأيقونة */
-    margin-right: 5px; /* مسافة بين الأيقونة والنص */
+    width: 30px; /* عرض الصورة */
+    height: 30px; /* ارتفاع الصورة */
+    margin-left: 5px; /* مساحة بين الصورة والنص */
 }
+
+.whatsapp-text {
+    font-size: 16px; /* حجم النص */
+}
+
 
 .whatsapp-text {
     color: white; /* لون النص */

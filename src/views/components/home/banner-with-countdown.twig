@@ -17,39 +17,69 @@
   </div>
   </div>
   <div class="flex justify-center items-center relative z-30 md:order-first">
+    <div class="art-countdown-nav">
+        <salla-count-down class="salla-count-down" data-end-time="2024-11-30">
+          <ul class="s-count-down-list s-count-down-sm">
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="days">0</div><div class="s-count-down-item-label">يوم</div></li>
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="hours">0</div><div class="s-count-down-item-label">ساعة</div></li>
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="minutes">0</div><div class="s-count-down-item-label">دقيقة</div></li>
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="seconds">0</div><div class="s-count-down-item-label">ثانية</div></li>
+          </ul>
+        </salla-count-down>
+      </div>
+      
   
-  <salla-count-down color="#ffffff" labeled="true" date="2024-11-26" boxed="false" digits="ar" dir="rtl" size="lg" class="s-count-down-wrapper hydrated">
-  <ul class="s-count-down-list s-count-down-lg s-count-down-#ffffff">
-    <li class="s-count-down-item"><div class="s-count-down-item-value">8</div>
-      <div class="s-count-down-item-label">ثانية</div></li><li class="s-count-down-item"><div class="s-count-down-item-value">17</div><div class="s-count-down-item-label">دقيقة</div></li><li class="s-count-down-item"><div class="s-count-down-item-value">0</div><div class="s-count-down-item-label">ساعة</div></li><li class="s-count-down-item"><div class="s-count-down-item-value">35</div><div class="s-count-down-item-label">يوم</div></li></ul>
-    
-    </salla-count-down>
   </div>
   </div>
   </div>
   </section>
+
+
+
+  
+  <script type"text/javascript">
+
+	window.onload = function() {
+    const countdownElement = document.querySelector('.salla-count-down');
+    
+    if (!countdownElement) {
+        console.error('Element not found!');
+        return; // إنهاء الدالة إذا لم يتم العثور على العنصر
+    }
+    
+    const endDate = countdownElement.getAttribute('data-end-time');
+    const endTime = new Date(`${endDate}T00:00:00Z`).getTime();
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.querySelector('.s-count-down-list').innerHTML = "<li>انتهى العد التنازلي!</li>";
+            return; 
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
+
+        document.getElementById('days').innerText = days;
+        document.getElementById('hours').innerText = hours;
+        document.getElementById('minutes').innerText = minutes;
+        document.getElementById('seconds').innerText = seconds;
+    };
+
+    updateCountdown();
+    const x = setInterval(updateCountdown, 1000);
+};
+
+
+
+
+
  
-  <section class="art-countdown bg-gray-300 h-screen w-full relative bg-no-repeat bg-center bg-cover bg-origin-border overflow-hidden" style="background-image: url('https://cdn.salla.sa/form-builder/yrLsNz44b9tu2YU0RnuLWHSHbu9kYuBnCLZuG7cz.jpg');">
-    <div class="container mx-auto w-full h-full relative z-20">
-        <div class="grid md:grid-cols-2 grid-cols-1 justify-between items-center w-full h-full lg:gap-20 md:gap-10">
-            <div class="flex flex-col gap-6 lg:px-10 md:order-last">
-                <span class="art-text-subtitle capitalize text-[16px] font-[200] ltr:tracking-[1px]" style="color: #ffffff">احصل عليها قبل انتهاء العرض</span>
-                <h2 class="art-text-title capitalize md:text-[34px] text-[28px] font-medium leading-[45px] ltr:tracking-[1px]" style="color: #ffffff">
-                    تخفيض حصري: شنط جلدية فاخرة
-                </h2>
-                <p class="art-text-description text-[17px]" style="color: #ffffff">سارعوا واستفيدوا من تخفيضنا المحدود على الشنط الجلدية الفاخرة. تقدم مجموعتنا تشكيلة من التصاميم التي تجمع بين العملية والأناقة، مما يجعل كل شنطة قطعة مميزة.</p>
-                <div class="flex gap-2">
-                    <a href="https://salla.sa/dev-oqggslwyq7yuaskf/redirect/products/1285593759" target="_self">
-                        <button style="color: var(--color-primary-reverse); border-color: var(--color-primary);" class="art-text-button ltr:tracking-[3px] relative py-4 px-8 border-[1px] uppercase text-[16px] overflow-hidden duration-300 z-50 bg-transparent">
-                            <span class="relative z-50">تسوق الان</span>
-                            <span class="absolute block top-0 left-0 w-full h-full scale-x-100 rtl:origin-right ltr:origin-left after:z-[-1] group-hover:scale-x-0 duration-500" style="background-color: var(--color-primary)"></span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="flex justify-center items-center relative z-30 md:order-first">
-                <salla-count-down color="#ffffff" labeled="true" date="2024-11-26T00:00:00" boxed="false" digits="ar" dir="rtl" size="lg" class="s-count-down-wrapper hydrated"></salla-count-down>
-            </div>
-        </div>
-    </div>
-</section>
+</script>

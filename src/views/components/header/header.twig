@@ -11,6 +11,31 @@
   </div>
   <button class="close-button" onclick="closeBanner()">✖</button>
 </div>
+<div class="art-top-navbar store-header">
+  <div class="top-navbar bg-[var(--color-upper-background)] text-[var(--color-upper-text)] h-full w-full">
+    <div class="flex gap-4 md:flex-row flex-col md:justify-between justify-center items-center w-full lg:px-10 md:px-5 px-2">
+      <div class="flex flex-wrap md:gap-x-4 md:gap-0 gap-2 items-center text-[16px] text-[var(--color-upper-text)]">
+        <span class="uppercase ltr:tracking-[2px]">خصم حتى 40%</span>
+        <a href="" class="md:block hidden relative text-[16px] ltr:tracking-[2px] uppercase after:absolute after:w-full after:h-[1px] after:bg-[var(--color-upper-text)] after:bottom-[0px] ltr:after:left-0 rtl:after:right-0 hover:after:w-0 after:duration-500">تسوق الان</a>
+      </div>
+    
+      <div class="art-countdown-nav">
+        <salla-count-down class="salla-count-down" data-end-time="2024-11-30">
+          <ul class="s-count-down-list s-count-down-sm">
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="days">0</div><div class="s-count-down-item-label">يوم</div></li>
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="hours">0</div><div class="s-count-down-item-label">ساعة</div></li>
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="minutes">0</div><div class="s-count-down-item-label">دقيقة</div></li>
+            <li class="s-count-down-item"><div class="s-count-down-item-value" id="seconds">0</div><div class="s-count-down-item-label">ثانية</div></li>
+          </ul>
+        </salla-count-down>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</div>
+
 
 
 {% set important_links = theme.settings.get('important_links') %}
@@ -247,6 +272,44 @@ window.onscroll = function() {
 document.getElementById("scrollToTop").onclick = function(event) {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+window.onload = function() {
+    const countdownElement = document.querySelector('.salla-count-down');
+    
+    if (!countdownElement) {
+        console.error('Element not found!');
+        return; // إنهاء الدالة إذا لم يتم العثور على العنصر
+    }
+    
+    const endDate = countdownElement.getAttribute('data-end-time');
+    const endTime = new Date(`${endDate}T00:00:00Z`).getTime();
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.querySelector('.s-count-down-list').innerHTML = "<li>انتهى العد التنازلي!</li>";
+            return; 
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
+
+        document.getElementById('days').innerText = days;
+        document.getElementById('hours').innerText = hours;
+        document.getElementById('minutes').innerText = minutes;
+        document.getElementById('seconds').innerText = seconds;
+    };
+
+    updateCountdown();
+    const x = setInterval(updateCountdown, 1000);
 };
 
 </script>
