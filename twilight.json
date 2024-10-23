@@ -2094,14 +2094,14 @@
                     "value": "#004956",
                     "required": false
                 },
-               
+                
      {
         "type": "items",
         "icon": "sicon-link",
-        "label": "المنتجات",
-        "id": "products",
+        "label": "الرابط",
+        "id": "",
         "value": [],
-        "description": "أضف المنتجات",
+        "description": "أضف الرابط",
         "required": false,
         "format": "variable-list",
         "searchable": true,
