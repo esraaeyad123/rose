@@ -6,19 +6,19 @@
       <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
 
       <!-- النص وزر -->
-      <div class="absolute bottom-20 left-5 right-5 text-right" style="color:{{component.colortext}}">
-          <h4 class="text-black text-2xl font-bold">{{component.title}}</h4>
-          <p class="text-black text-sm opacity-70">{{component.desc}}</p>
-          <div class="mt-2 button-container">
+      <div class="absolute bottom-20 left-5 right-5 text-right   md:mr-20  md:pr-11" style="color:{{component.colortext}} ;">
+        <h4 class="text-black text-2xl font-bold">{{component.title}}</h4>
+        <p class="text-black text-sm opacity-70">{{component.desc}}</p>
+        <div class="mt-2 button-container">
             <button class="button text-sm md:text-base flex gap-2 justify-center items-center shadow rounded-[0.25rem] h-10" 
                 onclick="window.location.href='{{component.display_all_url}}'" 
                 type="button" 
-                style="background-color:{{component.coloeButton}}; color:{{component.colorbuttonText}};">
+                style="background-color:{{component.coloeButton}}; color:{{component.colorbuttonText}}; ">
                 <span>{{component.textButton}}</span>
             </button>
         </div>
-        
-      </div>
+    </div>
+    
   </div>
 
   <div class="relative -mt-12 container">

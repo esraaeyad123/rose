@@ -18,14 +18,17 @@
   </div>
   <div class="flex justify-center items-center relative z-30 md:order-first">
     <div class="art-countdown-nav">
-        <salla-count-down class="salla-count-down" data-end-time="2024-11-30">
-          <ul class="s-count-down-list s-count-down-sm">
-            <li class="s-count-down-item"><div class="s-count-down-item-value" id="days">0</div><div class="s-count-down-item-label">يوم</div></li>
-            <li class="s-count-down-item"><div class="s-count-down-item-value" id="hours">0</div><div class="s-count-down-item-label">ساعة</div></li>
-            <li class="s-count-down-item"><div class="s-count-down-item-value" id="minutes">0</div><div class="s-count-down-item-label">دقيقة</div></li>
-            <li class="s-count-down-item"><div class="s-count-down-item-value" id="seconds">0</div><div class="s-count-down-item-label">ثانية</div></li>
-          </ul>
+        <salla-count-down class="salla-count-down" data="{{component.countsown}}" days hours minutes>
+         
         </salla-count-down>
+        <salla-count-down
+        data="{{component.countsown}} days hours minutes" 
+  color="#baf2e5"
+  boxed=true
+  digits="en"
+  size="md">
+</salla-count-down>
+
       </div>
       
   
@@ -36,50 +39,3 @@
 
 
 
-  
-  <script type"text/javascript">
-
-	window.onload = function() {
-    const countdownElement = document.querySelector('.salla-count-down');
-    
-    if (!countdownElement) {
-        console.error('Element not found!');
-        return; // إنهاء الدالة إذا لم يتم العثور على العنصر
-    }
-    
-    const endDate = countdownElement.getAttribute('data-end-time');
-    const endTime = new Date(`${endDate}T00:00:00Z`).getTime();
-
-    const updateCountdown = () => {
-        const now = new Date().getTime();
-        const distance = endTime - now;
-
-        if (distance < 0) {
-            clearInterval(x);
-            document.querySelector('.s-count-down-list').innerHTML = "<li>انتهى العد التنازلي!</li>";
-            return; 
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
-
-        document.getElementById('days').innerText = days;
-        document.getElementById('hours').innerText = hours;
-        document.getElementById('minutes').innerText = minutes;
-        document.getElementById('seconds').innerText = seconds;
-    };
-
-    updateCountdown();
-    const x = setInterval(updateCountdown, 1000);
-};
-
-
-
-
-
- 
-</script>
