@@ -1,0 +1,23 @@
+.rtl .rtl-range-slider,
+[dir=rtl] .rtl-range-slider {
+  transform: rotateY(180deg);
+}
+.rtl .rtl-range-numbers,
+[dir=rtl] .rtl-range-numbers {
+  flex-direction: row-reverse;
+}
+.rtl .form-select, .rtl select,
+[dir=rtl] .form-select,
+[dir=rtl] select {
+  background-position: left 0.5rem center;
+  padding-right: 12px;
+}
+.rtl .fix-align,
+[dir=rtl] .fix-align {
+  transform: translateY(-2px);
+  display: inline-block;
+}
+.rtl .flatpickr-months .numInputWrapper .cur-year,
+[dir=rtl] .flatpickr-months .numInputWrapper .cur-year {
+  padding: 0 15px 0 0;
+}/*# sourceMappingURL=rtl.css.map */

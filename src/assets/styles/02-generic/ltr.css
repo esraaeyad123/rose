@@ -1,0 +1,16 @@
+.sf-dump {
+  direction: ltr;
+}
+
+[dir=ltr] .with-arrow .sicon-keyboard_arrow_left:before,
+[dir=ltr] nav .sicon-keyboard_arrow_left:before,
+[dir=ltr] .sub-menu .has-children > a:after {
+  content: "\e96c";
+}
+[dir=ltr] .flatpickr-months .numInputWrapper .cur-year {
+  padding: 0 0 0 15px;
+}
+[dir=ltr] .flatpickr-months [class^=arrow] {
+  right: unset;
+  left: 0;
+}/*# sourceMappingURL=ltr.css.map */

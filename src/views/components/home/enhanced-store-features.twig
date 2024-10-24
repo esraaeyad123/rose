@@ -35,14 +35,14 @@
   block-title="{{ component.title }}"
   controls-outer
   
-  class="s-slider-wrapper carousel-slider s-slider-has-notitle s-slider-v-centered s-slider-horizontal hydrated">
+  class="s-slider-wrapper carousel-slider s-slider-has-notitle s-slider-v-centered s-slider-horizontal ">
 
-  <div class="swiper s-slider-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl swiper-backface-hidden" dir="rtl">
+  <div class="swiper s-slider-container swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl swiper-backface-hidden" >
       
       <div class="swiper-wrapper s-slider-swiper-wrapper"  >
       {% for item in  component.features %}
 
-        <div class="flex flex-col gap-6 text-center justify-center items-center swiper-slide swiper-slide-active" style="width: auto !important; min-width: 200px !important" >
+        <div class="flex flex-col gap-6 text-center justify-center items-center swiper-slide swiper-slide-active" >
       <span class="bg-[var(--color-primary)] text-[var(--color-primary-reverse)] {{ item.icon }} text-4xl text-white  rounded-[10px] mx-auto w-[100px] h-[100px] flex justify-center items-center"></span>
       <h4 class="text-[var(--color-primary-dark)] text-[22px] font-[500]">
         {{ item.title }}
@@ -67,6 +67,6 @@
 </section>
 <style>
  
-  .yasmeen-features .yasmeen-features-slider .swiper-wrapper
+  .rose-features .rose-features-slider .swiper-wrapper
   {justify-content:space-between!important}
 </style>

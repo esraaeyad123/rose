@@ -1,0 +1,14 @@
+.swiper-lazy {
+  @apply transition-opacity duration-500 opacity-0;
+  @apply absolute top-0 h-full w-full bg-cover bg-center;
+}
+.swiper-lazy.swiper-lazy-loaded {
+  @apply opacity-100;
+}
+
+.lazy__bg {
+  @apply absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-500 opacity-0;
+}
+.lazy__bg.loaded {
+  @apply opacity-100;
+}/*# sourceMappingURL=lazyload.css.map */
