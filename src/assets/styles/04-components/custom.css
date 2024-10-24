@@ -695,63 +695,60 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   fill: red;
 }
 
-/* From Uiverse.io by andrew-demchenk0 */
+
 .button-add {
-  position: relative;
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--color-primary);
-  background-color: var(--color-primary);
-}
-
-.button-add, .button__icon, .button__text {
-  transition: all 0.3s;
-}
-
-.button-add .button__text {
-  transform: translateX(30px);
-  color: #fff;
-  font-weight: 600;
-}
-
-.button-add .button__icon {
-  position: absolute;
-  transform: translateX(109px);
-  height: 100%;
-  width: 39px;
-  align-items: center;
-  justify-content: center;
-}
-
-.button-add .svg {
-  width: 30px;
-  stroke: #fff;
-}
-
-.button-add:hover {
-  background: var(--color-primary);
-}
-
-.button-add:hover .button__text {
-  color: transparent;
-}
-
-.button-add:hover .button__icon {
-  width: 148px;
-  transform: translateX(0);
-}
-
-.button-add:active .button__icon {
-  background-color: var(--color-primary);
-}
-
-.button-add:active {
-  border: 1px solid var(--color-primary);
-}
-
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+  }
+  
+  .button-add, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .button-add .button__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .button-add .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    width:90px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-add i {
+    width: 30px;
+    stroke: #fff;
+  }
+  
+  .button-add:hover {
+    background: var(--color-primary);
+  }
+  
+  .button-add:hover .button__text {
+    color: transparent;
+  }
+  
+  .button-add:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .button-add:active .button__icon {
+    background-color: var(--color-primary);
+  }
+  
+  .button-add:active {
+    border: 1px solid var(--color-primary);
+  }
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -4251,74 +4248,6 @@ salla-slider.details-slider .swiper-slide {
   --tw-ring-color: rgba(243, 244, 246, var(--tw-ring-opacity));
 }
 
-.button-add {
-  --color: var(--color-primary);
-  padding: 0.8em 1.7em;
-  background-color: var(--color-primary);
-  border-radius: 0.3em;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.5s;
-  font-weight: 400;
-  font-size: 1rem; /* استخدام rem بدلاً من px */
-  border: 4px solid;
-  font-family: inherit;
-  text-transform: uppercase;
-  color: var(--color-primary-light);
-  z-index: 1;
-}
-
-.button-add::before, .button-add::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 50px;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  border-radius: 50%;
-  z-index: -1;
-  background-color: var(--color);
-  transition: 1s ease;
-}
-
-.button-add::before {
-  top: -1em;
-  left: -1em;
-}
-
-.button-add::after {
-  left: calc(100% + 1em);
-  top: calc(100% + 1em);
-}
-
-.button-add:hover::before, .button-add:hover::after {
-  height: 410px;
-  width: 410px;
-}
-
-.button-add:hover {
-  color: var(--color-primary-reverse);
-}
-
-.button-add:active {
-  filter: brightness(0.8);
-}
-
-/* إضافة استعلامات وسائط لضبط حجم الخط */
-@media (max-width: 768px) {
-  .button-add {
-    font-size: 0.9rem; /* حجم أصغر للشاشات الصغيرة */
-    padding: 0.6em 1.4em; /* ضبط الحشو */
-  }
-}
-
-@media (max-width: 480px) {
-  .button-add {
-    font-size: 0.8rem; /* حجم أصغر أكثر للأجهزة الصغيرة جدًا */
-    padding: 0.5em 1.2em; /* ضبط الحشو */
-  }
-}
 
 
 
@@ -4450,3 +4379,67 @@ salla-slider.details-slider .swiper-slide {
   }
 }/*# sourceMappingURL=custom.css.map */
 
+
+
+    .promo-banner {
+        background-color: #ff5733; /* لون الخلفية */
+        color: white; /* لون النص */
+        padding: 15px; /* حشوة */
+        text-align: center; /* محاذاة النص */
+        position: fixed; /* يجعل الشريط ثابتًا في أعلى الصفحة */
+        top: 0; /* الموضع من الأعلى */
+        left: 0; /* الموضع من اليسار */
+        right: 0; /* الموضع من اليمين */
+        z-index: 1000; /* لضمان ظهور الشريط فوق كل العناصر */
+        overflow: hidden; /* لإخفاء المحتوى الزائد */
+        display: flex; /* لجعل المحتوى في سطر واحد */
+        justify-content: space-between; /* توزيع المسافات */
+        align-items: center; /* محاذاة العمود */
+    }
+
+    .banner-content {
+        display: flex;
+        animation: slide 10s linear infinite; /* تأثير الحركة */
+        white-space: nowrap; /* لمنع التفاف النص */
+    }
+
+    .promo-text {
+        margin-right: 20px; /* مسافة بين النص والزر */
+    }
+
+    .close-button {
+        background: none; /* إزالة الخلفية */
+        border: none; /* إزالة الحدود */
+        color: white; /* لون النص */
+        font-size: 20px; /* حجم الخط */
+        cursor: pointer; /* شكل المؤشر */
+        margin-left: 20px; /* مسافة بين النص وزر الإغلاق */
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(100%); /* يبدأ من خارج الشاشة من اليمين */
+        }
+        100% {
+            transform: translateX(-100%); /* ينتهي خارج الشاشة من اليسار */
+        }
+    }
+
+    .promo-button {
+        background-color: #ffffff; /* لون الزر */
+        color: #ff5733; /* لون النص */
+        padding: 10px 20px; /* حشوة الزر */
+        border: none; /* إزالة الحدود */
+        border-radius: 5px; /* زوايا دائرية */
+        text-decoration: none; /* إزالة الخط السفلي */
+        transition: background-color 0.3s; /* تأثير عند المرور */
+    }
+
+    .promo-button:hover {
+        background-color: #f0f0f0; /* تغيير لون الخلفية عند المرور */
+    }
+
+ 
+
+
+    

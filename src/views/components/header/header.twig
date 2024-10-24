@@ -151,74 +151,7 @@
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
 
-<!-- إعلان ترويجي -->
 
-<!-- CSS -->
-<!-- CSS -->
-<style>
-    .promo-banner {
-        background-color: #ff5733; /* لون الخلفية */
-        color: white; /* لون النص */
-        padding: 15px; /* حشوة */
-        text-align: center; /* محاذاة النص */
-        position: fixed; /* يجعل الشريط ثابتًا في أعلى الصفحة */
-        top: 0; /* الموضع من الأعلى */
-        left: 0; /* الموضع من اليسار */
-        right: 0; /* الموضع من اليمين */
-        z-index: 1000; /* لضمان ظهور الشريط فوق كل العناصر */
-        overflow: hidden; /* لإخفاء المحتوى الزائد */
-        display: flex; /* لجعل المحتوى في سطر واحد */
-        justify-content: space-between; /* توزيع المسافات */
-        align-items: center; /* محاذاة العمود */
-    }
-
-    .banner-content {
-        display: flex;
-        animation: slide 10s linear infinite; /* تأثير الحركة */
-        white-space: nowrap; /* لمنع التفاف النص */
-    }
-
-    .promo-text {
-        margin-right: 20px; /* مسافة بين النص والزر */
-    }
-
-    .close-button {
-        background: none; /* إزالة الخلفية */
-        border: none; /* إزالة الحدود */
-        color: white; /* لون النص */
-        font-size: 20px; /* حجم الخط */
-        cursor: pointer; /* شكل المؤشر */
-        margin-left: 20px; /* مسافة بين النص وزر الإغلاق */
-    }
-
-    @keyframes slide {
-        0% {
-            transform: translateX(100%); /* يبدأ من خارج الشاشة من اليمين */
-        }
-        100% {
-            transform: translateX(-100%); /* ينتهي خارج الشاشة من اليسار */
-        }
-    }
-
-    .promo-button {
-        background-color: #ffffff; /* لون الزر */
-        color: #ff5733; /* لون النص */
-        padding: 10px 20px; /* حشوة الزر */
-        border: none; /* إزالة الحدود */
-        border-radius: 5px; /* زوايا دائرية */
-        text-decoration: none; /* إزالة الخط السفلي */
-        transition: background-color 0.3s; /* تأثير عند المرور */
-    }
-
-    .promo-button:hover {
-        background-color: #f0f0f0; /* تغيير لون الخلفية عند المرور */
-    }
-
- 
-
-
-    
-</style>
 
 <!-- JavaScript -->
 <script>

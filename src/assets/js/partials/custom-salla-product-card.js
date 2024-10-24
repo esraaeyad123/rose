@@ -184,23 +184,20 @@ class ProductCard extends HTMLElement {
             
           ${!this.hideAddBtn ?
           `
-          
-          <div class="flex w-full  add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
-                    <salla-add-product-button
-                       class="button-add" shape="btn" color="primary" fill="none" size="medium" width="wide" type="button" 
-                        product-id="${this.product.id}"
-                        product-status="${this.product.status}"
-                        product-type="${this.product.type}">
-                        ${this.product.type == 'booking' ? '' : ''}
-                       
-                        <span class="button__text">اضافة للسلة </span>
-  <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
-                     
-                </svg>
-                    </salla-add-product-button>
-                   
+<div class="flex w-full add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
+    <salla-add-product-button  class="button-add" shape="btn" color="primary" fill="none" size="medium" width="wide" type="button"
+        product-id="${this.product.id}"
+        product-status="${this.product.status}"
+        product-type="${this.product.type}">
+         <div class="w-full">
+          <span class="s-button-text"><i class="button__icon text-base sicon-cart-add"></i>
+                <span class="button__text">إضافة للسلة</span></span>
+        </div>
+    </salla-add-product-button>
+</div>
 
-                      `
+
+`
             : ''
           }
 
@@ -218,3 +215,7 @@ class ProductCard extends HTMLElement {
   }
   
   customElements.define('custom-salla-product-card', ProductCard);
+
+
+
+
