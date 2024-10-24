@@ -4377,3 +4377,125 @@ box-sizing:border-box;
 .s-block--special-products-slider {
   position: relative;
 }
+
+.button {
+  font-size: 1rem; /* زيادة حجم الخط */
+  padding: 0.75rem 1.5rem; /* زيادة المسافة الداخلية للزر */
+  min-width: 150px; /* تعيين عرض أدنى للزر */
+}
+
+@media (max-width: 768px) {
+  .button {
+      width: auto; /* عرض الزر حسب المحتوى */
+      padding: 0.75rem 1.5rem; /* الحفاظ على الحجم الأكبر */
+  }
+}
+
+.fixed-products-with-image h4,
+.fixed-products-with-image p {
+  white-space: normal; /* للسماح بتفصيل النص */
+  overflow-wrap: break-word; /* لكسر الكلمات الطويلة */
+}
+
+.button-custom {
+  font-size: 0.875rem; /* حجم خط الزر صغير */
+}
+
+@media (max-width: 768px) {
+  .fixed-products-with-image .absolute.bottom-20 {
+      text-align: center; /* محاذاة مركزية للنص في الأجهزة الصغيرة */
+  }
+
+  .fixed-products-with-image .button-container {
+      display: flex;
+      justify-content: center; /* محاذاة الزر في المنتصف */
+      margin-top: 10px; /* مسافة بين النص والزر */
+  }
+
+  .button-custom {
+      width: auto; /* عرض الزر حسب المحتوى */
+      padding: 0.5rem 1rem; /* ضبط المسافة الداخلية للزر */
+  }
+}
+
+
+.fixed-products-with-image .absolute.bottom-20 {
+  text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+.fixed-products-with-image h4,
+.fixed-products-with-image p {
+  white-space: normal; /* للسماح بتفصيل النص */
+  overflow-wrap: break-word; /* لكسر الكلمات الطويلة */
+}
+
+.button-custom {
+  font-size: 0.875rem; /* حجم خط الزر صغير */
+}
+
+@media (max-width: 768px) {
+  .fixed-products-with-image .absolute.bottom-20 {
+      text-align: center; /* محاذاة مركزية للنص في الأجهزة الصغيرة */
+  }
+
+  .button-custom {
+      width: 80%; /* عرض الزر في الأجهزة الصغيرة */
+  }
+}
+
+.product-card {
+  padding: 1rem; /* تأكد من وجود مساحة داخلية */
+  height: auto; /* تجنب ارتفاع ثابت */
+  overflow: visible; /* السماح بعرض النصوص بالكامل */
+}
+
+.product-card h4, 
+.product-card p {
+  white-space: normal; /* السماح بتفصيل النص */
+  overflow-wrap: break-word; /* لكسر الكلمات الطويلة */
+}
+
+.button-custom {
+  font-size: 1rem; /* زيادة حجم الخط */
+  padding: 0.75rem 1.5rem; /* زيادة المسافة الداخلية للزر */
+  min-width: 150px; /* تعيين عرض أدنى للزر */
+}
+
+@media (max-width: 768px) {
+  .product-card {
+      padding: 0.5rem; /* تقليل المساحة في الأجهزة الصغيرة */
+  }
+  
+  .button-custom {
+      width: auto; /* عرض الزر حسب المحتوى */
+      padding: 0.5rem 1rem; /* الحفاظ على الحجم المناسب */
+  }
+}
+.block-product {
+  padding: 1rem; /* تأكد من وجود مساحة داخلية */
+  height: auto; /* تجنب ارتفاع ثابت */
+  overflow: visible; /* السماح بعرض النصوص بالكامل */
+}
+
+.block-product h4, 
+.block-product p {
+  white-space: normal; /* السماح بتفصيل النص */
+  overflow-wrap: break-word; /* لكسر الكلمات الطويلة */
+}
+
+.button-custom {
+  font-size: 1rem; /* زيادة حجم الخط */
+  padding: 0.75rem 1.5rem; /* زيادة المسافة الداخلية للزر */
+  min-width: 150px; /* تعيين عرض أدنى للزر */
+}
+
+@media (max-width: 768px) {
+  .block-product {
+      padding: 0.5rem; /* تقليل المساحة في الأجهزة الصغيرة */
+  }
+  
+  .button-custom {
+      width: auto; /* عرض الزر حسب المحتوى */
+      padding: 0.5rem 1rem; /* الحفاظ على الحجم المناسب */
+  }
+}

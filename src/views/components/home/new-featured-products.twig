@@ -1,38 +1,34 @@
-
-
-
 <section class="s-blockl fixed-products-with-image">
-    <div aria-hidden="true" class="flex items-center justify-center h-96 overflow-hidden relative w-full">
+  <div aria-hidden="true" class="flex items-center justify-center h-96 overflow-hidden relative w-full">
       <video class="bg-cover w-full origin-center" autoplay="" loop="" muted="">
-        <source src="{{component.url}}" type="">
+          <source src="{{component.url}}" type="">
       </video>
       <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
-  
+
       <!-- النص وزر -->
-      <div class="absolute bottom-20 left-5 right-5 text-right">
-        <h4 class="text-black text-2xl font-bold">{{component.title}}</h4>
-        <p class="text-black text-sm opacity-70"> {{component.desc}}</p>
-        <a href="https://salla.sa/dev-0dvixz52swmu55m6/redirect/categories/97219664" class="flex py-3 px-6 mt-3 gap-2 font-semibold items-center justify-center button-style transition-all rounded">
-          <span class="font-semibold">{{component.item}}</span>
-        </a>
-      </div>
-    </div>
-    
-  
-    <div class="relative -mt-12 container">
-      <div class="mt-6">       
+      <div class="absolute bottom-20 left-5 right-5 text-right" style="color:{{component.colortext}}">
+          <h4 class="text-black text-2xl font-bold">{{component.title}}</h4>
+          <p class="text-black text-sm opacity-70">{{component.desc}}</p>
+          <div class="mt-2 button-container">
+            <button class="button text-sm md:text-base flex gap-2 justify-center items-center shadow rounded-[0.25rem] h-10" 
+                onclick="window.location.href='{{component.display_all_url}}'" 
+                type="button" 
+                style="background-color:{{component.coloeButton}}; color:{{component.colorbuttonText}};">
+                <span>{{component.textButton}}</span>
+            </button>
+        </div>
         
-        {% for product in component.products %}
-        <custom-salla-product-card
-            product-id="{{ product.id }}"
-            horizontal-cards="false">
-        </custom-salla-product-card>
-    {% endfor %}
       </div>
-    </div>
-  </section>
+  </div>
+
+  <div class="relative -mt-12 container">
+      <div class="relative mt-6">
+          <salla-products-list 
+              source="selected" 
+              source-value="[{{ component.products|map((product) => product.id)|join(',') }}]">
+          </salla-products-list>
+      </div>
+  </div>
+</section>
 
 
-
-
- 
