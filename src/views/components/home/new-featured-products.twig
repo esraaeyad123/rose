@@ -21,14 +21,18 @@
     
   </div>
 
-  <div class="relative -mt-12 container">
-      <div class="relative mt-6">
-          <salla-products-list 
-              source="selected" 
-              source-value="[{{ component.products|map((product) => product.id)|join(',') }}]">
-          </salla-products-list>
-      </div>
-  </div>
+  
+
+<div class="container  ">
+    <salla-products-list 
+            source="selected" 
+            source-value="[{{ component.products|map((product) => product.id)|join(',') }}]">
+        </salla-products-list>
+</div>
+
 </section>
+
+
+
 
 

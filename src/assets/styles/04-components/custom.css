@@ -846,16 +846,23 @@ salla-slider[direction=ltr] .s-slider-block__title-nav {
 
 .s-slider-block__title-right {
   padding-right: 2rem;
-  font-size: 1.875rem;
   line-height: 2.25rem;
-  font-weight: 700;
 }
+
+.s-slider-block__title h2 {
+    font-size: 40px !important;
+    font-weight: 200 !important;
+  }
 
 [dir=rtl] .s-slider-block__title-right {
   padding-left: 2rem;
-  font-size: 1.875rem;
   line-height: 2.25rem;
-  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+    .s-slider-block__title h2 {
+        font-size: 20px !important;
+    }
 }
 
 .s-slider-block__title-left {
