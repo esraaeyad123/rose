@@ -4450,3 +4450,13 @@ salla-slider.details-slider .swiper-slide {
 
 
     
+
+    .s-button-text {
+        display: flex;
+        align-items: center;
+    }
+    
+    .button__icon {
+        margin-right: 4px; /* قيمة لضبط المسافة بين الأيقونة والنص */
+    }
+    
