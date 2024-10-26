@@ -1,72 +1,64 @@
-
-
-<section class="s-block s-block--full-bg as-grid bg-white py-2 sm:py-16 ">
-
-    <div class="text-center ">
-        <h2 class="text-4xl font-bold mb-10"> {{ component.item }}
-
-        </h2>
+<section class="s-block s-block--full-bg as-grid bg-white py-2 sm:py-16">
+    <div class="text-center">
+        <h2 class="text-4xl font-bold mb-10">{{ component.item }}</h2>
     </div>
-
-
-    <div class="flex  flex-col items-center justify-center space-y-8  px-6 sm:flex-row sm:space-x-6 sm:space-y-0">
-       
+    
+    <div class="flex flex-wrap justify-center gap-4">
         {% for code in component.code %}
-        <div class="w-full max-w-m overflow-hidden rounded-lg shadow-s m-4 duration-300 hover:scale-105 hover:shadow-s">
-            <div class="flex i justify-center mb-3">
-                <div class="bg-gradient-to-br bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] text-white text-center py-10 px-20 rounded-lg shadow-md relative">
-                <h3 class="text-2xl font-semibold mb-4">{{code.item_1}}</h3>
-                <div  class="content bg-white text-gray-800 rounded-lg px-4 py-2 flex items-center justify-between">
-                        <span class=" code text-2xl  text-center font-semibold">{{code.item_3}}</span>
-                        
-                             </div>
-                                 
-                
-            <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 left-0 -ml-6"></div>
-            <div class="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 right-0 -mr-6"></div>
-            
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-lg overflow-hidden mb-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+            <div class="bg-gradient-to-r from-red-400 to-yellow-300 p-6">
+                <p class="text-white text-center mt-2 h-16 flex items-center justify-center">{{ code.item_1 }}</p>
+            </div>
+            <div class="p-4 flex flex-col h-full">
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold">استخدم الكود:</span>
+                    <div class="flex items-center">
+                        <span class="code mr-2 bg-gray-200 text-gray-800 py-1 px-3 rounded-lg">{{ code.item_3 }}</span>
+                        <div class="content ml-2 cursor-pointer" id="myTooltip">
+                            Copy
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        </div>
-
-
         {% endfor %}
+    </div>
+</section>
 
-      </div>
-      </section>
-   
-      
 <script>
-    document.querySelectorAll(".content").forEach((item, index) => {
-	item.addEventListener("click", async (event) => {
-		if (!navigator.clipboard) {
-			// Clipboard API not available
-			return;
-		}
-		try {
-			await navigator.clipboard.writeText(event.target.innerText);
-			
-			var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied"
-			
-		} catch (err) {
-			console.error("Failed to copy!", err);
-		}
-	});
-});
-
+    document.querySelectorAll(".content").forEach((item) => {
+        item.addEventListener("click", async (event) => {
+            if (!navigator.clipboard) {
+                return;
+            }
+            try {
+                const code = event.target.previousElementSibling.innerText;
+                await navigator.clipboard.writeText(code);
+                var tooltip = document.getElementById("myTooltip");
+                tooltip.innerHTML = "Copied";
+                setTimeout(() => { tooltip.innerHTML = "Copy"; }, 2000); // Reset tooltip after 2 seconds
+            } catch (err) {
+                console.error("Failed to copy!", err);
+            }
+        });
+    });
 </script>
-<style>
 
-    .content::after {
-	content: "Copy";
-	color: #000;
-	background-color: #ffd700;
-	cursor: pointer;
-	padding: 3px 10px;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
+<style>
+    .content {
+        color: #000;
+        background-color: #ffd700;
+        padding: 3px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin-left: 8px; /* إضافة مسافة بسيطة بين الزرين */
+    }
+    .content:hover {
+        background-color: #ffc107;
+    }
 </style>
+
+
+
+
+

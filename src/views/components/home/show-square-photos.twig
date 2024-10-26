@@ -7,50 +7,32 @@
 #}
 
 
+<section class="s-block s-block--banners container bg-white">
 
-<section class="s-block s-block--banners container bg-white py-1 ">
+  <div class="px-6 py-0 md:py-0 md:rtl:pl-0 md:ltr:pr-0 flex-1">
+      <div class="items-center text-center flex flex-col">
+          <h2 class="text-2xl max-w-s md:max-w-2xl md:text-start md:text-4xl font-bold md:!leading-12">
+              {{ component.item }} 
+          </h2>
 
-             <div class="px-6 py-0 md:py-0 md:rtl:pl-0 md:ltr:pr-0 flex-1">
-               <div class=" items-center text-center flex flex-col" >
-               <h2 class=" text-2xl max-w-s md:max-w-2xl  md:text-start md:text-4xl font-bold md:!leading-12">
-                {{ component.item }}
+          <p class="mx-auto mt-6 max-w-xl text-lg md:text-xl leading-8 text-slate-400">
+              {{ component.item_1 }}
+          </p>
 
- </h2>
-
-               <p class=" mx-auto mt-6 max-w-xl text-lg md:text-xl leading-8 text-slate-400">
-                
-                {{ component.item_1 }}
-                
-
-                 </p>
-                <div class="mt-4 md:mt-4 flex md:justify-start items-center gap-x-6">
-                 <button class="button-custom   md:text-[20px] text-[17px] flex gap-4 justify-center items-center shadow rounded-[0.25rem] h-12 w-full py-2 px-8 duration-100" href="{{component.item_3}}" type="button" >
-                 <span class="text">   {{ component.buttonText }}</span>
-                 
-               <i class="arrow-icon sicon-arrow-up-left"></i>
-               </button>
-               </div>
-               </div> 
-
-               <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-3 md:grid-cols-3">
-                {% for banner in component.gellary %}
-
-                <div class="">
-                  <img class="object-cover object-center w-full h-40 max-w-full rounded-lg
-                  duration-300 hover:scale-105 hover:shadow-s"
-                    src="{{banner.gellary_photo}}"
-                    alt="" />
-                </div>
-              
-                {% endfor %}
-    
-               
-              
-              </div>
-    
+          <div class="mt-4 md:mt-4 flex md:justify-start items-center gap-x-6">
+              <button class="button-custom md:text-[20px] text-[17px] flex gap-4 justify-center items-center shadow rounded-[0.25rem] h-12 w-full py-2 px-8 duration-100" href="{{component.item_3}}" type="button">
+                  <span class="text">{{ component.buttonText }}</span>
+                  <i class="arrow-icon sicon-arrow-up-left"></i>
+              </button>
           </div>
-         
+      </div>
 
-
-            
-  </section>
+      <div class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-3 md:grid-cols-3">
+          {% for banner in component.gellary %}
+          <div>
+              <img class="object-cover object-center w-full h-40 max-w-full rounded-lg duration-300 hover:scale-105 hover:shadow-s" src="{{banner.gellary_photo}}" alt="" />
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</section>

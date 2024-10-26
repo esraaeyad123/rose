@@ -1,19 +1,15 @@
-<section class="flex flex-col mt-20">
+
+  <section class="flex flex-col mt-20">
     <p class="font-semibold text-2xl md:text-3xl text-center">{{ component.title }}</p>
-    <div
-      class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
-      {% for item in component.item %}
-
-      <div
-        class="flex flex-col justify-center items-center bg-[#FFF6F3] px-4 h-[126px] w-[100%] md:w-[281px] md:h-[192px] rounded-lg justify-self-center">
-      
-        <div class="flex flex-row justify-center items-center">
-          <i class="{{ item.icon_picker }} text-5xl font-bold text-title-size text-primary"></i>
-          <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary mr-2">{{item.desc}}</p>
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
+        {% for item in component.item %}
+        <div class="flex flex-col justify-center items-center bg-gradient-to-b from-[#FFF6F3] to-[#FFE8E0] px-6 py-4 h-[150px] w-full md:w-[281px] md:h-[192px] rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            <div class="flex flex-row justify-center items-center mb-2">
+                <i class="{{ item.icon_picker }} text-6xl font-bold text-primary"></i>
+                <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary mr-2">{{ item.desc }}</p>
+            </div>
+            <p class="font-medium text-base sm:text-lg leading-6 text-center">{{ item.title2 }}</p>
         </div>
-        <p class="font-medium text-base sm:text-lg leading-6 mt-3 md:mt-6 text-center">{{item.title2}}</p>
-      </div>
-      {% endfor %}
-
+        {% endfor %}
     </div>
-  </section>
+</section>

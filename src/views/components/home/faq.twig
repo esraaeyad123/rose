@@ -1,37 +1,27 @@
-
-<section class="s-block s-block--full-bg as-grid bg-white py-1 sm:py-1">
-   
-  <div class=" relative px-6 lg:px-8 md:flex  ">
-    <div class="flex flex-col  basis-1/2">
-        <p class="inline-block font-semibold text-primary mb-4">{{component.title}}</p>
-        <p class="sm:text-4xl text-3xl font-extrabold text-base-content">{{component.description}}</p>
-    </div>
-    <ul class="basis-1/2">
-        {% for item in component.faq %}
-
-        <div class="py-5">
-            <details  class="group  bg-[#FFF6F3]  text-[var(--color-primary)] !important  md:flex-row flex-col items-center md:justify-between justify-center  w-full h-full lg:px-10 px-5 py-5 gap-4 rounded-[20px]" >
-                
-                <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
-                    <span class="text-base font-semibold leading-7 ">        
-                        {{item.item_1}}
-                    </span>
-                    <span class="transition group-open:rotate-180">
+<section class="s-block s-block--full-bg as-grid bg-white py-4 sm:py-6">
+    <div class="relative px-6 lg:px-8 md:flex">
+        <div class="flex flex-col basis-1/2 mb-6">
+            <p class="inline-block font-semibold text-primary mb-2">{{ component.title }}</p>
+            <p class="sm:text-4xl text-3xl font-extrabold text-base-content">{{ component.description }}</p>
+        </div>
+        <ul class="basis-1/2">
+            {% for item in component.faq %}
+            <div class="py-3">
+                <details class="group bg-[#FFF6F3] text-[var(--color-primary)] md:flex-row flex-col items-center justify-between w-full h-full lg:px-10 px-5 py-5 gap-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:shadow-lg">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+                        <span class="text-base font-semibold leading-7">{{ item.item_1 }}</span>
+                        <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                 stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                 <path d="M6 9l6 6 6-6"></path>
                             </svg>
                         </span>
-                </summary>
-                <p class="text-base leading-7 pt-2 group-open:animate-fadeIn mt-3 text--500 ">{{item.item}}
-                </p>
-            </details>
-        </div>
-        {% endfor %}
-    </ul>
-</div>
+                    </summary>
+                    <p class="text-base leading-7 pt-2 group-open:animate-fadeIn mt-3 text-gray-600 transition duration-300">{{ item.item }}</p>
+                </details>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
 </section>
-
-
-
