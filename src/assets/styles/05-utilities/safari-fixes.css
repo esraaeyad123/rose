@@ -1,0 +1,7 @@
+@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .full-banner-entry {
+      background-attachment: initial;
+    }
+  }
+}/*# sourceMappingURL=safari-fixes.css.map */

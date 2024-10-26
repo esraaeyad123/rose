@@ -5,32 +5,23 @@
 | cart.items_count | int     |                                 |
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
-<div class="promo-banner" id="promoBanner">
-  <div class="banner-content">
-      <p class="promo-text">🌟 عرض خاص: احصل على 20% خصم على أول طلب لك! 🌟</p>
-  </div>
-  <button class="close-button" onclick="closeBanner()">✖</button>
-</div>
-<div class="art-top-navbar store-header">
-  <div class="top-navbar bg-[var(--color-upper-background)] text-[var(--color-upper-text)] h-full w-full">
-    <div class="flex gap-4 md:flex-row flex-col md:justify-between justify-center items-center w-full lg:px-10 md:px-5 px-2">
-      <div class="flex flex-wrap md:gap-x-4 md:gap-0 gap-2 items-center text-[16px] text-[var(--color-upper-text)]">
-        <span class="uppercase ltr:tracking-[2px]">خصم حتى 40%</span>
-        <a href="" class="md:block hidden relative text-[16px] ltr:tracking-[2px] uppercase after:absolute after:w-full after:h-[1px] after:bg-[var(--color-upper-text)] after:bottom-[0px] ltr:after:left-0 rtl:after:right-0 hover:after:w-0 after:duration-500">تسوق الان</a>
-      </div>
-    
-      <div class="art-countdown-nav">
-        <salla-count-down class="salla-count-down" data="2024-11-30" days hours minutes>
-         
-        </salla-count-down>
-      </div>
-      
-      
-      
-    </div>
-  </div>
-</div>
 
+
+
+<div class="marquee">
+  <ul class="marquee__content">
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+  </ul>
+</div>
 
 
 {% set important_links = theme.settings.get('important_links') %}
@@ -136,8 +127,8 @@
     <div class="lg:flex gap-4 hidden items-center justify-end py-4">
     <span class="test-sm font-semibold">سلة المشتريات</span>
     <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
-      <i slot="icon" class="header-btn__icon icon sicon-shopping-bag"></i>
-    </salla-cart-summary>
+      <i slot="icon" class="header-btn__icon  icon sicon-shopping-basket"></i>
+        </salla-cart-summary>
     </div>
     </div>
     </div>
@@ -172,7 +163,58 @@ window.onscroll = function() {
     }
 };
 
+function closeBanner() {
+    const banner = document.getElementById('promoBanner');
+    banner.style.animation = 'slideOut 0.5s forwards'; // بدء تأثير الخروج
+    setTimeout(() => {
+        banner.style.display = 'none'; // إخفاء الشريط بعد الانتهاء من الحركة
+    }, 500); // مطابقة مع مدة الحركة
+}
 
 
 
 </script>
+
+<style>
+
+
+  .marquee {
+    overflow: hidden; /* لإخفاء النص الزائد */
+    white-space: nowrap; /* لمنع التفاف النص */
+    position: relative; /* لتحديد موضع المحتوى */
+    background-color: #ffcc00; /* لون خلفية زاهي */
+    padding: 10px; /* مساحة داخلية */
+}
+
+.marquee__content {
+    display: flex; /* استخدام flexbox لتوزيع العناصر بشكل أفقي */
+    animation: marquee 20s linear infinite; /* تغيير القيمة لجعل الحركة أبطأ */
+}
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* يبدأ خارج الشاشة من اليمين */
+    }
+    100% {
+        transform: translateX(-100%); /* يخرج خارج الشاشة من اليسار */
+    }
+}
+
+.text-md {
+    font-size: 18px; /* حجم النص */
+    color: #333; /* لون النص */
+    padding: 0 20px; /* مساحة داخلية للعنصر */
+    flex-shrink: 0; /* يمنع تصغير العنصر عند التمرير */
+}
+
+/* إضافة تأثير عند التمرير فوق النص */
+.text-md:hover {
+    color: #ff0000; /* لون مختلف عند التمرير */
+    text-decoration: underline; /* خط تحت النص عند التمرير */
+}
+
+
+
+
+</style>

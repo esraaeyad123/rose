@@ -1,0 +1,56 @@
+@media (max-width: 640px) {
+  .swal2-container {
+    width: 100% !important;
+  }
+}
+.swal2-container .swal2-popup.swal2-toast {
+  max-width: 300px;
+  padding: 0 10px 5px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.0705882353);
+}
+@media (max-width: 640px) {
+  .swal2-container .swal2-popup.swal2-toast {
+    max-width: 100%;
+  }
+}
+.swal2-container .swal2-popup.swal2-toast .swal2-icon {
+  @apply rtl:ml-1 ltr:mr-1 rtl:-mr-1.5 ltr:-ml-1.5 scale-50 animate-none;
+}
+.swal2-container .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+  @apply border-white;
+}
+.swal2-container .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-line-tip,
+.swal2-container .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-line-long {
+  @apply bg-white;
+}
+.swal2-container .swal2-popup.swal2-toast .swal2-title {
+  @apply text-sm m-0 py-2 leading-6;
+}
+.swal2-container .swal2-popup.swal2-toast .swal2-close {
+  @apply rtl:mr-2 ltr:ml-2 scale-75 shrink-0;
+}
+.swal2-container .swal2-popup.swal2-toast .swal2-timer-progress-bar-container {
+  height: 2px;
+}
+.swal2-container .swal2-popup.swal2-toast .swal2-timer-progress-bar {
+  background: #ddd;
+}
+.swal2-container .swal2-popup.swal2-toast.swal2-icon-error {
+  @apply bg-red-400;
+}
+.swal2-container .swal2-popup.swal2-toast.swal2-icon-error * {
+  @apply text-white;
+}
+.swal2-container .swal2-popup.swal2-toast.swal2-icon-error .swal2-error {
+  @apply border-white;
+}
+.swal2-container .swal2-popup.swal2-toast.swal2-icon-error .swal2-x-mark-line-right,
+.swal2-container .swal2-popup.swal2-toast.swal2-icon-error .swal2-x-mark-line-left {
+  @apply bg-white;
+}
+.swal2-container .swal2-popup.swal2-toast.swal2-icon-success {
+  @apply bg-green-500;
+}
+.swal2-container .swal2-popup.swal2-toast.swal2-icon-success * {
+  @apply text-white;
+}/*# sourceMappingURL=swal.css.map */

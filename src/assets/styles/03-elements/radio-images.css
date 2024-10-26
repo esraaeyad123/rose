@@ -1,0 +1,59 @@
+.radio-images__label {
+  @apply inline-block mb-0.5 cursor-pointer rounded-md overflow-hidden h-24 md:h-20 w-full;
+}
+.radio-images__badge {
+  @apply block absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full px-1.5 bg-red-400 text-white whitespace-nowrap;
+}
+.radio-images input[type=radio] {
+  display: none;
+}
+.radio-images input[type=radio] + label {
+  position: relative;
+}
+.radio-images input[type=radio] + label:after {
+  content: "\ea9d";
+  font-family: "sallaicons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.4);
+  transition: transform 0.3s;
+}
+.radio-images input[type=radio] + label:before {
+  content: "";
+  background-color: #000;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 0.3s;
+}
+.radio-images input[type=radio]:checked + label:after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.radio-images input[type=radio]:checked + label:before {
+  opacity: 0.3;
+}
+.radio-images input[type=radio]:disabled + label {
+  opacity: 0.45;
+}/*# sourceMappingURL=radio-images.css.map */
