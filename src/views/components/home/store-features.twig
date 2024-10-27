@@ -7,18 +7,20 @@
 | items[].text  | string | Subtitle for the feature                                         |
 | position      | Int    | Sorting number start from zero                                   |
 #}
-<section class="px-6 md:px-0 py-4">
-  <div class="flex flex-col lg:flex-row gap-4 lg:py-16 lg:px-12 px-6 py-14 lg:justify-between">
-      {% for item in items %}
-      <div class="feature_item flex items-center gap-3 sal-animate p-4 rounded-lg bg-white shadow-md">
-          <div class="image">
-              <i class="{{ item.icon }} text-title-size text-primary text-3xl"></i>
-          </div>
-          <div class="content flex flex-col">
-              <span class="text-gray-900 dark:text-white font-bold text-xl">{{ item.title }}</span>
-              <span class="text-base font-medium text-gray-700 dark:text-gray-200">{{ item.text }}</span>
-          </div>
+
+
+
+  <div class="container mx-auto">
+    <div class="grid lg:grid-cols-3 gap-4 sm:gap-6 xl:gap-8 text-center">
+        {% for item in items %}
+
+            <div style="background-color: #f3f4f6 !important;" class="bg-gray-100 p-2 md:p-4 rounded-md">
+        <i class="{{ item.icon }} text-5xl"></i>
+        <div class="mt-1 text-">{{ item.title }}</div> 
+        <div class="mt-1 text-lg"> {{ item.text }}</div> 
       </div>
+
       {% endfor %}
+
+          </div>
   </div>
-</section>

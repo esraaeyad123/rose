@@ -535,6 +535,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-auto{margin-left:auto;margin-right:auto}
 .my-1{margin-top:0.25rem;margin-bottom:0.25rem}
 .my-2{margin-top:0.5rem;margin-bottom:0.5rem}
+.my-6{margin-top:1.5rem;margin-bottom:1.5rem}
 .-mb-52{margin-bottom:-13rem}
 .-mt-1{margin-top:-0.25rem}
 .-mt-62{margin-top:-248px}
@@ -770,6 +771,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .border-gray-300{--tw-border-opacity:1;border-color:rgba(209, 213, 219, 1);border-color:rgba(209, 213, 219, var(--tw-border-opacity))}
 .border-green-300{--tw-border-opacity:1;border-color:rgba(134, 239, 172, 1);border-color:rgba(134, 239, 172, var(--tw-border-opacity))}
 .border-primary{border-color:#414042;border-color:var(--color-primary)}
+.border-slate-900{--tw-border-opacity:1;border-color:rgba(15, 23, 42, 1);border-color:rgba(15, 23, 42, var(--tw-border-opacity))}
 .border-b-gray-200{--tw-border-opacity:1;border-bottom-color:rgba(229, 231, 235, 1);border-bottom-color:rgba(229, 231, 235, var(--tw-border-opacity))}
 .bg-\[\#FFF6F3\]{--tw-bg-opacity:1;background-color:rgba(255, 246, 243, 1);background-color:rgba(255, 246, 243, var(--tw-bg-opacity))}
 .bg-\[\#f7f7f7\]{--tw-bg-opacity:1;background-color:rgba(247, 247, 247, 1);background-color:rgba(247, 247, 247, var(--tw-bg-opacity))}
@@ -6776,16 +6778,18 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   background-color: #f0f0f0; /* لون خلفية الزر المعطل */
   cursor: not-allowed; /* تغيير شكل المؤشر عند الزر المعطل */
 }
-.content {
+.contentcode {
   color: #000;
-  background-color: #ffd700;
+  background-color: #ff6767;
+  background-color: var(--color-primary-reverse);
   padding: 3px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
   margin-left: 8px; /* إضافة مسافة بسيطة بين الزرين */
 }
-.content:hover {
-  background-color: #ffc107;
+.contentcode:hover {
+  background-color: #ff6767;
+  background-color: var(--color-primary-reverse);
 }
 .marquee {
   overflow: hidden; /* لإخفاء النص الزائد */
@@ -7211,16 +7215,19 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .hover\:-translate-y-3:hover{--tw-translate-y:-0.75rem;transform:translate(var(--tw-translate-x), -0.75rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(1.05) scaleY(1.05);transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgba(229, 231, 235, 1);background-color:rgba(229, 231, 235, var(--tw-bg-opacity))}
+.hover\:bg-slate-900:hover{--tw-bg-opacity:1;background-color:rgba(15, 23, 42, 1);background-color:rgba(15, 23, 42, var(--tw-bg-opacity))}
 .hover\:text-black:hover{--tw-text-opacity:1;color:rgba(0, 0, 0, 1);color:rgba(0, 0, 0, var(--tw-text-opacity))}
 .hover\:text-dark:hover{--tw-text-opacity:1;color:rgba(29, 31, 31, 1);color:rgba(29, 31, 31, var(--tw-text-opacity))}
 .hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgba(17, 24, 39, 1);color:rgba(17, 24, 39, var(--tw-text-opacity))}
 .hover\:text-primary:hover{color:#414042;color:var(--color-primary)}
+.hover\:text-white:hover{--tw-text-opacity:1;color:rgba(255, 255, 255, 1);color:rgba(255, 255, 255, var(--tw-text-opacity))}
 .hover\:underline:hover{text-decoration-line:underline}
 .hover\:opacity-100:hover{opacity:1}
 .hover\:opacity-80:hover{opacity:0.8}
 .hover\:opacity-90:hover{opacity:0.9}
 .hover\:shadow-default:hover{--tw-shadow:5px 10px 30px #2B2D340D;;--tw-shadow-colored:5px 10px 30px var(--tw-shadow-color);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 5px 10px 30px #2B2D340D;;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
 .hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
+.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
 .group[open] .group-open\:rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .group:hover .group-hover\:-translate-x-1{--tw-translate-x:-0.25rem;transform:translate(-0.25rem, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .group:hover .group-hover\:scale-x-0{--tw-scale-x:0;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(0) scaleY(var(--tw-scale-y));transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
@@ -7258,6 +7265,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .sm\:items-start{align-items:flex-start}
 .sm\:gap-4{gap:1rem}
 .sm\:gap-8{gap:2rem}
+.sm\:gap-6{gap:1.5rem}
 .sm\:p-1{padding:0.25rem}
 .sm\:p-5{padding:1.25rem}
 .sm\:py-16{padding-top:4rem;padding-bottom:4rem}
@@ -7325,6 +7333,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:border-none{border-style:none}
 .md\:p-0{padding:0px}
 .md\:p-8{padding:2rem}
+.md\:p-4{padding:1rem}
 .md\:px-0{padding-left:0px;padding-right:0px}
 .md\:px-5{padding-left:1.25rem;padding-right:1.25rem}
 .md\:px-6{padding-left:1.5rem;padding-right:1.5rem}
@@ -7352,6 +7361,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:col-span-2{grid-column:span 2 / span 2}
 .lg\:col-span-6{grid-column:span 6 / span 6}
 .lg\:col-start-7{grid-column-start:7}
+.lg\:my-8{margin-top:2rem;margin-bottom:2rem}
 .lg\:-mt-28{margin-top:-7rem}
 .lg\:mb-24{margin-bottom:6rem}
 .lg\:mb-8{margin-bottom:2rem}
@@ -7382,6 +7392,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}
 .lg\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}
 .lg\:grid-cols-8{grid-template-columns:repeat(8, minmax(0, 1fr))}
+.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .lg\:flex-row{flex-direction:row}
 .lg\:flex-nowrap{flex-wrap:nowrap}
 .lg\:items-start{align-items:flex-start}
@@ -7410,6 +7421,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:py-16{padding-top:4rem;padding-bottom:4rem}
 .lg\:py-20{padding-top:5rem;padding-bottom:5rem}
 .lg\:py-24{padding-top:6rem;padding-bottom:6rem}
+.lg\:py-4{padding-top:1rem;padding-bottom:1rem}
 .lg\:pb-11{padding-bottom:2.75rem}
 .lg\:pb-2{padding-bottom:0.5rem}
 .lg\:pb-20{padding-bottom:5rem}
@@ -7423,6 +7435,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:shadow-default{--tw-shadow:5px 10px 30px #2B2D340D;;--tw-shadow-colored:5px 10px 30px var(--tw-shadow-color);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 5px 10px 30px #2B2D340D;;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}}
 @media (min-width: 1280px){
 .xl\:gap-\[3\.5rem\]{gap:3.5rem}
+.xl\:gap-8{gap:2rem}
 .xl\:px-0{padding-left:0px;padding-right:0px}
 .xl\:px-20{padding-left:5rem;padding-right:5rem}
 .xl\:px-28{padding-left:7rem;padding-right:7rem}
