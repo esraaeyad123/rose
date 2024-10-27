@@ -10,7 +10,7 @@
 
 
             {% else %}
-
+           
             <video playsinline class="object-cover object-center w-full h-full min-h-[200px] max-h-[250px] lg:max-h-[700px]" loop autoplay muted src="{{component.url}}"></video>
 
             {% endif %}
@@ -18,7 +18,9 @@
             <div class="space-y-4 lg:space-y-8 absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2.5 py-10 lg:p-10 z-[1]">
                 <h2 class="text-2xl md:text-4xl font-bold !leading-[1.15]">{{component.title}}</h2>
                 <p class="description max-w-[400px] text-sm sm:text-base">{{component.desc}}</p>
-                <a class="button-custom advanced-slider__caption__inner__content__button outlined" style="background-color:{{component.item3}}" href="https://salla.sa/dev-flormi3pb6t1cfo7/redirect/categories/1232998349" tabindex="-1" style="background-color: transparent; border: 1px solid {{component.item4}}">
+                <a class="button-custom " style="background-color:{{component.item3}}"
+                 href="{{component.display_all_url}}" 
+                 style="background-color:{{component.item4}}">
                     <span style="color:{{component.item4}}">{{component.item5}}</span>
                 </a>
             </div>

@@ -1,8 +1,8 @@
 <section class="s-blockl fixed-products-with-image">
   <div aria-hidden="true" class="flex items-center justify-center h-96 overflow-hidden relative w-full">
-      <video class="bg-cover w-full origin-center" autoplay="" loop="" muted="">
-          <source src="{{component.url}}" type="">
-      </video>
+    <video class="bg-cover w-full origin-center" autoplay loop muted>
+        <source src="{{ component.url }}" type="video/mp4">
+    </video>
       <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
 
       <!-- النص وزر -->
@@ -10,7 +10,7 @@
         <h4 class="text-black text-2xl font-bold">{{component.title}}</h4>
         <p class="text-black text-sm opacity-70">{{component.desc}}</p>
         <div class="mt-2 button-container">
-            <button class="button text-sm md:text-base flex gap-2 justify-center items-center shadow rounded-[0.25rem] h-10" 
+            <button class="custom-button text-sm md:text-base flex gap-2 justify-center items-center shadow rounded-[0.25rem] h-10" 
                 onclick="window.location.href='{{component.display_all_url}}'" 
                 type="button" 
                 style="background-color:{{component.coloeButton}}; color:{{component.colorbuttonText}}; ">
