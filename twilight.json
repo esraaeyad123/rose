@@ -1441,7 +1441,7 @@
                     "required": false,
                     "minLength": 6,
                     "maxLength": 30
-                } ,
+                },
                 {
                     "type": "items",
                     "icon": "sicon-link",
@@ -2010,7 +2010,7 @@
         {
             "key": "65a4af88-512d-44ec-8ddb-f6bfb8f954fd",
             "title": "منتجات ثابتة مميزة",
-            "icon": "sicon-store",
+            "icon": "sicon-keypad",
             "path": "home.new-featured-products",
             "fields": [
                 {
@@ -2189,6 +2189,18 @@
                             "value": "custom"
                         }
                     ]
+                },
+                {
+                    "id": "colorBackground",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "لون الخلفية",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#004956",
+                    "required": false
                 }
             ]
         }
