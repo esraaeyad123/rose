@@ -77,6 +77,10 @@
      </div>
 	<span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-1 md:grid-cols-2 md:grid-cols-3"></span>
 	
+
+  <div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14 ">
+    <i class="sicon-caret-up-double"></i>
+  </div>
 </footer>
 
 
@@ -86,20 +90,10 @@
     <span class="whatsapp-text">تواصل معنا</span>
 </a>
 
-<div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14">
-  <i class="sicon-caret-up-double"></i>
-</div>
+
+
 
   <script type"text/javascript">
-    document.querySelector('.scroll-top').addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // تأثير التمرير الناعم
-    });
-});
-
-	
-
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -129,6 +123,31 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  let lastScrollY = window.scrollY;
+  const scrollTopButton = document.querySelector('.scroll-top');
+
+  // عند التمرير
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { // يظهر الزر بعد 200 بكسل من التمرير
+      if (window.scrollY > lastScrollY) { // إذا تم التمرير لأسفل
+        scrollTopButton.classList.add('show');
+      } else { // إذا تم التمرير لأعلى
+        scrollTopButton.classList.remove('show');
+      }
+    } else {
+      scrollTopButton.classList.remove('show'); // يخفي الزر إذا كان التمرير أقل من 200 بكسل
+    }
+    lastScrollY = window.scrollY; // تحديث موضع التمرير الأخير
+  });
+
+  // عند الضغط على الزر، يُرجع الصفحة للأعلى
+  scrollTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+
 </script>
 
 <style>
@@ -147,25 +166,31 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 
-  .whatsapp-button {
-    display: flex;
-    align-items: center; /* توسيط المحتوى عمودياً */
-    background-color: #25D366; /* لون الخلفية الأخضر */
+.whatsapp-button {
+    position: fixed; /* لجعل الزر ثابتًا */
+    bottom: 20px; /* المسافة من الأسفل */
+    right: 25px; /* المسافة من اليمين */
+    z-index: 1000; /* لضمان ظهور الزر فوق كل العناصر */
+    background-color: #25D366; /* لون خلفية واتساب */
     color: white; /* لون النص */
-    padding: 10px 15px; /* مساحة داخلية */
-    border-radius: 5px; /* زوايا مستديرة قليلاً */
-    text-decoration: none; /* إزالة خط التسطير */
-    position: fixed; /* جعل الزر ثابت */
-    left: 20px; /* المسافة من اليسار */
-    bottom: 55px; /* المسافة من الأسفل */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل */
+    padding: 10px 15px; /* padding للزر */
+    border-radius: 5px; /* زوايا مستديرة */
+    display: flex; /* لجعل الصورة والنص في خط واحد */
+    align-items: center; /* محاذاة العمود */
+    text-decoration: none; /* إزالة الخط تحت النص */
 }
 
 .whatsapp-button img {
-    width: 30px; /* عرض الصورة */
-    height: 30px; /* ارتفاع الصورة */
-    margin-left: 5px; /* مساحة بين الصورة والنص */
+    width: 30px; /* عرض الأيقونة */
+    height: 30px; /* ارتفاع الأيقونة */
+    margin-right: 5px; /* المسافة بين الأيقونة والنص */
 }
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* تغيير لون الخلفية عند التمرير */
+}
+
+
 
 .whatsapp-text {
     font-size: 16px; /* حجم النص */
@@ -178,13 +203,18 @@ document.addEventListener("DOMContentLoaded", function() {
     display: none; /* إخفاء النص بشكل افتراضي */
 }
 
-.whatsapp-button:hover {
-    transform: scale(1.1); /* تكبير عند التحويم */
-    background-color: #128C7E; /* تغيير اللون عند التحويم */
-}
+
 
 .whatsapp-button:hover .whatsapp-text {
     display: block; /* إظهار النص عند التحويم */
+}
+
+.scroll-top {
+  transition: opacity 0.3s ease;
+  opacity: 0; /* يبدأ مخفياً */
+}
+.scroll-top.show {
+  opacity: 1; /* يظهر عند إضافة الفئة show */
 }
 
 

@@ -69,13 +69,14 @@
     <div class="flex lg:hidden items-center justify-end">
       <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
         <i slot="icon" class="header-btn__icon  icon sicon-shopping-basket"></i>
+
       </salla-cart-summary>
     </div>
     </div>
     </div>
+    
     <div class="header-search flex-1 w-full lg:w-auto">
-      <salla-search inline oval height="46"></salla-search>
-  
+      <salla-search inline oval height="46" class="search-input"></salla-search>
     </div>
     </div>
   
@@ -175,46 +176,3 @@ function closeBanner() {
 
 </script>
 
-<style>
-
-
-  .marquee {
-    overflow: hidden; /* لإخفاء النص الزائد */
-    white-space: nowrap; /* لمنع التفاف النص */
-    position: relative; /* لتحديد موضع المحتوى */
-    background-color: #ffcc00; /* لون خلفية زاهي */
-    padding: 10px; /* مساحة داخلية */
-}
-
-.marquee__content {
-    display: flex; /* استخدام flexbox لتوزيع العناصر بشكل أفقي */
-    animation: marquee 20s linear infinite; /* تغيير القيمة لجعل الحركة أبطأ */
-}
-
-
-@keyframes marquee {
-    0% {
-        transform: translateX(100%); /* يبدأ خارج الشاشة من اليمين */
-    }
-    100% {
-        transform: translateX(-100%); /* يخرج خارج الشاشة من اليسار */
-    }
-}
-
-.text-md {
-    font-size: 18px; /* حجم النص */
-    color: #333; /* لون النص */
-    padding: 0 20px; /* مساحة داخلية للعنصر */
-    flex-shrink: 0; /* يمنع تصغير العنصر عند التمرير */
-}
-
-/* إضافة تأثير عند التمرير فوق النص */
-.text-md:hover {
-    color: #ff0000; /* لون مختلف عند التمرير */
-    text-decoration: underline; /* خط تحت النص عند التمرير */
-}
-
-
-
-
-</style>

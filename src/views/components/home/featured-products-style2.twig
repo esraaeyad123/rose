@@ -21,15 +21,15 @@
 
       <div class="tabs hide-scroll text-center">
           {% for section in items %}
-              <custom-tabs  
-                class="tab-trigger {{ loop.first?'is-active':'' }} 
-                inline-block font-bold text-xl p-4 border-b-4 border-transparent rounded-t-lg hover:text-primary hover:border-primary dark:hover:text-primary"
-                data-target="{{ component_id }}-{{ section.id }}"
-                data-component-id="{{ component_id }}"
-                fill="outline">
-                  {{ section.title }}
-                  
-              </custom-tabs>
+          <custom-tabs  
+          class="tab-trigger {{ loop.first?'is-active':'' }} 
+          tab-item"
+          data-target="{{ component_id }}-{{ section.id }}"
+          data-component-id="{{ component_id }}"
+          fill="outline">
+          {{ section.title }}
+      </custom-tabs>
+      
           {% endfor %}
       </div>
 
