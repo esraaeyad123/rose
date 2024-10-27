@@ -1783,7 +1783,7 @@
         {
             "key": "fee8462c-b6f2-4db1-b51f-ce2163b42a67",
             "title": "منتجات متحركة مميزة",
-            "icon": "sicon-store",
+            "icon": "sicon-star",
             "path": "home.enhanced-slider-products",
             "fields": [
                 {
