@@ -1,14 +1,13 @@
 
-{% set scroll_to_top = theme.settings.get('scroll_to_top') %}
-<p>قيمة scroll_to_top: {{ scroll_to_top }}</p>
+{% set scrolltotop = theme.settings.get('scrolltotop') %}
+<p>قيمة scrolltotop: {{ scrolltotop }}</p>
 imageZoom
 {{ theme.settings.get('scrolltotop', true) }}
-{% if scroll_to_top %}
+{% if scrolltotop %}
   <div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14" aria-label="Scroll to Top">
     <i class="sicon-caret-up-double"></i>
   </div>
   
-
 {% endif %}
 
 {% set button_wat = theme.settings.get('button_wat') %}
