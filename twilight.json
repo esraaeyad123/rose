@@ -176,6 +176,77 @@
             "required": true
         },
         {
+            "id": "button_wat",
+            "type": "collection",
+            "format": "collection",
+            "label": "زر الواتساب",
+            "description": "اضافة زر واتساب",
+            "labelHTML": null,
+            "item_label": null,
+            "icon": "sicon-list-add",
+            "fields": [
+                {
+                    "id": "button_wat.alrqm_oatsab",
+                    "type": "string",
+                    "format": "text",
+                    "label": "الرقم واتساب",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "button_wat.ns",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "button_wat.where_wat",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "مكان واتساب",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [
+                        {
+                            "label": "اليمين",
+                            "value": "right",
+                            "key": "0d9c50ea-0124-40d2-a7e4-43f6461b47da"
+                        },
+                        {
+                            "label": "اليسار",
+                            "value": "left",
+                            "key": "781428c6-e9fa-4eca-a75f-552610b42593"
+                        }
+                    ],
+                    "source": "Manual",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": false
+                }
+            ],
+            "value": [],
+            "minLength": 1,
+            "maxLength": 5
+        },
+        {
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "الزر الرجوع الى الاعلى",
