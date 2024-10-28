@@ -116,17 +116,9 @@
             "label": "نص ",
             "description": null,
             "labelHTML": null,
-            "value": "",
-            "required": false,
-            "conditions": [
-                {
-                    "id": "buttonwat",
-                    "operation": "=",
-                    "value": true
-                }
-            ]
+            "value": null,
+            "required": false
         },
-       
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",

@@ -9,16 +9,17 @@ imageZoom
   </div>
   
 {% endif %}
-
+{{ theme.settings.get('textwat')|json_encode }}
 {% set buttonwat = theme.settings.get('buttonwat', true) %}
 
 <p>قيمة button_wat: {{ buttonwat }}</p>
 
+{{theme.settings.get('numwat', true)}}
 {% if buttonwat %}
 
 <a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
-    <span class="whatsapp-text"> {{theme.settings.get('textwat')}}</span>
+    <span class="whatsapp-text"> {{theme.settings.get('textwat', true)|json_encode }}</span>
 </a>
 {% endif %}
 
