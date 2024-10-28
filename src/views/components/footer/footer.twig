@@ -77,17 +77,17 @@
      </div>
 	<span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-1 md:grid-cols-2 md:grid-cols-3"></span>
 	
-  {% if scroll_ to_top %}
-
-  <div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14 ">
-    <i class="sicon-caret-up-double"></i>
-  </div>
-
-  {% endif %}
+ 
 
 </footer>
 
+{% if scroll_ to_top %}
 
+<div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14 ">
+  <i class="sicon-caret-up-double"></i>
+</div>
+
+{% endif %}
 
 
 <a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
@@ -155,72 +155,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 
-<style>
-  .scroll-top {
-    background-color: black; /* اللون الأسود */
-    border-radius: 0; /* مربع بدون زوايا مدورة */
-}
-
-.scroll-top i {
-    color: white; /* لون السهم الأبيض */
-    font-size: 1.5rem; /* حجم السهم */
-}
-
-.scroll-top:hover {
-    background-color: #333; /* لون أغمق عند التمرير فوق الزر */
-}
-
-
-.whatsapp-button {
-    position: fixed; /* لجعل الزر ثابتًا */
-    bottom: 20px; /* المسافة من الأسفل */
-    right: 25px; /* المسافة من اليمين */
-    z-index: 1000; /* لضمان ظهور الزر فوق كل العناصر */
-    background-color: #25D366; /* لون خلفية واتساب */
-    color: white; /* لون النص */
-    padding: 10px 15px; /* padding للزر */
-    border-radius: 5px; /* زوايا مستديرة */
-    display: flex; /* لجعل الصورة والنص في خط واحد */
-    align-items: center; /* محاذاة العمود */
-    text-decoration: none; /* إزالة الخط تحت النص */
-}
-
-.whatsapp-button img {
-    width: 30px; /* عرض الأيقونة */
-    height: 30px; /* ارتفاع الأيقونة */
-    margin-right: 5px; /* المسافة بين الأيقونة والنص */
-}
-
-.whatsapp-button:hover {
-    background-color: #128C7E; /* تغيير لون الخلفية عند التمرير */
-}
-
-
-
-.whatsapp-text {
-    font-size: 16px; /* حجم النص */
-}
-
-
-.whatsapp-text {
-    color: white; /* لون النص */
-    font-size: 14px; /* حجم النص */
-    display: none; /* إخفاء النص بشكل افتراضي */
-}
-
-
-
-.whatsapp-button:hover .whatsapp-text {
-    display: block; /* إظهار النص عند التحويم */
-}
-
-.scroll-top {
-  transition: opacity 0.3s ease;
-  opacity: 0; /* يبدأ مخفياً */
-}
-.scroll-top.show {
-  opacity: 1; /* يظهر عند إضافة الفئة show */
-}
-
-
-</style>
