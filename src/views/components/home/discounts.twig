@@ -1,11 +1,7 @@
-<section class="s-block s-block--full-bg as-grid bg-white py-4 sm:py-16">
-    <div class="text-center">
-        <h2 class="text-4xl font-bold mb-10">{{ component.item }}</h2>
-    </div>
-    
+<section class="s-block">
     <div class="flex flex-wrap justify-center gap-4">
         {% for code in component.code %}
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-lg overflow-hidden mb-4 transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+        <div class="item fade-in-up w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
             <div class="bg-gradient-to-r from-red-400 to-yellow-300 p-6">
                 <p class="text-white text-center mt-2 h-16 flex items-center justify-center">{{ code.item_1 }}</p>
             </div>
@@ -19,14 +15,23 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
         {% endfor %}
     </div>
 </section>
-
-
+<div class="flex items-center justify-center flex-col gap-2 aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" data-aos-once="true" data-aos-delay="200">
+    <div class="flex">
+      <i class="sicon-discount-coupon text-5xl" style="color: var(--color-primary) !important;"></i>
+    </div>
+    <!--  -->
+    <div class="px-3 py-2 text-center">
+      <h4 class="mb-0 text-xl font-normal">عروض وتخفيضات
+      </h4>
+      <p class="text-[var(--color-text-theme)] opacity-80 text-sm">صفقات حصرية وخاصة بالعملاء الجدد
+      </p>
+    </div>
+  </div>
 
 <script>
     document.querySelectorAll(".content").forEach((item) => {
@@ -45,8 +50,9 @@
             }
         });
     });
-</script>
 
+
+</script>
 
 
 
