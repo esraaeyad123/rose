@@ -80,6 +80,59 @@
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",
+            "label": "شريط اعلاني متحرك  ",
+            "description": null,
+            "id": "marquee",
+            "format": "switch",
+            "required": false,
+            "value": false,
+            "selected": false
+        },
+        {
+            "id": "textbanner",
+            "type": "string",
+            "format": "title",
+            "label": " نص الاعلان",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "e.g. https://salla.sa",
+            "icon": "sicon-link",
+            "value": null,
+            "required": false,
+            "minLength": 6,
+            "maxLength": 350,
+            "conditions": [
+                {
+                    "id": "marquee",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
+        },
+        {
+            "id": "background_image",
+            "type": "string",
+            "format": "image",
+            "label": "صورة الخلفية",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": null,
+            "icon": "sicon-image",
+            "value": null,
+            "required": false,
+            "conditions": [
+                {
+                    "id": "marquee",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
+        }
+        
+       ,
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
             "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
             "description": "مثل صفحة الهبوط ، المدونة ،الصفحات التعريفية",
             "id": "important_links",
