@@ -310,6 +310,16 @@ isElementLoaded(selector){
       app.element('salla-cart-summary').animateToCart(app.element(`#product-${prodId} img`));
     });
   }
+
+
+  closeModal() {
+    var my =document.getElementById('my_modal');
+    my.style.display = "none";    
+  }
 }
+
+
+
+
 
 salla.onReady(() => (new App).loadTheApp());

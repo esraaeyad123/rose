@@ -89,37 +89,6 @@
             "selected": false
         },
         {
-            "id": "numwat",
-            "type": "string",
-            "format": "text",
-            "label": " رقم الجوال",
-            "description": null,
-            "labelHTML": null,
-            "placeholder": "e.g. https://salla.sa",
-            "icon": "sicon-link",
-            "value": null,
-            "required": false,
-            "minLength": 6,
-            "maxLength": 6,
-            "conditions": [
-                {
-                    "id": "buttonwat",
-                    "operation": "=",
-                    "value": true
-                }
-            ]
-        },
-        {
-            "id": "textwat",
-            "type": "string",
-            "format": "text",
-            "label": "نص ",
-            "description": null,
-            "labelHTML": null,
-            "value": null,
-            "required": false
-        },
-        {
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
