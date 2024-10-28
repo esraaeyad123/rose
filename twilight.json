@@ -128,7 +128,7 @@
             "icon": "sicon-list",
             "selected": [
                 {
-                    "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
+                    "label": "مكان عرض ايقونة واتساب",
                     "value": "contain",
                     "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
                 }

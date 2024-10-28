@@ -1,7 +1,6 @@
 
 {% set scrolltotop = theme.settings.get('scrolltotop', true) %}
-<p>قيمة scrolltotop: {{ scrolltotop }}</p>
-imageZoom
+
 {{ theme.settings.get('scrolltotop', true) }}
 {% if scrolltotop %}
   <div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14" aria-label="Scroll to Top">
@@ -9,17 +8,22 @@ imageZoom
   </div>
   
 {% endif %}
-{{ theme.settings.get('textwat')|json_encode }}
-{% set buttonwat = theme.settings.get('buttonwat', true) %}
 
-<p>قيمة button_wat: {{ buttonwat }}</p>
+{{theme.settings.get('textwat')|json_encode }}
 
-{{theme.settings.get('numwat', true)}}
+
+{% set buttonwat = theme.settings.get('buttonwat') %}
+{{ theme.settings.get('scrolltotop', true) }}
+
+{{theme.settings.get('textwat', true)}}
+
+{% set textwat = theme.settings.get('textwat', true) %}
+kjj{{textwat}}
 {% if buttonwat %}
 
 <a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
-    <span class="whatsapp-text"> {{theme.settings.get('textwat', true)|json_encode }}</span>
+    <span class="whatsapp-text"> {{theme.settings.get('textwat') }}</span>
 </a>
 {% endif %}
 
