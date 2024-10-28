@@ -691,6 +691,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}
+.grid-cols-\[repeat\(2\2c minmax\(0\2c 1fr\)\)\]{grid-template-columns:repeat(2,minmax(0,1fr))}
 .flex-row{flex-direction:row}
 .flex-col{flex-direction:column}
 .flex-wrap{flex-wrap:wrap}
@@ -7366,6 +7367,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}
 .md\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}
+.md\:grid-cols-\[repeat\(3\2c minmax\(0\2c 1fr\)\)\]{grid-template-columns:repeat(3,minmax(0,1fr))}
 .md\:flex-row{flex-direction:row}
 .md\:items-start{align-items:flex-start}
 .md\:items-center{align-items:center}

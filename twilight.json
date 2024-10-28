@@ -180,7 +180,7 @@
             "icon": "sicon-toggle-off",
             "label": "الزر الرجوع الى الاعلى",
             "description": "لإضافة زر \"الرجوع إلى الأعلى\" على الجانب الأيمن من الصفحة",
-            "id": "scroll_ to_top",
+            "id": "scroll_to_top",
             "format": "switch",
             "required": false,
             "value": false,
