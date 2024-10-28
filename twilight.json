@@ -323,7 +323,7 @@
             "icon": "sicon-toggle-off",
             "label": "الزر الرجوع الى الاعلى",
             "description": "لإضافة زر \"الرجوع إلى الأعلى\" على الجانب الأيمن من الصفحة",
-            "id": "scroll_to_top",
+            "id": "scrolltotop",
             "format": "switch",
             "required": false,
             "value": false,
