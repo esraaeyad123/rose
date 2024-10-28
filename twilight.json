@@ -80,44 +80,13 @@
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",
-            "label": "زر  واتساب  ",
+            "label": "زر  واتساب",
             "description": null,
             "id": "buttonwat",
             "format": "switch",
             "required": false,
             "value": false,
             "selected": false
-        },
-        {
-            "id": "numwat",
-            "type": "string",
-            "format": "text",
-            "label": " رقم الجوال",
-            "description": null,
-            "labelHTML": null,
-            "placeholder": "e.g. https://salla.sa",
-            "icon": "sicon-link",
-            "value": null,
-            "required": false,
-            "minLength": 6,
-            "maxLength": 6,
-            "conditions": [
-                {
-                    "id": "buttonwat",
-                    "operation": "=",
-                    "value": true
-                }
-            ]
-        },
-        {
-            "id": "textwat",
-            "type": "string",
-            "format": "text",
-            "label": "نص ",
-            "description": null,
-            "labelHTML": null,
-            "value": null,
-            "required": false
         },
         {
             "type": "boolean",
@@ -217,7 +186,6 @@
             "source": "Manual",
             "required": true
         },
-       
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",
