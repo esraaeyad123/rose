@@ -1,6 +1,6 @@
 <footer class="store-footer pb-[70px] bg-[#f7f7f7] dark:bg-[var(--color-dark-secondary)] md:pb-0" >
 	
-	<div aria-label="footer" class="store-footer__inner wow animate__fadeIn" >
+	<div aria-label="footer" class="store-footer__inner " >
 	<div class="container">
 	<div class="flex items-center flex-col mb-5 border-b-4">
 	<a href="{{ store.url }}" class="flex items-center m-0">
@@ -81,13 +81,6 @@
 
 </footer>
 
-{% if scroll_ to_top %}
-
-<div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14 ">
-  <i class="sicon-caret-up-double"></i>
-</div>
-
-{% endif %}
 
 
 <a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
@@ -96,6 +89,13 @@
 </a>
 
 
+{% if scroll_ to_top %}
+
+<div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14 ">
+  <i class="sicon-caret-up-double"></i>
+</div>
+
+{% endif %}
 
 
   <script type"text/javascript">
