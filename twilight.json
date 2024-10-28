@@ -91,7 +91,7 @@
         {
             "id": "textbanner",
             "type": "string",
-            "format": "title",
+            "format": "text",
             "label": " نص الاعلان",
             "description": null,
             "labelHTML": null,
@@ -110,15 +110,34 @@
             ]
         },
         {
-            "id": "background_image",
+            "id": "coloebanner",
             "type": "string",
-            "format": "image",
-            "label": "صورة الخلفية",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون شريط",
             "description": null,
             "labelHTML": null,
-            "placeholder": null,
-            "icon": "sicon-image",
-            "value": null,
+            "icon": "sicon-format-fill",
+            "value": "#004956",
+            "required": false,
+            "conditions": [
+                {
+                    "id": "marquee",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
+        },
+        {
+            "id": "coloetext",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون النص",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#004956",
             "required": false,
             "conditions": [
                 {
