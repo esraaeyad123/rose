@@ -1,0 +1,76 @@
+.loyalty .breadcrumbs {
+  @apply pb-0 pt-4;
+}
+.loyalty .breadcrumbs ol {
+  @apply justify-center lg:justify-start;
+}
+.loyalty .breadcrumbs a,
+.loyalty .breadcrumbs span,
+.loyalty .breadcrumbs .arrow {
+  @apply text-white/90;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+.loyalty__banner {
+  @apply relative overflow-hidden bg-white m-auto p-10 lg:py-16 lg:px-20 rounded-md mb-28 mt-20 shadow-default;
+}
+.loyalty__banner-inner {
+  @apply relative z-10 text-center sm:flex flex-1 items-center rtl:space-x-reverse sm:space-x-12;
+}
+.loyalty__banner-content {
+  @apply md:flex flex-1 justify-between items-center;
+}
+.loyalty__banner-content .info {
+  @apply mb-6 md:mb-0;
+}
+.loyalty__banner-content .info h1 {
+  @apply font-bold text-3xl mb-2.5;
+}
+.loyalty__banner-content .info p {
+  @apply text-gray-500 max-w-xs leading-6 mb-2;
+}
+.loyalty__banner .loyalty-points {
+  @apply text-sm text-gray-500;
+}
+.loyalty__banner .loyalty-points .count-number {
+  @apply text-4xl text-primary font-bold ltr:ml-2.5 rtl:mr-2.5;
+}
+.loyalty-star {
+  @apply absolute z-0 transform opacity-70;
+}
+.loyalty-star i {
+  @apply text-gray-100 text-[400px];
+}
+.loyalty-star--first {
+  @apply -right-24 -top-48 -rotate-45;
+}
+.loyalty-star--second {
+  @apply -left-16 -bottom-40 -rotate-90;
+}
+.loyalty .product-entry__image {
+  flex-shrink: unset;
+}
+
+.points-ways__list {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-8;
+}
+.points-ways__list .way-item {
+  @apply flex flex-col bg-white w-full opacity-100 rounded-md shadow-default p-6;
+}
+.points-ways__list .way-item__icon {
+  @apply flex shrink-0 items-center justify-center relative h-12 w-12;
+}
+.points-ways__list .way-item__icon span {
+  @apply absolute z-0 w-full h-full inset-0 rounded-full opacity-10;
+}
+.points-ways__list .way-item__content {
+  @apply flex flex-col justify-start;
+}
+.points-ways__list .way-item__content h4 {
+  @apply font-bold text-xl break-all;
+}
+.points-ways__list .way-item__content p {
+  @apply text-sm text-gray-400;
+}
+.points-ways__list .way-item__action {
+  @apply mt-auto pt-4;
+}/*# sourceMappingURL=loyalty.css.map */
