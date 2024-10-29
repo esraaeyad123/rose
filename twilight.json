@@ -88,7 +88,7 @@
             "value": false,
             "selected": false
         },
-        {  
+        {
             "id": "numwat",
             "type": "string",
             "format": "text",
@@ -1318,10 +1318,22 @@
             "path": "home.banner-with-countdown",
             "fields": [
                 {
+                    "id": "imagebackground",
+                    "type": "string",
+                    "format": "image",
+                    "label": "خلفية المكون",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
                     "id": "title",
                     "type": "string",
                     "format": "text",
-                    "label": "String",
+                    "label": "العنوان",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -1331,70 +1343,6 @@
                     "required": false,
                     "minLength": 6,
                     "maxLength": 30
-                },
-                {
-                    "type": "items",
-                    "icon": "sicon-link",
-                    "label": "الرابط",
-                    "id": "link",
-                    "value": [],
-                    "description": null,
-                    "required": false,
-                    "format": "variable-list",
-                    "searchable": true,
-                    "source": "custom",
-                    "sources": [
-                        {
-                            "label": "منتج",
-                            "key": "products",
-                            "value": "products"
-                        },
-                        {
-                            "label": "تصنيف",
-                            "key": "categories",
-                            "value": "categories"
-                        },
-                        {
-                            "label": "ماركة تجارية",
-                            "key": "brands",
-                            "value": "brands"
-                        },
-                        {
-                            "label": "صفحة تعريفية",
-                            "key": "pages",
-                            "value": "pages"
-                        },
-                        {
-                            "label": "مقالة",
-                            "key": "blog_articles",
-                            "value": "blog_articles"
-                        },
-                        {
-                            "label": "تصنيف ضمن المدونة",
-                            "key": "blog_categories",
-                            "value": "blog_categories"
-                        },
-                        {
-                            "label": "التخفيضات",
-                            "key": "offers_link",
-                            "value": "offers_link"
-                        },
-                        {
-                            "label": "الماركات التجارية",
-                            "key": "brands_link",
-                            "value": "brands_link"
-                        },
-                        {
-                            "label": "المدونة",
-                            "key": "blog_link",
-                            "value": "blog_link"
-                        },
-                        {
-                            "label": "رابط خارجي",
-                            "key": "custom",
-                            "value": "custom"
-                        }
-                    ]
                 },
                 {
                     "id": "desc",
@@ -1424,19 +1372,7 @@
                     "required": false
                 },
                 {
-                    "id": "background",
-                    "type": "string",
-                    "format": "image",
-                    "label": "خلفية المكون",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "e.g. https://hostname.com/image.png",
-                    "icon": "sicon-image",
-                    "value": null,
-                    "required": false
-                },
-                {
-                    "id": "textBut",
+                    "id": "buttontext",
                     "type": "string",
                     "format": "text",
                     "label": "نص الزر",
@@ -1449,30 +1385,6 @@
                     "required": false,
                     "minLength": 6,
                     "maxLength": 30
-                },
-                {
-                    "id": "cloroBack",
-                    "type": "string",
-                    "format": "color",
-                    "inputType": "color",
-                    "label": "لون الخلفية",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-format-fill",
-                    "value": "#004956",
-                    "required": false
-                },
-                {
-                    "id": "colorText",
-                    "type": "string",
-                    "format": "color",
-                    "inputType": "color",
-                    "label": "لون النص",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-format-fill",
-                    "value": "#004956",
-                    "required": false
                 }
             ]
         },
