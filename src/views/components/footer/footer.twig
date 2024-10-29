@@ -9,6 +9,8 @@
   
 {% endif %}
 
+{{ theme.settings.get('textwat') }}
+
 {{theme.settings.get('textwat')|json_encode }}
 
 
@@ -17,7 +19,10 @@
 
 {{theme.settings.get('textwat', true)}}
 
-{% set textwat = theme.settings.get('textwat', true) %}
+{% set textwat = theme.settings.get('textwat', true)|json_encode %}
+{% set buttonwat = theme.settings.get('buttonwat', true)|json_encode %}
+
+
 kjj{{textwat}}
 {% if buttonwat %}
 
@@ -146,29 +151,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  let lastScrollY = window.scrollY;
-  const scrollTopButton = document.querySelector('.scroll-top');
-
-  // عند التمرير
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) { // يظهر الزر بعد 200 بكسل من التمرير
-      if (window.scrollY > lastScrollY) { // إذا تم التمرير لأسفل
-        scrollTopButton.classList.add('show');
-      } else { // إذا تم التمرير لأعلى
-        scrollTopButton.classList.remove('show');
-      }
-    } else {
-      scrollTopButton.classList.remove('show'); // يخفي الزر إذا كان التمرير أقل من 200 بكسل
-    }
-    lastScrollY = window.scrollY; // تحديث موضع التمرير الأخير
-  });
-
-  // عند الضغط على الزر، يُرجع الصفحة للأعلى
-  scrollTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
 
 
 </script>

@@ -11,6 +11,8 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.copycontent();
+    this.scrollTopButton();
     this.commonThings();
     this.initiateNotifier();
     this.initiateMobileMenu();
@@ -311,11 +313,70 @@ isElementLoaded(selector){
     });
   }
 
+  
+  scrollTopButton() {
+    document.addEventListener('DOMContentLoaded', () => {
+      let lastScrollY = window.scrollY;
+      const scrollTopButton = document.querySelector('.scroll-top');
+    
+      // عند التمرير
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // يظهر الزر بعد 200 بكسل من التمرير
+          if (window.scrollY > lastScrollY) { // إذا تم التمرير لأسفل
+            scrollTopButton.classList.add('show');
+          } else { // إذا تم التمرير لأعلى
+            scrollTopButton.classList.remove('show');
+          }
+        } else {
+          scrollTopButton.classList.remove('show'); // يخفي الزر إذا كان التمرير أقل من 200 بكسل
+        }
+        lastScrollY = window.scrollY; // تحديث موضع التمرير الأخير
+      });
+    
+      // عند الضغط على الزر، يُرجع الصفحة للأعلى
+      scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+    
+  }
 
   closeModal() {
     var my =document.getElementById('my_modal');
     my.style.display = "none";    
   }
+
+  copycontent() {
+
+    document.querySelectorAll(".contentcode").forEach((item) => {
+      item.addEventListener("click", async (event) => {
+          if (!navigator.clipboard) {
+              return;
+          }
+          try {
+              const code = event.target.previousElementSibling.innerText; // الحصول على النص من العنصر السابق
+              await navigator.clipboard.writeText(code); // نسخ النص إلى الحافظة
+              
+              // تغيير نص الزر عند النسخ
+              event.target.innerHTML = "Copied"; 
+              setTimeout(() => { 
+                  event.target.innerHTML = "Copy"; // إعادة النص الأصلي بعد 2 ثانية
+              }, 2000); 
+          } catch (err) {
+              console.error("Failed to copy!", err);
+          }
+      });
+  });
+   
+    console.log('copy');
+
+  }
+
+ 
+
+
+
+
 }
 
 

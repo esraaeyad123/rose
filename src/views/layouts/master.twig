@@ -61,6 +61,7 @@
     <!-- To eliminate all render blocking CSS & JS and start with the critical css-->
     <!-- To show loader to the user till the page content are  loaded-->
     <style>
+     
       .loader-init {
           position: fixed;
           top: 0;
@@ -130,7 +131,7 @@
     <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>
     
     <style>
-        :root {
+      :root {
             --font-main: '{{theme.font.name}}';
             --color-primary: {{ theme.color.primary }};
             --color-primary-dark: {{ theme.color.darker(0.15) }};

@@ -10,7 +10,7 @@
                     <span class="text-xl font-bold">استخدم الكود:</span>
                     <div class="flex items-center">
                         <span class="code mr-2 bg-gray-200 text-gray-800 py-1 px-3 rounded-lg">{{ code.item_3 }}</span>
-                        <div class="contentcode ml-2 cursor-pointer" id="myTooltip" aria-label="نسخ الكود">
+                        <div class="contentcode ml-2 cursor-pointer" aria-label="نسخ الكود">
                             Copy
                         </div>
                     </div>
@@ -20,29 +20,4 @@
         {% endfor %}
     </div>
 </section>
-
-<script>
-    document.querySelectorAll(".content").forEach((item) => {
-        item.addEventListener("click", async (event) => {
-            if (!navigator.clipboard) {
-                return;
-            }
-            try {
-                const code = event.target.previousElementSibling.innerText;
-                await navigator.clipboard.writeText(code);
-                var tooltip = document.getElementById("myTooltip");
-                tooltip.innerHTML = "Copied";
-                setTimeout(() => { tooltip.innerHTML = "Copy"; }, 2000); // Reset tooltip after 2 seconds
-            } catch (err) {
-                console.error("Failed to copy!", err);
-            }
-        });
-    });
-
-
-</script>
-
-
-
-
 
