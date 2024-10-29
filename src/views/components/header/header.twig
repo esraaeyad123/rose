@@ -23,6 +23,10 @@
   </ul>
 </div>
 
+<div id="loading" class="loading-screen">
+  <img src="{{ store.logo }}" alt="Loading..." class="loading-logo">
+</div>
+
 
 {% set important_links = theme.settings.get('important_links') %}
 
@@ -193,3 +197,29 @@ function closeBanner() {
 
 </script>
 
+
+<style>
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* خلفية بيضاء شفافة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* أعلى من باقي المحتويات */
+}
+
+.loading-logo {
+    width: 100px; /* عرض اللوجو */
+    animation: spin 1s linear infinite; /* حركة الدوران */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+</style>
