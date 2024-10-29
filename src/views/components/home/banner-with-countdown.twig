@@ -1,37 +1,33 @@
-<section class="art-countdown bg-gray-300 h-screen w-full relative bg-no-repeat bg-center bg-cover bg-origin-border overflow-hidden after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/20 after:z-10 lg:px-10 md:px-5 px-1 lg:py-20 md:py-10 py-5" style="background-image: url( 'https://cdn.salla.sa/form-builder/yrLsNz44b9tu2YU0RnuLWHSHbu9kYuBnCLZuG7cz.jpg' );">
-  <div class="container mx-auto w-full h-full relative z-20">
-  <div class="grid md:grid-cols-2 grid-cols-1 justify-between items-center w-full h-full lg:gap-20 md:gap-10">
-  <div class="flex flex-col gap-6 lg:px-10 md:order-last">
-  <span class="art-text-subtitle capitalize text-[16px] font-[200] ltr:tracking-[1px]" style="color: #ffffff">احصل عليها قبل انتهاء العرض</span>
-  <h2 class="art-text-title capitalize md:text-[34px] text-[28px] font-medium leading-[45px] ltr:tracking-[1px]" style="color: #ffffff" data-aos="zoom-out-up" data-aos-duration="800" data-aos-once="true">
-  تخفيض حصري: شنط جلدية فاخرة
-  </h2>
-  <p class="art-text-description text-[17px]" style="color: #ffffff">سارعوا واستفيدوا من تخفيضنا المحدود على الشنط الجلدية الفاخرة. تقدم مجموعتنا تشكيلة من التصاميم التي تجمع بين العملية والأناقة، مما يجعل كل شنطة قطعة مميزة. مصنوعة من الجلد الفاخر</p>
-  <div class="flex gap-2 group" data-aos="zoom-out" data-aos-duration="800" data-aos-once="true">
-  <a href="https://salla.sa/dev-oqggslwyq7yuaskf/redirect/products/1285593759" target="_self">
-  <button style="color: var(--color-primary-reverse); border-color: var(--color-primary);" class="art-text-button ltr:tracking-[3px] relative py-4 px-8 border-[1px] uppercase text-[16px] overflow-hidden duration-300 z-50 bg-transparent" fdprocessedid="k334vn">
-  <span class="relative z-50">تسوقىىى الان</span>
-  <span class="absolute block top-0 left-0 w-full h-full scale-x-100 rtl:origin-right ltr:origin-left after:z-[-1] group-hover:scale-x-0 duration-500" style="background-color: var(--color-primary)"></span>
-  </button>
-  </a>
-  </div>
-  </div>
-  <div class="flex justify-center items-center relative z-30 md:order-first">
-    <div class="art-countdown-nav">
-      <salla-count-down  data="{{component.countsown}}" days hours minutes>
-      </salla-count-down>
-
-        
 
 
+    
 
-      </div>
       
-  
-  </div>
-  </div>
-  </div>
-  </section>
+<section class="s-block s-block--banners container bg-white">
 
+  <div class="px-6 py-0 md:py-0 md:rtl:pl-0 md:ltr:pr-0 flex-1">
+    <div class="grid md:grid-cols-2 grid-cols-1 justify-between items-center w-full h-full lg:gap-20 md:gap-10">
+      <div class="flex flex-col gap-6 lg:px-10">
+        <span class="art-text-subtitle capitalize text-[16px] font-[200] tracking-[1px] text-white">احصل عليها قبل انتهاء العرض</span>
+        <h2 class="art-text-title capitalize md:text-[34px] text-[28px] font-medium leading-[45px] tracking-[1px] text-white" data-aos="zoom-out-up" data-aos-duration="800" data-aos-once="true">
+          تخفيض حصري: شنط جلدية فاخرة
+        </h2>
+        <p class="art-text-description text-[17px] text-white">سارعوا واستفيدوا من تخفيضنا المحدود على الشنط الجلدية الفاخرة. تقدم مجموعتنا تشكيلة من التصاميم التي تجمع بين العملية والأناقة، مما يجعل كل شنطة قطعة مميزة. مصنوعة من الجلد الفاخر</p>
+        <div class="flex gap-2 group">
+          <a href="https://salla.sa/dev-oqggslwyq7yuaskf/redirect/products/1285593759" target="_self">
+            <button class="art-text-button tracking-[3px] relative py-4 px-8 border-[1px] uppercase text-[16px] border-primary text-primary-reverse overflow-hidden duration-300 z-50 bg-transparent">
+              <span class="relative z-50"> {{component.titleButton}}</span>
+              <span class="absolute block top-0 left-0 w-full h-full scale-x-100 origin-left after:z-[-1] group-hover:scale-x-0 duration-500 bg-primary"></span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center items-center md:order-first">
+        <div class="art-countdown-nav">
+          <salla-count-down data="{{component.countsown}}" days hours minutes></salla-count-down>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
- 
