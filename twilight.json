@@ -58,6 +58,17 @@
             "label": "صفحة التحميل"
         },
         {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": " صفحة التحميل",
+            "description": null,
+            "id": "show_loding",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
             "id": "loadingitem2",
             "type": "number",
             "format": "integer",
@@ -70,7 +81,14 @@
             "value": 0,
             "required": false,
             "minimum": 0,
-            "maximum": "300"
+            "maximum": "300" ,
+            "conditions": [
+                {
+                    "id": "show_loding",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "id": "loadingitem1",
@@ -85,7 +103,14 @@
             "value": 0,
             "required": false,
             "minimum": 0,
-            "maximum": "300"
+            "maximum": "300",
+            "conditions": [
+                {
+                    "id": "show_loding",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "id": "lodingitem3",
@@ -97,7 +122,14 @@
             "placeholder": "e.g. https://hostname.com/image.png",
             "icon": "sicon-image",
             "value": null,
-            "required": false
+            "required": false,
+            "conditions": [
+                {
+                    "id": "show_loding",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "id": "lodingitem4",
@@ -109,7 +141,14 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#004956",
-            "required": false
+            "required": false ,
+            "conditions": [
+                {
+                    "id": "show_loding",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "type": "static",
