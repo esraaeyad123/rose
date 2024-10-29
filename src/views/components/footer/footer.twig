@@ -19,11 +19,11 @@
 
 {{theme.settings.get('textwat', true)}}
 
-{% set textwat = theme.settings.get('textwat', true)|json_encode %}
+{% set textwat = theme.settings.get('textwat', true) %}
 {% set buttonwat = theme.settings.get('buttonwat', true)|json_encode %}
 
 
-kjj{{textwat}}
+{{textwat}}
 {% if buttonwat %}
 
 <a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
