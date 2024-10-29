@@ -45,6 +45,74 @@
         },
         {
             "type": "static",
+            "id": "static-line2",
+            "format": "line",
+            "label": null
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "loadingscreen",
+            "value": "صفحة التحميل",
+            "variant": "h6",
+            "label": "صفحة التحميل"
+        },
+        {
+            "id": "loadingitem2",
+            "type": "number",
+            "format": "integer",
+            "inputType": "number",
+            "label": "طول شعار صفحة التحميل",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "اقصى طول مقبول هو 300 بيكسل",
+            "icon": "sicon-hashtag",
+            "value": 0,
+            "required": false,
+            "minimum": 0,
+            "maximum": "300"
+        },
+        {
+            "id": "loadingitem1",
+            "type": "number",
+            "format": "integer",
+            "inputType": "number",
+            "label": "عرض شعار صفحة التحميل",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "اقصى عرض مقبول هو 300 بيكسل",
+            "icon": "sicon-hashtag",
+            "value": 0,
+            "required": false,
+            "minimum": 0,
+            "maximum": "300"
+        },
+        {
+            "id": "lodingitem3",
+            "type": "string",
+            "format": "image",
+            "label": "شعار صفحة التحميل",
+            "description": "في حالة عدم رفع شعار هنا سيتم عرض شعار المتجر الاساسي",
+            "labelHTML": null,
+            "placeholder": "e.g. https://hostname.com/image.png",
+            "icon": "sicon-image",
+            "value": null,
+            "required": false
+        },
+        {
+            "id": "lodingitem4",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون خلفية صفحة التحميل",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#004956",
+            "required": false
+        },
+        {
+            "type": "static",
             "id": "static-line1",
             "format": "line"
         },
