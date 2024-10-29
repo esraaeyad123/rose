@@ -1,33 +1,34 @@
 
+ 
+<section class="s-block--features container flex justify-center px-2 md:px-0 py-8">
+  <div class="container">
+    <div class="bg-center bg-cover p-8 sm:p-10 rounded-2xl w-full text-white flex items-center justify-between mx-auto flex-col py-8" style="
+              background: linear-gradient(rgb(49 47 49 / 80%), rgb(79 79 79 / 80%)), url('{{ component.imagebackground }}');">
 
-    
-
-      
-<section class="s-block s-block--banners container bg-white">
-
-  <div class="px-6 py-0 md:py-0 md:rtl:pl-0 md:ltr:pr-0 flex-1">
-    <div class="grid md:grid-cols-2 grid-cols-1 justify-between items-center w-full h-full lg:gap-20 md:gap-10">
-      <div class="flex flex-col gap-6 lg:px-10">
-        <span class="art-text-subtitle capitalize text-[16px] font-[200] tracking-[1px] text-white">احصل عليها قبل انتهاء العرض</span>
-        <h2 class="art-text-title capitalize md:text-[34px] text-[28px] font-medium leading-[45px] tracking-[1px] text-white" data-aos="zoom-out-up" data-aos-duration="800" data-aos-once="true">
-          تخفيض حصري: شنط جلدية فاخرة
-        </h2>
-        <p class="art-text-description text-[17px] text-white">سارعوا واستفيدوا من تخفيضنا المحدود على الشنط الجلدية الفاخرة. تقدم مجموعتنا تشكيلة من التصاميم التي تجمع بين العملية والأناقة، مما يجعل كل شنطة قطعة مميزة. مصنوعة من الجلد الفاخر</p>
-        <div class="flex gap-2 group">
-          <a href="https://salla.sa/dev-oqggslwyq7yuaskf/redirect/products/1285593759" target="_self">
-            <button class="art-text-button tracking-[3px] relative py-4 px-8 border-[1px] uppercase text-[16px] border-primary text-primary-reverse overflow-hidden duration-300 z-50 bg-transparent">
-              <span class="relative z-50"> {{component.titleButton}}</span>
-              <span class="absolute block top-0 left-0 w-full h-full scale-x-100 origin-left after:z-[-1] group-hover:scale-x-0 duration-500 bg-primary"></span>
-            </button>
-          </a>
+      <div class="flex flex-col w-full items-center gap-4">
+        <div class="flex flex-col text-center py-4">
+          <span class="text-gray-200 font-bold">{{ component.title }}</span> <!-- إضافة font-bold هنا -->
+          <span class="text-gray-200 text-4xl md:text-5xl text-white font-semibold pt-2 font-bold">{{ component.dese }}</span> <!-- إضافة font-bold هنا -->
+        </div>
+        <div>
+          <div class="flex flex-col justify-center text-center">
+            <p class="text-gray-200 font-bold">{{ component.desc }}</p> <!-- إضافة font-bold هنا -->
+            <salla-count-down color="#ffffff" class="basis-1/4 s-count-down-wrapper hydrated" boxed="false" digits="auto" size="lg" labeled="true" date="{{ component.countsown }}">
+            </salla-count-down>
+          </div>
         </div>
       </div>
-      <div class="flex justify-center items-center md:order-first">
-        <div class="art-countdown-nav">
-          <salla-count-down data="{{component.countsown}}" days hours minutes></salla-count-down>
-        </div>
+      <div>
+        <a href="{{ component.link }}" target="_self">
+          <button type="button" data-modal-target="discount-modal" data-modal-toggle="discount-modal" rel="noreferrer" class="text-black bg-white hover:bg-gray-50 px-4 py-2 rounded-lg w-fit ease duration-300 flex gap-1 items-center">
+            <span class="font-bold">{{ component.buttontext }}</span> <!-- إضافة font-bold هنا -->
+            <svg data-v-e660a7a7="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="rotate-180 group-hover:-translate-x-1 transition-transform ease duration-200" width="1em" height="1em" viewBox="0 0 256 256">
+              <path fill="currentColor" d="m221.66 133.66l-72 72a8 8 0 0 1-11.32-11.32L196.69 136H40a8 8 0 0 1 0-16h156.69l-58.35-58.34a8 8 0 0 1 11.32-11.32l72 72a8 8 0 0 1 0 11.32Z">
+              </path>
+            </svg>
+          </button>
+        </a>
       </div>
     </div>
   </div>
 </section>
-
