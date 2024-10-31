@@ -22,10 +22,25 @@
       <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
   </ul>
 </div>
+{% set show_loding = theme.settings.get('show_loding')  %}
+{% set colorpage   = theme.settings.get('lodingitem4')  %}
+{% set width       = theme.settings.get('loadingitem1') %}
+{% set height      = theme.settings.get('loadingitem2') %}
+{% set image       = theme.settings.get('lodingitem3')  %}
 
-<div id="loading" class="loading-screen bg-gray-800 bg-opacity-80 flex items-center justify-center h-screen">
-  <img src="{{ store.logo }}" alt="Loading..." class="loading-logo">
+
+{% if show_loading %}
+<div id="loading" class="loading-screen bg-opacity-80 flex items-center justify-center h-screen"
+     style="background-color: {{ colorpage }}; width: {% if show_loading %}{{ width }}{% else %}100%{% endif %}; 
+     height: {% if show_loading %}{{ height }}{% else %}100%{% endif %};">
+  <img src="{% if show_loading %}{{ image }}{% else %}{{ store.logo }}{% endif %}" alt="Loading..." class="loading-logo">
 </div>
+{% endif %}
+
+
+
+
+
 
 {% set important_links = theme.settings.get('important_links') %}
 
