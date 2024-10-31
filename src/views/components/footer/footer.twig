@@ -9,23 +9,15 @@
   
 {% endif %}
 
-{{ theme.settings.get('textwat') }}
 
-{{theme.settings.get('textwat')|json_encode }}
 
 
 {% set buttonwat = theme.settings.get('buttonwat') %}
 {{ theme.settings.get('scrolltotop', true) }}
 
-{{theme.settings.get('numwat', true)}}
+{{theme.settings.get('wherewatbut', true)|json_encode %}}
 
-{% set textwat = theme.settings.get('textwat', true) %}
-{% set buttonwat = theme.settings.get('buttonwat', true)|json_encode %}
-
-
-{{textwat}}
-
-
+{% set buttonwat = theme.settings.get('wherewatbut', true)|json_encode %}
 {% if buttonwat %}
 
 <a href="https://wa.me/{{theme.settings.get('numwat')}}
@@ -33,6 +25,9 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
   <span class="whatsapp-text"> {{theme.settings.get('textwat') }}</span>
 </a>
+
+<input  id="where-info" value="{{theme.settings.get('wherewatbut') }}  ">
+
 {% endif %}
 
 <footer class="store-footer pb-[70px] bg-[#f7f7f7] dark:bg-[var(--color-dark-secondary)] md:pb-0" >

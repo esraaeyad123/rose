@@ -208,7 +208,14 @@
             "multilanguage": false,
             "required": false,
             "minLength": "12",
-            "maxLength": "12"
+            "maxLength": "12" ,
+            "conditions": [
+                {
+                    "id": "buttonwat",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "id": "textwat",
@@ -223,7 +230,14 @@
             "multilanguage": false,
             "required": false,
             "minLength": 6,
-            "maxLength": 30
+            "maxLength": 30 ,
+            "conditions": [
+                {
+                    "id": "buttonwat",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "id": "wherewatbut",
@@ -253,7 +267,14 @@
                 }
             ],
             "source": "Manual",
-            "required": true
+            "required": true ,
+            "conditions": [
+                {
+                    "id": "buttonwat",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "type": "boolean",
