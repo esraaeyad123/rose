@@ -1031,7 +1031,6 @@ padding: 10px;
   background-color: #333; /* لون أغمق عند التمرير فوق الزر */
 }
 
-
 .whatsapp-button {
   position: fixed; /* لجعل الزر ثابتًا */
   bottom: 20px; /* المسافة من الأسفل */
@@ -1122,4 +1121,48 @@ opacity: 1; /* يظهر عند إضافة الفئة show */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+.whatsapp-buttonleft {
+  position: fixed; /* لجعل الزر ثابتًا */
+  bottom: 30px; /* المسافة من الأسفل */
+  left: 25px; /* المسافة من اليمين */
+  z-index: 1000; /* لضمان ظهور الزر فوق كل العناصر */
+  background-color: #25D366; /* لون خلفية واتساب */
+  color: white; /* لون النص */
+  padding: 10px 15px; /* padding للزر */
+  border-radius: 5px; /* زوايا مستديرة */
+  display: flex; /* لجعل الصورة والنص في خط واحد */
+  align-items: center; /* محاذاة العمود */
+  text-decoration: none; /* إزالة الخط تحت النص */
+}
+
+.whatsapp-buttonleft img {
+  width: 30px; /* عرض الأيقونة */
+  height: 30px; /* ارتفاع الأيقونة */
+  margin-right: 5px; /* المسافة بين الأيقونة والنص */
+}
+
+.whatsapp-buttonleft:hover {
+  background-color: #128C7E; /* تغيير لون الخلفية عند التمرير */
+}
+
+
+
+.whatsapp-text {
+  font-size: 16px; /* حجم النص */
+}
+
+
+.whatsapp-text {
+  color: white; /* لون النص */
+  font-size: 14px; /* حجم النص */
+  display: none; /* إخفاء النص بشكل افتراضي */
+}
+
+
+
+.whatsapp-buttonleft:hover .whatsapp-text {
+  display: block; /* إظهار النص عند التحويم */
 }

@@ -28,17 +28,10 @@
 {% set height      = theme.settings.get('loadingitem2', true) %}
 {% set image       = theme.settings.get('lodingitem3', true) %}
 
-
-{% if show_loading %}
 <div id="loading" class="loading-screen bg-opacity-80 flex items-center justify-center h-screen"
-     style="background-color: {{ colorpage }}; width: {% if show_loading %}{{ width }}{% else %}100%{% endif %}; 
-     height: {% if show_loading %}{{ height }}{% else %}100%{% endif %};">
-  <img src="{% if show_loading %}{{ image }}{% else %}{{ store.logo }}{% endif %}" alt="Loading..." class="loading-logo">
+     style="background-color: {{ colorpage }}; width: {% if show_loading %}{{ width }}{% else %}100%{% endif %}; height: 100%;">
+  <img src="{% if show_loading %}{{ image }}{% else %}{{store.logo }}{% endif %}" alt="Loading..." class="loading-logo">
 </div>
-{% endif %}
-
-
-
 
 
 

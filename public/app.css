@@ -491,6 +491,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .-top-5{top:-1.25rem}
 .bottom-0{bottom:0px}
 .bottom-1{bottom:0.25rem}
+.bottom-14{bottom:3.5rem}
 .bottom-2{bottom:0.5rem}
 .bottom-20{bottom:5rem}
 .left-0{left:0px}
@@ -502,6 +503,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .right-2\.5{right:0.625rem}
 .right-3{right:0.75rem}
 .right-5{right:1.25rem}
+.right-8{right:2rem}
 .top-0{top:0px}
 .top-1\.5{top:0.375rem}
 .top-2{top:0.5rem}
@@ -509,17 +511,15 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .top-3{top:0.75rem}
 .top-4{top:1rem}
 .top-full{top:100%}
-.bottom-14{bottom:3.5rem}
-.right-8{right:2rem}
 .-z-1{z-index:-1}
 .z-0{z-index:0}
 .z-1{z-index:1}
 .z-10{z-index:10}
 .z-20{z-index:20}
+.z-40{z-index:40}
 .z-50{z-index:50}
 .z-\[1\]{z-index:1}
 .z-\[2\]{z-index:2}
-.z-40{z-index:40}
 .col-span-2{grid-column:span 2 / span 2}
 .col-span-6{grid-column:span 6 / span 6}
 .col-end-13{grid-column-end:13}
@@ -7050,6 +7050,36 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   100% {
     transform: rotate(360deg);
   }
+}
+.whatsapp-buttonleft {
+  position: fixed; /* لجعل الزر ثابتًا */
+  bottom: 30px; /* المسافة من الأسفل */
+  left: 25px; /* المسافة من اليمين */
+  z-index: 1000; /* لضمان ظهور الزر فوق كل العناصر */
+  background-color: #25D366; /* لون خلفية واتساب */
+  color: white; /* لون النص */
+  padding: 10px 15px; /* padding للزر */
+  border-radius: 5px; /* زوايا مستديرة */
+  display: flex; /* لجعل الصورة والنص في خط واحد */
+  align-items: center; /* محاذاة العمود */
+  -webkit-text-decoration: none;
+  text-decoration: none; /* إزالة الخط تحت النص */
+}
+.whatsapp-buttonleft img {
+  width: 30px; /* عرض الأيقونة */
+  height: 30px; /* ارتفاع الأيقونة */
+  margin-right: 5px; /* المسافة بين الأيقونة والنص */
+}
+.whatsapp-buttonleft:hover {
+  background-color: #128C7E; /* تغيير لون الخلفية عند التمرير */
+}
+.whatsapp-text { /* حجم النص */
+  color: white; /* لون النص */
+  font-size: 14px; /* حجم النص */
+  display: none; /* إخفاء النص بشكل افتراضي */
+}
+.whatsapp-buttonleft:hover .whatsapp-text {
+  display: block; /* إظهار النص عند التحويم */
 }
 body.mm-ocd-opened,
 body.modal-is-open,
