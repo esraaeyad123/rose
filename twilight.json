@@ -78,7 +78,7 @@
             "labelHTML": null,
             "placeholder": "اقصى طول مقبول هو 300 بيكسل",
             "icon": "sicon-hashtag",
-            "value": "100%",
+            "value": 0,
             "required": false,
             "minimum": 0,
             "maximum": "300" ,
@@ -100,7 +100,7 @@
             "labelHTML": null,
             "placeholder": "اقصى عرض مقبول هو 300 بيكسل",
             "icon": "sicon-hashtag",
-            "value": "100%",
+            "value": 0,
             "required": false,
             "minimum": 0,
             "maximum": "300",
@@ -275,9 +275,7 @@
                     "value": true
                 }
             ]
-        },
-        
-        {
+        },{
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
