@@ -275,7 +275,9 @@
                     "value": true
                 }
             ]
-        },{
+        },
+        
+        {
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
