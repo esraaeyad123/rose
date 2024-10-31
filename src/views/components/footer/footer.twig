@@ -1,34 +1,4 @@
 
-{% set scrolltotop = theme.settings.get('scrolltotop', true) %}
-
-{% if scrolltotop %}
-  <div class="scroll-top fixed right-8 w-10 h-10 z-40 text-white text-lg flex justify-center items-center cursor-pointer duration-500 bottom-14" aria-label="Scroll to Top">
-    <i class="sicon-caret-up-double"></i>
-  </div>
-  
-{% endif %}
-
-{{ theme.settings.get('scrolltotop', true) }}
-
-
-
-{% set buttonwat = theme.settings.get('buttonwat') %}
-{{ theme.settings.get('scrolltotop', true) }}
-
-{{theme.settings.get('wherewatbut', true)|json_encode %}}
-
-{% set buttonwat = theme.settings.get('wherewatbut', true)|json_encode %}
-{% if buttonwat %}
-
-<a href="https://wa.me/{{theme.settings.get('numwat')}}
-?text=مرحبًا! أود الاستفسار عن معلومات إضافية." class="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
-  <span class="whatsapp-text"> {{theme.settings.get('textwat') }}</span>
-</a>
-
-<input  id="where-info" value="{{theme.settings.get('wherewatbut') }}  ">
-
-{% endif %}
 
 <footer class="store-footer pb-[70px] bg-[#f7f7f7] dark:bg-[var(--color-dark-secondary)] md:pb-0" >
 	
