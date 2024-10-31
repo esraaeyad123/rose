@@ -200,15 +200,15 @@
             "type": "string",
             "format": "text",
             "label": "رقم واتساب",
-            "description": null,
+            "description": "يرجى إدخال رقم الجوال، يجب أن يبدأ بـ 966.",
             "labelHTML": null,
             "placeholder": "Placeholder text ..",
             "icon": "sicon-format-text-alt",
             "value": null,
             "multilanguage": false,
             "required": false,
-            "minLength": "11",
-            "maxLength": "11"
+            "minLength": "12",
+            "maxLength": "12"
         },
         {
             "id": "textwat",

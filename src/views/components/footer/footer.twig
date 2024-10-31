@@ -17,18 +17,21 @@
 {% set buttonwat = theme.settings.get('buttonwat') %}
 {{ theme.settings.get('scrolltotop', true) }}
 
-{{theme.settings.get('textwat', true)}}
+{{theme.settings.get('numwat', true)}}
 
 {% set textwat = theme.settings.get('textwat', true) %}
 {% set buttonwat = theme.settings.get('buttonwat', true)|json_encode %}
 
 
 {{textwat}}
+
+
 {% if buttonwat %}
 
-<a href="#" class="whatsapp-button" id="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
-    <span class="whatsapp-text"> {{theme.settings.get('textwat') }}</span>
+<a href="https://wa.me/{{theme.settings.get('numwat')}}
+?text=مرحبًا! أود الاستفسار عن معلومات إضافية." class="whatsapp-button" aria-label="تواصل معنا عبر واتساب">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" />
+  <span class="whatsapp-text"> {{theme.settings.get('textwat') }}</span>
 </a>
 {% endif %}
 
@@ -118,40 +121,4 @@
 
 
 
-
-
-
-  <script type"text/javascript">
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const whatsappButton = document.getElementById('whatsapp-button');
-
-    whatsappButton.addEventListener('click', function(event) {
-        event.preventDefault(); // منع التصرف الافتراضي للرابط
-
-        let message = "مرحبًا! أود الاستفسار عن ";
-        const productLink = window.location.href; // الحصول على رابط الصفحة الحالية
-
-        // تحقق من نوع الصفحة
-        if (document.title.includes("منتج")) { 
-            const productName = document.querySelector('h1').innerText; // اسم المنتج
-            message += `${productName}. يمكنك زيارة الرابط: ${productLink}`;
-        } else if (document.title.includes("طلب")) { 
-            const orderNumber = "رقم الطلب"; // هنا يمكنك استبداله برقم الطلب الفعلي
-            message += `طلبتي رقم ${orderNumber}. يمكنك زيارة الرابط: ${productLink}`;
-        } else {
-            message += "معلومات إضافية.";
-        }
-
-        const phoneNumber = "96659668246"; // أدخل رقم هاتفك هنا
-        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappLink, '_blank'); // فتح الرابط في نافذة جديدة
-    });
-});
-
-
-
-
-</script>
 
