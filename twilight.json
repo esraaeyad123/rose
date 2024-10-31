@@ -187,7 +187,7 @@
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",
-            "label": "زر  واتساب",
+            "label": "زر واتساب",
             "description": null,
             "id": "buttonwat",
             "format": "switch",
@@ -202,13 +202,13 @@
             "label": "رقم واتساب",
             "description": "يرجى إدخال رقم الجوال، يجب أن يبدأ بـ 966.",
             "labelHTML": null,
-            "placeholder": "Placeholder text ..",
+            "placeholder": "رقم الجوال ..",
             "icon": "sicon-format-text-alt",
             "value": null,
             "multilanguage": false,
             "required": false,
-            "minLength": "12",
-            "maxLength": "12" ,
+            "minLength": 12,
+            "maxLength": 12,
             "conditions": [
                 {
                     "id": "buttonwat",
@@ -224,13 +224,13 @@
             "label": "نص واتساب",
             "description": null,
             "labelHTML": null,
-            "placeholder": "Placeholder text ..",
+            "placeholder": "نص الرسالة ..",
             "icon": "sicon-format-text-alt",
             "value": null,
             "multilanguage": false,
             "required": false,
             "minLength": 6,
-            "maxLength": 30 ,
+            "maxLength": 30,
             "conditions": [
                 {
                     "id": "buttonwat",
@@ -249,9 +249,9 @@
             "icon": "sicon-list",
             "selected": [
                 {
-                    "label": "مكان عرض ايقونة واتساب",
-                    "value": "contain",
-                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                    "label": "اليمين",
+                    "value": "right",
+                    "key": "e9c8ea8f-c5c6-438e-9d45-3bce269afde4"
                 }
             ],
             "options": [
@@ -267,7 +267,7 @@
                 }
             ],
             "source": "Manual",
-            "required": true ,
+            "required": true,
             "conditions": [
                 {
                     "id": "buttonwat",
@@ -275,8 +275,7 @@
                     "value": true
                 }
             ]
-        },
-        {
+        },{
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
