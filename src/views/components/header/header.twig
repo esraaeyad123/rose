@@ -18,16 +18,9 @@
 <div class="marquee" style="background-color: {{ marqueecolorback }};">
   <button class="close-button" onclick="closeMarquee()">×</button>
   <ul class="marquee__content" style="color: {{ marqueecolortext }};">
-      <li class="text-md cursor-pointer"{{marqueetext}}</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
-      <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
+    {% for item in {{marqueetext}} %}
+      <li class="text-md cursor-pointer"><a href="{{marqueeurl}}">{{ item }}</a></li>
+    {% endfor %}
   </ul>
 </div>
 
