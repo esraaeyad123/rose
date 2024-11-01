@@ -304,4 +304,14 @@ function closeBanner() {
     animation: heartbeat 1.5s ease-in-out infinite;
 }
 
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.logo-slideDown {
+    animation: slideDown 1s ease-in-out;
+}
+
+
 </style>

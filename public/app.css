@@ -7039,7 +7039,7 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   align-items: center;
   z-index: 9999; /* أعلى من باقي المحتويات */
 }
-.loading-logo {
+.logo-spin {
   width: 100px; /* عرض اللوجو */
   animation: spin 1s linear infinite; /* حركة الدوران */
 }
@@ -7051,8 +7051,84 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
     transform: rotate(360deg);
   }
 }
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.logo-zoom {
+  animation: zoom 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.logo-fade {
+  animation: fadeIn 1s ease-in;
+}
+@keyframes spinZoom {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.logo-spin-zoom {
+  animation: spinZoom 2s linear infinite;
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.logo-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.logo-slideDown {
+  animation: slideDown 1s ease-in-out;
+}
+/* ends of logo */
 .whatsapp-buttonleft {
-  position: fixed; /* لجعل الزر ثابتًا */
+  position: fixed;
   bottom: 30px; /* المسافة من الأسفل */
   left: 25px; /* المسافة من اليمين */
   z-index: 1000; /* لضمان ظهور الزر فوق كل العناصر */
@@ -7081,6 +7157,7 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
 .whatsapp-buttonleft:hover .whatsapp-text {
   display: block; /* إظهار النص عند التحويم */
 }
+/* لجعل الزر ثابتًا */
 body.mm-ocd-opened,
 body.modal-is-open,
 body.fancybox-open {

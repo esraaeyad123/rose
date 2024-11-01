@@ -160,7 +160,7 @@
             "icon": "sicon-list",
             "selected": [
                 {
-                    "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
+                    "label": "اضافة تأثير  على اللوجو عند دخول الصفحة",
                     "value": "contain",
                     "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
                 }
