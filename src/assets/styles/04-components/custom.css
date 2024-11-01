@@ -814,6 +814,7 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   overflow: hidden; /* لإخفاء النص الزائد */
   white-space: nowrap; /* لمنع التفاف النص */
   position: relative; /* لتحديد موضع المحتوى */
+  background-color: #ffcc00; /* لون خلفية زاهي */
   padding: 10px; /* مساحة داخلية */
 }
 
@@ -834,6 +835,7 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
 
 .text-md {
   font-size: 18px; /* حجم النص */
+  color: #333; /* لون النص */
   padding: 0 20px; /* مساحة داخلية للعنصر */
   flex-shrink: 0; /* يمنع تصغير العنصر عند التمرير */
 }
