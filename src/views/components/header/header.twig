@@ -9,6 +9,7 @@
 
 
 <div class="marquee">
+  <button class="close-button" onclick="closeMarquee()">×</button>
   <ul class="marquee__content">
       <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
       <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
@@ -22,6 +23,7 @@
       <li class="text-md cursor-pointer">كولكشن 24 الحصري - خصم 15% لمدة محدودة</li>
   </ul>
 </div>
+
 {% set show_loding = theme.settings.get('show_loding', true) %}
 {% set colorpage   = theme.settings.get('lodingitem4', true) %}
 {% set width       = theme.settings.get('loadingitem1', true) %}
@@ -51,21 +53,6 @@
 
 <header class="custom-store-header store-header dark:bg-[var(--color-dark-primary)] dark:text-white">
   {# Top Nav #}
-
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
-<body>
-   
-
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const el = document.querySelector('.animate__animated');
-        el.classList.add('animate__fadeInLeft'); // تطبيق الحركة
-    });
-    </script>
-</body>
-
   <div class="custom-top-navbar top-navbar relative">
     <div class="container mx-auto">
     <div class="grid lg:grid-cols-12 grid-cols-1 lg:items-center lg:justify-between lg:py-0 py-2 xl:px-20 lg:px-6">
@@ -184,6 +171,47 @@
 
 
 
+<!-- JavaScript -->
+<script>
+   
+  function closeMarquee() {
+    document.querySelector('.marquee').style.display = 'none';
+}
+
+
+   
+
+
+function closeBanner() {
+    const banner = document.getElementById('promoBanner');
+    banner.style.animation = 'slideOut 0.5s forwards'; // بدء تأثير الخروج
+    setTimeout(() => {
+        banner.style.display = 'none'; // إخفاء الشريط بعد الانتهاء من الحركة
+    }, 500); // مطابقة مع مدة الحركة
+}
 
 
 
+</script>
+
+
+<style>
+  .close-button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #fff; /* لون الزر */
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* موقع الزر */
+    right: 10px; /* موقع الزر */
+}
+
+.marquee {
+    position: relative; /* لجعل الزر يتناسب مع الموقع */
+    background-color: #333; /* لون خلفية الشريط */
+    color: white; /* لون النص */
+    padding: 10px; /* مساحة داخلية */
+}
+
+</style>

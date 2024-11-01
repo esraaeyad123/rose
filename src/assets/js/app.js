@@ -11,6 +11,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.setTimeout();
     this.copycontent();
     this.scrollTopButton();
     this.commonThings();
@@ -313,6 +314,16 @@ isElementLoaded(selector){
     });
   }
 
+
+ setTimeout() {
+  return new Promise(resolve => {
+      setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+          resolve();
+      }, 3000); // 3000 مللي ثانية = 3 ثوانٍ
+  });
+}
+
   
   scrollTopButton() {
     document.addEventListener('DOMContentLoaded', () => {
@@ -372,7 +383,6 @@ isElementLoaded(selector){
 
   }
 
- 
 
 
 
