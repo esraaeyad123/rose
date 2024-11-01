@@ -7,23 +7,6 @@
 #}
 
 
-{% set marquee = theme.settings.get('marquee', true) %}
-{% set marqueetext = theme.settings.get('marqueetext', true) %}
-{% set marqueecolortext = theme.settings.get('marqueecolortext', true) %}
-{% set marqueecolorback = theme.settings.get('marqueecolorback', true) %}
-{% set marqueeurl = theme.settings.get('marqueeurl', true) %}
-
-{% if marquee %}
-<div class="marquee" style="background-color: {{ marqueecolorback }};">
-  <button class="close-button" onclick="closeMarquee()">×</button>
-  <ul class="marquee__content" style="color: {{ marqueecolortext }};">
-    {% for i in 1..10 %} {# تكرار النص 10 مرات #}
-      <li class="text-md cursor-pointer"><a href="{{ marqueeurl }}">{{ marqueetext }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
 {% set show_loding = theme.settings.get('show_loding', true) %}
 {% set colorpage = theme.settings.get('lodingitem4', true) %}
 {% set width = theme.settings.get('loadingitem1', true) %}
@@ -168,29 +151,5 @@
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
 
-
-
-<!-- JavaScript -->
-<script>
-   
-  function closeMarquee() {
-    document.querySelector('.marquee').style.display = 'none';
-}
-
-
-   
-
-
-function closeBanner() {
-    const banner = document.getElementById('promoBanner');
-    banner.style.animation = 'slideOut 0.5s forwards'; // بدء تأثير الخروج
-    setTimeout(() => {
-        banner.style.display = 'none'; // إخفاء الشريط بعد الانتهاء من الحركة
-    }, 500); // مطابقة مع مدة الحركة
-}
-
-
-
-</script>
 
 
