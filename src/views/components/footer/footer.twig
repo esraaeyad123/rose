@@ -5,13 +5,8 @@
     <i class="sicon-caret-up-double"></i>
   </div>
 {% endif %}
-
-
-
 {% set buttonwat   = theme.settings.get('buttonwat', true) %}
-
 {% set wherebutton = theme.settings.get('wherewatbut', true) %}
-
 {% if buttonwat %}
 {% if wherebutton == 'right' %}
 <a href="https://wa.me/{{ theme.settings.get('numwat') }}?text=مرحبًا! أود الاستفسار عن معلومات إضافية."
