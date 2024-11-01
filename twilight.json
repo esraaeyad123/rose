@@ -53,7 +53,7 @@
             "type": "static",
             "format": "title",
             "id": "shret_aaloe_mthrk",
-            "value": "صفحة التحميل",
+            "value": "شريط علوي متحرك",
             "variant": "h6",
             "label": "شريط علوي متحرك"
         },
@@ -81,7 +81,7 @@
             "multilanguage": false,
             "required": false,
             "minLength": 6,
-            "maxLength": 30 ,
+            "maxLength": 30,
             "conditions": [
                 {
                     "id": "marquee",
@@ -100,8 +100,8 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#004956",
-            "required": false ,
-             "conditions": [
+            "required": false,
+            "conditions": [
                 {
                     "id": "marquee",
                     "operation": "=",
@@ -119,7 +119,7 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#004956",
-            "required": false ,
+            "required": false,
             "conditions": [
                 {
                     "id": "marquee",
@@ -127,13 +127,13 @@
                     "value": true
                 }
             ]
-        } ,
+        },
         {
             "type": "items",
             "icon": "sicon-link",
             "label": "الرابط",
             "id": "marqueeurl",
-            "value": null,
+            "value": [],
             "description": null,
             "required": false,
             "format": "variable-list",
@@ -190,7 +190,7 @@
                     "key": "custom",
                     "value": "custom"
                 }
-            ] ,
+            ],
             "conditions": [
                 {
                     "id": "marquee",
@@ -198,8 +198,7 @@
                     "value": true
                 }
             ]
-        }  
-        ,
+        },
         {
             "type": "static",
             "format": "title",
