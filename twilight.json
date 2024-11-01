@@ -158,13 +158,6 @@
             "description": null,
             "labelHTML": null,
             "icon": "sicon-list",
-            "selected": [
-                {
-                    "label": "اضافة تأثير  على اللوجو عند دخول الصفحة",
-                    "value": "contain",
-                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
-                }
-            ],
             "options": [
                 {
                     "label": "تأثير الاهتزاز",
