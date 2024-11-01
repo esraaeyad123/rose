@@ -60,7 +60,7 @@
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",
-            "label": " صفحة التحميل",
+            "label": "صفحة التحميل",
             "description": null,
             "id": "show_loding",
             "format": "switch",
@@ -81,7 +81,7 @@
             "value": 0,
             "required": false,
             "minimum": 0,
-            "maximum": "300" ,
+            "maximum": "300",
             "conditions": [
                 {
                     "id": "show_loding",
@@ -141,7 +141,7 @@
             "labelHTML": null,
             "icon": "sicon-format-fill",
             "value": "#004956",
-            "required": false ,
+            "required": false,
             "conditions": [
                 {
                     "id": "show_loding",
@@ -149,6 +149,56 @@
                     "value": true
                 }
             ]
+        },
+        {
+            "id": "loadingeffect",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "اضافة تأثير  على اللوجو عند دخول الصفحة",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-list",
+            "selected": [
+                {
+                    "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
+                    "value": "contain",
+                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                }
+            ],
+            "options": [
+                {
+                    "label": "تأثير الاهتزاز",
+                    "value": "shake",
+                    "key": "e9c8ea8f-c5c6-438e-9d45-3bce269afde4"
+                },
+                {
+                    "label": "تأثير التكبير",
+                    "value": "zoom",
+                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                },
+                {
+                    "label": "تأثير التلاشي",
+                    "value": "fade",
+                    "key": "0c36f58b-da63-4bd4-91f4-acf3cf8549d5"
+                },
+                {
+                    "label": "تأثير الحركة من الأعلى",
+                    "value": "slideDown",
+                    "key": "1b539e87-e170-497d-9092-23eccf490401"
+                },
+                {
+                    "label": "تأثير  دوران",
+                    "value": "spin",
+                    "key": "d1121c5d-8aae-4238-b718-de8f6c9afef8"
+                },
+                {
+                    "label": "تأثير نبض القلب",
+                    "value": "heartbeat",
+                    "key": "aff9d18d-7da2-4224-bfac-ac163adbd68d"
+                }
+            ],
+            "source": "Manual",
+            "required": true
         },
         {
             "type": "static",
@@ -275,7 +325,8 @@
                     "value": true
                 }
             ]
-        },{
+        },
+        {
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
