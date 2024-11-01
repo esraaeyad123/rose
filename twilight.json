@@ -198,7 +198,14 @@
                 }
             ],
             "source": "Manual",
-            "required": true
+            "required": true ,
+            "conditions": [
+                {
+                    "id": "show_loding",
+                    "operation": "=",
+                    "value": true
+                }
+            ]
         },
         {
             "type": "static",

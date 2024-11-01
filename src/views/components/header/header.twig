@@ -27,6 +27,7 @@
 {% set width       = theme.settings.get('loadingitem1', true) %}
 {% set height      = theme.settings.get('loadingitem2', true) %}
 {% set image       = theme.settings.get('lodingitem3', true) %}
+{% set effect       = theme.settings.get('loadingeffect', true) %}
 
 {% if show_loding %}
 <div id="loading" class="loading-screen bg-opacity-80 flex items-center justify-center h-screen"
@@ -39,7 +40,7 @@
      {% endif %} 
      style="height: {% if height == 0 %}100%{% else %}{{height}}px{% endif %};
      width: {% if width == 0 %}100%{% else %}{{width}}px{% endif %}; "
-     alt="Loading..." class="loading-logo">
+     alt="Loading..." class="loading-{{effect}}">
 </div>
 {% endif %}
 
