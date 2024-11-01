@@ -52,6 +52,64 @@
         {
             "type": "static",
             "format": "title",
+            "id": "shret_aaloe_mthrk",
+            "value": "صفحة التحميل",
+            "variant": "h6",
+            "label": "شريط علوي متحرك"
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "شريط علوي متحرك",
+            "description": null,
+            "id": "marquee",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "marqueetext",
+            "type": "string",
+            "format": "text",
+            "label": "النص الاعلان",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "Placeholder text ..",
+            "icon": "sicon-format-text-alt",
+            "value": null,
+            "multilanguage": false,
+            "required": false,
+            "minLength": 6,
+            "maxLength": 30
+        },
+        {
+            "id": "marqueecolortext",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون  النص",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#004956",
+            "required": false
+        },
+        {
+            "id": "marqueecolorback",
+            "type": "string",
+            "format": "color",
+            "inputType": "color",
+            "label": "لون الخلفية",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-format-fill",
+            "value": "#004956",
+            "required": false
+        },
+        {
+            "type": "static",
+            "format": "title",
             "id": "loadingscreen",
             "value": "صفحة التحميل",
             "variant": "h6",
@@ -191,7 +249,7 @@
                 }
             ],
             "source": "Manual",
-            "required": true ,
+            "required": true,
             "conditions": [
                 {
                     "id": "show_loding",
@@ -233,6 +291,20 @@
             "required": false,
             "value": true,
             "selected": false
+        },
+        {
+            "type": "static",
+            "id": "line",
+            "format": "line",
+            "label": "line"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "undefined_copy",
+            "value": "زر الواتساب",
+            "variant": "h6",
+            "label": "زر الواتساب"
         },
         {
             "type": "boolean",
