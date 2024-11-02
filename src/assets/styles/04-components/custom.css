@@ -741,6 +741,62 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   opacity: 0; /* إخفاء النص عند التمرير */
 }
 
+/* الأنماط الافتراضية */
+.button-add {
+  /* إعدادات الزر الافتراضية */
+}
+
+/* للأجهزة الصغيرة */
+@media (max-width: 600px) {
+  .button-add button {
+      font-size: 16px; /* حجم النص أقل للأجهزة الصغيرة */
+      height: 40px; /* ارتفاع الزر */
+      padding: 10px; /* padding مناسب */
+  }
+}
+
+/* للأجهزة المتوسطة */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .button-add button {
+      font-size: 18px; /* حجم النص أكبر قليلاً */
+      height: 45px; /* ارتفاع الزر */
+      padding: 12px; /* padding مناسب */
+  }
+}
+
+/* للأجهزة الكبيرة */
+@media (min-width: 1025px) {
+  .button-add button {
+      font-size: 20px; /* حجم النص أكبر للأجهزة الكبيرة */
+      height: 50px; /* ارتفاع الزر أكبر قليلاً */
+      padding: 14px; /* padding أكبر */
+  }
+}
+/* للأجهزة الصغيرة */
+@media (max-width: 600px) {
+  #add-to-cart-icon {
+      height: 6px; /* زيادة الحجم */
+      width: 6px;  /* زيادة الحجم */
+  }
+}
+
+/* للأجهزة المتوسطة */
+@media (min-width: 601px) and (max-width: 1024px) {
+  #add-to-cart-icon {
+      height: 7px; /* حجم متوسط */
+      width: 7px;  /* حجم متوسط */
+  }
+}
+
+/* للأجهزة الكبيرة */
+@media (min-width: 1025px) {
+  #add-to-cart-icon {
+      height: 8px; /* حجم أكبر */
+      width: 8px;  /* حجم أكبر */
+  }
+}
+
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -1238,4 +1294,9 @@ opacity: 1; /* يظهر عند إضافة الفئة show */
 }/* لجعل الزر ثابتًا */
 
 
-
+@media (min-width: 1024px) {
+  .faq-item {
+      padding-top: 0.5rem; /* تعديل المسافة هنا للعرض الكبير */
+      padding-bottom: 0.5rem;
+  }
+}
