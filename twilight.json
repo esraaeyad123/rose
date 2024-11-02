@@ -1386,7 +1386,7 @@
                     "id": "code",
                     "type": "collection",
                     "format": "collection",
-                    "label": "الخصومات",
+                    "label": "كوبونات التخفيض",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
