@@ -1254,6 +1254,36 @@
                     "maxLength": 30
                 },
                 {
+                    "id": "item_1",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "نص توضيحي",
+                    "description": "نص يتم إضافته على الصورة بخط أصغر من العنوان الرئيسي",
+                    "labelHTML": null,
+                    "placeholder": "Your text here",
+                    "icon": "sicon-typography",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 20,
+                    "maxLength": 255
+                },
+                {
+                    "id": "buttonText",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص الزر",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
                     "type": "items",
                     "icon": "sicon-link",
                     "label": "الرابط",
@@ -1318,21 +1348,6 @@
                     ]
                 },
                 {
-                    "id": "item_1",
-                    "type": "string",
-                    "format": "textarea",
-                    "label": "نص توضيحي",
-                    "description": "نص يتم إضافته على الصورة بخط أصغر من العنوان الرئيسي",
-                    "labelHTML": null,
-                    "placeholder": "Your text here",
-                    "icon": "sicon-typography",
-                    "value": null,
-                    "multilanguage": false,
-                    "required": false,
-                    "minLength": 20,
-                    "maxLength": 255
-                },
-                {
                     "id": "gellary",
                     "type": "collection",
                     "format": "collection",
@@ -1358,27 +1373,12 @@
                     "value": [],
                     "minLength": "3",
                     "maxLength": "3"
-                },
-                {
-                    "id": "buttonText",
-                    "type": "string",
-                    "format": "text",
-                    "label": "نص الزر",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "Placeholder text ..",
-                    "icon": "sicon-format-text-alt",
-                    "value": null,
-                    "multilanguage": false,
-                    "required": false,
-                    "minLength": 6,
-                    "maxLength": 30
                 }
             ]
         },
         {
             "key": "801c67e4-0ff5-4973-92fd-b87b88db69bc",
-            "title": "خصومات",
+            "title": "كوبونات التخفيض",
             "icon": "sicon-gift-sharing",
             "path": "home.discounts",
             "fields": [
@@ -1386,7 +1386,7 @@
                     "id": "code",
                     "type": "collection",
                     "format": "collection",
-                    "label": "الخصومات",
+                    "label": "كوبونات التخفيض",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -1577,10 +1577,10 @@
             "path": "home.faq",
             "fields": [
                 {
-                    "id": "description",
+                    "id": "title",
                     "type": "string",
                     "format": "text",
-                    "label": "نص توضيحي",
+                    "label": "العنوان",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -1592,10 +1592,10 @@
                     "maxLength": "80"
                 },
                 {
-                    "id": "title",
+                    "id": "description",
                     "type": "string",
                     "format": "text",
-                    "label": "العنوان",
+                    "label": "نص توضيحي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
