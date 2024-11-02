@@ -908,7 +908,7 @@ color: var(--color-primary) !important;
 }
 
 .dark .custom-store-header .top-navbar .s-search-input {
-background-color: #1e293b !important;
+background-color:  var(--color-primary)  !important;
 }
 
 .custom-store-header .top-navbar .s-search-input::-moz-placeholder,
@@ -1236,3 +1236,6 @@ opacity: 1; /* يظهر عند إضافة الفئة show */
 .whatsapp-buttonleft:hover .whatsapp-text {
   display: block; /* إظهار النص عند التحويم */
 }/* لجعل الزر ثابتًا */
+
+
+

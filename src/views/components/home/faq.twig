@@ -1,14 +1,14 @@
 <section class="s-block s-block--full-bg as-grid bg-white py-4 sm:py-6">
     <div class="relative px-6 lg:px-8 md:flex">
-        <div class="flex flex-col basis-1/2 mb-6">
+        <div class="flex flex-col mb-6 w-full md:w-1/2">
             <p class="inline-block font-semibold text-primary mb-2">{{ component.title }}</p>
             <p class="sm:text-4xl text-3xl font-extrabold text-base-content">{{ component.description }}</p>
         </div>
-        <ul class="basis-1/2">
+        <ul class="basis-1/2 w-full">
             {% for item in component.faq %}
             <div class="py-3">
-                <details class="group bg-[#FFF6F3] text-[var(--color-primary)] md:flex-row flex-col items-center justify-between w-full h-full lg:px-10 px-5 py-5 gap-4 rounded-lg shadow-md transition duration-300 ease-in-out hover:shadow-lg">
-                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+                <details class="group bg-[#FFF6F3] text-[var(--color-primary)] flex flex-col items-start w-full rounded-lg shadow-md transition duration-300 ease-in-out hover:shadow-lg">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium w-full">
                         <span class="text-base font-semibold leading-7">{{ item.item_1 }}</span>
                         <span class="transition group-open:rotate-180">
                             <svg fill="none" height="24" shape-rendering="geometricPrecision"
