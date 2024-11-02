@@ -6736,6 +6736,13 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
     height: 40px; /* ارتفاع الزر */
     padding: 10px; /* padding مناسب */
   }
+  .button-add span {
+    font-size: 14px; /* تصغير حجم الخط */
+  }
+  #add-to-cart-icon {
+    height: 24px; /* زيادة حجم الأيقونة */
+    width: 24px; /* زيادة حجم الأيقونة */
+  }
 }
 /* للأجهزة المتوسطة */
 @media (min-width: 601px) and (max-width: 1024px) {
@@ -6744,6 +6751,13 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
     height: 45px; /* ارتفاع الزر */
     padding: 12px; /* padding مناسب */
   }
+  .button-add span {
+    font-size: 16px; /* حجم متوسط */
+  }
+  #add-to-cart-icon {
+    height: 28px; /* حجم متوسط */
+    width: 28px; /* حجم متوسط */
+  }
 }
 /* للأجهزة الكبيرة */
 @media (min-width: 1025px) {
@@ -6751,27 +6765,6 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
     font-size: 20px; /* حجم النص أكبر للأجهزة الكبيرة */
     height: 50px; /* ارتفاع الزر أكبر قليلاً */
     padding: 14px; /* padding أكبر */
-  }
-}
-/* للأجهزة الصغيرة */
-@media (max-width: 600px) {
-  #add-to-cart-icon {
-    height: 6px; /* زيادة الحجم */
-    width: 6px; /* زيادة الحجم */
-  }
-}
-/* للأجهزة المتوسطة */
-@media (min-width: 601px) and (max-width: 1024px) {
-  #add-to-cart-icon {
-    height: 7px; /* حجم متوسط */
-    width: 7px; /* حجم متوسط */
-  }
-}
-/* للأجهزة الكبيرة */
-@media (min-width: 1025px) {
-  #add-to-cart-icon {
-    height: 8px; /* حجم أكبر */
-    width: 8px; /* حجم أكبر */
   }
 }
 /* width */
