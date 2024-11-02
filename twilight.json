@@ -1577,10 +1577,10 @@
             "path": "home.faq",
             "fields": [
                 {
-                    "id": "description",
+                    "id": "title",
                     "type": "string",
                     "format": "text",
-                    "label": "نص توضيحي",
+                    "label": "العنوان",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -1592,10 +1592,10 @@
                     "maxLength": "80"
                 },
                 {
-                    "id": "title",
+                    "id": "description",
                     "type": "string",
                     "format": "text",
-                    "label": "العنوان",
+                    "label": "نص توضيحي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
