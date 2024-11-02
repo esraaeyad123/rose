@@ -324,6 +324,12 @@ isElementLoaded(selector){
   });
 }
 
+closeMarquee() {
+  var marquee = document.querySelector('.marquee');
+  if (marquee) {
+      marquee.style.display = 'none';
+  }
+}
   
   scrollTopButton() {
     document.addEventListener('DOMContentLoaded', () => {
@@ -357,6 +363,10 @@ isElementLoaded(selector){
     my.style.display = "none";    
   }
 
+  closeMarquee() {
+    var marquee = document.querySelector('.marquee');
+    marquee.style.display = "none";    
+  }
   copycontent() {
 
     document.querySelectorAll(".contentcode").forEach((item) => {

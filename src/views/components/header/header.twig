@@ -11,26 +11,27 @@
 {% set marqueetext = theme.settings.get('marqueetext', true) %}
 {% set marqueecolortext = theme.settings.get('marqueecolortext', true) %}
 {% set marqueecolorback = theme.settings.get('marqueecolorback', true) %}
-{% set marqueeurl = theme.settings.get('marqueeurl', true) %}
+
 
 {% if marquee %}
-<div class="marquee" style="background-color: {{ marqueecolorback }};">
-  <button class="close-button" onclick="closeMarquee()">×</button>
+<div class="marquee" style="background-color: {{ marqueecolorback }};" >
+  <button class="close-button" onclick="app.closeMarquee()">×</button>
   <ul class="marquee__content" style="color: {{ marqueecolortext }};">
-    {% for i in 1..10 %} {# تكرار النص 10 مرات #}
-      <li class="text-md cursor-pointer"><a href="{{ marqueeurl }}">{{ marqueetext }}</a></li>
+    {% for i in 1..10 %}
+      <li class="text-md cursor-pointer">{{ marqueetext }}</li>
     {% endfor %}
   </ul>
 </div>
 {% endif %}
 
 
-{% set show_loding = theme.settings.get('show_loding', true) %}
-{% set colorpage = theme.settings.get('lodingitem4', true) %}
-{% set width = theme.settings.get('loadingitem1', true) %}
-{% set height = theme.settings.get('loadingitem2', true) %}
-{% set image = theme.settings.get('lodingitem3', true) %}
-{% set effect = theme.settings.get('loadingeffect', true) %}
+
+{% set show_loding  = theme.settings.get('show_loding', true) %}
+{% set colorpage    = theme.settings.get('lodingitem4', true) %}
+{% set width        = theme.settings.get('loadingitem1', true) %}
+{% set height       = theme.settings.get('loadingitem2', true) %}
+{% set image        = theme.settings.get('lodingitem3', true) %}
+{% set effect       = theme.settings.get('loadingeffect', true) %}
 
 {% if show_loding %}
 <div id="loading" class="loading-screen bg-opacity-80 flex items-center justify-center h-screen"
@@ -168,6 +169,7 @@
 {% if store.scope %}
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
+
 
 
 
