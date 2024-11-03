@@ -112,7 +112,6 @@
     </script>
   
     <script defer src="{{ 'main-menu.js'|asset }}"></script>
-
     <script data-cfasync="false">
         window.header_is_sticky = "{{theme.settings.get('header_is_sticky', 'Default Value')}}"
         window.imageZoom = "{{theme.settings.get('imageZoom')}}"
@@ -123,7 +122,7 @@
     {% hook 'head:start' %}
     {% hook head %}
     {% block styles %}{% endblock %}
-
+    <link rel="stylesheet" href="{{ 'app.css' | asset }}">
     <link rel="stylesheet" href="{{ theme.font.path|cdn }}"/>
     <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>
     

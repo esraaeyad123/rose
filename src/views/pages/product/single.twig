@@ -186,7 +186,7 @@
                 </salla-slider>
             </div>
 
-            <div class=" yasmeen-main-content  md:sticky md:overflow-hidden top-24 w-full md:w-2/4 md:pb-16">
+            <div class=" md:sticky md:overflow-hidden top-24 w-full md:w-2/4 md:pb-16">
 
                 {% hook 'product:single.description.start' %}
 
@@ -410,7 +410,7 @@
                 <salla-tabs class="tabs border-b colored-border">
                     <!-- Tab One -->
                     <salla-tab-header class="flex justify-center items-center text-center " 
-                    slot="header" name="tab_one"><span>الوصف</span>
+                    slot="header" name="tab_one"><span>{{ trans('pages.products.deschead') }}</span>
                    </salla-tab-header>
                      <salla-tab-content  slot="content" name="tab_one">
                         <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
@@ -435,7 +435,7 @@
                     <!-- Tab Two -->
                     <salla-tab-header slot="header" name="tab_two" 
                     class="flex justify-center items-center text-center">
-                    <span>التعليقات</span></salla-tab-header
+                    <span>  {{ trans('pages.products.commentshead') }}</span></salla-tab-header
                     >
                     <salla-tab-content slot="content" name="tab_two">
                         <div class="s-tabs-content">
@@ -454,7 +454,6 @@
 
 
  
-    {# Similar Products Area #}
     <div class="container">
         <salla-products-slider source="related" source-value="{{product.id}}" block-title="{{trans('pages.products.similar_products')}}" display-all-url></salla-products-slider>
     </div>
