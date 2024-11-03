@@ -661,7 +661,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-w-\[calc\(100\%-60px\)\]{max-width:calc(100% - 60px)}
 .max-w-full{max-width:100%}
 .max-w-lg{max-width:32rem}
-.max-w-md{max-width:28rem}
 .max-w-none{max-width:none}
 .max-w-sm{max-width:24rem}
 .max-w-xl{max-width:36rem}

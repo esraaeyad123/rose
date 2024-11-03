@@ -118,14 +118,11 @@
         window.imageZoom = "{{theme.settings.get('imageZoom')}}"
     </script>
     <script type="text/javascript" src="{{ asset ('custom-salla-product-card.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('custom.js') }}"></script>
 
 
     {% hook 'head:start' %}
     {% hook head %}
     {% block styles %}{% endblock %}
-    <link rel="stylesheet" href="{{ 'app.css' | asset }}">
-    <link rel="stylesheet" href="{{ 'custom.css' | asset }}">
 
     <link rel="stylesheet" href="{{ theme.font.path|cdn }}"/>
     <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>

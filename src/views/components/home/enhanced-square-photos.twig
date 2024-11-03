@@ -5,9 +5,7 @@ my-1 md:my-4 sm:py-16 py-8 sm:py-16  px-10 lg:py-24">
 
     <div class="banners-grid banners-grid--{{ component.item|length }}">
         {% for item in component.item %}
-
-        <div class="banner-entry-two rounded lazy " > 
-
+        <div class="banner-entry-two rounded lazy" > 
             <a href="{{item.categories}}" class="!opacity-100 h-auto relative overflow-hidden">
                 <img class="lazy w-full object-cover absolute h-full top-0 loaded" src="{{item.photo}}" data-src="{{item.photo}}" alt="" >
                 <div class="banner-entry__text flex flex-col items-center" >
@@ -17,12 +15,7 @@ my-1 md:my-4 sm:py-16 py-8 sm:py-16  px-10 lg:py-24">
             <div class="banner__desc"><p>{{item.description}}</p></div> </div>
             </a>
             </div>
-
-
-
-
-
-           
+ 
         {% endfor %}
 
  

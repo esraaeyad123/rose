@@ -320,7 +320,7 @@ isElementLoaded(selector){
       setTimeout(() => {
           document.getElementById('loading').style.display = 'none';
           resolve();
-      }, 3000); // 3000 مللي ثانية = 3 ثوانٍ
+      }, 3000); 
   });
 }
 
@@ -336,21 +336,20 @@ closeMarquee() {
       let lastScrollY = window.scrollY;
       const scrollTopButton = document.querySelector('.scroll-top');
     
-      // عند التمرير
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) { // يظهر الزر بعد 200 بكسل من التمرير
-          if (window.scrollY > lastScrollY) { // إذا تم التمرير لأسفل
+        if (window.scrollY > 200) { 
+          if (window.scrollY > lastScrollY) { 
             scrollTopButton.classList.add('show');
-          } else { // إذا تم التمرير لأعلى
+          } else { 
             scrollTopButton.classList.remove('show');
           }
         } else {
-          scrollTopButton.classList.remove('show'); // يخفي الزر إذا كان التمرير أقل من 200 بكسل
+          scrollTopButton.classList.remove('show'); 
         }
-        lastScrollY = window.scrollY; // تحديث موضع التمرير الأخير
+        lastScrollY = window.scrollY; 
       });
     
-      // عند الضغط على الزر، يُرجع الصفحة للأعلى
+    
       scrollTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
@@ -363,10 +362,7 @@ closeMarquee() {
     my.style.display = "none";    
   }
 
-  closeMarquee() {
-    var marquee = document.querySelector('.marquee');
-    marquee.style.display = "none";    
-  }
+  
   copycontent() {
 
     document.querySelectorAll(".contentcode").forEach((item) => {
@@ -375,13 +371,12 @@ closeMarquee() {
               return;
           }
           try {
-              const code = event.target.previousElementSibling.innerText; // الحصول على النص من العنصر السابق
-              await navigator.clipboard.writeText(code); // نسخ النص إلى الحافظة
+              const code = event.target.previousElementSibling.innerText; 
+              await navigator.clipboard.writeText(code); 
               
-              // تغيير نص الزر عند النسخ
               event.target.innerHTML = "Copied"; 
               setTimeout(() => { 
-                  event.target.innerHTML = "Copy"; // إعادة النص الأصلي بعد 2 ثانية
+                  event.target.innerHTML = "Copy"; 
               }, 2000); 
           } catch (err) {
               console.error("Failed to copy!", err);
@@ -389,8 +384,6 @@ closeMarquee() {
       });
   });
    
-    console.log('copy');
-
   }
 
 
