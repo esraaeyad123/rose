@@ -1,6 +1,6 @@
 <div id="my_modal" 
     class="bg-black/50 fixed top-0 right-0 left-0 z-50 h-full flex items-center justify-center overflow-hidden">
-    <div class="relative p-4 w-full max-w-md h-auto">
+    <div class="relative p-4 w-full max-w-sm md:max-w-md lg:max-w-lg h-auto">
 
         <div class="relative bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-[var(--color-primary-dark)] ring-opacity-40">
             <button onclick="app.closeModal()" type="button"
@@ -10,7 +10,7 @@
                 </svg>
                 <span class="sr-only">Close popup</span>
             </button>
-            <img class="w-full" src="{{component.item_1}}" alt="Product Image">
+            <img class="w-full h-auto" src="{{component.item_1}}" alt="Product Image">
 
             <div class="p-5">
                 <h3 class="text-2xl mb-0.5 font-medium"></h3>
@@ -27,16 +27,13 @@
 
                 <div class="mt-6 text-center text-sm text-slate-600">
                    <a href="{{ link }}">
- 
-                    <button class="bg-[var(--color-primary)] font-bold text-white cursor-pointer tracking-normal md:text-[20px] text-[17px] flex gap-4 justify-center items-center shadow rounded-[0.25rem] h-12 w-full py-2 px-8 duration-100">
+                    <button class="bg-[var(--color-primary)] font-bold text-white cursor-pointer tracking-normal md:text-[20px] text-[17px] flex gap-4 justify-center items-center shadow rounded-[0.25rem] h-12 w-full py-2 px-4 duration-100">
                         {{component.textbutton}}                    
                     </button>  
-                        </a>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
 
