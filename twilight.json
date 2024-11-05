@@ -1604,7 +1604,7 @@
                     "multilanguage": false,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": "80"
+                    "maxLength": "300"
                 },
                 {
                     "id": "faq",
@@ -1629,7 +1629,7 @@
                             "multilanguage": true,
                             "required": true,
                             "minLength": 6,
-                            "maxLength": "50"
+                            "maxLength": "300"
                         },
                         {
                             "id": "faq.item",
@@ -1644,7 +1644,7 @@
                             "multilanguage": false,
                             "required": false,
                             "minLength": 6,
-                            "maxLength": "50"
+                            "maxLength": "300"
                         }
                     ],
                     "value": [],
