@@ -2241,7 +2241,14 @@
                     "placeholder": null,
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false
+                    "required": false ,
+                    "conditions": [
+                        {
+                            "id": "videotoimg",
+                            "operation": "=",
+                            "value": true
+                        }
+                    ]
                 },
                 {
                     "id": "item2",
@@ -2414,6 +2421,17 @@
             "path": "home.new-featured-products",
             "fields": [
                 {
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "لاستبدال الفيديو بصورة",
+                    "description": null,
+                    "id": "videotoimg",
+                    "format": "switch",
+                    "required": false,
+                    "value": false,
+                    "selected": false
+                },
+                {
                     "id": "title",
                     "type": "string",
                     "format": "text",
@@ -2456,7 +2474,34 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": "9000"
+                    "maxLength": "9000" ,
+                    "conditions": [
+                        {
+                            "id": "videotoimg",
+                            "operation": "=",
+                            "value": false
+                        }
+                    ]
+
+                },
+                {
+                    "id": "background_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة الخلفية",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": null,
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false,
+                    "conditions": [
+                        {
+                            "id": "videotoimg",
+                            "operation": "=",
+                            "value": true
+                        }
+                    ]
                 },
                 {
                     "id": "textButton",
