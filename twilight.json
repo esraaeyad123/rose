@@ -2589,18 +2589,6 @@
                             "value": "custom"
                         }
                     ]
-                },
-                {
-                    "id": "colorBackground",
-                    "type": "string",
-                    "format": "color",
-                    "inputType": "color",
-                    "label": "لون الخلفية",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-format-fill",
-                    "value": "#004956",
-                    "required": false
                 }
             ]
         }
