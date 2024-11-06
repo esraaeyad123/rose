@@ -81,7 +81,7 @@
             "multilanguage": false,
             "required": false,
             "minLength": 6,
-            "maxLength": 30,
+            "maxLength": "100",
             "conditions": [
                 {
                     "id": "marquee",
@@ -217,50 +217,6 @@
             "required": false,
             "value": true,
             "selected": true
-        },
-        {
-            "id": "loadingitem2",
-            "type": "number",
-            "format": "integer",
-            "inputType": "number",
-            "label": "طول شعار صفحة التحميل",
-            "description": null,
-            "labelHTML": null,
-            "placeholder": "اقصى طول مقبول هو 300 بيكسل",
-            "icon": "sicon-hashtag",
-            "value": 0,
-            "required": false,
-            "minimum": 0,
-            "maximum": "300",
-            "conditions": [
-                {
-                    "id": "show_loding",
-                    "operation": "=",
-                    "value": true
-                }
-            ]
-        },
-        {
-            "id": "loadingitem1",
-            "type": "number",
-            "format": "integer",
-            "inputType": "number",
-            "label": "عرض شعار صفحة التحميل",
-            "description": null,
-            "labelHTML": null,
-            "placeholder": "اقصى عرض مقبول هو 300 بيكسل",
-            "icon": "sicon-hashtag",
-            "value": 0,
-            "required": false,
-            "minimum": 0,
-            "maximum": "300",
-            "conditions": [
-                {
-                    "id": "show_loding",
-                    "operation": "=",
-                    "value": true
-                }
-            ]
         },
         {
             "id": "lodingitem3",
@@ -2241,7 +2197,7 @@
                     "placeholder": null,
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false ,
+                    "required": false,
                     "conditions": [
                         {
                             "id": "videotoimg",
@@ -2474,7 +2430,7 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": "9000" ,
+                    "maxLength": "9000",
                     "conditions": [
                         {
                             "id": "videotoimg",
@@ -2482,7 +2438,6 @@
                             "value": false
                         }
                     ]
-
                 },
                 {
                     "id": "background_image",
