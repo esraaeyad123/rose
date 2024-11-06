@@ -2104,6 +2104,21 @@
                             "maxLength": "100"
                         },
                         {
+                            "id": "item.item2",
+                            "type": "number",
+                            "format": "integer",
+                            "inputType": "number",
+                            "label": "الرقم",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Input an integer number between 5 and 50.",
+                            "icon": "sicon-hashtag",
+                            "value": 0,
+                            "required": false,
+                            "minimum": 0,
+                            "maximum": "100"
+                        },
+                        {
                             "id": "item.icon_picker",
                             "type": "string",
                             "format": "icon",
@@ -2118,21 +2133,6 @@
                     "value": [],
                     "minLength": 1,
                     "maxLength": "4"
-                },
-                {
-                    "id": "item2",
-                    "type": "number",
-                    "format": "integer",
-                    "inputType": "number",
-                    "label": "الرقم",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "Input an integer number between 5 and 50.",
-                    "icon": "sicon-hashtag",
-                    "value": 0,
-                    "required": false,
-                    "minimum": 0,
-                    "maximum": "100"
                 }
             ]
         },
