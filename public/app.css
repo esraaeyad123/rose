@@ -6438,12 +6438,13 @@ input[type=radio].sr-only:checked ~ div.with-gradient-overlay .banner-entry__tex
 .banner-entry__text h3 {
   bottom: 100%;
   margin: 0;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  text-align: center; /* اجعل النص في المنتصف */
+  color: white; /* تأكد من أن اللون أبيض */
 }
 @media (min-width: 768px) {
   .banner-entry__text h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 .banner-entry__text .banner__desc {
@@ -7651,7 +7652,6 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:pt-10{padding-top:2.5rem}
 .lg\:pt-20{padding-top:5rem}
 .lg\:pt-8{padding-top:2rem}
-.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}
 .lg\:text-title-size{font-size:42px}
 .lg\:shadow-default{--tw-shadow:5px 10px 30px #2B2D340D;;--tw-shadow-colored:5px 10px 30px var(--tw-shadow-color);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 5px 10px 30px #2B2D340D;;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}}
 @media (min-width: 1280px){

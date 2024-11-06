@@ -2,40 +2,16 @@
     <p class="font-semibold text-2xl md:text-3xl text-center text-gray-800">{{ component.title }}</p>
     <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
         {% for item in component.item %}
-        <div id="counter-{{ loop.index }}" class="flex flex-col justify-between items-center bg-gradient-to-b from-[#FFF6F3] to-[#FFE8E0] px-4 py-4 min-h-[160px] w-full sm:w-[180px] md:w-[220px] lg:w-[250px] rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+        <div class="flex flex-col justify-between items-center bg-gradient-to-b from-[#FFF6F3] to-[#FFE8E0] px-4 py-4 min-h-[160px] w-full sm:w-[180px] md:w-[220px] lg:w-[250px] rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <div class="flex flex-col justify-center items-center mb-4"> 
                 <i class="{{ item.icon_picker }} text-3xl font-bold text-primary mb-2"></i> 
             </div>
-            <p class="font-medium text-3xl sm:text-lg leading-6 text-center text-gray-700">{{ item.title2 }}</p>
+            <p class="font-medium text-1xl sm:text-lg leading-6 text-center text-gray-700">{{ item.title2 }}</p>
 
-            <div id="counterDisplay-{{ loop.index }}" class="font-bold text-2xl text-primary mt-2"><span>+</span>{{ item.item2 }}</div>
+            <div id="counterDisplay-{{ loop.index }}" class="font-bold text-2xl text-primary mt-2"><span class="font-bold text-2xl text-primary mt-2">+</span>{{ item.item2 }}</div>
         </div>
         {% endfor %}
     </div>
 </section>
 
 
-<script>
-    window.onload = function() {
-        {% for item in component.item %}
-        (function(index, targetValue) {
-            var counterElement = document.getElementById('counterDisplay-' + index); // Get the display element
-            
-            var currentCount = 0; 
-            var target = parseInt(targetValue); // Target value entered by the user
-            var incrementSpeed = 10; // Speed of increment (milliseconds)
-            var incrementValue = Math.ceil(target / 100); // Increment value
-
-            // Set up an interval to increase the counter automatically until it reaches the target value
-            var interval = setInterval(function() {
-                currentCount += incrementValue; // Increment the count by calculated step
-                if (currentCount >= target) {
-                    currentCount = target; // Ensure the counter stops at the target value
-                    clearInterval(interval); // Stop the interval
-                }
-                counterElement.innerText = currentCount; // Update the display
-            }, incrementSpeed); // Update every 10ms
-        })({{ loop.index }}, "{{ item.item2 }}");
-        {% endfor %}
-    }
-</script>

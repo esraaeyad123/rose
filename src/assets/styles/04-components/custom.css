@@ -412,13 +412,15 @@ input[type=radio].sr-only:checked ~ div.with-gradient-overlay .banner-entry__tex
 .banner-entry__text h3 {
   bottom: 100%;
   margin: 0;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size:1rem;
+  text-align: center;  /* اجعل النص في المنتصف */
+  color: white; /* تأكد من أن اللون أبيض */
 }
+
 
 @media (min-width: 768px) {
   .banner-entry__text h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 .banner-entry__text .banner__desc {
