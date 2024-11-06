@@ -1169,6 +1169,7 @@ opacity: 1; /* يظهر عند إضافة الفئة show */
   z-index: 9999; /* أعلى من باقي المحتويات */
 }
 
+
 .logo-spin {
   width: 100px; /* عرض اللوجو */
   animation: spin 1s linear infinite; /* حركة الدوران */

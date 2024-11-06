@@ -42,9 +42,7 @@
      {% else %}
        src="{{ store.logo }}"
      {% endif %} 
-     style="height: {% if height == 0 %}100%{% else %}{{ height }}px{% endif %};
-     width: {% if width == 0 %}100%{% else %}{{ width }}px{% endif %};"
-     alt="Loading..." class="logo-{{ effect }}">
+     width="100%" height="100%"   alt="Loading..." class="logo-{{ effect }}">
 </div>
 {% endif %}
 

@@ -1,14 +1,26 @@
 <section class="flex flex-col mt-20">
-    <p class="font-semibold text-2xl md:text-3xl text-center">{{ component.title }}</p>
-    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
+    <p class="font-semibold text-2xl md:text-3xl text-center text-gray-800">{{ component.title }}</p>
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
         {% for item in component.item %}
-        <div class="flex flex-col justify-center items-center bg-gradient-to-b from-[#FFF6F3] to-[#FFE8E0] px-6 py-4 h-[150px] w-full md:w-[281px] md:h-[192px] rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-            <div class="flex flex-row justify-center items-center mb-2">
-                <i class="{{ item.icon_picker }} text-6xl font-bold text-primary"></i>
-                <p class="font-bold text-3xl sm:text-4xl lg:text-5xl leading-9 text-primary mr-2">{{ item.desc }}</p>
+        <div id="counter-{{ loop.index }}" class="flex flex-col justify-between items-center bg-gradient-to-b from-[#FFF6F3] to-[#FFE8E0] px-4 py-4 min-h-[160px] w-full sm:w-[180px] md:w-[220px] lg:w-[250px] rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl" onclick="incrementCounter({{ loop.index }})">
+            <div class="flex flex-col justify-center items-center mb-4"> 
+                <i class="{{ item.icon_picker }} text-3xl font-bold text-primary mb-2"></i> 
+                <p class="font-medium text-base sm:text-lg leading-6 text-center text-gray-700">{{ item.title2 }}</p>
+                <p class="font-bold text-2xl sm:text-2xl lg:text-4xl leading-tight text-primary mb-2">{{ item.desc }} </p>
             </div>
-            <p class="font-medium text-base sm:text-lg leading-6 text-center">{{ item.title2 }}</p>
+            <div id="counterDisplay-{{ loop.index }}" class="font-bold text-xl text-primary mt-2">{{ item.title2 }}</div>
         </div>
         {% endfor %}
     </div>
 </section>
+
+<script>
+    // JavaScript function to increment the counter
+    function incrementCounter(index) {
+        var counterElement = document.getElementById('counterDisplay-' + index);
+        var currentCount = parseInt(counterElement.innerText); // Get the current value as integer
+        counterElement.innerText = currentCount + 1; // Increment by 1
+    }
+</script>
+
+
