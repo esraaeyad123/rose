@@ -2,17 +2,17 @@
     <div class="flex flex-wrap justify-center gap-4">
         {% for code in component.code %}
         <div class="item fade-in-up w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-white rounded-lg shadow-lg overflow-hidden mb-4">
-            <div class="bg-gradient-to-r from-red-400 to-yellow-300 p-6">
-                <p class="text-white text-center mt-2 h-16 flex items-center justify-center">{{ code.item_1 }}</p>
+            <div class="bg-gradient-to-r from-red-200 to-yellow-100 p-6"> <!-- استخدم درجات أفتح -->
+                <p class="text-gray-700 text-center mt-2 h-16 flex items-center justify-center">{{ code.item_1 }}</p> <!-- لون نص أفتح -->
             </div>
             <div class="p-4 flex flex-col h-full">
                 <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold">استخدم الكود:</span>
+                    <span class="text-lg font-semibold text-gray-600">استخدم الكود:</span> <!-- لون نص أفتح -->
                     <div class="flex items-center">
-                        <span class="code mr-2 bg-gray-200 text-gray-800 py-1 px-3 rounded-lg">{{ code.item_3 }}</span>
+                        <span class="code mr-2 bg-gray-100 text-gray-600 py-1 px-3 rounded-lg">{{ code.item_3 }}</span> <!-- خلفية فاتحة -->
                         <div class="ml-2">
                         </div>
-                        <div class="contentcode ml-2 cursor-pointer" aria-label="نسخ الكود">
+                        <div class="contentcode ml-2 cursor-pointer text-blue-500" aria-label="نسخ الكود">
                             Copy
                         </div>
                     </div>
