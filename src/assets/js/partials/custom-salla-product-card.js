@@ -160,48 +160,24 @@ class ProductCard extends HTMLElement {
         <div class="flex px-6 py-2 text-center h-min justify-between mt-2">
             ${!this.hideAddBtn ?
                 `
-                <div class="flex w-full add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
+         <div class="flex w-full add-button-preview ${this.product.status == 'out' ? 'disabled' : ''}">
     <salla-add-product-button class="button-add" shape="btn" color="primary" fill="none" size="medium" width="wide" type="button"
         product-id="${this.product.id}"
         product-status="${this.product.status}"
         product-type="${this.product.type}">
         
         <div class="flex flex-col justify-between h-min w-full">
-           <button class="
-    bg-[var(--color-primary)] 
-    font-bold 
-    text-white 
-    cursor-pointer 
-    tracking-normal  
-    md:text-[20px] 
-    text-[17px] 
-    flex 
-    gap-2 
-    justify-center 
-    items-center 
-    shadow 
-    rounded-[0.25rem] 
-    h-10 
-    w-full 
-    py-2 
-    px-2
-    duration-100
-      
-    "
-    type="button" 
-    aria-label="Add product to cart">
-    <span class="flex items-center">اضف للسلة</span>
-    <svg id="add-to-cart-icon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 24 24" color="currentColor">
-        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-            <path d="M3.977 9.84A2 2 0 0 1 5.971 8h12.058a2 2 0 0 1 1.994 1.84l.803 10A2 2 0 0 1 18.833 22H5.167a2 2 0 0 1-1.993-2.16l.803-10Z"></path>
-            <path d="M16 11V6a4 4 0 0 0-4-4v0a4 4 0 0 0-4 4v5"></path>
-        </g>
-    </svg>
-   
-</button>
-
+           <button class="bg-[var(--color-primary)] font-bold text-white cursor-pointer tracking-normal md:text-[20px] text-[17px] flex gap-2 justify-center items-center shadow rounded-[0.25rem] h-10 w-full py-2 px-2 duration-100"
+               type="button" aria-label="Add product to cart">
+                <span class="flex items-center">اضف للسلة</span>
+                <svg id="add-to-cart-icon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 24 24" color="currentColor">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="M3.977 9.84A2 2 0 0 1 5.971 8h12.058a2 2 0 0 1 1.994 1.84l.803 10A2 2 0 0 1 18.833 22H5.167a2 2 0 0 1-1.993-2.16l.803-10Z"></path>
+                        <path d="M16 11V6a4 4 0 0 0-4-4v0a4 4 0 0 0-4 4v5"></path>
+                    </g>
+                </svg>
+            </button>
         </div>
-       
     </salla-add-product-button>
 </div>
 

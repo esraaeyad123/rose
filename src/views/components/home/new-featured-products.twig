@@ -1,13 +1,22 @@
 <section class="s-blockl fixed-products-with-image">
-  <div style="background-color:{{component.colorBackground}};" class="flex items-center justify-center h-96 overflow-hidden relative w-full">
+  <div class="flex items-center justify-center h-96 overflow-hidden relative w-full">
+    {% if component.videotoimg %}
+    <img class="lazy w-full h-auto object-cover object-center min-h-[200px] max-h-[250px] lg:max-h-[700px] loaded" src="{{ component.background_image }}"  loading="lazy">
+
+    {% else %}
+
     <video class="bg-cover w-full origin-center" autoplay loop muted>
         <source src="{{ component.url }}" type="video/mp4">
     </video>
+
+    {% endif %}
+
+
       <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
 
       <div class="absolute bottom-20 left-5 right-5 text-right   md:mr-20  md:pr-11" style="color:{{component.colortext}} ;">
-        <h4 class="text-black text-2xl font-bold">{{component.title}}</h4>
-        <p class="text-black text-sm opacity-70">{{component.desc}}</p>
+        <h2 class="text-black font-bold">{{component.title}}</h2>
+        <p class="text-black text-sm opacity-70 description sm:text-base">{{component.desc}}</p>
         <div class="mt-2 button-container">
             <button class="button-custom  border-2 lg:px-8 px-4 lg:py-4 py-2 lg:my-8 my-6 border-slate-900 duration-300" 
                 onclick="window.location.href='{{component.display_all_url}}'" 
@@ -23,6 +32,8 @@
 <div class="container">
     <salla-products-list 
             source="selected" 
+            class="simplified-products" 
+
             source-value="[{{ component.products|map((product) => product.id)|join(',') }}]">
         </salla-products-list>
 </div>
