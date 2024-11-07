@@ -17,6 +17,8 @@
       <div class="absolute bottom-20 left-5 right-5 text-right   md:mr-20  md:pr-11" style="color:{{component.colortext}} ;">
         <h2 class="text-black font-bold">{{component.title}}</h2>
         <p class="text-black text-sm opacity-70 description sm:text-base">{{component.desc}}</p>
+        {% if component.textButton %}
+
         <div class="mt-2 button-container">
             <button class="button-custom  border-2 lg:px-8 px-4 lg:py-4 py-2 lg:my-8 my-6 border-slate-900 duration-300" 
                 onclick="window.location.href='{{component.display_all_url}}'" 
@@ -25,8 +27,13 @@
                 <span>{{component.textButton}}</span>
             </button>
         </div>
+        {% endif %}
+
     </div>
     
+
+  
+  
   </div>
 
 <div class="container">
