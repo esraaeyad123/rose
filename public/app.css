@@ -519,6 +519,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .z-40{z-index:40}
 .z-50{z-index:50}
 .z-\[1\]{z-index:1}
+.z-\[20\]{z-index:20}
 .z-\[2\]{z-index:2}
 .col-span-2{grid-column:span 2 / span 2}
 .col-span-6{grid-column:span 6 / span 6}
@@ -724,7 +725,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .space-x-5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.25rem * 0);margin-right:calc(1.25rem * var(--tw-space-x-reverse));margin-left:calc(1.25rem * (1 - 0));margin-left:calc(1.25rem * (1 - var(--tw-space-x-reverse)));margin-left:calc(1.25rem * calc(1 - 0));margin-left:calc(1.25rem * calc(1 - var(--tw-space-x-reverse)))}
 .space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * 0);margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * (1 - 0));margin-left:calc(1.5rem * (1 - var(--tw-space-x-reverse)));margin-left:calc(1.5rem * calc(1 - 0));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}
 .space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * (1 - 0));margin-top:calc(0.25rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(0.25rem * calc(1 - 0));margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * 0);margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}
-.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * (1 - 0));margin-top:calc(0.5rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(0.5rem * calc(1 - 0));margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * 0);margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}
 .space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * (1 - 0));margin-top:calc(0.625rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(0.625rem * calc(1 - 0));margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * 0);margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}
 .space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * (1 - 0));margin-top:calc(1rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(1rem * calc(1 - 0));margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * 0);margin-bottom:calc(1rem * var(--tw-space-y-reverse))}
 .space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * (1 - 0));margin-top:calc(1.25rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(1.25rem * calc(1 - 0));margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * 0);margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}
@@ -878,9 +878,11 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-4xl{font-size:2.25rem;line-height:2.5rem}
 .text-6xl{font-size:3.75rem;line-height:1}
 .text-7xl{font-size:4.5rem;line-height:1}
+.text-\[15px\]{font-size:15px}
 .text-\[16px\]{font-size:16px}
 .text-\[17px\]{font-size:17px}
 .text-\[22px\]{font-size:22px}
+.text-\[30px\]{font-size:30px}
 .text-base{font-size:1rem;line-height:1.5rem}
 .text-lg{font-size:1.125rem;line-height:1.75rem}
 .text-sm{font-size:0.875rem;line-height:1.25rem}
@@ -889,13 +891,13 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .font-\[500\]{font-weight:500}
 .font-bold{font-weight:700}
 .font-extrabold{font-weight:800}
-.font-light{font-weight:300}
 .font-medium{font-weight:500}
 .font-normal{font-weight:400}
 .font-semibold{font-weight:600}
 .font-thin{font-weight:100}
 .uppercase{text-transform:uppercase}
 .\!leading-\[1\.15\]{line-height:1.15 !important}
+.\!leading-tight{line-height:1.25 !important}
 .leading-10{line-height:2.5rem}
 .leading-12{line-height:3rem}
 .leading-4{line-height:1rem}
@@ -6713,6 +6715,15 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   width: 100%; /* عرض الزر يتناسب مع الحاوية */
   max-width: 300px; /* أقصى عرض للزر */
 }
+.custom-button:hover {
+  background-color: #555;
+}
+.custom-button svg {
+  transition: transform 0.2s ease;
+}
+.custom-button:hover svg {
+  transform: translateX(-5px);
+}
 .add-to-cart-icon {
   height: 20px; /* ارتفاع الأيقونة */
   width: 20px; /* عرض الأيقونة */
@@ -7576,9 +7587,11 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:text-4xl{font-size:2.25rem;line-height:2.5rem}
 .md\:text-5xl{font-size:3rem;line-height:1}
 .md\:text-\[20px\]{font-size:20px}
+.md\:text-\[40px\]{font-size:40px}
 .md\:text-base{font-size:1rem;line-height:1.5rem}
 .md\:text-xl{font-size:1.25rem;line-height:1.75rem}
 .md\:\!leading-12{line-height:3rem !important}
+.md\:leading-\[2\.7rem\]{line-height:2.7rem}
 .md\:first\:pt-24:first-child{padding-top:6rem}}
 @media (min-width: 1024px){
 .lg\:not-sr-only{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}

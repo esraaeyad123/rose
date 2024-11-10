@@ -723,6 +723,18 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   max-width: 300px; /* أقصى عرض للزر */
 }
 
+.custom-button:hover {
+  background-color: #555;
+}
+
+.custom-button svg {
+  transition: transform 0.2s ease;
+}
+
+.custom-button:hover svg {
+  transform: translateX(-5px);
+}
+
 .add-to-cart-icon {
   height: 20px; /* ارتفاع الأيقونة */
   width: 20px; /* عرض الأيقونة */
@@ -1299,3 +1311,7 @@ opacity: 1; /* يظهر عند إضافة الفئة show */
       padding-bottom: 0.5rem;
   }
 }
+
+
+
+
