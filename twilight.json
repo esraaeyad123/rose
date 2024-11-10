@@ -1541,7 +1541,7 @@
         {
             "key": "ab9ec31b-f655-48e3-aafb-fdc6e0d105d9",
             "title": "خلفية مع العد التنازلي",
-            "icon": "sicon-store",
+            "icon": "sicon-percentage",
             "path": "home.banner-with-countdown",
             "fields": [
                 {
@@ -1710,7 +1710,7 @@
                     "multilanguage": false,
                     "required": false,
                     "minLength": 6,
-                    "maxLength":50
+                    "maxLength": 50
                 },
                 {
                     "id": "item_3",
@@ -1810,8 +1810,8 @@
         },
         {
             "key": "a2175a26-abe2-478c-8d33-92c029c60af9",
-            "title": "الخلفية كاملة",
-            "icon": "sicon-android-tablet",
+            "title": "فيديو كامل ( روز )",
+            "icon": "sicon-play-library",
             "path": "home.full-background",
             "fields": [
                 {
