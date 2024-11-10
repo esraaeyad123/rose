@@ -709,30 +709,15 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   justify-content: center; /* محاذاة العناصر أفقيًا في المنتصف */
 }
 
-.custom-button {
-  background-color: #ffcc00; /* لون خلفية الزر */
-  border: 2px solid #333; /* لون الحافة */
-  border-radius: 5px; /* حواف دائرية */
-  padding: 12px 20px; /* مساحة داخلية لجعل الزر مريح */
-  display: flex; /* استخدام flexbox */
-  align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
-  justify-content: center; /* محاذاة العناصر أفقيًا في المنتصف */
-  cursor: pointer; /* تغيير المؤشر عند التمرير فوقه */
-  transition: background-color 0.3s, transform 0.3s; /* تأثير الانتقال */
-  width: 100%; /* عرض الزر يتناسب مع الحاوية */
-  max-width: 300px; /* أقصى عرض للزر */
-}
 
-.custom-button:hover {
-  background-color: #555;
-}
 
-.custom-button svg {
+/* تأثيرات على الأيقونة داخل الزر */
+.button-custom svg {
   transition: transform 0.2s ease;
 }
 
-.custom-button:hover svg {
-  transform: translateX(-5px);
+.button-custom:hover svg {
+  transform: translateX(-5px); /* تحريك الأيقونة عند التمرير */
 }
 
 .add-to-cart-icon {
@@ -742,18 +727,21 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   transition: transform 0.3s; /* تأثير الانتقال للأيقونة */
 }
 
-.custom-button:hover {
-  background-color: #f39c12; /* تغيير لون الخلفية عند التمرير */
-  transform: scale(1.02); /* تأثير تكبير الزر عند التمرير */
+
+
+
+
+.s-block--special-products-slider2 {
+  margin-bottom: 50px; /* Increased margin-bottom for more space below */
 }
 
-.custom-button:hover .add-to-cart-icon {
-  transform: translateX(5px); /* تحريك الأيقونة إلى اليمين عند التمرير */
+.slider-wrap {
+  padding-bottom: 60px; /* Increased padding-bottom for more space under the slider */
 }
 
-.custom-button:hover span {
-  opacity: 0; /* إخفاء النص عند التمرير */
-}
+
+
+
 
 /* الأنماط الافتراضية */
 .button-add {

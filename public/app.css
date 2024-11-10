@@ -535,7 +535,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-auto{margin-left:auto;margin-right:auto}
 .my-1{margin-top:0.25rem;margin-bottom:0.25rem}
 .my-2{margin-top:0.5rem;margin-bottom:0.5rem}
-.my-6{margin-top:1.5rem;margin-bottom:1.5rem}
 .-mb-52{margin-bottom:-13rem}
 .-mt-1{margin-top:-0.25rem}
 .-mt-62{margin-top:-248px}
@@ -771,7 +770,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .border-gray-300{--tw-border-opacity:1;border-color:rgba(209, 213, 219, 1);border-color:rgba(209, 213, 219, var(--tw-border-opacity))}
 .border-green-300{--tw-border-opacity:1;border-color:rgba(134, 239, 172, 1);border-color:rgba(134, 239, 172, var(--tw-border-opacity))}
 .border-primary{border-color:#414042;border-color:var(--color-primary)}
-.border-slate-900{--tw-border-opacity:1;border-color:rgba(15, 23, 42, 1);border-color:rgba(15, 23, 42, var(--tw-border-opacity))}
 .border-b-gray-200{--tw-border-opacity:1;border-bottom-color:rgba(229, 231, 235, 1);border-bottom-color:rgba(229, 231, 235, var(--tw-border-opacity))}
 .bg-\[\#FFF6F3\]{--tw-bg-opacity:1;background-color:rgba(255, 246, 243, 1);background-color:rgba(255, 246, 243, var(--tw-bg-opacity))}
 .bg-\[\#f7f7f7\]{--tw-bg-opacity:1;background-color:rgba(247, 247, 247, 1);background-color:rgba(247, 247, 247, var(--tw-bg-opacity))}
@@ -895,7 +893,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .font-normal{font-weight:400}
 .font-semibold{font-weight:600}
 .font-thin{font-weight:100}
-.uppercase{text-transform:uppercase}
 .\!leading-\[1\.15\]{line-height:1.15 !important}
 .\!leading-tight{line-height:1.25 !important}
 .leading-10{line-height:2.5rem}
@@ -6702,27 +6699,12 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
   justify-content: center; /* محاذاة العناصر أفقيًا في المنتصف */
 }
-.custom-button {
-  background-color: #ffcc00; /* لون خلفية الزر */
-  border: 2px solid #333; /* لون الحافة */
-  border-radius: 5px; /* حواف دائرية */
-  padding: 12px 20px; /* مساحة داخلية لجعل الزر مريح */
-  display: flex; /* استخدام flexbox */
-  align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
-  justify-content: center; /* محاذاة العناصر أفقيًا في المنتصف */
-  cursor: pointer; /* تغيير المؤشر عند التمرير فوقه */
-  transition: background-color 0.3s, transform 0.3s; /* تأثير الانتقال */
-  width: 100%; /* عرض الزر يتناسب مع الحاوية */
-  max-width: 300px; /* أقصى عرض للزر */
-}
-.custom-button:hover {
-  background-color: #555;
-}
-.custom-button svg {
+/* تأثيرات على الأيقونة داخل الزر */
+.button-custom svg {
   transition: transform 0.2s ease;
 }
-.custom-button:hover svg {
-  transform: translateX(-5px);
+.button-custom:hover svg {
+  transform: translateX(-5px); /* تحريك الأيقونة عند التمرير */
 }
 .add-to-cart-icon {
   height: 20px; /* ارتفاع الأيقونة */
@@ -6730,15 +6712,11 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   margin-left: 8px; /* مسافة بين النص والأيقونة */
   transition: transform 0.3s; /* تأثير الانتقال للأيقونة */
 }
-.custom-button:hover {
-  background-color: #f39c12; /* تغيير لون الخلفية عند التمرير */
-  transform: scale(1.02); /* تأثير تكبير الزر عند التمرير */
+.s-block--special-products-slider2 {
+  margin-bottom: 50px; /* Increased margin-bottom for more space below */
 }
-.custom-button:hover .add-to-cart-icon {
-  transform: translateX(5px); /* تحريك الأيقونة إلى اليمين عند التمرير */
-}
-.custom-button:hover span {
-  opacity: 0; /* إخفاء النص عند التمرير */
+.slider-wrap {
+  padding-bottom: 60px; /* Increased padding-bottom for more space under the slider */
 }
 /* الأنماط الافتراضية */
 .button-add {
@@ -7528,6 +7506,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:mb-10{margin-bottom:2.5rem}
 .md\:mb-16{margin-bottom:4rem}
 .md\:mb-20{margin-bottom:5rem}
+.md\:mb-4{margin-bottom:1rem}
 .md\:mb-8{margin-bottom:2rem}
 .md\:mb-9{margin-bottom:2.25rem}
 .md\:mr-20{margin-right:5rem}
@@ -7589,6 +7568,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .md\:text-\[20px\]{font-size:20px}
 .md\:text-\[40px\]{font-size:40px}
 .md\:text-base{font-size:1rem;line-height:1.5rem}
+.md\:text-lg{font-size:1.125rem;line-height:1.75rem}
 .md\:text-xl{font-size:1.25rem;line-height:1.75rem}
 .md\:\!leading-12{line-height:3rem !important}
 .md\:leading-\[2\.7rem\]{line-height:2.7rem}
@@ -7600,7 +7580,6 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:col-span-2{grid-column:span 2 / span 2}
 .lg\:col-span-6{grid-column:span 6 / span 6}
 .lg\:col-start-7{grid-column-start:7}
-.lg\:my-8{margin-top:2rem;margin-bottom:2rem}
 .lg\:-mt-28{margin-top:-7rem}
 .lg\:mb-24{margin-bottom:6rem}
 .lg\:mb-8{margin-bottom:2rem}
@@ -7653,10 +7632,8 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:px-0{padding-left:0px;padding-right:0px}
 .lg\:px-10{padding-left:2.5rem;padding-right:2.5rem}
 .lg\:px-6{padding-left:1.5rem;padding-right:1.5rem}
-.lg\:px-8{padding-left:2rem;padding-right:2rem}
 .lg\:py-0{padding-top:0px;padding-bottom:0px}
 .lg\:py-24{padding-top:6rem;padding-bottom:6rem}
-.lg\:py-4{padding-top:1rem;padding-bottom:1rem}
 .lg\:pb-11{padding-bottom:2.75rem}
 .lg\:pb-2{padding-bottom:0.5rem}
 .lg\:pb-20{padding-bottom:5rem}
