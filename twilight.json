@@ -2072,18 +2072,6 @@
             "path": "home.enhanced-slider-products",
             "fields": [
                 {
-                    "id": "item1",
-                    "type": "string",
-                    "format": "color",
-                    "inputType": "color",
-                    "label": "لون خلفية المحتوى",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-format-fill",
-                    "value": "#004956",
-                    "required": false
-                },
-                {
                     "type": "boolean",
                     "icon": "sicon-toggle-off",
                     "label": "لاستبدال الفيديو بصورة",
