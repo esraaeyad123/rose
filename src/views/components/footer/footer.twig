@@ -1,7 +1,4 @@
-{% set marquee = theme.settings.get('marquee', true) %}
-{% set marqueetext = theme.settings.get('marqueetext', true) %}
-{% set marqueecolortext = theme.settings.get('marqueecolortext', true) %}
-{% set marqueecolorback = theme.settings.get('marqueecolorback', true) %}
+
 {% set scrolltotop = theme.settings.get('scrolltotop', true) %}
 
 {% if scrolltotop %}
@@ -9,25 +6,8 @@
     <i class="sicon-caret-up-double"></i>
   </div>
 {% endif %}
-{% set buttonwat   = theme.settings.get('buttonwat', true) %}
-{% set wherebutton = theme.settings.get('wherewatbut', true) %}
-{% if buttonwat %}
-{% if wherebutton == 'right' %}
-<a href="https://wa.me/{{ theme.settings.get('numwat') }}?text=مرحبًا! أود الاستفسار عن معلومات إضافية."
-   class="whatsapp-button" 
-   aria-label="تواصل معنا عبر واتساب">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" style="width: 24px; height: 24px;" />
-  <span class="whatsapp-text">{{ theme.settings.get('textwat') }}</span>
-</a>
-{% else %}
-<a href="https://wa.me/{{ theme.settings.get('numwat') }}?text=مرحبًا! أود الاستفسار عن معلومات إضافية."
-   class="whatsapp-buttonleft" 
-   aria-label="تواصل معنا عبر واتساب">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" style="width: 24px; height: 24px;" />
-  <span class="whatsapp-text">{{ theme.settings.get('textwat') }}</span>
-</a>
-{% endif %}
-{% endif %}
+
+
 
 
 <footer class="store-footer pb-[70px] bg-[#f7f7f7] dark:bg-[var(--color-dark-secondary)] md:pb-0" >

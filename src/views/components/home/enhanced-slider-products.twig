@@ -1,7 +1,8 @@
 <section class="s-block--special-products-slider2">
     <div class="min-h-[600px] w-full flex flex-col lg:flex-row justify-center items-stretch pt-8 relative h-full lg:space-y-0 lg:space-x-10">
-
-        <div class="lg:w-1/3 flex items-center justify-center bg-cover bg-no-repeat text-center relative min-h-[200px] max-h-[250px] md:max-h-[700px] has-overlay--before has-overlay--opacity-option has-overlay--opacity-60" style="color: {{ component.item2 }};">
+        
+        <div class="lg:w-1/3 flex items-center justify-center bg-cover bg-no-repeat text-center relative min-h-[200px] max-h-[250px] md:max-h-[700px] has-overlay--before has-overlay--opacity-option has-overlay--opacity-60" 
+            style="color: {{ component.item2 }};">
             {% if component.videotoimg %}
                 <img class="lazy w-full h-auto object-cover object-center min-h-[200px] max-h-[250px] lg:max-h-[700px] loaded" src="{{ component.photo }}" alt="{{ component.title }}" loading="lazy">
             {% else %}
@@ -9,27 +10,22 @@
             {% endif %}
 
             <div class="space-y-4 lg:space-y-8 absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2.5 py-10 lg:p-10 z-[1]">
-                <h2 class=" font-bold !leading-[1.15]">{{ component.title }}</h2>
+                <h2 class="font-bold !leading-[1.15]">{{ component.title }}</h2>
                 <p class="description max-w-[400px] text-sm sm:text-base">{{ component.desc }}</p>
                 {% if component.item5 %}
-                    <a class="button-custom" style="background-color: {{ component.item4 }};"
-                    href="{{ component.display_all_url }}">
-                        <span style="color: {{ component.item3 }};">{{ component.item5 }}
-                            
-                        </span>
-                    
+                    <a class="button-custom" style="background-color: {{ component.item4 }};" href="{{ component.display_all_url }}">
+                        <span style="color: {{ component.item3 }};">{{ component.item5 }}</span>
                     </a>
-                   
                 {% endif %}
             </div>
         </div>
 
-        <div class="mt-5"></div> 
+        <div class="mt-5"></div>
 
-        <div class="slider-wrap relative lg:w-2/3 pb-20 lg:pt-20 lg:pb-40 2xl:px-2.5"> 
+        <div class="slider-wrap relative lg:w-2/3 pb-20 lg:pt-20 lg:pb-40 2xl:px-2.5">
             <salla-products-slider
                 id="product-slider"
-                class="simplified-products fit-slider-products s-products-slider-wrapper" 
+                class="simplified-products fit-slider-products s-products-slider-wrapper"
                 autoplay
                 type="carousel"
                 {% if component.products|length %}
@@ -45,6 +41,5 @@
         </div>
     </div>
 </section>
-
 
   
