@@ -620,17 +620,14 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-h-\[300px\]{max-height:300px}
 .max-h-\[350px\]{max-height:350px}
 .max-h-full{max-height:100%}
-.max-h-\[50px\]{max-height:50px}
 .min-h-\[160px\]{min-height:160px}
 .min-h-\[200px\]{min-height:200px}
-.min-h-\[250px\]{min-height:250px}
 .min-h-\[300px\]{min-height:300px}
 .min-h-\[34px\]{min-height:34px}
+.min-h-\[350px\]{min-height:350px}
 .min-h-\[600px\]{min-height:600px}
 .min-h-full{min-height:100%}
 .min-h-screen{min-height:100vh}
-.min-h-\[50px\]{min-height:50px}
-.min-h-\[350px\]{min-height:350px}
 .\!w-36{width:9rem !important}
 .\!w-\[160px\]{width:160px !important}
 .w-10{width:2.5rem}
@@ -7601,11 +7598,9 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:hidden{display:none}
 .lg\:h-auto{height:auto}
 .lg\:max-h-\[700px\]{max-height:700px}
-.lg\:max-h-\[800px\]{max-height:800px}
-.lg\:max-h-\[00px\]{max-height:00px}
 .lg\:max-h-\[900px\]{max-height:900px}
+.lg\:max-h-\[00px\]{max-height:00px}
 .lg\:min-h-\[528px\]{min-height:528px}
-.lg\:min-h-\[400px\]{min-height:400px}
 .lg\:w-1\/3{width:33.333333%}
 .lg\:w-1\/4{width:25%}
 .lg\:w-10\/12{width:83.333333%}
