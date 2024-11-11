@@ -618,13 +618,11 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-h-\[150px\]{max-height:150px}
 .max-h-\[250px\]{max-height:250px}
 .max-h-\[300px\]{max-height:300px}
-.max-h-\[600px\]{max-height:600px}
 .max-h-full{max-height:100%}
 .min-h-\[160px\]{min-height:160px}
 .min-h-\[200px\]{min-height:200px}
 .min-h-\[300px\]{min-height:300px}
 .min-h-\[34px\]{min-height:34px}
-.min-h-\[350px\]{min-height:350px}
 .min-h-\[600px\]{min-height:600px}
 .min-h-full{min-height:100%}
 .min-h-screen{min-height:100vh}
