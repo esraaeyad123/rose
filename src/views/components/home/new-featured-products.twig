@@ -1,11 +1,11 @@
 <section class="s-blockl fixed-products-with-image">
   <div class="flex items-center justify-center h-96 overflow-hidden relative w-full">
     {% if component.videotoimg %}
-    <img class="lazy w-full h-auto object-cover object-center min-h-[200px] max-h-[250px] lg:max-h-[700px] loaded" src="{{ component.background_image }}" loading="lazy">
+      <img class="lazy w-full h-auto object-cover object-center min-h-[200px] max-h-[250px] lg:max-h-[700px] loaded" src="{{ component.background_image }}" loading="lazy">
     {% else %}
-    <video class="bg-cover w-full origin-center" autoplay loop muted>
-        <source src="{{ component.url }}" type="video/mp4">
-    </video>
+      <video class="bg-cover w-full origin-center" autoplay loop muted>
+          <source src="{{ component.url }}" type="video/mp4">
+      </video>
     {% endif %}
 
     <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
@@ -36,8 +36,7 @@
       {% endif %}
     </div>
   </div>
-
-  <div class="container">
+  <div class="container mt-0"> 
     <salla-products-list 
       source="selected" 
       class="simplified-products" 
