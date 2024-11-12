@@ -1308,3 +1308,26 @@ padding: 10px;
 
 
 
+.product-block__thumb img {
+  width: 100%;
+  height: auto;  /* الصورة ستحتفظ بنسبتها الأصلية */
+  display: block; /* لإزالة المسافات الفارغة تحت الصورة */
+  margin: 0 auto; /* لتوسيط الصورة داخل العنصر إذا كانت أصغر من العنصر */
+}
+
+
+.animate-duration-1000 {
+  animation-duration: 1000ms !important;
+}
+
+
+
+
+.product-card-image {
+  height: 340px !important;
+}
+@media screen and (max-width: 768px) {
+  .product-card-image {
+      height: 370px !important;
+  }
+}
