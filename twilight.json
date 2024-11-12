@@ -1980,7 +1980,7 @@
                     "type": "string",
                     "format": "image",
                     "label": "صورة خلفية المحتوى",
-                    "description": "المقاس المناسب للصورة هو 600×800 بكسل",
+                    "description": "المقاس المناسب للصورة هو 400×900 بكسل",
                     "labelHTML": null,
                     "placeholder": null,
                     "icon": "sicon-image",
