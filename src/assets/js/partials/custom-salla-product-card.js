@@ -100,8 +100,8 @@ class ProductCard extends HTMLElement {
                         : ''
             }
             
-      <a class="relative mx-2 mt-3 flex overflow-hidden rounded-xl product-card-image" href="${this.product.url}" aria-label="${this.product.name}">
-  <img class="object-cover w-full " src="${this.product.image.url}" data-src="${this.product.image.url}" alt="${this.product.image.alt}" />
+      <a class="mx-2 mt-3 flex overflow-hidden rounded-xl" href="${this.product.url}" aria-label="${this.product.name}">
+  <img class="object-cover  w-full h-auto" width="200"  src="${this.product.image.url}" data-src="${this.product.image.url}" alt="${this.product.image.alt}" />
 </a>
         </div>
     </div>

@@ -1323,11 +1323,3 @@ padding: 10px;
 
 
 
-.product-card-image {
-  height: 340px !important;
-}
-@media screen and (max-width: 768px) {
-  .product-card-image {
-      height: 370px !important;
-  }
-}
