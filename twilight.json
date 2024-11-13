@@ -1203,7 +1203,7 @@
                             "icon": "sicon-format-text-alt",
                             "value": null,
                             "multilanguage": false,
-                            "required": false,
+                            "required": true,
                             "minLength": 6,
                             "maxLength": 30
                         },
@@ -1217,7 +1217,7 @@
                             "labelHTML": null,
                             "icon": "sicon-calendar-time",
                             "value": "2021-10-01T15:23",
-                            "required": false
+                            "required": true
                         }
                     ],
                     "value": [],
