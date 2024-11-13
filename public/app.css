@@ -7198,10 +7198,14 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   width: 100%;
   height: auto; /* الصورة ستحتفظ بنسبتها الأصلية */
   display: block; /* لإزالة المسافات الفارغة تحت الصورة */
-  margin: 0 auto; /* لتوسيط الصورة داخل العنصر إذا كانت أصغر من العنصر */
+  margin: 0 auto;
 }
 .animate-duration-1000 {
   animation-duration: 1000ms !important;
+}
+.loading-screen img {
+  max-width: 80px;
+  max-height: 80px;
 }
 body.mm-ocd-opened,
 body.modal-is-open,

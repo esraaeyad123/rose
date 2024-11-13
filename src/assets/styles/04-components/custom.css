@@ -1312,7 +1312,7 @@ padding: 10px;
   width: 100%;
   height: auto;  /* الصورة ستحتفظ بنسبتها الأصلية */
   display: block; /* لإزالة المسافات الفارغة تحت الصورة */
-  margin: 0 auto; /* لتوسيط الصورة داخل العنصر إذا كانت أصغر من العنصر */
+  margin: 0 auto; 
 }
 
 
@@ -1321,5 +1321,8 @@ padding: 10px;
 }
 
 
+.loading-screen img {
+  max-width: 80px; 
+  max-height: 80px; 
 
-
+}
