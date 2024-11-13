@@ -1243,10 +1243,10 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "item.description",
+                            "id": "item.title",
                             "type": "string",
                             "format": "text",
-                            "label": "توضيح بسيط",
+                            "label": "العنوان الرئيسي",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
@@ -1258,10 +1258,10 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "item.title",
+                            "id": "item.description",
                             "type": "string",
                             "format": "text",
-                            "label": "العنوان الرئيسي",
+                            "label": "توضيح بسيط",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
