@@ -12,32 +12,26 @@ class ProductCard extends HTMLElement {
         return;
       }
       
-      // Setting props
       this.horizontal = this.getAttribute('horizontal') === 'true';
       this.showWishlist = this.getAttribute('show-wishlist') === 'true';
       this.is_special = this.getAttribute('product-entry--special') === 'true';
-      this.product = this.product || JSON.parse(this.getAttribute('product'));  // Assuming 'product' attribute is a JSON string
+      this.product = this.product || JSON.parse(this.getAttribute('product'));  
 
   
-      // Append host classes and id
       this.classList.add('product-block');
       this.id = `product_${this.product.id}`
       if (this.product.is_out_of_stock) {
         this.classList.add('is-out', 's-product-card-entry', 's-product-card-entry', 's-product-card-vertical', 'hydrated');
       }
 
-      // Wait until the Salla library has fully loaded before initializing and rendering the component
       salla.onReady(() => {
-        // Add fit type class
         let fitType = salla.config.get('store.settings.product.fit_type')
         if (!!fitType) {
           this.classList.add(`${fitType}`)
         }
   
-        // The element is ready for rendering now
         this.render();
         
-        // Check if translations are loaded, if not then load them and re-render
         if (!salla.lang.translationsLoaded) {
           salla.lang.onLoaded(() => this.render());
         }
@@ -49,14 +43,12 @@ class ProductCard extends HTMLElement {
       salla.lang.translationsLoaded || salla.lang.onLoaded(() => {this.render()});
     }
     render() {
-      // Handle landing page
       this.source = salla.config.get('page.slug');
       if (this.source == 'landing-page') {
         this.hideAddBtn = true;
         this.showQuantity = true;
       }
   
-      // Translations
       const remained = salla.lang.get('pages.products.remained');
       const donationPH = salla.lang.get('pages.products.donation_placeholder');
       const startingPrice = salla.lang.get('pages.products.starting_price');
@@ -112,7 +104,7 @@ class ProductCard extends HTMLElement {
             }
             
             <a class="mx-2 mt-3 flex overflow-hidden rounded-xl" href="${this.product.url}" aria-label="${this.product.name}">
-                <img class="object-cover w-full" width="200" height="200" src="${this.product.image.url}" data-src="${this.product.image.url}" alt="${this.product.image.alt}" />
+                <img class="product-image object-cover w-full h-48" src="${this.product.image.url}" alt="${this.product.image.alt}" />
             </a>
         </div>
     </div>

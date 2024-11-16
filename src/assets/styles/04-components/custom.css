@@ -743,7 +743,6 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
 
 
 
-/* الأنماط الافتراضية */
 .button-add {
   /* إعدادات الزر الافتراضية */
 }
@@ -1308,12 +1307,7 @@ padding: 10px;
 
 
 
-.product-block__thumb img {
-  width: 100%;
-  height: auto;  /* الصورة ستحتفظ بنسبتها الأصلية */
-  display: block; /* لإزالة المسافات الفارغة تحت الصورة */
-  margin: 0 auto; 
-}
+
 
 
 .animate-duration-1000 {
@@ -1325,4 +1319,48 @@ padding: 10px;
   max-width: 80px; 
   max-height: 80px; 
 
+}
+
+/* توحيد أبعاد الصورة */
+
+
+/* توحيد ارتفاع المنتج */
+.product {
+  height: 100%; /* تأكيد أن جميع المنتجات تكون بنفس الارتفاع */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* توحيد العرض لجميع المنتجات */
+.product .product-block__thumb {
+  width: 100%;
+  height: 200px; /* تحديد ارتفاع ثابت للصورة */
+  overflow: hidden;
+}
+
+.price-wrapper .total-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-title-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.product {
+  min-height: 450px; 
+}
+
+.product-image {
+  width: 400px;  
+  height: 450px; 
+  object-fit: cover;
 }
