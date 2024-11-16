@@ -1028,7 +1028,7 @@
                     "type": "string",
                     "format": "text",
                     "label": "العنوان الرئيسي",
-                    "description": "نص يتم إضافته على الصورة بنمط خط كبير",
+                    "description": "أدخل العنوان الرئيسي",
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
                     "icon": "sicon-format-text-alt",
@@ -1043,7 +1043,7 @@
                     "type": "string",
                     "format": "textarea",
                     "label": "نص توضيحي",
-                    "description": "نص يتم إضافته على الصورة بخط أصغر من العنوان الرئيسي",
+                    "description": "نص يتم إضافته بخط أصغر من العنوان الرئيسي",
                     "labelHTML": null,
                     "placeholder": "Your text here",
                     "icon": "sicon-typography",
@@ -1203,7 +1203,7 @@
                             "icon": "sicon-format-text-alt",
                             "value": null,
                             "multilanguage": false,
-                            "required": false,
+                            "required": true,
                             "minLength": 6,
                             "maxLength": 30
                         },
@@ -1217,7 +1217,7 @@
                             "labelHTML": null,
                             "icon": "sicon-calendar-time",
                             "value": "2021-10-01T15:23",
-                            "required": false
+                            "required": true
                         }
                     ],
                     "value": [],
@@ -1243,10 +1243,10 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "item.description",
+                            "id": "item.title",
                             "type": "string",
                             "format": "text",
-                            "label": "توضيح بسيط",
+                            "label": "العنوان الرئيسي",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
@@ -1258,10 +1258,10 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "item.title",
+                            "id": "item.description",
                             "type": "string",
                             "format": "text",
-                            "label": "العنوان الرئيسي",
+                            "label": "توضيح بسيط",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
@@ -1427,7 +1427,7 @@
                             "icon": "sicon-format-text-alt",
                             "value": null,
                             "multilanguage": false,
-                            "required": false,
+                            "required": true,
                             "minLength": 6,
                             "maxLength": "300"
                         }
