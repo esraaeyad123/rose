@@ -517,10 +517,10 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .z-20{z-index:20}
 .z-40{z-index:40}
 .z-50{z-index:50}
+.z-\[-1\]{z-index:-1}
 .z-\[1\]{z-index:1}
 .z-\[20\]{z-index:20}
 .z-\[2\]{z-index:2}
-.z-\[-1\]{z-index:-1}
 .col-span-2{grid-column:span 2 / span 2}
 .col-span-6{grid-column:span 6 / span 6}
 .col-end-13{grid-column-end:13}
@@ -664,6 +664,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-w-sm{max-width:24rem}
 .max-w-xl{max-width:36rem}
 .max-w-xs{max-width:20rem}
+.max-w-\[500px\]{max-width:500px}
 .flex-1{flex:1 1 0%}
 .flex-none{flex:none}
 .flex-shrink-0{flex-shrink:0}
@@ -861,6 +862,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .pt-5{padding-top:1.25rem}
 .pt-6{padding-top:1.5rem}
 .pt-8{padding-top:2rem}
+.text-left{text-align:left}
 .text-center{text-align:center}
 .text-right{text-align:right}
 .text-start{text-align:left}
@@ -7630,6 +7632,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 .lg\:w-\[250px\]{width:250px}
 .lg\:w-auto{width:auto}
 .lg\:w-full{width:100%}
+.lg\:w-1\/2{width:50%}
 .lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}
 .lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
