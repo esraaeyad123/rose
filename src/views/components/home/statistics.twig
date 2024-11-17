@@ -2,7 +2,7 @@
     <p class="font-semibold text-2xl md:text-3xl text-center text-gray-800">{{ component.title }}</p>
     <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-y-5 lg:gap-y-0 gap-x-5 place-items-center w-full mx-auto max-w-7xl px-5">
         {% for item in component.item %}
-        <div class="flex flex-col justify-between items-center bg-gradient-to-b from-[#FFF6F3] to-[var(--color-main)] px-4 py-4 min-h-[160px] w-full sm:w-[180px] md:w-[220px] lg:w-[250px] rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+        <div class="colorback flex flex-col justify-between items-center  px-4 py-4 min-h-[160px] w-full sm:w-[180px] md:w-[220px] lg:w-[250px] rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             <div class="flex flex-col justify-center items-center mb-4"> 
                 <i class="{{ item.icon_picker }} text-3xl font-bold text-primary mb-2"></i> 
             </div>
@@ -15,3 +15,97 @@
 </section>
 
 
+
+
+<section class="flex flex-col md:flex-row space-y-6 md:space-y-0">
+    <!-- Media Section (Image on the right) -->
+    <div class="relative md:w-1/2 flex-shrink-0">
+      <img 
+        src="//mojave-theme.myshopify.com/cdn/shop/files/Mojave8901-min.jpg?v=1648294326" 
+        alt="Promotional Collections" 
+        class="w-full h-auto object-cover object-center" 
+        loading="lazy"
+      />
+    </div>
+  
+    <!-- Content Section (Text on the left) -->
+    <div class="md:w-1/2 bg-gray-50 py-12 px-6 text-center md:text-right">
+        <p class="text-2xl font-semibold capitalize text-gray-800">عروض الشتاء</p>
+        <h4 class="text-3xl font-medium mt-4 text-gray-700">
+          اكتشف أساسيات جديدة كل يوم لتمزجها وتناسبها مع جميع ملابسك.
+        </h4>
+    
+        <!-- قائمة الروابط -->
+        <ul class="mt-8 space-y-4">
+          <li>
+            <a href="/collections/tops" class="text-lg font-semibold text-gray-800 flex justify-between items-center hover:text-blue-500">
+              القمصان
+              <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.227252 0.852252C0.446922 0.632583 0.803078 0.632583 1.02275 0.852252L7.77275 7.60225C7.99242 7.82192 7.99242 8.17808 7.77275 8.39775L1.02275 15.1477C0.803078 15.3674 0.446922 15.3674 0.227252 15.1477C0.00758251 14.9281 0.00758251 14.5719 0.227252 14.3523L6.5795 8L0.227252 1.64775C0.00758251 1.42808 0.00758251 1.07192 0.227252 0.852252Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="/collections/jackets-blazers" class="text-lg font-semibold text-gray-800 flex justify-between items-center hover:text-blue-500">
+              المعاطف والبليزرات
+              <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.227252 0.852252C0.446922 0.632583 0.803078 0.632583 1.02275 0.852252L7.77275 7.60225C7.99242 7.82192 7.99242 8.17808 7.77275 8.39775L1.02275 15.1477C0.803078 15.3674 0.446922 15.3674 0.227252 15.1477C0.00758251 14.9281 0.00758251 14.5719 0.227252 14.3523L6.5795 8L0.227252 1.64775C0.00758251 1.42808 0.00758251 1.07192 0.227252 0.852252Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="/collections/dresses" class="text-lg font-semibold text-gray-800 flex justify-between items-center hover:text-blue-500">
+              الفساتين
+              <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.227252 0.852252C0.446922 0.632583 0.803078 0.632583 1.02275 0.852252L7.77275 7.60225C7.99242 7.82192 7.99242 8.17808 7.77275 8.39775L1.02275 15.1477C0.803078 15.3674 0.446922 15.3674 0.227252 15.1477C0.00758251 14.9281 0.00758251 14.5719 0.227252 14.3523L6.5795 8L0.227252 1.64775C0.00758251 1.42808 0.00758251 1.07192 0.227252 0.852252Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="/collections/bottoms" class="text-lg font-semibold text-gray-800 flex justify-between items-center hover:text-blue-500">
+              السراويل
+              <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.227252 0.852252C0.446922 0.632583 0.803078 0.632583 1.02275 0.852252L7.77275 7.60225C7.99242 7.82192 7.99242 8.17808 7.77275 8.39775L1.02275 15.1477C0.803078 15.3674 0.446922 15.3674 0.227252 15.1477C0.00758251 14.9281 0.00758251 14.5719 0.227252 14.3523L6.5795 8L0.227252 1.64775C0.00758251 1.42808 0.00758251 1.07192 0.227252 0.852252Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="/collections" class="text-lg font-semibold text-gray-800 flex justify-between items-center hover:text-blue-500">
+              الكل
+              <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.227252 0.852252C0.446922 0.632583 0.803078 0.632583 1.02275 0.852252L7.77275 7.60225C7.99242 7.82192 7.99242 8.17808 7.77275 8.39775L1.02275 15.1477C0.803078 15.3674 0.446922 15.3674 0.227252 15.1477C0.00758251 14.9281 0.00758251 14.5719 0.227252 14.3523L6.5795 8L0.227252 1.64775C0.00758251 1.42808 0.00758251 1.07192 0.227252 0.852252Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+  </section>
+  
+
+
+  <div id="imageGallery" class="relative w-full h-[500px] overflow-hidden">
+    <div class="absolute inset-0 transition-opacity duration-1000 animate-slide opacity-100">
+      <img src="image_1.jpg" alt="Image 1" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 transition-opacity duration-1000 animate-slide opacity-0">
+      <img src="image_2.jpg" alt="Image 2" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 transition-opacity duration-1000 animate-slide opacity-0">
+      <img src="image_3.jpg" alt="Image 3" class="w-full h-full object-cover">
+    </div>
+  </div>
+  
+
+  <script>
+    const images = document.querySelectorAll('#imageGallery > div');
+    let currentIndex = 0;
+
+    function switchImage() {
+        images[currentIndex].classList.add('opacity-0');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.remove('opacity-0');
+    }
+
+    // تبديل الصورة كل 3 ثواني (3000 مللي ثانية)
+    setInterval(switchImage, 3000);
+</script>

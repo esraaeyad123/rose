@@ -1324,3 +1324,30 @@ padding: 10px;
 /* توحيد أبعاد الصورة */
 
 
+.colorback{
+
+  background: linear-gradient(to bottom, #FFF6F3, #ffffff , var(--color-primary));
+
+}
+
+
+@keyframes slide {
+  0%, 33.33% {
+    opacity: 1;
+  }
+  33.33%, 100% {
+    opacity: 0;
+  }
+}
+
+#imageGallery > div:nth-child(1) {
+  animation: slide 9s infinite;
+}
+
+#imageGallery > div:nth-child(2) {
+  animation: slide 9s infinite 3s;
+}
+
+#imageGallery > div:nth-child(3) {
+  animation: slide 9s infinite 6s;
+}

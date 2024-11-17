@@ -330,6 +330,46 @@ closeMarquee() {
       marquee.style.display = 'none';
   }
 }
+
+
+
+copycontent() {
+  document.querySelectorAll(".contentcode").forEach((item) => {
+      item.addEventListener("click", async (event) => {
+          if (!navigator.clipboard) {
+              return;
+          }
+          try {
+              // احصل على العنصر الذي يحتوي على الكود باستخدام parentNode
+              const codeElement = event.target.closest('.flex').querySelector('.code');
+              
+              // إذا لم يتم العثور على العنصر .code، لا تتابع
+              if (!codeElement) {
+                  console.error("لم يتم العثور على العنصر الذي يحتوي على الكود.");
+                  return;
+              }
+              
+              // احصل على النص من العنصر .code
+              const code = codeElement.innerText;
+              
+              // حاول نسخ الكود إلى الحافظة
+              await navigator.clipboard.writeText(code);
+              
+              // تغيير النص إلى "Copied" بعد النسخ
+              event.target.innerHTML = "Copied";
+              
+              // إعادة النص إلى "Copy" بعد 2 ثانية
+              setTimeout(() => {
+                  event.target.innerHTML = "Copy";
+              }, 2000);
+          } catch (err) {
+              console.error("فشل النسخ!", err);
+          }
+      });
+  });
+}
+
+
   
   scrollTopButton() {
     document.addEventListener('DOMContentLoaded', () => {
@@ -362,33 +402,6 @@ closeMarquee() {
     my.style.display = "none";    
   }
 
-  
-copycontent() {
-    document.querySelectorAll(".contentcode").forEach((item) => {
-        item.addEventListener("click", async (event) => {
-            if (!navigator.clipboard) {
-                return;
-            }
-            try {
-                // احصل على الكود من العنصر الذي يحتوي على الكود
-                const code = event.target.previousElementSibling.querySelector('.code').innerText;
-                
-                // حاول نسخ الكود إلى الحافظة
-                await navigator.clipboard.writeText(code);
-                
-                // تغيير النص إلى "Copied" بعد النسخ
-                event.target.innerHTML = "Copied";
-                
-                // إعادة النص إلى "Copy" بعد 2 ثانية
-                setTimeout(() => {
-                    event.target.innerHTML = "Copy";
-                }, 2000);
-            } catch (err) {
-                console.error("فشل النسخ!", err);
-            }
-        });
-    });
-}
 
 
 
