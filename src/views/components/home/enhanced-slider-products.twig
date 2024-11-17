@@ -41,3 +41,51 @@
     </div>
 </section>
 
+
+
+<section class="s-block--special-products-slider2">
+    <div class="min-h-[600px] w-full flex flex-col lg:flex-row justify-center items-stretch pt-8 relative h-full lg:space-y-0 lg:space-x-10">
+
+        <!-- الفيديو والنص -->
+        <div class="lg:w-full flex flex-col items-center justify-center bg-cover bg-no-repeat text-center relative min-h-[200px] max-h-[250px] md:max-h-[700px] has-overlay--before has-overlay--opacity-option has-overlay--opacity-60" style="color:{{component.item2}};">
+            
+            {% if component.videotoimg %}
+                <img class="lazy w-full h-auto object-cover object-center min-h-[200px] max-h-[250px] lg:max-h-[700px] loaded" src="{{component.photo}}" alt="{{component.title}}" loading="lazy">
+            {% else %}
+                <video playsinline class="object-cover object-center w-full h-full absolute top-0 left-0 z-[-1]" loop autoplay muted src="{{component.url}}"></video>
+            {% endif %}
+
+            <div class="space-y-4 lg:space-y-8 absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2.5 py-10 lg:p-10 z-[1]">
+                <h2 class="font-bold !leading-[1.15]">{{ component.title }}</h2>
+                <p class="description max-w-[400px] text-sm sm:text-base">{{ component.desc }}</p>
+                {% if component.item5 %}
+                    <a class="button-custom" style="background-color: {{ component.item4 }};" href="{{ component.display_all_url }}">
+                        <span style="color: {{ component.item3 }};">{{ component.item5 }}</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- الفاصل بين الفيديو والنص -->
+        <div class="mt-5"></div>
+
+        <!-- منتج صغير مع تأثير العرض الجزئي -->
+        <div class="slider-wrap relative lg:w-full pb-20 lg:pt-20 lg:pb-28 2xl:px-2.5 overflow-hidden">
+            <salla-products-slider
+                id="product-slider"
+                class="simplified-products fit-slider-products s-products-slider-wrapper" autoplay
+                type="carousel"
+                {% if component.products|length %}
+                    source="selected"
+                    source-value="[{{ component.products|map((product) => product.id)|join(',') }}]"
+                {% endif %}
+                {% if display_all != '' and display_all != '#' %}
+                    display-all-url="{{display_all}}"
+                {% endif %}
+            ></salla-products-slider>
+
+            <!-- تحكم التمرير (pagination) -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
