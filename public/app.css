@@ -787,8 +787,11 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .from-\[\#FFF6F3\]{--tw-gradient-from:#FFF6F3 var(--tw-gradient-from-position);--tw-gradient-to:rgba(255, 246, 243, 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .from-red-200{--tw-gradient-from:#fecaca var(--tw-gradient-from-position);--tw-gradient-to:rgba(254, 202, 202, 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:rgba(255, 255, 255, 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
+.from-\[\]{--tw-gradient-from: var(--tw-gradient-from-position);--tw-gradient-to:rgba(255, 255, 255, 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
+.from-\[var\(--color-main\)\]{--tw-gradient-from:var(--color-main) var(--tw-gradient-from-position);--tw-gradient-to:rgba(255, 255, 255, 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}
 .to-\[\#FFE8E0\]{--tw-gradient-to:#FFE8E0 var(--tw-gradient-to-position)}
 .to-yellow-100{--tw-gradient-to:#fef9c3 var(--tw-gradient-to-position)}
+.to-\[var\(--color-main\)\]{--tw-gradient-to:var(--color-main) var(--tw-gradient-to-position)}
 .bg-cover{background-size:cover}
 .bg-center{background-position:center}
 .bg-no-repeat{background-repeat:no-repeat}

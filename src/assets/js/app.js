@@ -363,28 +363,33 @@ closeMarquee() {
   }
 
   
-  copycontent() {
-
+copycontent() {
     document.querySelectorAll(".contentcode").forEach((item) => {
-      item.addEventListener("click", async (event) => {
-          if (!navigator.clipboard) {
-              return;
-          }
-          try {
-              const code = event.target.previousElementSibling.innerText; 
-              await navigator.clipboard.writeText(code); 
-              
-              event.target.innerHTML = "Copied"; 
-              setTimeout(() => { 
-                  event.target.innerHTML = "Copy"; 
-              }, 2000); 
-          } catch (err) {
-              console.error("Failed to copy!", err);
-          }
-      });
-  });
-   
-  }
+        item.addEventListener("click", async (event) => {
+            if (!navigator.clipboard) {
+                return;
+            }
+            try {
+                // احصل على الكود من العنصر الذي يحتوي على الكود
+                const code = event.target.previousElementSibling.querySelector('.code').innerText;
+                
+                // حاول نسخ الكود إلى الحافظة
+                await navigator.clipboard.writeText(code);
+                
+                // تغيير النص إلى "Copied" بعد النسخ
+                event.target.innerHTML = "Copied";
+                
+                // إعادة النص إلى "Copy" بعد 2 ثانية
+                setTimeout(() => {
+                    event.target.innerHTML = "Copy";
+                }, 2000);
+            } catch (err) {
+                console.error("فشل النسخ!", err);
+            }
+        });
+    });
+}
+
 
 
 

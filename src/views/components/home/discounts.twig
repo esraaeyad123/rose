@@ -9,13 +9,10 @@
                 <div class="flex justify-between items-center">
                     <span class="text-lg font-semibold text-gray-600">
                         {{ trans('pages.copytext.copycode') }}
-                        </span>
+                    </span>
                     <div class="flex items-center">
                         <span class="code mr-2 bg-gray-100 text-black-600 py-1 px-3 rounded-lg">{{ code.item_3 }}</span> 
-                        
-                        <div class="ml-2">
-                        </div>
-                        <div class="contentcode ml-2 cursor-pointer text-blue-500" aria-label="نسخ الكود">
+                        <div onclick="copycontent()" class="contentcode ml-2 cursor-pointer text-blue-500" aria-label="نسخ الكود">
                             Copy
                         </div>
                     </div>
