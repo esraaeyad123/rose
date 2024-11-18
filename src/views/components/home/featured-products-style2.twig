@@ -19,20 +19,18 @@
 <section class="s-block s-block-tabs s-block--tabs-produtcs s-block--full-bg {{ is_slider ? 'as-slider':'as-grid' }} bg-withe-100 py-8 sm:py-16" id="{{ component_id }}">
   <div class="container">
 
-      <div class="tabs hide-scroll text-center">
-          {% for section in items %}
+    <div class="tabs hide-scroll text-center">
+      {% for section in items %}
           <custom-tabs  
-          class="tab-trigger {{ loop.first?'is-active':'' }} 
-          tab-item"
-          data-target="{{ component_id }}-{{ section.id }}"
-          data-component-id="{{ component_id }}"
-          fill="outline">
-          {{ section.title }}
-      </custom-tabs>
-      
-          {% endfor %}
-      </div>
-
+              class="tab-trigger {{ loop.first ? 'is-active' : '' }} tab-item"
+              data-target="{{ component_id }}-{{ section.id }}"
+              data-component-id="{{ component_id }}"
+              fill="outline">
+              {{ section.title }}
+          </custom-tabs>
+      {% endfor %}
+  </div>
+  
       <div class="tabs-wrapper">
         {% for section in items %}
             <div id="{{ component_id }}-{{ section.id }}" class="tabs__item {{ loop.first?'is-active':'' }}">
@@ -56,5 +54,4 @@
       </div>
   </div>
 </section> 
-
 

@@ -1285,11 +1285,11 @@ padding: 10px;
 
 
 .s-products-slider-wrapper .card {
-  width: calc(33.333% - 20px); /* عرض أكبر بنسبة 33% مع وجود مسافة بين العناصر */
+  width: calc(50.333% - 20px); /* عرض أكبر بنسبة 33% مع وجود مسافة بين العناصر */
 }
 
 .s-products-slider-wrapper .swiper-slide {
-  width: calc(33.333% - 20px); /* تحديد عرض العناصر داخل الـ Slider */
+  width: calc(50.333% - 20px); /* تحديد عرض العناصر داخل الـ Slider */
 }
 
 @media (max-width: 1024px) {

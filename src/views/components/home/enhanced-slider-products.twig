@@ -42,13 +42,11 @@
 </section>
 
 
-
-
 <section class="s-block--special-products-slider2">
     <div class="min-h-[600px] w-full flex flex-col lg:flex-row justify-between items-center pt-8 relative">
 
         <!-- الجنب الأيسر: النص والزر -->
-        <div class="lg:w-1/2 flex flex-col justify-center items-start text-left p-8">
+        <div class="lg:w-1/2 flex flex-col justify-center items-center text-center p-8 relative z-10">
             <h2 class="font-bold text-3xl">{{ component.title }}</h2>
             <p class="description max-w-[500px] text-sm sm:text-base">{{ component.desc }}</p>
             
@@ -57,10 +55,28 @@
                     <span style="color: {{ component.item3 }};">{{ component.item5 }}</span>
                 </a>
             {% endif %}
+
+            <div class="slider-wrap relative lg:w-full pb-20 lg:pt-20 lg:pb-28 2xl:px-1.5">
+                <salla-products-slider
+                    id="product-slider"
+                    class="simplified-products fit-slider-products s-products-slider-wrapper" autoplay
+                    type="carousel"
+                    {% if component.products|length %}
+                        source="selected"
+                        source-value="[{{ component.products|map((product) => product.id)|join(',') }}]"
+                    {% endif %}
+                    {% if display_all != '' and display_all != '#' %}
+                        display-all-url="{{display_all}}"
+                    {% endif %}
+                ></salla-products-slider>
+        
+                <!-- تحكم التمرير (pagination) -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
 
         <!-- الجنب الأيمن: الصورة أو الفيديو -->
-        <div class="lg:w-1/2 relative">
+        <div class="lg:w-1/2 min-w-[40%] flex-shrink-0 relative">
             {% if component.videotoimg %}
                 <img class="lazy w-full h-auto object-cover object-center" src="{{component.photo}}" alt="{{component.title}}" loading="lazy">
             {% else %}
@@ -71,9 +87,9 @@
     </div>
 
     <!-- سلايدر المنتجات أسفل النص -->
-    <div class="slider-wrap relative lg:w-full pb-20 lg:pt-20 lg:pb-28 2xl:px-2.5">
+    <div class="lg:hidden w-full mt-8">
         <salla-products-slider
-            id="product-slider"
+            id="product-slider-mobile"
             class="simplified-products fit-slider-products s-products-slider-wrapper" autoplay
             type="carousel"
             {% if component.products|length %}
@@ -84,8 +100,9 @@
                 display-all-url="{{display_all}}"
             {% endif %}
         ></salla-products-slider>
-
-        <!-- تحكم التمرير (pagination) -->
-        <div class="swiper-pagination"></div>
     </div>
+
 </section>
+
+
+
