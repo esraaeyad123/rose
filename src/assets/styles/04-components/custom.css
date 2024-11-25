@@ -1284,19 +1284,6 @@ padding: 10px;
 
 
 
-.s-products-slider-wrapper .card {
-  width: calc(50.333% - 20px); /* عرض أكبر بنسبة 33% مع وجود مسافة بين العناصر */
-}
-
-.s-products-slider-wrapper .swiper-slide {
-  width: calc(50.333% - 20px); /* تحديد عرض العناصر داخل الـ Slider */
-}
-
-@media (max-width: 1024px) {
-  .s-products-slider-wrapper .swiper-slide {
-    width: calc(50% - 10px); /* عند الأجهزة متوسطة الحجم يمكن تعديل العرض إلى 50% */
-  }
-}
 
 @media (max-width: 768px) {
   .s-products-slider-wrapper .swiper-slide {
@@ -1304,6 +1291,33 @@ padding: 10px;
   }
 }
 
+
+
+.s-products-slider-wrapper .card {
+  width: calc(20% - 10px); /* تصغير عرض البطاقات إلى 20% مع تقليل المسافة */
+}
+
+.s-products-slider-wrapper .swiper-slide {
+  width: calc(20% - 10px); /* تصغير عرض الشرائح داخل السلايدر */
+}
+
+@media (max-width: 1024px) {
+  .s-products-slider-wrapper .swiper-slide {
+    width: calc(25% - 10px); /* تصغير العناصر أكثر عند الأجهزة متوسطة الحجم */
+  }
+}
+
+@media (max-width: 768px) {
+  .s-products-slider-wrapper .swiper-slide {
+    width: calc(33.333% - 10px); /* تقليل العناصر أكثر للأجهزة الصغيرة */
+  }
+}
+
+@media (max-width: 480px) {
+  .s-products-slider-wrapper .swiper-slide {
+    width: calc(50% - 10px); /* عرض العنصر نصف الشاشة للأجهزة الصغيرة جدًا */
+  }
+}
 
 
 
