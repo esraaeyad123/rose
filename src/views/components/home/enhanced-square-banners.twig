@@ -3,12 +3,12 @@
         {% for index, banner in component.banners %}
             <a href="{{ banner.url }}" 
                 aria-label="{{ banner.title ? banner.title : 'square-banner-' ~ index }}" 
-                class="banner-entry {{ banner.title ? 'has-overlay' : '' }} {{ component.banners|length <= 3 ? 'h-lg-banner' : 'h-banner' }}"
-                style="--primary-bg: url('{{ banner.image }}'); --alt-bg: url('{{ banner.alt_image }}');">
+                class="banner-entry relative h-60 w-full rounded-lg overflow-hidden bg-cover bg-center animate-bg-switch"
+                style="--primary-bg: url('{{ banner.image }}'); --alt-bg: url('https://cdn.salla.sa/form-builder/C80FalIA8077iWKmiIHePPeyrGBIEQBI5mAPkLs8.jpg');">
                 
-                <article class="banner-entry__text text-with-border">
+                <article class="absolute bottom-4 left-4 text-white">
                     <h3 class="banner__title font-bold mb-1 leading-6">{{ banner.title }}</h3>
-                    <p class="banner__description">{{ banner.description }}mm</p>
+                    <p class="banner__description">{{ banner.description }}mmmmmmmm</p>
                 </article>
             </a>
         {% endfor %}
