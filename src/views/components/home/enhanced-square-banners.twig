@@ -1,37 +1,24 @@
+{#
+| Variable                        | Type     | Description                                                                  |
+|---------------------------------|----------|------------------------------------------------------------------------------|
+| component                       | object   | Contains merchant settings for fields from twilight.json `component` section |
+| component.banners               | object[] | list of banners                                                              |
+| component.banners[].image       | string   |                                                                              |
+| component.banners[].url         | string   |                                                                              |
+| component.banners[].title       | ?string  |                                                                              |
+| component.banners[].description | ?string  |                                                                              |
+| position                        | int      | Sorting number start from zero                                               |
+#}
+
 <section class="s-block s-block--banners container">
     <div class="grid {{ component.banners|length <= 3 ? 'md:grid-cols-' ~ component.banners|length : 'md:grid-cols-3 two-row' }} grid-flow-row gap-3 sm:gap-8">
         {% for index, banner in component.banners %}
-            <a href="{{ banner.url }}" 
-                aria-label="{{ banner.title ? banner.title : 'square-banner-' ~ index }}" 
-                class="banner-entry relative h-60 w-full rounded-lg overflow-hidden bg-cover bg-center animate-bg-switch"
-                style="--primary-bg: url('{{ banner.image }}'); --alt-bg: url('https://cdn.salla.sa/form-builder/C80FalIA8077iWKmiIHePPeyrGBIEQBI5mAPkLs8.jpg');">
-                
-                <article class="absolute bottom-4 left-4 text-white">
-                    <h3 class="banner__title font-bold mb-1 leading-6">{{ banner.title }}</h3>
-                    <p class="banner__description">{{ banner.description }}mmmmmmmm</p>
+            <a  href="{{banner.url}}" aria-label={{banner.title ? banner.title : 'square-banner-' ~ index }} class="banner-entry lazy {{banner.title ? 'has-overlay' : ''}} {{ component.banners|length <= 3 ? "h-lg-banner" : "h-banner" }}" data-bg="{{ banner.image }}">
+                <article class="banner-entry__text text-with-border">
+                    <h3 class="banner__title font-bold mb-1 leading-6">{{banner.title}}</h3>
+                    <p class="banner__description">{{banner.description}}</p>
                 </article>
             </a>
         {% endfor %}
     </div>
 </section>
-
-<style>
-/* القاعدة الأساسية للبنرات */
-.banner-entry {
-    background-image: var(--primary-bg); /* الخلفية الأساسية */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: bg-switch 6s infinite; /* تبديل كل 6 ثوانٍ */
-}
-
-/* الرسوم المتحركة لتبديل الصور */
-@keyframes bg-switch {
-    0%, 50% {
-        background-image: var(--primary-bg); /* العرض للصورة الأساسية */
-    }
-    51%, 100% {
-        background-image: var(--alt-bg); /* العرض للصورة البديلة */
-    }
-}
-</style>

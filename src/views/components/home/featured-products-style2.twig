@@ -16,44 +16,48 @@
 #}
 {% set component_id='featured-products-style2-' ~ position %}
 {% set is_vertical = theme.settings.get('vertical_fixed_products', true) %}
-<section class="s-block s-block-tabs s-block--tabs-produtcs s-block--full-bg {{ is_slider ? 'as-slider':'as-grid' }} bg-withe-100 py-8 sm:py-16" id="{{ component_id }}">
-  <div class="container">
 
-    <div class="tabs hide-scroll text-center">
+<section class="s-block s-block-tabs s-block--tabs-products s-block--full-bg {{ is_slider ? 'as-slider':'as-grid' }} bg-withe-100 py-8 sm:py-16" id="{{ component_id }}">
+  <div class="container flex flex-col lg:flex-row gap-6">
+    <!-- قائمة التبويبات -->
+    <div class="tabs flex flex-col text-left lg:w-1/4">
       {% for section in items %}
-          <custom-tabs  
-              class="tab-trigger {{ loop.first ? 'is-active' : '' }} tab-item"
-              data-target="{{ component_id }}-{{ section.id }}"
-              data-component-id="{{ component_id }}"
-              fill="outline">
-              {{ section.title }}
-          </custom-tabs>
+        <custom-tabs
+          class="custom-tabs text-sm font-medium mb-4 cursor-pointer hover:text-blue-600 {{ loop.first ? 'is-active' : '' }} tab-item relative"
+          data-target="{{ component_id }}-{{ section.id }}"
+          data-component-id="{{ component_id }}"
+          fill="outline"
+        >
+          <span>{{ section.title }}</span>
+          <div class="tab-underline absolute left-0 bottom-0 w-full h-[2px] bg-transparent"></div>
+        </custom-tabs>
       {% endfor %}
+    </div>
+
+    <!-- المحتوى -->
+    <div class="tabs-wrapper flex-1">
+      {% for section in items %}
+        <div id="{{ component_id }}-{{ section.id }}" class="tabs__item {{ loop.first ? 'is-active' : '' }}">
+          {% if is_slider %}
+            <salla-products-slider
+              slider-id="section-{{ section.id }}-slider"
+              source="selected"
+              source-value="[{{ section.products|map((product) => product.id)|join(',') }}]"
+            >
+            </salla-products-slider>
+          {% else %}
+            <salla-products-list
+              source="selected"
+              source-value="[{{ section.products|map((product) => product.id)|join(',') }}]"
+              {{ is_vertical ? '' : 'horizontal-cards' }}
+            >
+            </salla-products-list>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
-  
-      <div class="tabs-wrapper">
-        {% for section in items %}
-            <div id="{{ component_id }}-{{ section.id }}" class="tabs__item {{ loop.first?'is-active':'' }}">
-                {% if is_slider %}
-                    <salla-products-slider 
-                      slider-id="section-{{ section.id }}-slider" 
-                      source="selected" 
-                      source-value="[{{ section.products|map((product) => product.id)|join(',') }}]" 
-                      >
-                    </salla-products-slider>
-                {% else %}
-                    <salla-products-list 
-                      source="selected" 
-                      source-value="[{{ section.products|map((product) => product.id)|join(',') }}]"
-                      {{is_vertical ? '' : 'horizontal-cards'}}
-                      >
-                    </salla-products-list>
-                {% endif %}
-            </div>
-        {% endfor %}
-      </div>
-  </div>
-</section> 
+</section>
 
 
-
+<style>
