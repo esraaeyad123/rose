@@ -8,62 +8,67 @@
 #}
 {% extends "layouts.customer" %}
 {% block inner_content %}
-    <div class="space-y-5" id="wishlist">
-        {% hook 'customer:wishlist.items.start' %}
-        
-        <salla-infinite-scroll  
-            class="space-y-5"
-            next-page="{{ products.next_page }}">
-                {% for product in products %}
-                    <div  id="wishlist-product-{{ product.id }}">
-                        <div class="product-entry product-entry--wishlist">
-                            <div class="flex items-center mb-4 sm:mb-0">
+<div class="space-y-5 bg-white p-4 rounded-md shadow-sm" id="wishlist">
+    {% hook 'customer:wishlist.items.start' %}
 
-                                <a href="{{ product.url }}"
-                                    class='product-entry__image'>
-                                    <img class="h-full w-full object-cover lazy" data-src="{{ product.image.url }}" alt="{{ product.image.alt }}"/>
-                                </a>
-                                <div class="flex-1 rtl:pr-5 ltr:pl-5">
-                                    <h3 class="text-sm text-gray-800 leading-6 mb-1.5 rtl:pl-5 ltr:pr-5 rtl:md:pl-8 ltr:md:pr-8 line-clamp-1">
-                                        <a href="{{ product.url }}">{{ product.name }}</a>
-                                    </h3>
-                                    <div class="w-full center-between"> 
-                                        {% if product.is_on_sale %}
-                                            <div class="rtl:space-x-reverse space-x-1">
-                                                <h4 class="text-red-400 font-bold text-sm inline-block">{{ product.sale_price|money }}</h4>
-                                                <span class="text-sm text-gray-500 line-through">{{ product.regular_price|money }}</span>
-                                            </div>
-                                        {% else %}
-                                            <h4 class="font-bold text-sm">{{ product.price|money }}</h4>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center rtl:space-x-reverse space-x-4">
-                                <salla-add-product-button roduct-status="{{ product.status }}" product-id="{{ product.id }}" product-type="{{ product.type }}" loader-position="center"  fill="outline" class="flex-grow sm:grow-0 w-full md:w-40">
-                                    {{ product.add_to_cart_label }}
-                                </salla-add-product-button>
+    <salla-infinite-scroll  
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        next-page="{{ products.next_page }}">
 
-                                <salla-button loader-position="center" shape="icon" size="small" color="danger"
-                                                class="btn--delete" onclick="salla.wishlist.remove({{ product.id }})">
-                                    <i class="sicon-cancel"></i>
-                                </salla-button>
-                            </div>
+        {% for product in products %}
+        <div id="wishlist-product-{{ product.id }}" class="border rounded-md shadow-sm bg-white p-4 flex flex-col">
+            <a href="{{ product.url }}" class="w-full h-40 rounded-md overflow-hidden mb-4">
+                <img class="w-full h-full object-cover lazy" 
+                     data-src="{{ product.image.url }}" alt="{{ product.image.alt }}" />
+            </a>
+
+            <div class="flex-1">
+                <h3 class="text-sm font-medium text-gray-800 truncate mb-2">
+                    <a href="{{ product.url }}">{{ product.name }}</a>
+                </h3>
+
+                <div class="mb-4">
+                    {% if product.is_on_sale %}
+                        <div class="space-x-2 rtl:space-x-reverse">
+                            <span class="text-red-500 font-bold text-sm">{{ product.sale_price|money }}</span>
+                            <span class="text-gray-500 text-xs line-through">{{ product.regular_price|money }}</span>
                         </div>
-                    </div>
-                {% else %}
-                    <div class="no-content-placeholder">
-                        <span class="rounded-icon !w-36 !h-36 bg-gray-100 mb-6">
-                            <i class="sicon-heart text-6xl block text-gray-400"></i>
-                        </span>
-                        <p class="text-sm mb-5">{{ trans('pages.profile.wishlist_placeholder') }}</p>
-                    </div>
-                {% endfor %}
-        </salla-infinite-scroll>
-        
-        {% hook 'customer:wishlist.items.end' %}
-    </div>
+                    {% else %}
+                        <span class="font-bold text-sm text-gray-800">{{ product.price|money }}</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <salla-add-product-button roduct-status="{{ product.status }}" product-id="{{ product.id }}" product-type="{{ product.type }}" loader-position="center"  fill="outline" class="flex-grow sm:grow-0 md:w-40">
+                    {{ product.add_to_cart_label }}
+                </salla-add-product-button>
+
+                <button 
+                    onclick="salla.wishlist.remove({{ product.id }})" 
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition">
+                    <i class="sicon-trash text-black text-lg"></i>
+                </button>
+            </div>
+        </div>
+        {% else %}
+        <div class="no-content-placeholder text-center col-span-full">
+            <span class="rounded-icon !w-36 !h-36 bg-gray-100 mb-6">
+                <i class="sicon-heart text-6xl block text-gray-400"></i>
+            </span>
+            <p class="text-sm text-gray-600">{{ trans('pages.profile.wishlist_placeholder') }}</p>
+        </div>
+        {% endfor %}
+    </salla-infinite-scroll>
+
+    {% hook 'customer:wishlist.items.end' %}
+</div>
+
+
+
 {% endblock %}
 {% block scripts %}
     <script defer src="{{ 'customer.js' | asset }}"></script>
 {% endblock %}
+
+

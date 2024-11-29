@@ -1,72 +1,24 @@
-
-<section class="s-block--special-products-slider2">
-    <div class="min-h-[600px] w-full flex flex-col lg:flex-row justify-center items-stretch pt-8 relative h-full lg:space-y-0 lg:space-x-10">
-
-        <div class="lg:w-1/3 flex items-center justify-center bg-cover bg-no-repeat text-center relative min-h-[200px] max-h-[250px] md:max-h-[700px] has-overlay--before has-overlay--opacity-option has-overlay--opacity-60" style="color:{{component.item2}};">
-            {% if component.videotoimg %}
-                <img class="lazy w-full h-auto object-cover object-center min-h-[200px] max-h-[250px] lg:max-h-[700px] loaded" src="{{component.photo}}" alt="{{component.title}}" loading="lazy">
-            {% else %}
-                <video playsinline class="object-cover object-center w-full h-full min-h-[200px] max-h-[250px] lg:max-h-[700px]" loop autoplay muted src="{{component.url}}"></video>
-            {% endif %}
-
-            <div class="space-y-4 lg:space-y-8 absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center px-2.5 py-10 lg:p-10 z-[1]">
-                <h2 class="font-bold !leading-[1.15]">{{ component.title }}</h2>
-                <p class="description max-w-[400px] text-sm sm:text-base">{{ component.desc }}</p>
-                {% if component.item5 %}
-                    <a class="button-custom" style="background-color: {{ component.item4 }};" href="{{ component.display_all_url }}">
-                        <span style="color: {{ component.item3 }};">{{ component.item5 }}</span>
-                    </a>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="mt-5"></div>
-
-        <div class="slider-wrap relative lg:w-2/3 pb-20 lg:pt-20 lg:pb-28 2xl:px-2.5">
-            <salla-products-slider
-                id="product-slider"
-                class="simplified-products fit-slider-products s-products-slider-wrapper" autoplay
-                type="carousel"
-                {% if component.products|length %}
-                    source="selected"
-                    source-value="[{{ component.products|map((product) => product.id)|join(',') }}]"
-                {% endif %}
-                {% if display_all != '' and display_all != '#' %}
-                    display-all-url="{{display_all}}"
-                {% endif %}
-            ></salla-products-slider>
-
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-</section>
-
-
 <section class="s-block--special-products-slider2 relative overflow-hidden">
-    <!-- خلفية الفيديو -->
-    <video
-        playsinline
-        class="absolute top-0 left-0 w-full h-[400px] object-cover -z-[1]"
-        loop
-        autoplay
-        muted
-        src="{{ component.url }}"
-    ></video>
-    {% if component.videotoimg %}
-                <img class="lazy w-full h-auto object-cover object-center min-h-[200px] max-h-[250px] lg:max-h-[700px] loaded" src="{{component.photo}}" alt="{{component.title}}" loading="lazy">
-            {% else %}
+    <div class="absolute top-0 left-0 w-full h-full -z-[1]">
+        {% if component.videotoimg %}
+            <img 
+                class="w-full h-full object-cover object-center" 
+                src="{{ component.photo }}" 
+                loading="lazy"
+            >
+        {% else %}
             <video
-            playsinline
-            class="absolute top-0 left-0 w-full h-[400px] object-cover -z-[1]"
-            loop
-            autoplay
-            muted
-            src="{{ component.url }}"
-        ></video>            
+                playsinline
+                class="w-full h-full object-cover object-center"
+                loop
+                autoplay
+                muted
+                src="{{ component.url }}"
+            ></video>
         {% endif %}
+    </div>
 
     <div class="min-h-[600px] w-full flex flex-col lg:flex-row justify-between items-start lg:items-center pt-8 relative z-10">
-        <!-- الجنب الأيسر: النص والزر -->
         <div class="lg:w-1/2 flex flex-col justify-center items-start text-left p-8">
             <h2 class="font-bold text-3xl">{{ component.title }}</h2>
             <p class="description max-w-[500px] text-sm sm:text-base mt-4">{{ component.desc }}</p>
@@ -78,7 +30,6 @@
             {% endif %}
         </div>
 
-        <!-- الجنب الأيمن: سلايدر المنتجات -->
         <div class="lg:w-1/2 flex-shrink-0 relative">
             <div class="slider-wrap relative lg:w-full pb-8">
                 <salla-products-slider
@@ -95,16 +46,11 @@
                     {% endif %}
                 ></salla-products-slider>
 
-                <!-- تحكم التمرير (pagination) -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
-
- 
 </section>
-
-
 
 
 

@@ -406,46 +406,50 @@
                    
                     </div>
             </div>
-            <div class= "product-tabs">
-                <salla-tabs class="tabs border-b colored-border">
-                    <!-- Tab One -->
-                    <salla-tab-header class="flex justify-center items-center text-center " 
-                    slot="header" name="tab_one"><span>{{ trans('pages.products.deschead') }}</span>
-                   </salla-tab-header>
-                     <salla-tab-content  slot="content" name="tab_one">
-                        <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
-                            {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
-                            {% if product.has_read_more %}
-                                <article class="article article--main relative overflow-hidden transition-all max-h-0 duration-300 py-4"
-                                    id="more-content" style="max-height:5.25rem">
-                                    {{ product_desc|raw }}
-                                </article>
-        
-                                {# Read More Button #}
-                                <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
-                                    {{ trans('pages.products.read_more') }}
-                                </a>
-                            {% else %}
-                                <article class="article--main pb-1">
-                                    {{ product_desc|raw }}
-                                </article>
-                            {% endif %}
-                        </div>               
-                     </salla-tab-content>
-                    <!-- Tab Two -->
-                    <salla-tab-header slot="header" name="tab_two" 
-                    class="flex justify-center items-center text-center">
-                    <span>  {{ trans('pages.products.commentshead') }}</span></salla-tab-header
-                    >
-                    <salla-tab-content slot="content" name="tab_two">
-                        <div class="s-tabs-content">
-                            {% component 'comments' %}
-    
-                            </div>
-                    </salla-tab-content>
-                  
-                  </salla-tabs>
+         
+
+            <div class="flex flex-wrap md:flex-nowrap gap-6 p-6 bg-white rounded-md shadow-sm">
+                <div class="flex-1 md:w-1/2 border-r pr-6 relative">
+                    <h2 class="text-lg font-semibold mb-4 relative">
+                        <span class="inline-block border-b-2 border-primary hover:text-primary transition">
+                            {{ trans('pages.products.deschead') }}
+                        </span>
+                    </h2>
+                    
+                    <div class="product__description leading-7">
+                        {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
+                        {% if product.has_read_more %}
+                            <article class="article article--main relative overflow-hidden transition-all max-h-0 duration-300 py-4"
+                                id="more-content" style="max-height:5.25rem">
+                                {{ product_desc|raw }}
+                            </article>
+            
+                     <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
+                                {{ trans('pages.products.read_more') }}
+                            </a>
+                        {% else %}
+                            <article class="article--main pb-1">
+                                {{ product_desc|raw }}
+                            </article>
+                        {% endif %}
+                    </div>
+            
+                    <div class="absolute top-0 right-0 h-full w-px bg-gray-200"></div>
+                </div>
+            
+                <div class="flex-1 md:w-1/2 pl-6">
+                    <h2 class="text-lg font-semibold mb-4 relative">
+                        <span class="inline-block border-b-2 border-primary hover:text-primary transition">
+                            {{ trans('pages.products.commentshead') }}
+                        </span>
+                    </h2>
+                    
+                    <div class="comments-section">
+                        {% component 'comments' %}
+                    </div>
+                </div>
             </div>
+            
 
         </div>
        

@@ -18,6 +18,26 @@
 | main_product.product     | Product   |                                                                     |
 | position                 | int       | sorting block                                                       |
 #}
+
+
+{#
+| Variable                 | Type      | Description                                                         |
+|--------------------------|-----------|---------------------------------------------------------------------|
+| items                    | array     |                                                                     |
+| items[].title            | string    | Section title                                                       |
+| items[].name             | string    | Alias for title                                                     |
+| items[].type             | string    | category,most_sales,latest_products,chosen_products                 |
+| items[].featured_product | Null      |                                                                     |
+| items[].products[]       | Product[] |                                                                     |
+| items[].limit            | Int       | Number of products to be shown                                      |
+| items[].id               | string    | Section id                                                          |
+| main_product             | array     |                                                                     |
+| main_product.id          | string    | string product id                                                   |
+| main_product.title       | string    | Offer title                                                         |
+| main_product.value       | string    | Product Name                                                        |
+| main_product.product     | Product   |                                                                     |
+| position                 | int       | sorting block                                                       |
+#}
 {% set component_id='featured-products-style1-' ~ position %}
 <section class="s-block s-block-tabs s-block--special-products container" id="{{ component_id }}">
     <div class="s-block__title"> 
@@ -30,7 +50,7 @@
                       data-target="{{ component_id }}-{{ section.id }}"
                       data-component-id="{{ component_id }}"
                       class="tab-trigger {{ loop.first?'is-active' : '' }}">
-                  {{ section.title }}mmmmmm
+                  {{ section.title }}
               </salla-button>
           {% endfor %}
       </div>

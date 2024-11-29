@@ -2,10 +2,9 @@
 
 
 
-<div class="flex flex-col mt-20">
+<div class="flex flex-col mt-10 mb-10">
     <p class="font-semibold text-2xl md:text-3xl text-center text-gray-800">{{ component.title }}</p>
 
-    <!-- جعل العناصر داخل صف أفقي -->
     <div class="flex flex-wrap justify-center gap-4 mt-4">
         {% for item in component.item %}
 
@@ -19,7 +18,7 @@
             </div>
          
             <div class="mt-2 text-sm text-gray-400">
-                <span class="font-bold text-xl text-primary mt-2">+</span>{{ item.item2 }}
+                <span class="font-bold text-l text-primary mt-2">+</span><span class="font-bold text-xl mr-2">{{ item.item2 }}</span>
 
 
 
