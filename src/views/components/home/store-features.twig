@@ -24,7 +24,8 @@
                             ></i>
                             <div>
                         <h2 class="text-base font-bold">{{ item.title }}</h2>
-                        <h4 class="text-sm text-gray-400">{{ item.text }}</h4>
+                        <h4 class="text-sm text-gray-400">{{ item.text }} </h4>
+                        <h4 class="text-sm text-gray-400">{{ item.text }} </h4>
                     </div>
                 </div>
                     
@@ -34,7 +35,6 @@
         </div>
     </div>
 </section>
-
 
 
 <div class="px-4 py-12">
@@ -117,3 +117,85 @@
     </div>
   </div>
 </div>
+
+
+<div class="socials-container">
+  <div class="social-item">
+    <img src="path-to-your-image1.jpg" alt="Instagram Icon" class="social-icon">
+    <div class="social-text">
+      <p class="social-title">Instagram</p>
+      <a href="https://www.instagram.com/youraccount" class="social-link" target="_blank">Visit Our Instagram</a>
+    </div>
+  </div>
+  
+  <div class="social-item">
+    <img src="path-to-your-image2.jpg" alt="Instagram Icon" class="social-icon">
+    <div class="social-text">
+      <p class="social-title">Instagram</p>
+      <a href="https://www.instagram.com/youraccount" class="social-link" target="_blank">Visit Our Instagram</a>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  /* تصميم الحاوية الرئيسية */
+.socials-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* تصميم العنصر الفردي في القائمة */
+.social-item {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* تصميم صورة الأيقونة */
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+/* تصميم النص */
+.social-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* عنوان الشبكة الاجتماعية */
+.social-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* رابط الشبكة الاجتماعية */
+.social-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #0056b3;
+}
+
+</style>
