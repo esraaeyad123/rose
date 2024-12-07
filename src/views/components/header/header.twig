@@ -49,18 +49,38 @@
 
 {% set important_links = theme.settings.get('important_links') %}
 
-<header class="custom-store-header store-header dark:bg-[var(--color-dark-primary)] dark:text-white">
-  {# الجزء العلوي: اللوغو والمستخدم والسلة #}
-  <div class="custom-top-navbar top-navbar relative">
-    <div class="container mx-auto">
-      <div class="grid lg:grid-cols-12 grid-cols-1 lg:items-center lg:justify-between lg:py-0 py-2 xl:px-20 lg:px-6">
-        
-        <!-- اللوغو في المنتصف -->
-        <div class="w-full col-span-12 flex justify-center items-center gap-4">
-          <!-- الشعار في المنتصف -->
-          <div class="flex-grow flex justify-center items-center">
+
+<header class="store-header centered_logo">
+  <!-- الجزء العلوي: اللوغو والمستخدم والسلة -->
+  <div class="top-navbar">
+    <div class="container flex justify-between">
+      <div class="flex-1 flex items-center ">
+        {% if important_links %}
+          <salla-menu source="footer" topnav></salla-menu>
+        {% endif %}
+        {% if store.scope %}
+          <button class="btn--rounded-gray" onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
+            <i class="sicon-location rtl:ml-1 ltr:mr-1"></i> {{ store.scope.name }}
+          </button>
+        {% endif %}
+      </div>
+      <salla-contacts is-header></salla-contacts>
+    </div>
+  </div>
+
+  <!-- الشعار والمستخدم والسلة -->
+  <div id="mainnav" class="main-nav-container">
+    <div class="inner bg-inherit py-2">
+      <div class="container">
+        <div class="flex items-stretch justify-between relative">
+          <div class="flex items-center justify-start w-1/3">
+            <a class="mburger mburger--collapse leading-none flex justify-center items-center" href="#mobile-menu" aria-label="Open-menu">
+              <i class="sicon-right text-3xl rtl:ml-2.5 ltr:mr-2.5"></i>
+            </a>
+          </div>
+          <div class="top-0 z-20"> <!-- الشعار ثابت -->
             <a class="navbar-brand" href="{{ store.url }}">
-              <img fetchpriority="high" width="auto" height="auto" loading="eager" src="{{ store.logo }}" alt="{{ store.name }} logo" style="max-width: 200px;"> <!-- التحكم بحجم الشعار -->
+              <img fetchpriority="high" width="100%" height="100%" loading="eager" src="{{ store.logo }}" alt="{{ store.name }} logo">
               {% if is_page('index') %}
                 <h1 class="sr-only">{{ store.name }}</h1>
               {% else %}
@@ -68,63 +88,47 @@
               {% endif %}
             </a>
           </div>
-        
-          <!-- باقي العناصر على اليمين -->
-          <div class="flex items-center">
-            <!-- المستخدم -->
-            <div class="flex justify-start bg-transparent items-center relative">
-              {% if user.type=='user' %}
+          <div class="flex items-center justify-end w-1/3">
+            <div>
+              {% if user.type == 'user' %}
                 <salla-user-menu avatar-only show-header></salla-user-menu>
               {% else %}
                 <button class="header-btn flex justify-center items-center gap-2 relative px-3" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
-                  <i class="sicon-user"></i>
+                  <i class="header-btn__icon sicon-user"></i>
                 </button>
               {% endif %}
             </div>
-            
-            <!-- سلة المشتريات -->
-            <div class="flex items-center justify-start">
-              <salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
+            <div>
+              <salla-cart-summary>
                 <i slot="icon" class="header-btn__icon icon sicon-shopping-basket"></i>
               </salla-cart-summary>
             </div>
           </div>
         </div>
-        
-      </div>
-    </div>
-  </div>
-
-  {# البحث الطويل في المنتصف #}
-  <div class="header-search flex justify-center mt-4 lg:mt-0">
-    <salla-search inline oval height="46" class="search-input w-full max-w-2xl"></salla-search>
-    <!-- العملات -->
-    <div class="header-buttons mx-3">
-      {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
-        <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray basis-0">
-          <span class="flag iti__flag iti__{{ user.language.country_code }} rounded-sm"></span>
-          <span class="mx-1.5">|</span> <span>{{ currency.symbol }}</span>
-        </button>
-        <salla-localization-modal></salla-localization-modal>
-      {% endif %}
-    </div>
-  </div>
-
-  {# القائمة الرئيسية والعملات أسفل البحث في المنتصف #}
-  <div id="mainnav" class="custom-main-nav main-nav-container border-b border-gray-300 bg-white dark:border-slate-600 dark:bg-[var(--color-dark-secondary)] lg:h-auto fixed-pinned animated fixed-header">
-    <div class="inner bg-inherit">
-      <div class="container mx-auto">
-        <div class="flex items-center justify-center xl:px-20 lg:px-6">
-          
-          <!-- العملات والقائمة في المنتصف أسفل البحث -->
-          <div class="flex items-center justify-center w-full">
-            <custom-main-menu></custom-main-menu>
+  
+        <!-- البحث -->
+        <div class="header-search flex justify-center items-center "> <!-- إضافة المسافة -->
+          <salla-search inline oval height="46" class="search-input w-full max-w-2xl"></salla-search>
+          <div class="header-buttons mx-3">
+            {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+              <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray basis-0 flex items-center gap-2">
+                <span class="flag iti__flag iti__{{ user.language.country_code }} rounded-sm"></span>
+                <span class="mx-1.5">|</span> <span>{{ currency.symbol }}</span>
+              </button>
+              <salla-localization-modal></salla-localization-modal>
+            {% endif %}
           </div>
         </div>
+  
+        <!-- القائمة -->
       </div>
     </div>
   </div>
+  
 </header>
+
+
+
 
 
 {% if store.scope %}
