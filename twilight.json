@@ -2279,6 +2279,13 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "fc062025-d333-4794-af1f-a02caf78a4fb",
+            "title": "معرض صور مربعة 2 ( محسنة )",
+            "icon": "sicon-store",
+            "path": "home.enhanced-square-photo-style2",
+            "fields": []
         }
     ],
     "support_url": null,
