@@ -2285,7 +2285,53 @@
             "title": "معرض صور مربعة 2 ( محسنة )",
             "icon": "sicon-store",
             "path": "home.enhanced-square-photo-style2",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "static",
+                    "format": "title",
+                    "label": "العنوان الرئيسي",
+                    "value": null,
+                    "variant": "h1",
+                    "icon": "sicon-format-text"
+                },
+                {
+                    "id": "description",
+                    "type": "static",
+                    "format": "description",
+                    "label": "نص توضيحي",
+                    "value": null,
+                    "variant": "h1",
+                    "icon": "sicon-format-size"
+                },
+                {
+                    "id": "listPhoto",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "قائمة الصور",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "listPhoto.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "الصور",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": null,
