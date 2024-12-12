@@ -2288,21 +2288,33 @@
             "fields": [
                 {
                     "id": "title",
-                    "type": "static",
-                    "format": "title",
+                    "type": "string",
+                    "format": "text",
                     "label": "العنوان الرئيسي",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
                     "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-text"
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 },
                 {
-                    "id": "description",
-                    "type": "static",
-                    "format": "description",
-                    "label": "نص توضيحي",
+                    "id": "desc",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "النص",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Your text here",
+                    "icon": "sicon-typography",
                     "value": null,
-                    "variant": "h1",
-                    "icon": "sicon-format-size"
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 20,
+                    "maxLength": 255
                 },
                 {
                     "id": "listPhoto",
@@ -2315,7 +2327,7 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "listPhoto.image",
+                            "id": "listPhoto.photo",
                             "type": "string",
                             "format": "image",
                             "label": "الصور",
