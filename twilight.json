@@ -2332,6 +2332,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "49bb788f-0e5c-4199-837d-d077d9ae2e34",
+            "title": "التصنيفات",
+            "icon": "sicon-store",
+            "path": "home.catagory",
+            "fields": []
         }
     ],
     "support_url": null,
