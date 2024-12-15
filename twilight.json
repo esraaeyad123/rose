@@ -2396,14 +2396,14 @@
                             "icon": "sicon-toggle-off",
                             "label": "لاستبدال الصورة بفيديو",
                             "description": null,
-                            "id": "videotoimg",
+                            "id": "listPhoto.videotoimg",
                             "format": "switch",
                             "required": false,
                             "value": false,
                             "selected": false
                         },
                         {
-                            "id": "url",
+                            "id": "listPhoto.url",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
