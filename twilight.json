@@ -2384,36 +2384,8 @@
                 "item_label": null,
                 "icon": "sicon-list-add",
                 "fields": [
-                  {
-                    "type": "boolean",
-                    "icon": "sicon-toggle-off",
-                    "label": "لاستبدال الصورة بفيديو",
-                    "id": "listPhoto.videotoimg",
-                    "format": "switch",
-                    "required": false,
-                    "value": false,
-                    "selected": false
-                  },
-                  {
-                    "id": "listPhoto.url",
-                    "type": "string",
-                    "format": "url",
-                    "inputType": "url",
-                    "label": "الرابط الفيديو",
-                    "placeholder": "e.g. https://salla.sa",
-                    "icon": "sicon-link",
-                    "value": null,
-                    "required": false,
-                    "minLength": 6,
-                    "maxLength": 350,
-                    "conditions": [
-                      {
-                        "id": "listPhoto.videotoimg",
-                        "operation": "=",
-                        "value": false
-                      }
-                    ]
-                  },
+                 
+                
                   {
                     "id": "listPhoto.photo",
                     "type": "string",
@@ -2422,14 +2394,8 @@
                     "placeholder": "e.g. https://hostname.com/image.png",
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false,
-                    "conditions": [
-                      {
-                        "id": "listPhoto.videotoimg",
-                        "operation": "=",
-                        "value": true
-                      }
-                    ]
+                    "required": false
+                    
                   }
                 ],
                 "value": [],
