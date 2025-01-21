@@ -1,7 +1,7 @@
 <section class="relative h-screen flex flex-col items-center justify-center text-center text-white">
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
         {% if component.videotoimg %}
-        <img src="{{component.background_image}}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover filter blur-sm">
+        <img src="{{component.background_image}}"  class="absolute inset-0 w-full h-full object-cover filter blur-sm">
         {% else %}
         <video class="w-full h-full object-cover object-center" src="{{component.url}}" type="video/mp4" autoplay muted loop></video>
         {% endif %}

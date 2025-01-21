@@ -4253,3 +4253,37 @@ salla-slider[type]:not(.hydrated) > div, salla-slider[type]:not(.hydrated) .swip
   padding-right: 0 !important;
   padding-top: 0.5rem !important;
 }
+
+.gallery{
+  display: flex;
+  justify-content: center;
+
+  gap: 1rem;
+  width: 45rem;
+}
+
+.card{
+  position: relative;
+  left: 0;
+  width: 3rem;
+  border-radius: 5rem;
+
+  height: 25rem;
+  overflow: hidden;
+  transition: .4s ease-in-out;
+
+  box-shadow: 0 5 12px rgba(0, 0, 0, .3);
+  flex: .15;
+}
+
+.card img{
+  position: relative;
+  height: 25rem;
+  object-fit: cover;
+}
+
+.card:hover{
+  flex: 1 1 0;
+  cursor: pointer;
+  border-radius: 1rem;
+}
