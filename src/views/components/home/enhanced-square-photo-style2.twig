@@ -1,56 +1,58 @@
-<section class="s-block s-block--full-bg as-grid bg-white py-4 sm:py-6 yasmeen-countdown bg-[#faf2f0]">
-  <div class="relative px-8 lg:px-10 md:flex justify-between items-center">
 
-    <div class="flex [&:hover>div]:w-16 [&>div:hover]:w-[30rem] pl-4 flex-1">
-      {% for item in component.listPhoto %}
-        {% if loop.index == 1 %}
-          <div class="group relative h-80 w-[30rem] cursor-pointer overflow-hidden rounded-lg transition-all duration-200">
-            <img class="h-full object-cover" src="{{ item.photo }}" alt="" />
-          </div>
-        {% else %}
-          <div class="group relative h-80 w-16 cursor-pointer overflow-hidden rounded-lg transition-all duration-200">
-            <img class="h-full object-cover" src="{{ item.photo }}" alt="" />
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
 
-    <div class="flex flex-col mb-6 w-full md:w-1/2 bg-store-color max-w-full h-full left-10">
-      <div class="sticky top-0 ">
-        <p class="inline-block font-semibold text-primary mb-2">{{ component.title }}</p>
-        <p class="sm:text-2xl text-l  text-base-content break-words ml-2">{{ component.desc }}</p>
 
-      </div>
 
-      
-    </div>
-
-  
+<div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4 bg-[#faf2f0]">
+  <div class="text-center">
+    <h2 class="font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-gray-800 md:w-full w-9/12 mx-auto">{{ component.title }}</h2>
+    <p class="font-normal text-base leading-6 text-gray-600 mt-4 lg:w-5/12 md:w-9/12 mx-auto">
+      {{ component.desc }}
+    </p>
   </div>
-</section>
-
-
-<div class="flex w-full h-full items-center justify-center">
-  <div class="flex w-5/6 h-5/6 space-x-2">
-    <!-- أول صورة -->
-    <div class="slide relative flex-auto bg-cover bg-center transition-all duration-500 ease-in-out hover:flex-grow"
-      style="background-image:url('https://images.unsplash.com/photo-1533468432434-200de3b5d528?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80')"></div>
-    
-    <!-- ثاني صورة -->
-    <div class="slide relative flex-auto bg-cover bg-center transition-all duration-500 ease-in-out hover:flex-grow"
-      style="background-image:url('https://images.unsplash.com/photo-1586254574632-55e4aaea7793?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')"></div>
-    
-    <!-- ثالث صورة -->
-    <div class="slide relative flex-auto bg-cover bg-center transition-all duration-500 ease-in-out hover:flex-grow"
-      style="background-image:url('https://images.unsplash.com/photo-1536536982624-06c1776e0ca8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')"></div>
-    
-    <!-- رابع صورة -->
-    <div class="slide relative flex-auto bg-cover bg-center transition-all duration-500 ease-in-out hover:flex-grow"
-      style="background-image:url('https://images.unsplash.com/photo-1502827186494-9f7976a04548?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80')"></div>
-    
-    <!-- خامس صورة -->
-    <div class="slide relative flex-auto bg-cover bg-center transition-all duration-500 ease-in-out hover:flex-grow"
-      style="background-image:url('https://images.unsplash.com/photo-1545559054-8f4f9e855781?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')"></div>
+  <div class="flex gap-4 mt-10 justify-center flex-wrap">
+    {% for item in component.listPhoto %}
+    <figure class="card bg-white rounded-lg shadow-lg overflow-hidden">
+      <img src="{{ item.photo }}" alt="Lakeview Elegance preview" 
+      class="w-full h-48 sm:h-64 md:h-80 object-cover">
+    </figure>
+      
+    {% endfor %}  
   </div>
 </div>
 
+
+<style>
+  .gallery{
+    display: flex;
+    justify-content: center;
+
+    gap: 1rem;
+    width: 45rem;
+}
+
+.card{
+    position: relative;
+    left: 0;
+    width: 3rem;
+    border-radius: 5rem;
+
+    height: 25rem;
+    overflow: hidden;
+    transition: .4s ease-in-out;
+
+    box-shadow: 0 5 12px rgba(0, 0, 0, .3);
+    flex: .15;
+}
+
+.card img{
+    position: relative;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.card:hover{
+    flex: 1 1 0;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+</style>
