@@ -2400,7 +2400,7 @@
                     "maxLength": 5
                 },
                 {
-                    "id": "lon_alkhlfet",
+                    "id": "colorback",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
