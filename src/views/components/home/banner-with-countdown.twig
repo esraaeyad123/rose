@@ -20,16 +20,21 @@
         </div>
       </div>
       <div>
-        <a href="{{ component.link }}" target="_self">
-          <button type="button" data-modal-target="discount-modal" data-modal-toggle="discount-modal" rel="noreferrer" class=" button-custom text-black bg-white hover:bg-gray-50 px-4 py-2 rounded-lg w-fit ease duration-300 flex gap-1 items-center">
-            <span class="font-bold">{{ component.buttontext }}</span> 
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" 
-               class="rotate-180 group-hover:-translate-x-1 transition-transform ease duration-200" 
-               width="1em" height="1em" viewBox="0 0 256 256">
-            <path fill="currentColor" d="m221.66 133.66l-72 72a8 8 0 0 1-11.32-11.32L196.69 136H40a8 8 0 0 1 0-16h156.69l-58.35-58.34a8 8 0 0 1 11.32-11.32l72 72a8 8 0 0 1 0 11.32Z"></path>
-          </svg>
-          </button>
-        </a>
+        <a href="{{ component.link }}"
+   class="button-custom text-black bg-white hover:bg-gray-50 px-4 py-2 rounded-lg w-fit ease duration-300 flex gap-1 items-center"
+   rel="noreferrer" target="_self">
+  
+  <span class="font-bold">{{ component.buttontext }}</span>
+
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+       class="rotate-180 group-hover:-translate-x-1 transition-transform ease duration-200"
+       width="1em" height="1em" viewBox="0 0 256 256">
+    <path fill="currentColor"
+          d="m221.66 133.66l-72 72a8 8 0 0 1-11.32-11.32L196.69 136H40a8 8 0 0 1 0-16h156.69l-58.35-58.34a8 8 0 0 1 11.32-11.32l72 72a8 8 0 0 1 0 11.32Z" />
+  </svg>
+
+</a>
+
       </div>
     </div>
   </div>

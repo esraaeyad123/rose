@@ -331,43 +331,51 @@ closeMarquee() {
   }
 }
 
-
-
 copycontent() {
   document.querySelectorAll(".contentcode").forEach((item) => {
-      item.addEventListener("click", async (event) => {
-          if (!navigator.clipboard) {
-              return;
-          }
-          try {
-              // احصل على العنصر الذي يحتوي على الكود باستخدام parentNode
-              const codeElement = event.target.closest('.flex').querySelector('.code');
-              
-              // إذا لم يتم العثور على العنصر .code، لا تتابع
-              if (!codeElement) {
-                  console.error("لم يتم العثور على العنصر الذي يحتوي على الكود.");
-                  return;
-              }
-              
-              // احصل على النص من العنصر .code
-              const code = codeElement.innerText;
-              
-              // حاول نسخ الكود إلى الحافظة
-              await navigator.clipboard.writeText(code);
-              
-              // تغيير النص إلى "Copied" بعد النسخ
-              event.target.innerHTML = "Copied";
-              
-              // إعادة النص إلى "Copy" بعد 2 ثانية
-              setTimeout(() => {
-                  event.target.innerHTML = "Copy";
-              }, 2000);
-          } catch (err) {
-              console.error("فشل النسخ!", err);
-          }
-      });
+    // تأكد من عدم تكرار الحدث
+    if (item.dataset.listenerAttached === "true") return;
+    item.dataset.listenerAttached = "true";
+
+    item.addEventListener("click", async (event) => {
+      const codeElement = event.target.closest('.flex').querySelector('.code');
+
+      if (!codeElement) {
+        console.error("لم يتم العثور على العنصر الذي يحتوي على الكود.");
+        return;
+      }
+
+      const code = codeElement.innerText;
+
+      // محاولة استخدام Clipboard API أولاً
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(code);
+        } else {
+          // طريقة بديلة للنسخ
+          const textarea = document.createElement("textarea");
+          textarea.value = code;
+          textarea.setAttribute("readonly", "");
+          textarea.style.position = "absolute";
+          textarea.style.left = "-9999px";
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+        }
+
+        // تغيير النص بعد النسخ
+        event.target.innerHTML = "Copied";
+        setTimeout(() => {
+          event.target.innerHTML = "Copy";
+        }, 2000);
+      } catch (err) {
+        console.error("فشل النسخ!", err);
+      }
+    });
   });
 }
+
 
 
   
