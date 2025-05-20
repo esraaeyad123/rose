@@ -21,11 +21,12 @@
 
       {% if component.desc %}
         <p class="text-sm opacity-70 sm:text-base md:text-lg mt-2" style="color:{{ component.colortext }};">
-          {{ component.desc }} 
+          {{ component.desc }}
+
         </p>
       {% endif %}
 
-      {% if component.textButton %}
+{% if component.display_all_url and component.display_all_url != '#' and component.display_all_url != '##' %}
         <div class="mt-4 mb-4 flex md:justify-start items-center gap-x-6">
           <a href="{{ component.display_all_url }}"
              class="button-custom md:text-[20px] text-[17px] flex gap-4 justify-center items-center shadow rounded-[0.25rem] h-12 w-full py-2 px-8 duration-100"
