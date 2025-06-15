@@ -83,14 +83,11 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    <div class="lg:mt-4 lg:container">
-        {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
-      
-         <!-- Breadcrumb -->
-            <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 mb-5 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
-            <salla-breadcrumb></salla-breadcrumb>
-            </nav>
-  
+    <div class="container py-6">
+  <nav class="flex items-center px-4 py-2 text-sm text-gray-600 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 mb-6" aria-label="Breadcrumb">
+    <salla-breadcrumb></salla-breadcrumb>
+  </nav>
+
     
         <div class="flex flex-col items-start md:flex-row" id="product-{{ product.id }}">
             <div class="sidebar md:sticky top-24 w-full md:!w-2/4 rtl:ml-8 ltr:mr-8 pb-8 md:pb-16 overflow-hidden shrink-0">
@@ -186,7 +183,7 @@
                 </salla-slider>
             </div>
 
-            <div class=" md:sticky md:overflow-hidden top-24 w-full md:w-2/4 md:pb-16">
+<div class="md:sticky md:overflow-hidden top-24 w-full md:w-2/4 md:pb-16">
 
                 {% hook 'product:single.description.start' %}
 
@@ -408,47 +405,49 @@
             </div>
          
 
-            <div class="flex flex-wrap md:flex-nowrap gap-6 p-6 bg-white rounded-md shadow-sm">
-                <div class="flex-1 md:w-1/2 border-r pr-6 relative">
-                    <h2 class="text-lg font-semibold mb-4 relative">
-                        <span class="inline-block border-b-2 border-primary hover:text-primary transition">
-                            {{ trans('pages.products.deschead') }}
-                        </span>
-                    </h2>
-                    
-                    <div class="product__description leading-7">
-                        {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
-                        {% if product.has_read_more %}
-                            <article class="article article--main relative overflow-hidden transition-all max-h-0 duration-300 py-4"
-                                id="more-content" style="max-height:5.25rem">
-                                {{ product_desc|raw }}
-                            </article>
-            
-                     <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
-                                {{ trans('pages.products.read_more') }}
-                            </a>
-                        {% else %}
-                            <article class="article--main pb-1">
-                                {{ product_desc|raw }}
-                            </article>
-                        {% endif %}
-                    </div>
-            
-                    <div class="absolute top-0 right-0 h-full w-px bg-gray-200"></div>
-                </div>
-            
-                <div class="flex-1 md:w-1/2 pl-6">
-                    <h2 class="text-lg font-semibold mb-4 relative">
-                        <span class="inline-block border-b-2 border-primary hover:text-primary transition">
-                            {{ trans('pages.products.commentshead') }}
-                        </span>
-                    </h2>
-                    
-                    <div class="comments-section">
-                        {% component 'comments' %}
-                    </div>
-                </div>
-            </div>
+          <div class="flex flex-wrap md:flex-nowrap gap-6 p-6 bg-white rounded-xl shadow-md">
+    <div class="flex-1 md:w-1/2 md:pr-6 border-gray-200 md:border-r relative">
+        <h2 class="text-xl font-semibold mb-4">
+            <span class="inline-block border-b-2 border-primary hover:text-primary transition-colors duration-200">
+                {{ trans('pages.products.deschead') }}
+            </span>
+        </h2>
+
+        <div class="product__description text-gray-700 leading-relaxed">
+            {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
+            {% if product.has_read_more %}
+                <article id="more-content"
+                         class="article article--main relative overflow-hidden transition-all duration-300 max-h-[5.25rem] py-2">
+                    {{ product_desc|raw }}
+                </article>
+
+                <a id="btn-show-more"
+                   class="text-primary hover:underline inline-block mt-2 cursor-pointer transition duration-200">
+                    {{ trans('pages.products.read_more') }}
+                </a>
+            {% else %}
+                <article class="article--main pb-1">
+                    {{ product_desc|raw }}
+                </article>
+            {% endif %}
+        </div>
+
+        <div class="hidden md:block absolute top-0 right-0 h-full w-px bg-gray-200"></div>
+    </div>
+
+    <div class="flex-1 md:w-1/2 md:pl-6 mt-6 md:mt-0">
+        <h2 class="text-xl font-semibold mb-4">
+            <span class="inline-block border-b-2 border-primary hover:text-primary transition-colors duration-200">
+                {{ trans('pages.products.commentshead') }}
+            </span>
+        </h2>
+
+        <div class="comments-section">
+            {% component 'comments' %}
+        </div>
+    </div>
+</div>
+
             
 
         </div>

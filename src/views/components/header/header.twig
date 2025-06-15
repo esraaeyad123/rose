@@ -1,29 +1,3 @@
-{#
-| Variable         | Type    | Description                     |
-|------------------|---------|---------------------------------|
-| cart             | object  |                                 |
-| cart.items_count | int     |                                 |
-| cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
-#}
-
-
-{% set marquee = theme.settings.get('marquee', true) %}
-{% set marqueetext = theme.settings.get('marqueetext', true) %}
-{% set marqueecolortext = theme.settings.get('marqueecolortext', true) %}
-{% set marqueecolorback = theme.settings.get('marqueecolorback', true) %}
-
-
-{% if marquee %}
-<div class="marquee" style="background-color: {{ marqueecolorback }};" >
-  <button class="close-button" onclick="app.closeMarquee()">×</button>
-  <ul class="marquee__content" style="color: {{ marqueecolortext }};">
-    {% for i in 1..10 %}
-      <li class="text-md cursor-pointer">{{ marqueetext }}</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
 
 
 {% set show_loding  = theme.settings.get('show_loding', true) %}
@@ -47,34 +21,62 @@
 {% endif %}
 
 
+
+
+
+
+
 {% set important_links = theme.settings.get('important_links') %}
 
 
 
 
-<header class="store-header centered_logo">
-  <div class="top-navbar">
-    <div class="container flex justify-between">
-      <div class="flex-1 flex items-center">
+<!-- ✅ تعديل مخصص للهيدر - تم بواسطة ChatGPT - بتاريخ 15 يونيو 2025 -->
+<header class="store-header bg-white shadow-sm">
+  <!-- الشريط العلوي -->
+  <div class="top-navbar border-b border-gray-100">
+    <div class="container flex flex-col md:flex-row justify-between items-center py-2 gap-2">
+      
+      <!-- روابط مهمة و الموقع -->
+      <div class="flex flex-wrap items-center gap-2">
         {% if important_links %}
           <salla-menu source="footer" topnav></salla-menu>
         {% endif %}
+
         {% if store.scope %}
-          <button class="btn--rounded-gray text-sm px-2 py-1" onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
+          <button class="btn--rounded-gray text-sm"
+                  onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
             <i class="sicon-location rtl:ml-1 ltr:mr-1"></i> {{ store.scope.name }}
           </button>
         {% endif %}
       </div>
-      <salla-contacts is-header></salla-contacts>
+
+      <!-- البحث -->
+      <div class="w-full md:w-auto flex-1">
+        <div class="header-search">
+          <salla-search inline oval height="24"></salla-search>
+        </div>
+      </div>
+
+      <!-- التواصل -->
+      <div class="hidden md:block">
+        <salla-contacts is-header></salla-contacts>
+      </div>
     </div>
   </div>
 
-  <div id="mainnav" class="main-nav-container transition-all duration-300">
-    <div class="inner bg-inherit py-1">
-      <div class="container relative">
-        <div class="absolute left-1/2 transform -translate-x-1/2 z-20 text-center">
-          <a class="navbar-brand inline-block" href="{{ store.url }}">
-            <img fetchpriority="high" width="120" height="auto" loading="eager" src="{{ store.logo }}" alt="{{ store.name }} logo">
+  <!-- الشريط الرئيسي -->
+  <div id="mainnav" class="main-nav-container bg-white shadow">
+    <div class="container">
+      <div class="flex items-center justify-between py-3 relative">
+
+        <!-- الشعار والقائمة -->
+        <div class="flex items-center gap-4">
+          <a class="lg:hidden" href="#mobile-menu" aria-label="Open menu">
+            <i class="sicon-menu text-primary text-2xl"></i>
+          </a>
+          <a class="navbar-brand" href="{{ store.url }}">
+            <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
             {% if is_page('index') %}
               <h1 class="sr-only">{{ store.name }}</h1>
             {% else %}
@@ -83,152 +85,42 @@
           </a>
         </div>
 
-        <div class="flex justify-between items-center">
-          <div class="header-search flex items-center gap-2">
-            <salla-search inline oval height="40" class="search-input w-64"></salla-search>
-            <div class="header-buttons">
-              {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
-                <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray px-2 py-1 text-sm">
-                  <span class="flag iti__flag iti__{{ user.language.country_code }} rounded-sm"></span>
-                  <span class="mx-1">|</span> <span>{{ currency.symbol }}</span>
-                </button>
-                <salla-localization-modal></salla-localization-modal>
-              {% endif %}
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2">
-            {% if user.type == 'user' %}
-              <salla-user-menu avatar-only show-header></salla-user-menu>
-            {% else %}
-              <button class="header-btn flex justify-center items-center gap-2 px-2" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
-                <i class="header-btn__icon sicon-user"></i>
-              </button>
-            {% endif %}
-            <salla-cart-summary>
-              <i slot="icon" class="header-btn__icon icon sicon-shopping-basket"></i>
-            </salla-cart-summary>
-          </div>
+        <!-- القائمة الرئيسية -->
+        <div class="hidden lg:flex flex-1 justify-center">
+          <custom-main-menu></custom-main-menu>
         </div>
 
-        <nav class="hidden md:block mt-1">
-          <ul class="flex justify-center space-x-4 rtl:space-x-reverse text-sm font-small text-gray-700">
-            <custom-main-menu></custom-main-menu>
-          </ul>
-        </nav>
+        <!-- الأيقونات: مستخدم + سلة + لغة -->
+        <div class="flex items-center gap-3">
+
+          {% if user.type == 'user' %}
+            <salla-user-menu avatar-only show-header></salla-user-menu>
+          {% else %}
+            <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
+              <i class="header-btn__icon sicon-user"></i>
+            </button>
+          {% endif %}
+
+          <salla-cart-summary class="ml-2 rtl:ml-[unset] rtl:mr-2">
+            <i slot="icon" class="header-btn__icon sicon-shopping-basket"></i>
+          </salla-cart-summary>
+
+          {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+            <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray text-sm">
+              <span class="flag iti__flag iti__{{ user.language.country_code }} rounded-sm"></span>
+              <span class="mx-1.5">|</span>
+              <span>{{ currency.symbol }}</span>
+            </button>
+            <salla-localization-modal></salla-localization-modal>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
 </header>
 
 {% if store.scope %}
-  <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
+    <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
 
-<script>
-  window.addEventListener('scroll', function () {
-    const header = document.querySelector('.store-header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-</script>
 
-
-<style>
-/* الأساسيات */
-
-/* عند التمرير - إخفاء كل شيء ماعدا اللوجو */
-.store-header.scrolled .top-navbar,
-.store-header.scrolled .main-nav-container nav,
-.store-header.scrolled .header-buttons,
-.store-header.scrolled salla-search,
-.store-header.scrolled salla-cart-summary,
-.store-header.scrolled salla-user-menu,
-.store-header.scrolled button[onclick*='login::open'] {
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.3s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* تصغير الهيدر واللوجو عند التمرير */
-.store-header.scrolled .main-nav-container .navbar-brand img {
-  height: 40px !important;
-  width: auto !important;
-  transition: all 0.3s ease;
-}
-.store-header .navbar-brand img {
-  height: 60px;
-  transition: all 0.3s ease;
-}
-
-/* تنسيق البحث */
-.header-search .search-input {
-  width: 250px;
-  max-width: 100%;
-  transition: width 0.3s ease;
-}
-.header-search {
-  gap: 1rem;
-  padding: 0.5rem 0;
-}
-
-.main-nav-container nav ul {
-  font-size: 10px !important;
-}
-
-
-/* تنسيق أيقونات المستخدم والسلة */
-.header-btn__icon {
-  min-width: 20px;
-}
-
-/* إخفاء الهامبرغر على الشاشات الكبيرة */
-@media (min-width: 768px) {
-  .mburger {
-    display: none !important;
-  }
-}
-
-/* تأثير عند التمرير على عناصر المنيو */
-.main-nav-container nav ul li {
-  transition: all 0.3s ease; /* انتقال سلس */
-}
-
-.main-nav-container nav ul li:hover {
-  transform: scale(1.1); /* تكبير العنصر عند التمرير */
-  color: #ff5733; /* تغيير اللون عند التمرير */
-  cursor: pointer; /* تغيير الشكل عند التمرير */
-}
-
-
-@media (max-width: 768px) {
-  .main-nav-container .flex {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
-  }
-
-  .main-nav-container salla-search {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .main-nav-container .header-buttons,
-  .main-nav-container salla-cart-summary,
-  .main-nav-container salla-user-menu,
-  .main-nav-container button[onclick*='login::open'] {
-    justify-content: center;
-  }
-
-  .main-nav-container .header-btn__icon {
-    font-size: 18px;
-  }
-}
-
-
-</style>

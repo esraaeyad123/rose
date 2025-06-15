@@ -821,33 +821,32 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
 
 
 .s-slider-block__display-all:hover {
-  text-decoration: underline; /* إضافة خط تحت النص عند التمرير */
+  text-decoration: underline; 
 }
 
 
 .s-slider-nav-arrow {
-  width: 40px; /* عرض الزر */
-  height: 40px; /* ارتفاع الزر */
-  background-color: white; /* لون الخلفية */
-  border: none; /* إزالة الحدود الافتراضية */
-  border-radius: 5px; /* زوايا مدورة خفيفة (يمكنك تعديلها) */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-  display: flex; /* استخدام flex لتوسيع المحتوى داخل الزر */
-  align-items: center; /* محاذاة العناصر في الوسط عمودياً */
-  justify-content: center; /* محاذاة العناصر في الوسط أفقياً */
-  cursor: pointer; /* تغيير شكل المؤشر عند التمرير فوق الزر */
-  transition: box-shadow 0.3s; /* تأثير انتقال للظل */
+  width: 40px; 
+  height: 40px; 
+  background-color: white; 
+  border: none;
+  border-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; 
+  transition: box-shadow 0.3s; 
 }
 
 .s-slider-nav-arrow:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .s-slider-nav-arrow:disabled {
-  background-color: #f0f0f0; /* لون خلفية الزر المعطل */
-  cursor: not-allowed; /* تغيير شكل المؤشر عند الزر المعطل */
+  background-color: #f0f0f0; 
+  cursor: not-allowed; 
 }
-
 
 .contentcode {
   color: #000;
@@ -855,47 +854,45 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   padding: 3px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
-  margin-left: 8px; /* إضافة مسافة بسيطة بين الزرين */
+  margin-left: 8px; 
 }
+
 .contentcode:hover {
   background-color: var(--color-primary-reverse);
 }
 
-
-
 .marquee {
-  overflow: hidden; /* لإخفاء النص الزائد */
-  white-space: nowrap; /* لمنع التفاف النص */
-  position: relative; /* لتحديد موضع المحتوى */
-  background-color: #ffcc00; /* لون خلفية زاهي */
-  padding: 10px; /* مساحة داخلية */
+  overflow: hidden; 
+  white-space: nowrap; 
+  position: relative; 
+  background-color: #ffcc00; 
+  padding: 10px; 
 }
 
 .marquee__content {
-  display: flex; /* استخدام flexbox لتوزيع العناصر بشكل أفقي */
-  animation: marquee 20s linear infinite; /* تغيير القيمة لجعل الحركة أبطأ */
+  display: flex; 
+  animation: marquee 20s linear infinite; 
 }
-
 
 @keyframes marquee {
   0% {
-      transform: translateX(100%); /* يبدأ خارج الشاشة من اليمين */
+    transform: translateX(100%); 
   }
   100% {
-      transform: translateX(-100%); /* يخرج خارج الشاشة من اليسار */
+    transform: translateX(-100%); 
   }
 }
 
 .text-md {
-  font-size: 18px; /* حجم النص */
-  padding: 0 20px; /* مساحة داخلية للعنصر */
-  flex-shrink: 0; /* يمنع تصغير العنصر عند التمرير */
+  font-size: 18px; 
+  padding: 0 20px; 
+  flex-shrink: 0; 
 }
 
 .close-button {
   background: none; 
   border: none; 
-  color: black/* استخدم لون النص هنا */;
+  color: black;
   font-size: 24px; 
   cursor: pointer; 
   position: absolute; 
@@ -903,8 +900,6 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
   right: 10px; 
 }
 
-
-/*   custom-store-header */
 
 @media (min-width: 1024px) {
 .custom-store-header .main-nav-container {
@@ -1022,7 +1017,7 @@ border: none !important;
 
 .custom-store-header .main-menu li.root-level > a {
 border-bottom: 1px solid transparent !important;
-padding: 1.5rem 0 !important; /* Combined padding */
+padding: 1.5rem 0 !important; 
 }
 
 .custom-store-header .main-menu li.root-level > a:hover {
@@ -1035,7 +1030,6 @@ padding: 10px;
 }
 
 
-/* tab*/
 
 
 .scroll-top {
@@ -1253,37 +1247,36 @@ padding: 10px;
 
 @media (max-width: 768px) {
   .s-products-slider-wrapper .swiper-slide {
-    width: 100%; /* عند الأجهزة الصغيرة يمكن جعل الـ Cards تأخذ كامل العرض */
+    width: 100%;
   }
 }
 
-
-
 .s-products-slider-wrapper .card {
-  width: calc(20% - 10px); /* تصغير عرض البطاقات إلى 20% مع تقليل المسافة */
+  width: calc(20% - 10px);
 }
 
 .s-products-slider-wrapper .swiper-slide {
-  width: calc(20% - 10px); /* تصغير عرض الشرائح داخل السلايدر */
+  width: calc(20% - 10px);
 }
 
 @media (max-width: 1024px) {
   .s-products-slider-wrapper .swiper-slide {
-    width: calc(25% - 10px); /* تصغير العناصر أكثر عند الأجهزة متوسطة الحجم */
+    width: calc(25% - 10px);
   }
 }
 
 @media (max-width: 768px) {
   .s-products-slider-wrapper .swiper-slide {
-    width: calc(33.333% - 10px); /* تقليل العناصر أكثر للأجهزة الصغيرة */
+    width: calc(33.333% - 10px);
   }
 }
 
 @media (max-width: 480px) {
   .s-products-slider-wrapper .swiper-slide {
-    width: calc(50% - 10px); /* عرض العنصر نصف الشاشة للأجهزة الصغيرة جدًا */
+    width: calc(50% - 10px);
   }
 }
+
 
 
 
@@ -1301,7 +1294,6 @@ padding: 10px;
 
 }
 
-/* توحيد أبعاد الصورة */
 
 
 .colorback{
@@ -3884,7 +3876,6 @@ input {
 }
 .addToCart::after {
   content: "";
-  /* display: block; */
   width: 1.2em;
   height: 1.2em;
   position: absolute;
@@ -3898,7 +3889,6 @@ input {
 }
 .addToCart:hover::after {
   content: "";
-  /* display: block; */
   width: 1.2em;
   height: 1.2em;
   position: absolute;
@@ -3943,9 +3933,7 @@ input {
 .swiper-button-next:hover {
   background-color: #303030;
   color: #fff;
-  /* Safari */
   transition: background-color 130ms ease-in;
-  /* Safari */
   transition-delay: 130ms;
 }
 .swiper-button-prev:hover:after,
@@ -3954,9 +3942,7 @@ input {
 }
 .swiper-button-prev:hover:after,
 .swiper-button-next:hover:after {
-  /* Safari */
   transition: background-color 130ms ease-in;
-  /* Safari */
   transition-delay: 130ms;
 }
 .swiper-button-prev:after,
@@ -3973,7 +3959,6 @@ input {
 .swiper-button-next:after {
   margin-left: 0px !important;
 }
-/* featured products slider start */
 .Ft_Slider_items {
   padding: 0;
 }
@@ -4037,8 +4022,7 @@ input {
     width: 20%;
   }
 }
-/* featured products slider end */
-/* categories slider start */
+
 .category_items {
   padding: 0;
 }
@@ -4381,3 +4365,30 @@ salla-slider[type]:not(.hydrated) > div, salla-slider[type]:not(.hydrated) .swip
   opacity: 1;
   transform: translateY(0);
 }
+
+
+    .s-products-slider-wrapper .product-slider {
+  width: calc(40% - 10px); 
+}
+
+.s-products-slider-wrapper .swiper-slide {
+  width: calc(40% - 10px); 
+}
+
+@media (max-width: 1024px) {
+  .s-products-slider-wrapper .swiper-slide {
+    width: calc(25% - 10px);   }
+}
+
+@media (max-width: 768px) {
+  .s-products-slider-wrapper .swiper-slide {
+    width: calc(33.333% - 10px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .s-products-slider-wrapper .swiper-slide {
+    width: calc(50% - 10px); 
+  }
+}
+
