@@ -49,13 +49,10 @@
 
 
 
-<!-- ✅ تعديل مخصص للهيدر - تم بواسطة ChatGPT - بتاريخ 15 يونيو 2025 -->
 <header class="store-header bg-white shadow-sm">
-  <!-- الشريط العلوي -->
   <div class="top-navbar border-b border-gray-100">
     <div class="container flex flex-col md:flex-row justify-between items-center py-2 gap-2">
       
-      <!-- روابط مهمة و الموقع -->
       <div class="flex flex-wrap items-center gap-2">
         {% if important_links %}
           <salla-menu source="footer" topnav></salla-menu>
@@ -69,26 +66,22 @@
         {% endif %}
       </div>
 
-      <!-- البحث -->
       <div class="w-full md:w-auto flex-1">
         <div class="header-search">
           <salla-search inline oval height="24"></salla-search>
         </div>
       </div>
 
-      <!-- التواصل -->
       <div class="hidden md:block">
         <salla-contacts is-header></salla-contacts>
       </div>
     </div>
   </div>
 
-  <!-- الشريط الرئيسي -->
   <div id="mainnav" class="main-nav-container bg-white shadow">
     <div class="container">
       <div class="flex items-center justify-between py-3 relative">
 
-        <!-- الشعار والقائمة -->
         <div class="flex items-center gap-4">
           <a class="lg:hidden" href="#mobile-menu" aria-label="Open menu">
             <i class="sicon-menu text-primary text-2xl"></i>
@@ -108,7 +101,6 @@
           <custom-main-menu></custom-main-menu>
         </div>
 
-        <!-- الأيقونات: مستخدم + سلة + لغة -->
         <div class="flex items-center gap-3">
 
           {% if user.type == 'user' %}
@@ -141,8 +133,3 @@
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a55e2d4cca519301615d808b0f12180b1e448b5

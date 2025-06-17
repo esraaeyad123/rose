@@ -342,7 +342,6 @@
                                 loader-position="end"
                                 type="submit"
                                 width="wide"
-                                {# Notify availability props#}
                                 {% if product.notify_availability %}
                                     {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
                                     channels="{{ product.notify_availability.channels|join(',') }}"

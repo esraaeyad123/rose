@@ -1,55 +1,67 @@
 <section class="s-block--special-products-slider2 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full -z-[1] bg-black bg-opacity-50">
-        {% if component.videotoimg %}
-            <img 
-                class="w-full h-full object-cover object-center" 
-                src="{{ component.photo }}" 
-                loading="lazy"
-            >
-        {% else %}
-            <video
-                playsinline
-                class="w-full h-full object-cover object-center"
-                loop
-                autoplay
-                muted
-                src="{{ component.url }}"
-            ></video>
-        {% endif %}
+  <div class="absolute inset-0 -z-[1]">
+    {% if component.videotoimg %}
+      <img 
+        src="{{ component.photo }}" 
+        alt="Background"
+        class="w-full h-full object-cover object-center"
+        loading="lazy"
+      >
+    {% else %}
+      <video
+        playsinline
+        autoplay
+        muted
+        loop
+        src="{{ component.url }}"
+        class="w-full h-full object-cover object-center"
+      ></video>
+    {% endif %}
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <div class="min-h-[600px] flex flex-col lg:flex-row items-center justify-between gap-10 px-6 lg:px-16 py-12 relative z-10">
+    
+    <div class="lg:w-1/2 text-white space-y-6 animate-fade-in">
+      <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight drop-shadow-lg">
+        {{ component.title }}
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed max-w-xl drop-shadow-md">
+        {{ component.desc }}
+      </p>
+
+   {% if component.item5 %}
+  <a 
+    href="{{ component.display_all_url }}" 
+    class="inline-block px-6 py-3 rounded-md transition-all duration-300 bg-opacity-90 hover:bg-opacity-100 shadow-sm hover:shadow-md" 
+    style="background-color: {{ component.item4 }};"
+  >
+    <span class="font-medium text-base tracking-wide" style="color: {{ component.item3 }};">
+      {{ component.item5 }}
+    </span>
+  </a>
+{% endif %}
+
     </div>
 
-    <div class="min-h-[600px] w-full flex flex-col lg:flex-row justify-between items-start lg:items-center pt-8 relative z-10">
-        <div class="lg:w-1/2 flex flex-col justify-center items-start text-left p-8">
-            <h2 class="font-bold text-3xl">{{ component.title }}</h2>
-            <p class="description max-w-[500px] text-sm sm:text-base mt-4">{{ component.desc }}</p>
-
-            {% if component.item5 %}
-                <a class="button-custom mt-4" style="background-color: {{ component.item4 }};" href="{{ component.display_all_url }}">
-                    <span style="color: {{ component.item3 }};">{{ component.item5 }}</span>
-                </a>
-            {% endif %}
-        </div>
-
-        <div class="lg:w-1/2 flex-shrink-0 relative">
-            <div class="slider-wrap relative lg:w-full pb-8">
-                <salla-products-slider
-                    id="product-slider"
-                    class="simplified-products fit-slider-products s-products-slider-wrapper"
-                    autoplay
-                    type="carousel"
-                    {% if component.products|length %}
-                        source="selected"
-                        source-value="[{{ component.products|map((product) => product.id)|join(',') }}]"
-                    {% endif %}
-                    {% if display_all != '' and display_all != '#' %}
-                        display-all-url="{{ display_all }}"
-                    {% endif %}
-                ></salla-products-slider>
-
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
+    <div class="lg:w-1/2 w-full relative animate-fade-in-up">
+      <div class="slider-wrap w-full">
+        <salla-products-slider
+          id="product-slider"
+          class="simplified-products fit-slider-products s-products-slider-wrapper"
+          autoplay
+          type="carousel"
+          {% if component.products|length %}
+            source="selected"
+            source-value="[{{ component.products|map((product) => product.id)|join(',') }}]"
+          {% endif %}
+          {% if display_all != '' and display_all != '#' %}
+            display-all-url="{{ display_all }}"
+          {% endif %}
+        ></salla-products-slider>
+        <div class="swiper-pagination mt-4"></div>
+      </div>
     </div>
+  </div>
 </section>
-
 
