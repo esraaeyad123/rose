@@ -10,7 +10,17 @@
   "pages": {
     "cart": {
       "cart_options": "Cart Options"
-    }
+    } ,
+    "products":{
+      "commentshead":"comment",
+      "deschead":"description"
+    }  
+    ,
+    "copytext":{
+      "copycode":"copy code" ,
+            "copy":"copy "
+
+    } 
   },
   "common": {
     "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",

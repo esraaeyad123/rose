@@ -1,3 +1,8 @@
+
+
+
+
+
 <section class="container mx-auto px-4 py-8">
     <div class="flex flex-wrap justify-center gap-4">
         {% for code in component.code %}
@@ -13,8 +18,12 @@
                     </span>
                     <div class="flex items-center">
                         <span class="code mr-2 bg-gray-100 text-black-600 py-1 px-3 rounded-lg">{{ code.item_3 }}</span> 
-                        <div onclick="copycontent()" class="contentcode ml-2 cursor-pointer text-blue-500" aria-label="نسخ الكود">
-                            Copy
+                        <div onclick="copycontent()" 
+  class="contentcode ml-2 cursor-pointer text-white px-3 py-1 rounded-md bg-[var(--color-primary)] transition-all duration-300 text-sm"
+
+                        aria-label="نسخ الكود">
+                                                         {{ trans('pages.copytext.copy') }}
+
                         </div>
                     </div>
                 </div>
@@ -23,6 +32,3 @@
         {% endfor %}
     </div>
 </section>
-
-
-

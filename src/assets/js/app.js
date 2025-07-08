@@ -330,10 +330,8 @@ closeMarquee() {
       marquee.style.display = 'none';
   }
 }
-
-copycontent() {
+ copycontent() {
   document.querySelectorAll(".contentcode").forEach((item) => {
-    // تأكد من عدم تكرار الحدث
     if (item.dataset.listenerAttached === "true") return;
     item.dataset.listenerAttached = "true";
 
@@ -347,12 +345,10 @@ copycontent() {
 
       const code = codeElement.innerText;
 
-      // محاولة استخدام Clipboard API أولاً
       try {
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(code);
         } else {
-          // طريقة بديلة للنسخ
           const textarea = document.createElement("textarea");
           textarea.value = code;
           textarea.setAttribute("readonly", "");
@@ -364,17 +360,22 @@ copycontent() {
           document.body.removeChild(textarea);
         }
 
-        // تغيير النص بعد النسخ
-        event.target.innerHTML = "Copied";
+        const originalText = event.target.innerHTML;
+
+        event.target.innerHTML = "Copied ✓";
+        event.target.style.backgroundColor = "var(--color-success)";
+
         setTimeout(() => {
-          event.target.innerHTML = "Copy";
+          event.target.innerHTML = originalText;
+          event.target.style.backgroundColor = "var(--color-primary)";
         }, 2000);
+
       } catch (err) {
         console.error("فشل النسخ!", err);
       }
     });
-  });
-}
+
+
 
 
 
