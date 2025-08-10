@@ -239,20 +239,29 @@
             
 
                 {# Price #}
-                <div class="flex whitespace-nowrap gap-4 items-center">
-                  <div class="{{ product.is_on_sale ? '' : 'hidden' }} space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                      <h4 class="text-red-800 font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
-                      <span class="text-gray-500 line-through">{{product.regular_price|money}}</span>
-                  </div>
-                  <div class="gap-4 {{ product.is_on_sale ? 'hidden' : 'flex' }}">
-                      {% if product.starting_price %} 
-                          <span class="">{{ trans('pages.products.starting_price') }}</span>
-                      {% endif %} 
-                          <h2 class=" font-bold text-xl inline-block"> {{product.starting_price ? product.starting_price|money : product.price|money }}</h2>
-                  </div>
-                
-                 
-                </div>
+               <div class="flex flex-wrap gap-2 items-center text-base sm:text-lg">
+    <div class="{{ product.is_on_sale ? '' : 'hidden' }} flex flex-wrap items-center gap-2">
+        <h4 class="text-red-800 font-bold text-lg sm:text-xl inline-block">
+            {{ product.sale_price|money|raw }}
+        </h4>
+        <span class="text-gray-500 line-through text-sm sm:text-base">
+            {{ product.regular_price|money|raw }}
+        </span>
+    </div>
+
+    <div class="{{ product.is_on_sale ? 'hidden' : 'flex' }} flex-wrap items-center gap-2">
+        {% if product.starting_price %}
+            <span class="text-gray-600 text-sm sm:text-base">
+                {{ trans('pages.products.starting_price') }}
+            </span>
+        {% endif %}
+        <h2 class="font-bold text-lg sm:text-xl inline-block">
+            {{ product.starting_price ? product.starting_price|money|raw : product.price|money|raw }}
+        </h2>
+    </div>
+</div>
+
+
 
                 {% hook 'product:single.description' %}
 
@@ -404,9 +413,11 @@
             </div>
          
 
-          <div class="flex flex-wrap md:flex-nowrap gap-6 p-6 bg-white rounded-xl shadow-md">
-    <div class="flex-1 md:w-1/2 md:pr-6 border-gray-200 md:border-r relative">
-        <h2 class="text-xl font-semibold mb-4">
+      
+
+<div class="flex flex-col md:flex-row gap-6 p-4 sm:p-6 bg-white rounded-xl shadow-md">
+    <div class="flex-1 md:w-1/2 md:pr-6 relative border-b border-gray-200 md:border-b-0 md:border-r pb-4 md:pb-0">
+        <h2 class="text-lg sm:text-xl font-semibold mb-3">
             <span class="inline-block border-b-2 border-primary hover:text-primary transition-colors duration-200">
                 {{ trans('pages.products.deschead') }}
             </span>
@@ -430,12 +441,10 @@
                 </article>
             {% endif %}
         </div>
-
-        <div class="hidden md:block absolute top-0 right-0 h-full w-px bg-gray-200"></div>
     </div>
 
-    <div class="flex-1 md:w-1/2 md:pl-6 mt-6 md:mt-0">
-        <h2 class="text-xl font-semibold mb-4">
+    <div class="flex-1 md:w-1/2 md:pl-6 pt-4 md:pt-0">
+        <h2 class="text-lg sm:text-xl font-semibold mb-3">
             <span class="inline-block border-b-2 border-primary hover:text-primary transition-colors duration-200">
                 {{ trans('pages.products.commentshead') }}
             </span>

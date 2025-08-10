@@ -305,7 +305,7 @@ class App extends AppHelpers {
 copycontent() {
   document.querySelectorAll(".contentcode").forEach((item) => {
     item.style.backgroundColor = "var(--color-primary)";
-    item.style.color = "#ffffff"; // تأكد أن النص واضح على الخلفية
+    item.style.color = "#ffffff"; 
     item.style.transition = "background-color 0.3s ease";
 
     if (item.dataset.listenerAttached === "true") return;

@@ -1498,6 +1498,18 @@
                     "value": "2021-10-01T15:23",
                     "required": false
                 },
+                  {
+  "type": "boolean",
+  "icon": "sicon-toggle-off",
+  "label": "تكرار صورة في الخلفية",
+  "description": null,
+  "id": "repeatimage",
+  "format": "switch",
+  "required": false,
+  "value": false,
+  "selected": false
+}
+ ,
                 {
                     "id": "buttontext",
                     "type": "string",
