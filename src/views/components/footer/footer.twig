@@ -17,6 +17,8 @@
 	<div class="flex items-center flex-col mb-5 border-b-4">
 	<a href="{{ store.url }}" class="flex items-center m-0">
 	<img src="{{ store.logo }}" alt="{{ store.name }}"class="max-w-[200px] max-h-[150px]">
+	<img src="{{ theme.settings.get('logo_top') ?: store.logo }}" alt="{{ store.name }}" class="max-w-[200px] max-h-[150px]>
+
 	</a>
 	
 	                {% if store.description %}

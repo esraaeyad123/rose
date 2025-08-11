@@ -166,55 +166,8 @@
                 }
             ]
         },
-        {
-    "type": "static",
-    "format": "title",
-    "id": "custom_logos",
-    "value": "الشعارات المخصصة",
-    "variant": "h6",
-    "label": "الشعارات المخصصة"
-},
-{
-    "type": "boolean",
-    "icon": "sicon-toggle-off",
-    "label": "تفعيل الشعارات المخصصة",
-    "id": "show_custom_logos",
-    "format": "switch",
-    "value": true
-},
-{
-    "id": "logo_top",
-    "type": "string",
-    "format": "image",
-    "label": "شعار أعلى الصفحة",
-    "description": "في حالة عدم رفع شعار هنا سيتم عرض شعار المتجر الأساسي",
-    "icon": "sicon-image",
-    "value": null,
-    "conditions": [
-        {
-            "id": "show_custom_logos",
-            "operation": "=",
-            "value": true
-        }
-    ]
-},
-{
-    "id": "logo_bottom",
-    "type": "string",
-    "format": "image",
-    "label": "شعار أسفل الصفحة",
-    "description": "في حالة عدم رفع شعار هنا سيتم عرض شعار المتجر الأساسي",
-    "icon": "sicon-image",
-    "value": null,
-    "conditions": [
-        {
-            "id": "show_custom_logos",
-            "operation": "=",
-            "value": true
-        }
-    ]
-}
-,
+   
+
         {
             "id": "lodingitem4",
             "type": "string",
@@ -296,6 +249,54 @@
             "value": "خيارات أعلى الصفحة",
             "variant": "h6"
         },
+             {
+    "type": "static",
+    "format": "title",
+    "id": "custom_logos",
+    "value": "الشعارات المخصصة",
+    "variant": "h6",
+    "label": "الشعارات المخصصة"
+},
+{
+    "type": "boolean",
+    "icon": "sicon-toggle-off",
+    "label": "تفعيل الشعارات المخصصة",
+    "id": "show_custom_logos",
+    "format": "switch",
+    "value": true
+},
+{
+    "id": "logo_top",
+    "type": "string",
+    "format": "image",
+    "label": "شعار أعلى الصفحة",
+    "description": "في حالة عدم رفع شعار هنا سيتم عرض شعار المتجر الأساسي",
+    "icon": "sicon-image",
+    "value": null,
+    "conditions": [
+        {
+            "id": "show_custom_logos",
+            "operation": "=",
+            "value": true
+        }
+    ]
+},
+{
+    "id": "logo_bottom",
+    "type": "string",
+    "format": "image",
+    "label": "شعار أسفل الصفحة",
+    "description": "في حالة عدم رفع شعار هنا سيتم عرض شعار المتجر الأساسي",
+    "icon": "sicon-image",
+    "value": null,
+    "conditions": [
+        {
+            "id": "show_custom_logos",
+            "operation": "=",
+            "value": true
+        }
+    ]
+} ,
         {
             "id": "header_is_sticky",
             "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
