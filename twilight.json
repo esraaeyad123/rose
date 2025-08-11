@@ -110,6 +110,25 @@
             ]
         },
         {
+    "id": "marqueeurl",
+    "type": "string",
+    "format": "url",
+    "label": "رابط الإعلان",
+    "description": "أدخل رابط الانتقال عند الضغط على الشريط",
+    "placeholder": "https://example.com",
+    "icon": "sicon-link",
+    "value": null,
+    "required": false,
+    "conditions": [
+        {
+            "id": "marquee",
+            "operation": "=",
+            "value": true
+        }
+    ]
+}
+ ,
+        {
             "id": "marqueecolorback",
             "type": "string",
             "format": "color",

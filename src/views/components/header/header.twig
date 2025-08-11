@@ -3,18 +3,27 @@
 {% set marqueetext = theme.settings.get('marqueetext', true) %}
 {% set marqueecolortext = theme.settings.get('marqueecolortext', true) %}
 {% set marqueecolorback = theme.settings.get('marqueecolorback', true) %}
-
+{% set marqueeurl = theme.settings.get('marqueeurl') %}
 
 {% if marquee %}
-<div class="marquee" style="background-color: {{ marqueecolorback }};" >
+<div class="marquee" style="background-color: {{ marqueecolorback }};">
   <button class="close-button" onclick="app.closeMarquee()">×</button>
   <ul class="marquee__content" style="color: {{ marqueecolortext }};">
     {% for i in 1..10 %}
-      <li class="text-md cursor-pointer">{{ marqueetext }}</li>
+      <li class="text-md cursor-pointer">
+        {% if marqueeurl %}
+          <a href="{{ marqueeurl }}" style="color: inherit; text-decoration: none;">
+            {{ marqueetext }}
+          </a>
+        {% else %}
+          {{ marqueetext }}
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 </div>
 {% endif %}
+
 
 
 
@@ -87,8 +96,12 @@
             <i class="sicon-menu text-primary text-2xl"></i>
           </a>
           <a class="navbar-brand" href="{{ store.url }}">
-            <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
-            {% if is_page('index') %}
+{% if theme.settings.get('logo_top') %}
+    <img src="{{ theme.settings.get('logo_top') }}"  loading="eager" alt="{{ store.name }} logo">
+{% else %}
+    <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
+{% endif %}          
+  {% if is_page('index') %}
               <h1 class="sr-only">{{ store.name }}</h1>
             {% else %}
               <h2 class="sr-only">{{ store.name }}</h2>
@@ -96,7 +109,6 @@
           </a>
         </div>
 
-        <!-- القائمة الرئيسية -->
         <div class="hidden lg:flex flex-1 justify-center">
           <custom-main-menu></custom-main-menu>
         </div>

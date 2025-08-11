@@ -15,11 +15,20 @@
 	<div aria-label="footer" class="store-footer__inner " >
 	<div class="container">
 	<div class="flex items-center flex-col mb-5 border-b-4">
-	<a href="{{ store.url }}" class="flex items-center m-0">
-	<img src="{{ store.logo }}" alt="{{ store.name }}"class="max-w-[200px] max-h-[150px]">
-	<img src="{{ theme.settings.get('logo_top') ?: store.logo }}" alt="{{ store.name }}" class="max-w-[200px] max-h-[150px]>
+            <a href="{{ store.url }}" class="flex items-center m-0">
+    {% if theme.settings.get('logo_bottom') %}
+        <img src="{{ theme.settings.get('logo_bottom') }}" 
+             alt="{{ store.name }} logo bottom" 
+             class="max-w-[200px] max-h-[150px]" 
+             loading="eager">
+    {% else %}
+        <img src="{{ store.logo }}" 
+             alt="{{ store.name }} logo" 
+             class="max-w-[200px] max-h-[150px]" 
+             loading="eager">
+    {% endif %}
+</a>
 
-	</a>
 	
 	                {% if store.description %}
 					<p class="max-w-sm leading-6 mb-6">
