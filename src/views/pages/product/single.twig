@@ -91,7 +91,6 @@
     
     <div class="flex flex-col md:flex-row md:space-x-8 rtl:md:space-x-reverse p-4 md:p-8" id="product-{{ product.id }}">
   
-  <!-- Sidebar الصور -->
   <div class="sidebar w-full md:w-1/2 md:sticky top-24 overflow-hidden shrink-0 rounded-md shadow-md bg-white p-4">
       {% set has_many_images = product.images|length > 1 %}
       <salla-slider
@@ -241,7 +240,6 @@
 
     {% hook 'product:single.description' %}
 
-    <!-- خيارات المنتج -->
     <form class="product-form" enctype="multipart/form-data" method="post" onsubmit="return salla.form.onSubmit('cart.addItem', event)">
       <input type="hidden" name="id" value="{{ product.id }}">
 
@@ -282,32 +280,24 @@
       </salla-add-product-button>
 
       <div class="custom-bar mt-3 py-2 border-2 border-primary text-primary rounded-md text-center">
-        <h3 class="text-xl font-bold mb-2">اعجبك المنتج؟</h3>
-        <div class="flex justify-center items-center space-x-3 rtl:space-x-reverse">
-          <salla-social-share aria-label="social share"></salla-social-share>
- <salla-button
-              class="btn--wishlist animated sws absolute top-3 left-3 z-10"
-              data-id="{{ product.id }}"
-              onclick="salla.wishlist.toggle({{ product.id }})"
-              shape="icon"
-              fill="outline"
-              color="light"
-              aria-label="Add to wishlist">
-              <i class="sicon-heart"></i>
-          </salla-button>
-
-          <salla-button
-              class="btn--wishlist animated hidden sm:inline-flex"
-              data-id="{{ product.id }}"
-              onclick="salla.wishlist.toggle({{ product.id }})"
-              shape="icon"
-              fill="outline"
-              color="light"
-              aria-label="Add to wishlist">
-            <i class="sicon-heart"></i>
-          </salla-button>
-        </div>
-      </div>
+  <h3 class="text-xl font-bold mb-2">اعجبك المنتج؟</h3>
+  <div class="flex justify-center items-center space-x-3 rtl:space-x-reverse">
+    
+    <salla-social-share aria-label="social share"></salla-social-share>
+    
+    <salla-button
+      class="btn--wishlist animated sws"
+      data-id="{{ product.id }}"
+      onclick="salla.wishlist.toggle({{ product.id }})"
+      shape="icon"
+      fill="outline"
+      color="light"
+      aria-label="Add to wishlist">
+      <i class="sicon-heart"></i>
+    </salla-button>
+    
+  </div>
+</div>
 
       <div class="mt-4 text-base space-y-2">
         {% if product.sku %}
