@@ -1,21 +1,3 @@
-{% set marquee = theme.settings.get('marquee', true) %}
-{% set marqueetext = theme.settings.get('marqueetext', true) %}
-{% set marqueecolortext = theme.settings.get('marqueecolortext', true) %}
-{% set marqueecolorback = theme.settings.get('marqueecolorback', true) %}
-
-
-{% if marquee %}
-<div class="marquee" style="background-color: {{ marqueecolorback }};" >
-  <button class="close-button" onclick="app.closeMarquee()">×</button>
-  <ul class="marquee__content" style="color: {{ marqueecolortext }};">
-    {% for i in 1..10 %}
-      <li class="text-md cursor-pointer">{{ marqueetext }}</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
-
 
 {% set show_loding  = theme.settings.get('show_loding', true) %}
 {% set colorpage    = theme.settings.get('lodingitem4', true) %}
