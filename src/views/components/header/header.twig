@@ -1,3 +1,29 @@
+{% set marquee = theme.settings.get('marquee', true) %}
+{% set marqueetext = theme.settings.get('marqueetext', '') %}
+{% set marqueecolortext = theme.settings.get('marqueecolortext', ) %}
+{% set marqueecolorback = theme.settings.get('marqueecolorback', ) %}
+{% set marqueeurl = theme.settings.get('marqueeurl', '') %}
+
+{% if marquee and marqueetext %}
+  <div id="custom-marquee" class="marquee" style="background-color: {{ marqueecolorback }}; position: relative; z-index: 50;">
+    <button class="close-button" style="position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;" onclick="document.getElementById('custom-marquee').style.display='none'">×</button>
+    <ul class="marquee__content" style="color: {{ marqueecolortext }}; margin: 0; padding: 10px;">
+      {% for i in 1..10 %}
+        <li class="text-md " style="display: inline-block; margin-right: 20px;">
+          {% if marqueeurl %}
+            <a href="{{ marqueeurl }}" style="color: {{ marqueecolortext }}; text-decoration: underline;">
+              {{ marqueetext }}
+            </a>
+          {% else %}
+            {{ marqueetext }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endif %}
+
 
 {% set show_loding  = theme.settings.get('show_loding', true) %}
 {% set colorpage    = theme.settings.get('lodingitem4', true) %}
@@ -68,11 +94,14 @@
             <i class="sicon-menu text-primary text-2xl"></i>
           </a>
           <a class="navbar-brand" href="{{ store.url }}">
-{% if theme.settings.get('logo_top') %}
-    <img src="{{ theme.settings.get('logo_top') }}"  loading="eager" alt="{{ store.name }} logo">
+{% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
+    <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
 {% else %}
     <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
-{% endif %}            {% if is_page('index') %}
+{% endif %}   
+
+
+{% if is_page('index') %}
               <h1 class="sr-only">{{ store.name }}</h1>
             {% else %}
               <h2 class="sr-only">{{ store.name }}</h2>

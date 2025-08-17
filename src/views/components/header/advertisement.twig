@@ -15,36 +15,5 @@
 #}
 
 
-{% set marquee = theme.settings.get('marquee', true) %}
-{% set marqueetext = theme.settings.get('marqueetext', '') %}
-{% set marqueecolortext = theme.settings.get('marqueecolortext', '#000') %}
-{% set marqueecolorback = theme.settings.get('marqueecolorback', '#fff') %}
-{% set marqueeurl = theme.settings.get('marqueeurl', '') %}
-
-{% set marquee = theme.settings.get('marquee', true) %}
-{% set marqueetext = theme.settings.get('marqueetext', '') %}
-{% set marqueecolortext = theme.settings.get('marqueecolortext', '#000') %}
-{% set marqueecolorback = theme.settings.get('marqueecolorback', '#fff') %}
-{% set marqueeurl = theme.settings.get('marqueeurl', '') %}
-
-{% if marquee and marqueetext %}
-  <div id="custom-marquee" class="marquee" style="background-color: {{ marqueecolorback }}; position: relative; z-index: 50;">
-    <button class="close-button" style="position: absolute; top: 5px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;" onclick="document.getElementById('custom-marquee').style.display='none'">×</button>
-    <ul class="marquee__content" style="color: {{ marqueecolortext }}; margin: 0; padding: 10px;">
-      {% for i in 1..10 %}
-        <li class="text-md cursor-pointer" style="display: inline-block; margin-right: 20px;">
-          {% if marqueeurl %}
-            <a href="{{ marqueeurl }}" style="color: {{ marqueecolortext }}; text-decoration: underline;">
-              {{ marqueetext }}
-            </a>
-          {% else %}
-            {{ marqueetext }}
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-{% else %}
   <salla-advertisement></salla-advertisement>
-{% endif %}
 
