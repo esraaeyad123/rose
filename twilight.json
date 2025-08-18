@@ -268,6 +268,60 @@
             "value": "خيارات أعلى الصفحة",
             "variant": "h6"
         },
+       {
+      "type": "static",
+      "format": "title",
+      "id": "header_options",
+      "value": "الهيدر",
+      "variant": "h6",
+      "label": "الهيدر"
+    },
+    {
+      "id": "header_text_color",
+      "label": "لون الخط في الهيدر",
+      "type": "string",
+      "format": "color",
+      "icon": "sicon-font",
+      "value": "#000000"
+    },
+    {
+      "id": "header_bg_type",
+      "label": "خلفية الهيدر",
+      "description": "اختر نوع الخلفية للهيدر: صورة أو لون",
+      "type": "items",
+      "format": "dropdown-list",
+      "options": [
+        { "label": "لون", "value": "color" },
+        { "label": "صورة", "value": "image" }
+      ],
+      "value": "color"
+    },
+    {
+      "id": "header_bg_color",
+      "label": "لون خلفية الهيدر",
+      "type": "string",
+      "format": "color",
+      "icon": "sicon-paint-format",
+      "value": "#ffffff",
+      "conditions": [{ "id": "header_bg_type", "operation": "=", "value": "color" }]
+    },
+    {
+      "id": "header_bg_image",
+      "label": "صورة خلفية الهيدر",
+      "type": "string",
+      "format": "image",
+      "icon": "sicon-image",
+      "value": "",
+      "conditions": [{ "id": "header_bg_type", "operation": "=", "value": "image" }]
+    },
+    {
+      "id": "header_icons_color",
+      "label": "لون الأيقونات في الهيدر",
+      "type": "string",
+      "format": "color",
+      "icon": "sicon-star",
+      "value": "#333333"
+    } ,
              {
     "type": "static",
     "format": "title",
@@ -464,66 +518,6 @@
             "value": false,
             "selected": false
         }
-        ,
-  {
-    "type": "static",
-    "format": "title",
-    "id": "loadingscreen",
-    "value": "الهيدر",
-    "variant": "h6",
-    "label": "الهيدر"
-  },
-  {
-    "id": "header_text_color",
-    "label": "لون الخط في الهيدر",
-    "type": "color",
-    "format": "color",
-    "icon": "sicon-font",
-    "value": "#000000"
-  },
-  {
-    "id": "header_bg_type",
-    "label": "خلفية الهيدر",
-    "description": "اختر نوع الخلفية للهيدر: صورة أو لون",
-    "type": "select",
-    "options": [
-      { "label": "لون", "value": "color" },
-      { "label": "صورة", "value": "image" }
-    ],
-    "value": "color"
-  },
-  {
-    "id": "header_bg_color",
-    "label": "لون خلفية الهيدر",
-    "type": "color",
-    "format": "color",
-    "icon": "sicon-paint-format",
-    "value": "#ffffff",
-    "depends_on": {
-      "id": "header_bg_type",
-      "value": "color"
-    }
-  },
-  {
-    "id": "header_bg_image",
-    "label": "صورة خلفية الهيدر",
-    "type": "image",
-    "icon": "sicon-image",
-    "value": "",
-    "depends_on": {
-      "id": "header_bg_type",
-      "value": "image"
-    }
-  },
-  {
-    "id": "header_icons_color",
-    "label": "لون الأيقونات في الهيدر",
-    "type": "color",
-    "format": "color",
-    "icon": "sicon-star",
-    "value": "#333333"
-  }
-
     ],
     "components": [
         {
