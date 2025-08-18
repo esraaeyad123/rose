@@ -49,99 +49,121 @@
 
 
 
+<header class="store-header bg-white shadow-sm relative">
 
+  <!-- Main Navigation -->
+  <div id="mainnav" class="main-nav-container home-header fixed-pinned animated fixed-header" style="position: absolute; width: 100%; z-index: 102; height: 60px;">
+    <div class="container flex items-center justify-between py-3 relative">
 
-{% set important_links = theme.settings.get('important_links') %}
+      <!-- Logo & Main Menu -->
+      <div class="flex items-center gap-6">
+        <!-- Mobile Menu Button -->
+        <a class="lg:hidden mburger mburger--collapse" href="#mobile-menu" aria-label="Open menu">
+          <i class="sicon-menu text-primary text-2xl"></i>
+        </a>
 
+        <!-- Logo -->
+        <a class="navbar-brand" href="{{ store.url }}">
+          {% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
+            <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
+          {% else %}
+            <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
+          {% endif %}
+          {% if is_page('index') %}
+            <h1 class="sr-only">{{ store.name }}</h1>
+          {% else %}
+            <h2 class="sr-only">{{ store.name }}</h2>
+          {% endif %}
+        </a>
 
-
-
-<header class="store-header bg-white shadow-sm">
-  <div class="top-navbar border-b border-gray-100">
-    <div class="container flex flex-col md:flex-row justify-between items-center py-2 gap-2">
-      
-      <div class="flex flex-wrap items-center gap-2">
-        {% if important_links %}
-          <salla-menu source="footer" topnav></salla-menu>
-        {% endif %}
-
-        {% if store.scope %}
-          <button class="btn--rounded-gray text-sm"
-                  onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
-            <i class="sicon-location rtl:ml-1 ltr:mr-1"></i> {{ store.scope.name }}
-          </button>
-        {% endif %}
-      </div>
-
-      <div class="w-full md:w-auto flex-1">
-        <div class="header-search">
-          <salla-search inline oval height="24"></salla-search>
-        </div>
-      </div>
-
-      <div class="hidden md:block">
-        <salla-contacts is-header></salla-contacts>
-      </div>
-    </div>
-  </div>
-
-  <div id="mainnav" class="main-nav-container bg-white shadow">
-    <div class="container">
-      <div class="flex items-center justify-between py-3 relative">
-
-        <div class="flex items-center gap-4">
-          <a class="lg:hidden" href="#mobile-menu" aria-label="Open menu">
-            <i class="sicon-menu text-primary text-2xl"></i>
-          </a>
-          <a class="navbar-brand" href="{{ store.url }}">
-{% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
-    <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
-{% else %}
-    <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
-{% endif %}   
-
-
-{% if is_page('index') %}
-              <h1 class="sr-only">{{ store.name }}</h1>
-            {% else %}
-              <h2 class="sr-only">{{ store.name }}</h2>
-            {% endif %}
-          </a>
-        </div>
-
-        <div class="hidden lg:flex flex-1 justify-center">
+        <!-- Main Menu Desktop -->
+        <div class="hidden lg:flex gap-4">
           <custom-main-menu></custom-main-menu>
         </div>
+      </div>
 
-        <div class="flex items-center gap-3">
+      <!-- Right Side Header Buttons -->
+      <div class="flex items-center gap-4">
 
-          {% if user.type == 'user' %}
-            <salla-user-menu avatar-only show-header></salla-user-menu>
-          {% else %}
-            <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
-              <i class="header-btn__icon sicon-user"></i>
-            </button>
-          {% endif %}
+        <!-- Localization & Currency -->
+        {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+          <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray text-sm flex items-center gap-1 px-2">
+            <i class="sicon-world"></i>
+          </button>
+          <salla-localization-modal language="ar" currency="SAR" class="hydrated"></salla-localization-modal>
+        {% endif %}
 
-          <salla-cart-summary class="ml-2 rtl:ml-[unset] rtl:mr-2">
-            <i slot="icon" class="header-btn__icon sicon-shopping-basket"></i>
-          </salla-cart-summary>
+        <!-- User Menu -->
+        {% if user.type == 'user' %}
+          <salla-user-menu avatar-only show-header></salla-user-menu>
+        {% else %}
+          <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
+            <i class="header-btn__icon sicon-user"></i>
+          </button>
+        {% endif %}
 
-          {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
-            <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray text-sm">
-              <span class="flag iti__flag iti__{{ user.language.country_code }} rounded-sm"></span>
-              <span class="mx-1.5">|</span>
-              <span>{{ currency.symbol }}</span>
-            </button>
-            <salla-localization-modal></salla-localization-modal>
-          {% endif %}
+        <!-- Cart -->
+        <salla-cart-summary>
+          <i slot="icon" class="header-btn__icon sicon-shopping-basket"></i>
+        </salla-cart-summary>
+
+        <!-- Search -->
+        <button id="search-toggle" class="search-icon">
+          <i class="sicon-search"></i>
+        </button>
+        <div id="search-box" class="search-box hidden">
+          <salla-search inline="" oval="" height="36" class="hydrated">
+            <div class="s-search-modal">
+              <div class="s-search-container s-search-inline">
+                <div class="s-search-input-wrapper">
+                  <span class="s-search-icon-wrap">
+                    <span class="s-search-icon">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <title>search</title>
+                        <path d="M30.276 28.391l-7.576-7.576c1.644-2.053 2.633-4.652 2.633-7.481 0-6.616-5.384-12-12-12s-12 5.384-12 12 5.384 12 12 12c2.829 0 5.428-0.989 7.481-2.633l7.576 7.576c0.26 0.26 0.601 0.391 0.943 0.391s0.683-0.131 0.943-0.391c0.521-0.521 0.521-1.364 0-1.885zM13.333 22.667c-5.147 0-9.333-4.187-9.333-9.333s4.187-9.333 9.333-9.333 9.333 4.187 9.333 9.333-4.187 9.333-9.333 9.333z"></path>
+                      </svg>
+                    </span>
+                  </span>
+                  <input type="search" enterkeyhint="search" autocomplete="off" class="s-search-input" placeholder="ادخل كلمة البحث" style="height: 36px; border-radius: 18px;">
+                </div>
+                <div class="s-search-results">
+                  <p class="s-search-no-results-placeholder" style="display: none;">لا توجد نتائج</p>
+                </div>
+              </div>
+            </div>
+          </salla-search>
         </div>
+
       </div>
     </div>
   </div>
+
+  <!-- Optional Store Scope Component -->
+  {% if store.scope %}
+    <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
+  {% endif %}
+
 </header>
+
+
+
 
 {% if store.scope %}
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchToggle = document.getElementById('search-toggle');
+    const searchBox = document.getElementById('search-box');
+
+    searchToggle.addEventListener('click', function () {
+      searchBox.classList.toggle('hidden'); // يفتح ويغلق صندوق البحث
+      const input = searchBox.querySelector('input');
+      if (!searchBox.classList.contains('hidden') && input) {
+        input.focus(); // يضع المؤشر مباشرة في حقل البحث
+      }
+    });
+  });
+</script>
