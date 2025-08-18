@@ -1,8 +1,8 @@
-{% set marquee = theme.settings.get('marquee', true) %}
-{% set marqueetext = theme.settings.get('marqueetext', '') %}
-{% set marqueecolortext = theme.settings.get('marqueecolortext', ) %}
-{% set marqueecolorback = theme.settings.get('marqueecolorback', ) %}
-{% set marqueeurl = theme.settings.get('marqueeurl', '') %}
+{% set marquee        = theme.settings.get('marquee', true) %}
+{% set marqueetext    = theme.settings.get('marqueetext', '') %}
+{% set marqueecolortext = theme.settings.get('marqueecolortext', '') %}
+{% set marqueecolorback = theme.settings.get('marqueecolorback', '') %}
+{% set marqueeurl     = theme.settings.get('marqueeurl', '') %}
 
 {% if marquee and marqueetext %}
   <div id="custom-marquee" class="marquee" style="background-color: {{ marqueecolorback }}; position: relative; z-index: 50;">
@@ -21,148 +21,123 @@
       {% endfor %}
     </ul>
   </div>
-
 {% endif %}
 
 
-{% set show_loding  = theme.settings.get('show_loding', true) %}
-{% set colorpage    = theme.settings.get('lodingitem4', true) %}
-{% set width        = theme.settings.get('loadingitem1', true) %}
-{% set height       = theme.settings.get('loadingitem2', true) %}
-{% set image        = theme.settings.get('lodingitem3', true) %}
-{% set effect       = theme.settings.get('loadingeffect', true) %}
-
-{% if show_loding %}
-<div id="loading" class="loading-screen bg-opacity-80 flex items-center justify-center h-screen"
-     style="background-color: {{ colorpage }};">
-     <img 
-     {% if image %}
-       src="{{ image }}"
-     {% else %}
-       src="{{ store.logo }}"
-     {% endif %} 
-      alt="Loading..."  class="logo-{{ effect }}">
-</div>
-{% endif %}
-
-
-
-
-
-<header class="store-header bg-white shadow-sm relative">
+<header class="store-header">
 
   <!-- Main Navigation -->
-  <div id="mainnav" class="main-nav-container home-header fixed-pinned animated fixed-header" style="position: absolute; width: 100%; z-index: 102; height: 60px;">
-    <div class="container flex items-center justify-between py-3 relative">
+  <div class="main-nav-container flex items-center justify-between relative">
+    <!-- Logo + Menu -->
+    <div class="flex items-center gap-6">
+      <!-- Mobile Menu -->
+      <a class="lg:hidden mburger mburger--collapse" href="#mobile-menu" aria-label="Open menu">
+        <i class="sicon-menu text-primary text-2xl"></i>
+      </a>
 
-      <!-- Logo & Main Menu -->
-      <div class="flex items-center gap-6">
-        <!-- Mobile Menu Button -->
-        <a class="lg:hidden mburger mburger--collapse" href="#mobile-menu" aria-label="Open menu">
-          <i class="sicon-menu text-primary text-2xl"></i>
-        </a>
-
-        <!-- Logo -->
-        <a class="navbar-brand" href="{{ store.url }}">
-          {% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
-            <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
-          {% else %}
-            <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
-          {% endif %}
-          {% if is_page('index') %}
-            <h1 class="sr-only">{{ store.name }}</h1>
-          {% else %}
-            <h2 class="sr-only">{{ store.name }}</h2>
-          {% endif %}
-        </a>
-
-        <!-- Main Menu Desktop -->
-        <div class="hidden lg:flex gap-4">
-          <custom-main-menu></custom-main-menu>
-        </div>
-      </div>
-
-      <!-- Right Side Header Buttons -->
-      <div class="flex items-center gap-4">
-
-        <!-- Localization & Currency -->
-        {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
-          <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray text-sm flex items-center gap-1 px-2">
-            <i class="sicon-world"></i>
-          </button>
-          <salla-localization-modal language="ar" currency="SAR" class="hydrated"></salla-localization-modal>
-        {% endif %}
-
-        <!-- User Menu -->
-        {% if user.type == 'user' %}
-          <salla-user-menu avatar-only show-header></salla-user-menu>
+      <!-- Logo -->
+      <a class="navbar-brand" href="{{ store.url }}">
+        {% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
+          <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
         {% else %}
-          <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
-            <i class="header-btn__icon sicon-user"></i>
-          </button>
+          <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
         {% endif %}
+        {% if is_page('index') %}
+          <h1 class="sr-only">{{ store.name }}</h1>
+        {% else %}
+          <h2 class="sr-only">{{ store.name }}</h2>
+        {% endif %}
+      </a>
 
-        <!-- Cart -->
-        <salla-cart-summary>
-          <i slot="icon" class="header-btn__icon sicon-shopping-basket"></i>
-        </salla-cart-summary>
+      <!-- Main Menu Desktop -->
+      <div class="hidden lg:flex gap-4">
+        <custom-main-menu></custom-main-menu>
+      </div>
+    </div>
 
-        <!-- Search -->
-        <button id="search-toggle" class="search-icon">
-          <i class="sicon-search"></i>
+    <!-- Right Side -->
+    <div class="flex items-center gap-4">
+      {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+        <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray text-sm flex items-center gap-1 px-2">
+          <i class="sicon-world"></i>
         </button>
-        <div id="search-box" class="search-box hidden">
-          <salla-search inline="" oval="" height="36" class="hydrated">
-            <div class="s-search-modal">
-              <div class="s-search-container s-search-inline">
-                <div class="s-search-input-wrapper">
-                  <span class="s-search-icon-wrap">
-                    <span class="s-search-icon">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                        <title>search</title>
-                        <path d="M30.276 28.391l-7.576-7.576c1.644-2.053 2.633-4.652 2.633-7.481 0-6.616-5.384-12-12-12s-12 5.384-12 12 5.384 12 12 12c2.829 0 5.428-0.989 7.481-2.633l7.576 7.576c0.26 0.26 0.601 0.391 0.943 0.391s0.683-0.131 0.943-0.391c0.521-0.521 0.521-1.364 0-1.885zM13.333 22.667c-5.147 0-9.333-4.187-9.333-9.333s4.187-9.333 9.333-9.333 9.333 4.187 9.333 9.333-4.187 9.333-9.333 9.333z"></path>
-                      </svg>
-                    </span>
-                  </span>
-                  <input type="search" enterkeyhint="search" autocomplete="off" class="s-search-input" placeholder="ادخل كلمة البحث" style="height: 36px; border-radius: 18px;">
-                </div>
-                <div class="s-search-results">
-                  <p class="s-search-no-results-placeholder" style="display: none;">لا توجد نتائج</p>
-                </div>
-              </div>
-            </div>
-          </salla-search>
-        </div>
+        <salla-localization-modal language="ar" currency="SAR" class="hydrated"></salla-localization-modal>
+      {% endif %}
 
+      {% if user.type == 'user' %}
+        <salla-user-menu avatar-only show-header></salla-user-menu>
+      {% else %}
+        <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
+          <i class="header-btn__icon sicon-user"></i>
+        </button>
+      {% endif %}
+
+      <salla-cart-summary>
+        <i slot="icon" class="header-btn__icon sicon-shopping-basket"></i>
+      </salla-cart-summary>
+
+      <!-- Search -->
+      <button id="search-toggle" class="search-icon">
+        <i class="sicon-search"></i>
+      </button>
+      <div id="search-box" class="search-box hidden">
+        <salla-search inline="" oval="" height="36" class="hydrated"></salla-search>
       </div>
     </div>
   </div>
-
-  <!-- Optional Store Scope Component -->
-  {% if store.scope %}
-    <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
-  {% endif %}
-
 </header>
 
 
+<style>
+  /* الهيدر */
+  .store-header {
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    height: 90px;
+    line-height: 90px;
+    transition: all 0.3s ease;
+    border-radius: 45px;
+    width: 90%;
+    margin: 15px auto 0;
+    padding: 0 25px;
 
+    /* Glass Effect */
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-{% if store.scope %}
-    <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
-{% endif %}
+  /* عند التمرير */
+  .store-header.expand {
+    height: 110px;
+    line-height: 110px;
+    border-radius: 55px;
+    width: 85%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
 
+  /* الماركيه */
+  #custom-marquee {
+    position: relative;
+    z-index: 900;
+    width: 100%;
+  }
+</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const searchToggle = document.getElementById('search-toggle');
-    const searchBox = document.getElementById('search-box');
+    const header = document.querySelector('.store-header');
 
-    searchToggle.addEventListener('click', function () {
-      searchBox.classList.toggle('hidden'); // يفتح ويغلق صندوق البحث
-      const input = searchBox.querySelector('input');
-      if (!searchBox.classList.contains('hidden') && input) {
-        input.focus(); // يضع المؤشر مباشرة في حقل البحث
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 0) {
+        header.classList.add('expand');
+      } else {
+        header.classList.remove('expand');
       }
     });
   });
