@@ -4417,8 +4417,8 @@ salla-slider[type]:not(.hydrated) > div, salla-slider[type]:not(.hydrated) .swip
 .store-header.expand {
   height: 110px;
   line-height: 110px;
-  border-radius: 55px;* لون موحد */
-  width: 85%;
+  border-radius: 55px;
+  width:85%;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -4435,8 +4435,8 @@ salla-localization-modal .s-localization-modal-inner {
 }
 
 .header-icon {
-  font-size: 20px; 
-  color: {{ theme.settings.get('header_icons_color') }}; /
+   font-size: 20px;
+  color: var(--header-icons-color); 
 }
 
 .flex.items-center {

@@ -24,8 +24,15 @@
 {% endif %}
 
 
-<header class="store-header" 
-        style="background: {% if theme.settings.get('header_bg_type') %}{{ theme.settings.get('header_bg_color') }}{% else %}url('{{ theme.settings.get('header_bg_image') }}'){% endif %};">
+<header class="store-header"
+        style="
+          --header-icons-color: {{ theme.settings.get('header_icons_color') }};
+          {% if theme.settings.get('header_bg_type') %}
+            background: {{ theme.settings.get('header_bg_color') }};
+          {% else %}
+            background: url('{{ theme.settings.get('header_bg_image') }}');
+          {% endif %}
+        ">
   <div class="main-nav-container flex items-center justify-between relative">
     <div class="flex items-center gap-6" style="color: {{ theme.settings.get('header_text_color') }};">
       <a class="lg:hidden mburger mburger--collapse" href="#mobile-menu" aria-label="Open menu">

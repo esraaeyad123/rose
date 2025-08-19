@@ -447,6 +447,71 @@
             "selected": false
         },
         {
+  "type": "static",
+  "format": "title",
+  "id": "footer_options",
+  "value": "الفوتر",
+  "variant": "h6",
+  "label": "الفوتر"
+},
+{
+  "id": "footer_text_color",
+  "label": "لون الخط في الفوتر",
+  "type": "string",
+  "format": "color",
+  "icon": "sicon-font",
+  "value": "#000000"
+},
+{
+  "type": "boolean",
+  "icon": "sicon-toggle-off",
+  "label": "خلفية الفوتر",
+  "id": "footer_bg_type",
+  "description": "عند الإيقاف تظهر صورة وعند التشغيل يظهر لون",
+  "format": "switch",
+  "value": false
+},
+{
+  "id": "footer_bg_color",
+  "type": "string",
+  "format": "color",
+  "label": "لون الخلفية",
+  "icon": "sicon-format-fill",
+  "value": "#ffffff",
+  "conditions": [
+    {
+      "id": "footer_bg_type",
+      "operation": "=",
+      "value": true
+    }
+  ]
+},
+{
+  "id": "footer_bg_image",
+  "type": "string",
+  "format": "image",
+  "label": "صورة الخلفية",
+  "icon": "sicon-image",
+  "value": null,
+  "conditions": [
+    {
+      "id": "footer_bg_type",
+      "operation": "=",
+      "value": false
+    }
+  ]
+},
+{
+  "id": "footer_icons_color",
+  "type": "string",
+  "format": "color",
+  "label": "لون التواصل ",
+  "description": "اختر اللون المخصص لأيقونات الفوتر",
+  "icon": "sicon-brush",
+  "value": "#000000"
+}
+,
+        {
             "type": "static",
             "id": "static-line5",
             "format": "line"
