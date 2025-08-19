@@ -284,17 +284,14 @@
       "icon": "sicon-font",
       "value": "#000000"
     },
-    {
+  {
   "id": "header_bg_type",
   "label": "خلفية الهيدر",
-  "description": "اختر نوع الخلفية للهيدر: صورة أو لون",
-  "type": "items",
-  "format": "dropdown-list",
-  "options": [
-    { "label": "لون", "value": "color" },
-    { "label": "صورة", "value": "image" }
-  ],
-  "selected": [{ "label": "لون", "value": "color" }]
+  "description": "اختَر: صورة أو لون للهيدر",
+  "type": "boolean",
+  "format": "switch",
+  "icon": "sicon-toggle-on",
+  "value": true
 }
 ,
       
