@@ -292,7 +292,17 @@
     "format": "switch",
     "icon": "sicon-image",
     "value": false
-  },{
+  },
+  {
+    "id": "header_icon_color",
+    "label": "لون الأيقونات",
+    "description": "حدد لون الأيقونات داخل الهيدر",
+    "type": "color",
+    "format": "color",
+    "value": "#000000"
+  },
+  
+  {
     "type": "static",
     "format": "title",
     "id": "custom_logos",
