@@ -11,15 +11,13 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
-    this.setTimeout();
+      this.setTimeout();
     this.copycontent();
     this.scrollTopButton();
     this.commonThings();
     this.initiateNotifier();
     this.initiateMobileMenu();
-    if (header_is_sticky) {
-      this.initiateStickyMenu();
-    }
+    
     this.initAddToCart();
     this.initiateAdAlert();
     this.initiateDropdowns();
@@ -378,6 +376,10 @@ copycontent() {
     var my = document.getElementById('my_modal');
     my.style.display = "none";
   }
+    
+  
+
+
 }
 
 salla.onReady(() => (new App).loadTheApp());

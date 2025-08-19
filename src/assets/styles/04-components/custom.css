@@ -4392,3 +4392,67 @@ salla-slider[type]:not(.hydrated) > div, salla-slider[type]:not(.hydrated) .swip
   }
 }
 
+
+
+.store-header {
+  position: sticky;
+  top: 10px;
+  z-index: 2000;
+  height: 90px;
+  line-height: 90px;
+  transition: all 0.3s ease;
+  border-radius: 45px;
+  width: 90%;
+  margin: 15px auto 0;
+  padding: 0 25px;
+
+  background: rgba(255, 255, 255, 0.4); 
+  backdrop-filter: blur(15px) saturate(150%);
+  -webkit-backdrop-filter: blur(15px) saturate(150%);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* عند التمرير */
+.store-header.expand {
+  height: 110px;
+  line-height: 110px;
+  border-radius: 55px;* لون موحد */
+  width: 85%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+#custom-marquee {
+  position: relative;
+  z-index: 900;
+  width: 100%;
+}
+
+salla-localization-modal .s-localization-modal-inner {
+  background: transparent !important;
+}
+
+.header-icon {
+  font-size: 20px; 
+  color: {{ theme.settings.get('header_icons_color') }}; /
+}
+
+.flex.items-center {
+  gap: 15px; 
+}
+
+.header-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#search-box {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 3000;
+}

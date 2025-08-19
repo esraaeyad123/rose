@@ -26,16 +26,12 @@
 
 <header class="store-header" 
         style="background: {% if theme.settings.get('header_bg_type') %}{{ theme.settings.get('header_bg_color') }}{% else %}url('{{ theme.settings.get('header_bg_image') }}'){% endif %};">
-  <!-- Main Navigation -->
   <div class="main-nav-container flex items-center justify-between relative">
-    <!-- Logo + Menu -->
     <div class="flex items-center gap-6" style="color: {{ theme.settings.get('header_text_color') }};">
-      <!-- Mobile Menu -->
       <a class="lg:hidden mburger mburger--collapse" href="#mobile-menu" aria-label="Open menu">
         <i class="sicon-menu text-primary text-2xl" style="color: {{ theme.settings.get('header_icons_color') }};"></i>
       </a>
 
-      <!-- Logo -->
       <a class="navbar-brand" href="{{ store.url }}">
         {% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
           <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
@@ -49,130 +45,47 @@
         {% endif %}
       </a>
 
-      <!-- Main Menu Desktop -->
       <div class="hidden lg:flex gap-4">
         <custom-main-menu></custom-main-menu>
       </div>
     </div>
 
     <!-- Right Side -->
-    <div class="flex items-center gap-4">
-      {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
-        <button type="button" onclick="salla.event.dispatch('localization::open')" class="btn--rounded-gray text-sm flex items-center gap-1 px-2">
-          <i class="sicon-world" style="color: {{ theme.settings.get('header_icons_color') }};"></i>
-        </button>
-        <salla-localization-modal language="ar" currency="SAR" class="hydrated"></salla-localization-modal>
-      {% endif %}
+   <div class="flex items-center gap-4">
+  {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+    <button type="button" onclick="salla.event.dispatch('localization::open')" class="header-btn" aria-label="localization">
+      <i class="sicon-world header-icon"></i>
+    </button>
+    <salla-localization-modal language="ar" currency="SAR" class="hydrated"></salla-localization-modal>
+  {% endif %}
 
-      {% if user.type == 'user' %}
-        <salla-user-menu avatar-only show-header></salla-user-menu>
-      {% else %}
-        <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
-          <i class="header-btn__icon sicon-user" style="color: {{ theme.settings.get('header_icons_color') }};"></i>
-        </button>
-      {% endif %}
+  {% if user.type == 'user' %}
+    <salla-user-menu avatar-only show-header></salla-user-menu>
+  {% else %}
+    <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
+      <i class="sicon-user header-icon"></i>
+    </button>
+  {% endif %}
 
-      <salla-cart-summary>
-        <i slot="icon" class="header-btn__icon sicon-shopping-basket" style="color: {{ theme.settings.get('header_icons_color') }};"></i>
-      </salla-cart-summary>
+  <salla-cart-summary>
+    <i slot="icon" class="sicon-shopping-basket header-icon"></i>
+  </salla-cart-summary>
 
-      <!-- Search -->
-      <button id="search-toggle" class="search-icon">
-        <i class="sicon-search" style="color: {{ theme.settings.get('header_icons_color') }};"></i>
-      </button>
-      <div id="search-box" class="search-box hidden">
-        <salla-search inline="" oval="" height="36" class="hydrated"></salla-search>
-      </div>
-    </div>
+  <button id="search-toggle" class="header-btn" aria-label="search">
+    <i class="sicon-search header-icon"></i>
+  </button>
+
+  <div id="search-box" class="search-box hidden">
+    <salla-search inline="" oval="" height="20" class="hydrated"></salla-search>
+  </div>
+</div>
+
+
+
   </div>
 </header>
 
 
-<style>
-  .store-header {
-    position: sticky;
-  top: 10px;
-  z-index: 2000;
-    height: 90px;
-    line-height: 90px;
-    transition: all 0.3s ease;
-    border-radius: 45px;
-    width: 90%;
-    margin: 15px auto 0;
-    padding: 0 25px;
-
-    background: rgba(255, 255, 255, 0.4); 
-    backdrop-filter: blur(15px) saturate(150%);
-    -webkit-backdrop-filter: blur(15px) saturate(150%);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  /* عند التمرير */
-  .store-header.expand {
-    height: 110px;
-    line-height: 110px;
-    border-radius: 55px;
-    width: 85%;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-  }
-
-  #custom-marquee {
-    position: relative;
-    z-index: 900;
-    width: 100%;
-  }
-
-  s-localization-modal-section-inner/* خلفية شفافة تغطي الشاشة */
-.s-localization-modal-inner {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* شفافية */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5000; /* فوق الهيدر */
-}
 
 
-
-
- 
-
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.store-header');
-
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 0) {
-        header.classList.add('expand');
-      } else {
-        header.classList.remove('expand');
-      }
-    });
-  });
-
-
-  document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('.store-header');
-
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 0) {
-      header.classList.add('expand');
-    } else {
-      header.classList.remove('expand');
-    }
-  });
-
-  const loginButton = document.querySelector('[aria-label="user-icon"]');
-  loginButton.addEventListener('click', function () {
-    header.style.zIndex = 2000; // يبقى فوق نافذة تسجيل الدخول
-  });
-});
-
-</script>
 
