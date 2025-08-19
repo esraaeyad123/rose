@@ -89,11 +89,10 @@
 
 
 <style>
-  /* الهيدر */
   .store-header {
     position: sticky;
-    top: 10px;
-    z-index: 1000;
+  top: 10px;
+  z-index: 2000;
     height: 90px;
     line-height: 90px;
     transition: all 0.3s ease;
@@ -102,7 +101,6 @@
     margin: 15px auto 0;
     padding: 0 25px;
 
-    /* Glass Effect */
     background: rgba(255, 255, 255, 0.4); 
     backdrop-filter: blur(15px) saturate(150%);
     -webkit-backdrop-filter: blur(15px) saturate(150%);
@@ -121,12 +119,14 @@
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
 
-  /* الماركيه */
   #custom-marquee {
     position: relative;
     z-index: 900;
     width: 100%;
   }
+
+ 
+
 </style>
 
 <script>
@@ -141,4 +141,24 @@
       }
     });
   });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('.store-header');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 0) {
+      header.classList.add('expand');
+    } else {
+      header.classList.remove('expand');
+    }
+  });
+
+  const loginButton = document.querySelector('[aria-label="user-icon"]');
+  loginButton.addEventListener('click', function () {
+    header.style.zIndex = 2000; // يبقى فوق نافذة تسجيل الدخول
+  });
+});
+
 </script>
+
