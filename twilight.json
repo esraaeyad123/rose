@@ -326,7 +326,15 @@
 
 
 ,
- 
+ {
+  "id": "header_icons_color",
+  "type": "string",
+  "format": "color",
+  "label": "لون الأيقونات",
+  "description": "اختر اللون المخصص لأيقونات الهيدر (البحث، السلة، الحساب... إلخ)",
+  "icon": "sicon-brush",
+  "value": "#000000"
+} ,
   
   {
     "type": "static",
