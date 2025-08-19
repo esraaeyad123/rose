@@ -285,36 +285,35 @@
       "value": "#000000"
     },
   {
-    "id": "header_bg_type",
-    "label": "خلفية الهيدر",
-    "description": "اختر نوع الخلفية للهيدر: عند الإيقاف تكون لون وعند التشغيل تكون صورة",
-    "type": "boolean",
-    "format": "switch",
-    "icon": "sicon-image",
-    "value": false
-  },
-  {
-  "id": "header_bg_image",
-  "label": "صورة الخلفية",
-  "description": "تظهر إذا كان نوع الخلفية (صورة)",
+  "id": "header_bg_type",
+  "label": "خلفية الهيدر",
+  "description": "عند الإيقاف تظهر صورة وعند التشغيل يظهر لون",
+  "type": "boolean",
+  "format": "switch",
+  "icon": "sicon-image",
+  "value": false
+},
+{
+  "id": "header_bg_color",
+  "label": "لون الخلفية",
   "type": "string",
-  "format": "image",
-  "value": "",
+  "format": "color",
+  "icon": "sicon-format-fill",
+  "value": "#ffffff",
   "conditions": [
     {
       "id": "header_bg_type",
       "value": true
     }
   ]
-}
-  ,
-  {
-  "id": "header_bg_color",
-  "label": "لون الخلفية",
-  "description": "يظهر إذا كان نوع الخلفية (لون)",
+},
+{
+  "id": "header_bg_image",
+  "label": "صورة الخلفية",
   "type": "string",
-  "format": "color",
-  "value": "#ffffff",
+  "format": "image",
+  "icon": "sicon-image",
+  "value": "",
   "conditions": [
     {
       "id": "header_bg_type",
