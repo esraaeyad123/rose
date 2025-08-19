@@ -284,43 +284,47 @@
       "icon": "sicon-font",
       "value": "#000000"
     },
-  {
-  "id": "header_bg_type",
-  "label": "خلفية الهيدر",
-  "description": "عند الإيقاف تظهر صورة وعند التشغيل يظهر لون",
+    {
   "type": "boolean",
+  "icon": "sicon-toggle-off",
+  "label": "خلفية الهيدر",
+  "id": "header_bg_type",
+  "description": "عند الإيقاف تظهر صورة وعند التشغيل يظهر لون",
   "format": "switch",
-  "icon": "sicon-image",
   "value": false
 },
 {
   "id": "header_bg_color",
-  "label": "لون الخلفية",
   "type": "string",
   "format": "color",
+  "label": "لون الخلفية",
   "icon": "sicon-format-fill",
   "value": "#ffffff",
   "conditions": [
     {
       "id": "header_bg_type",
+      "operation": "=",
       "value": true
     }
   ]
 },
 {
   "id": "header_bg_image",
-  "label": "صورة الخلفية",
   "type": "string",
   "format": "image",
+  "label": "صورة الخلفية",
   "icon": "sicon-image",
-  "value": "",
+  "value": null,
   "conditions": [
     {
       "id": "header_bg_type",
+      "operation": "=",
       "value": false
     }
   ]
 }
+
+
 ,
  
   
