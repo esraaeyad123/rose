@@ -293,34 +293,7 @@
     "icon": "sicon-image",
     "value": false
   },
-  {
-    "id": "header_bg_color",
-    "label": "لون الخلفية",
-    "description": "يظهر إذا كان نوع الخلفية (لون)",
-    "type": "color",
-    "format": "color",
-    "value": "#ffffff",
-    "conditions": [
-      {
-        "id": "header_bg_type",
-        "value": false
-      }
-    ]
-  },
-  {
-    "id": "header_bg_image",
-    "label": "صورة الخلفية",
-    "description": "تظهر إذا كان نوع الخلفية (صورة)",
-    "type": "image",
-    "format": "image-picker",
-    "value": "",
-    "conditions": [
-      {
-        "id": "header_bg_type",
-        "value": true
-      }
-    ]
-  } ,
+
    {
     "id": "header_icon_color",
     "label": "لون الأيقونات",
