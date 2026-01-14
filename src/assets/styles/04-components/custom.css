@@ -4456,3 +4456,12 @@ salla-localization-modal .s-localization-modal-inner {
   right: 0;
   z-index: 3000;
 }
+
+.store-footer {
+  color: var(--footer-text-color);
+}
+
+.store-footer i,
+.store-footer svg {
+  color: var(--footer-icons-color);
+}
