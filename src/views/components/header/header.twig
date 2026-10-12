@@ -24,75 +24,68 @@
 {% endif %}
 
 
+{% set header_bg_image = theme.settings.get('header_bg_image') %}
+{% set header_bg_style %}
+  {%- if not theme.settings.get('header_bg_type') and header_bg_image -%}
+    background: url('{{ header_bg_image }}') center / cover no-repeat;
+  {%- else -%}
+    background: {{ theme.settings.get('header_bg_color', '#ffffff') }};
+  {%- endif -%}
+{% endset %}
+
 <header class="store-header custom-store-header"
-        style="
-          --header-icons-color: {{ theme.settings.get('header_icons_color') }};
-          {% if theme.settings.get('header_bg_type') %}
-            background: {{ theme.settings.get('header_bg_color') }};
-          {% else %}
-            background: url('{{ theme.settings.get('header_bg_image') }}');
+        style="--header-icons-color: {{ theme.settings.get('header_icons_color') }};">
+  <div id="mainnav" class="main-nav-container">
+    <div class="inner" style="{{ header_bg_style }}">
+      <div class="container flex items-center justify-between relative">
+        <div class="flex items-center gap-6" style="color: {{ theme.settings.get('header_text_color') }};">
+          <a class="lg:hidden mburger mburger--collapse" href="#mobile-menu" aria-label="Open menu">
+            <i class="sicon-menu text-primary text-2xl" style="color: {{ theme.settings.get('header_icons_color') }};"></i>
+          </a>
+
+          <a class="navbar-brand" href="{{ store.url }}">
+            {% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
+              <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
+            {% else %}
+              <img src="{{ store.logo }}" loading="eager" alt="{{ store.name }} logo">
+            {% endif %}
+            {% if is_page('index') %}
+              <h1 class="sr-only">{{ store.name }}</h1>
+            {% else %}
+              <h2 class="sr-only">{{ store.name }}</h2>
+            {% endif %}
+          </a>
+
+          <div class="hidden lg:flex gap-4">
+            <custom-main-menu></custom-main-menu>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+            <button type="button" onclick="salla.event.dispatch('localization::open')" class="header-btn" aria-label="localization">
+              <i class="sicon-world header-icon"></i>
+            </button>
+            <salla-localization-modal></salla-localization-modal>
           {% endif %}
-        ">
-  <div class="main-nav-container flex items-center justify-between relative">
-    <div class="flex items-center gap-6" style="color: {{ theme.settings.get('header_text_color') }};">
-      <a class="lg:hidden mburger mburger--collapse" href="#mobile-menu" aria-label="Open menu">
-        <i class="sicon-menu text-primary text-2xl" style="color: {{ theme.settings.get('header_icons_color') }};"></i>
-      </a>
 
-      <a class="navbar-brand" href="{{ store.url }}">
-        {% if theme.settings.get('show_custom_logos') and theme.settings.get('logo_top') %}
-          <img src="{{ theme.settings.get('logo_top') }}" loading="eager" alt="{{ store.name }} logo">
-        {% else %}
-          <img src="{{ store.logo }}" width="100%" height="100%" loading="eager" alt="{{ store.name }} logo">
-        {% endif %}
-        {% if is_page('index') %}
-          <h1 class="sr-only">{{ store.name }}</h1>
-        {% else %}
-          <h2 class="sr-only">{{ store.name }}</h2>
-        {% endif %}
-      </a>
+          {% if user.type == 'user' %}
+            <salla-user-menu avatar-only show-header></salla-user-menu>
+          {% else %}
+            <button type="button" class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
+              <i class="sicon-user header-icon"></i>
+            </button>
+          {% endif %}
 
-      <div class="hidden lg:flex gap-4">
-        <custom-main-menu></custom-main-menu>
+          <salla-cart-summary>
+            <i slot="icon" class="sicon-shopping-basket header-icon"></i>
+          </salla-cart-summary>
+
+          <button type="button" class="header-btn" aria-label="search" onclick="salla.event.dispatch('search::open')">
+            <i class="sicon-search header-icon"></i>
+          </button>
+        </div>
       </div>
     </div>
-
-    <!-- Right Side -->
-   <div class="flex items-center gap-4">
-  {% if store.settings.is_multilingual or store.settings.currencies_enabled %}
-    <button type="button" onclick="salla.event.dispatch('localization::open')" class="header-btn" aria-label="localization">
-      <i class="sicon-world header-icon"></i>
-    </button>
-    <salla-localization-modal language="ar" currency="SAR" class="hydrated"></salla-localization-modal>
-  {% endif %}
-
-  {% if user.type == 'user' %}
-    <salla-user-menu avatar-only show-header></salla-user-menu>
-  {% else %}
-    <button class="header-btn" aria-label="user-icon" onclick="salla.event.dispatch('login::open')">
-      <i class="sicon-user header-icon"></i>
-    </button>
-  {% endif %}
-
-  <salla-cart-summary>
-    <i slot="icon" class="sicon-shopping-basket header-icon"></i>
-  </salla-cart-summary>
-
-  <button id="search-toggle" class="header-btn" aria-label="search">
-    <i class="sicon-search header-icon"></i>
-  </button>
-
-  <div id="search-box" class="search-box hidden">
-    <salla-search inline="" oval="" height="20" class="hydrated"></salla-search>
-  </div>
-</div>
-
-
-
   </div>
 </header>
-
-
-
-
-

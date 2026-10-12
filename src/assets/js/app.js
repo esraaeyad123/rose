@@ -290,7 +290,8 @@ class App extends AppHelpers {
   setTimeout() {
     return new Promise(resolve => {
       setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
+        let loader = document.getElementById('loading');
+        if (loader) loader.style.display = 'none';
         resolve();
       }, 3000);
     });

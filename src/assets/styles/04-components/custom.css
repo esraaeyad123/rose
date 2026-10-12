@@ -930,7 +930,6 @@ input[type=radio].sr-only:checked ~ div.has-overlay a:after {
 
 .custom-store-header .main-nav-container {
 min-height: auto !important;
-height: auto !important;
 }
 
 .custom-store-header .top-navbar {
