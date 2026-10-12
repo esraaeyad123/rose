@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 class ProductCard extends HTMLElement {
 
     constructor() {
