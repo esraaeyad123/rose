@@ -1,0 +1,216 @@
+<title>منيو كافيه نُوار</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+  /* Layout: one narrow column like a printed menu card; sticky category chips; each item a row of name/desc on one side, price on the other. */
+  :root {
+    --bg: #f6f4ef;
+    --surface: #ffffff;
+    --ink: #22261f;
+    --muted: #6b7064;
+    --line: #e2dfd5;
+    --accent: #3f6b4f;
+    --accent-soft: #e4ece4;
+    --bean: #7a4b2a;
+    --font-display: 'Reem Kufi', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
+    --font-body: 'IBM Plex Sans Arabic', Tahoma, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161a16; --surface: #1e231e; --ink: #ecebe4; --muted: #a3a89c;
+      --line: #2f362f; --accent: #8fbf9c; --accent-soft: #263127; --bean: #d4a27a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #161a16; --surface: #1e231e; --ink: #ecebe4; --muted: #a3a89c;
+    --line: #2f362f; --accent: #8fbf9c; --accent-soft: #263127; --bean: #d4a27a;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    direction: rtl;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+  }
+  .wrap {
+    max-width: 640px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  header { padding-block: 40px 24px; text-align: center; }
+  .mark {
+    width: 64px; height: 64px; margin: 0 auto 12px; border-radius: 50%;
+    border: 2px solid var(--accent); display: grid; place-items: center;
+    font-family: var(--font-display); font-size: 30px; color: var(--accent);
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(34px, 9vw, 48px); line-height: 1.2; margin: 0;
+    text-wrap: balance;
+  }
+  .tagline { color: var(--muted); margin: 6px 0 16px; }
+  .meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .pill {
+    font-size: 14px; padding: 4px 12px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); font-weight: 500;
+  }
+
+  nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .chips { display: flex; gap: 8px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips a {
+    flex: none; text-decoration: none; color: var(--ink);
+    font-size: 15px; font-weight: 500; padding: 6px 16px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .chips a.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .chips a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  section { padding-block: 28px 8px; scroll-margin-top: 64px; }
+  h2 {
+    font-family: var(--font-display); font-weight: 500; font-size: 26px;
+    margin: 0 0 4px; color: var(--bean);
+  }
+  .sec-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+
+  .item {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+    padding-block: 14px; border-bottom: 1px dashed var(--line);
+  }
+  .item:last-child { border-bottom: 0; }
+  .info { min-width: 0; }
+  .name { font-weight: 600; font-size: 17px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tag { font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+  .desc { color: var(--muted); font-size: 14px; margin: 2px 0 0; }
+  .kcal { color: var(--muted); font-size: 13px; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .price {
+    flex: none; font-weight: 600; font-size: 18px; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .price small { font-size: 13px; color: var(--muted); font-weight: 400; }
+
+  footer { padding-block: 32px 40px; margin-top: 24px; border-top: 1px solid var(--line); }
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+  .info-grid h3 { font-size: 13px; letter-spacing: .02em; color: var(--muted); font-weight: 500; margin: 0 0 2px; }
+  .info-grid p { margin: 0; font-weight: 500; }
+  .num { direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+  .vat { color: var(--muted); font-size: 13px; margin-top: 20px; }
+  .credit {
+    margin-top: 24px; padding: 14px 16px; border-radius: 12px;
+    background: var(--surface); border: 1px solid var(--line);
+    font-size: 14px; color: var(--muted); text-align: center;
+  }
+  .credit b { color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+  html { scroll-behavior: smooth; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="mark" aria-hidden="true">ن</div>
+    <h1>كافيه نُوار</h1>
+    <p class="tagline">قهوة مختصة وحلى يومية</p>
+    <div class="meta">
+      <span class="pill" id="open-state">يومياً ٧ ص – ١ ص</span>
+      <span class="pill">جلسات داخلية وخارجية</span>
+    </div>
+  </header>
+</div>
+
+<nav aria-label="أقسام المنيو">
+  <div class="wrap">
+    <div class="chips">
+      <a href="#hot" class="active">قهوة ساخنة</a>
+      <a href="#cold">قهوة باردة</a>
+      <a href="#other">مشروبات أخرى</a>
+      <a href="#sweets">حلى ومخبوزات</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section id="hot">
+    <h2>قهوة ساخنة</h2>
+    <p class="sec-note">حبوب إثيوبية وكولومبية، تحمّص أسبوعياً</p>
+    <div class="item"><div class="info"><div class="name">قهوة سعودية <span class="tag">الأكثر طلباً</span></div><p class="desc">دلّة تكفي شخصين، بالهيل والزعفران، مع تمر</p><div class="kcal">١٥ سعرة</div></div><div class="price">18 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">إسبريسو</div><p class="desc">شوت مزدوج</p><div class="kcal">٥ سعرات</div></div><div class="price">12 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">أمريكانو</div><p class="desc">إسبريسو مع ماء حار</p><div class="kcal">١٠ سعرات</div></div><div class="price">14 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">كابتشينو</div><p class="desc">إسبريسو مع حليب ورغوة كثيفة</p><div class="kcal">١٣٠ سعرة</div></div><div class="price">17 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">فلات وايت</div><p class="desc">شوت مزدوج مع حليب مخملي</p><div class="kcal">١١٠ سعرات</div></div><div class="price">18 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">V60</div><p class="desc">تقطير يدوي، المحصول يتغير أسبوعياً</p><div class="kcal">٥ سعرات</div></div><div class="price">22 <small>ر.س</small></div></div>
+  </section>
+
+  <section id="cold">
+    <h2>قهوة باردة</h2>
+    <p class="sec-note">متوفرة بحليب الشوفان أو اللوز بدون إضافة</p>
+    <div class="item"><div class="info"><div class="name">آيس لاتيه</div><p class="desc">إسبريسو وحليب على ثلج</p><div class="kcal">١٤٠ سعرة</div></div><div class="price">19 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">آيس سبانش لاتيه <span class="tag">الأكثر طلباً</span></div><p class="desc">بالحليب المكثف المحلى</p><div class="kcal">٢٤٠ سعرة</div></div><div class="price">21 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">كولد برو</div><p class="desc">منقوع ١٨ ساعة</p><div class="kcal">١٠ سعرات</div></div><div class="price">20 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">آيس V60 <span class="tag">جديد</span></div><p class="desc">تقطير مباشر على الثلج</p><div class="kcal">٥ سعرات</div></div><div class="price">23 <small>ر.س</small></div></div>
+  </section>
+
+  <section id="other">
+    <h2>مشروبات أخرى</h2>
+    <div class="item"><div class="info"><div class="name">ماتشا لاتيه</div><p class="desc">ماتشا ياباني مع حليب، حار أو بارد</p><div class="kcal">١٦٠ سعرة</div></div><div class="price">22 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">شاي كرك</div><p class="desc">بالهيل والحليب المبخر</p><div class="kcal">١٨٠ سعرة</div></div><div class="price">10 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">هوت شوكليت</div><p class="desc">شوكولاتة بلجيكية داكنة</p><div class="kcal">٢٨٠ سعرة</div></div><div class="price">19 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">موهيتو ليمون ونعناع</div><p class="desc">منعش وبدون كافيين</p><div class="kcal">١٢٠ سعرة</div></div><div class="price">18 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">مياه معدنية</div><p class="desc">٣٣٠ مل</p><div class="kcal">٠ سعرة</div></div><div class="price">3 <small>ر.س</small></div></div>
+  </section>
+
+  <section id="sweets">
+    <h2>حلى ومخبوزات</h2>
+    <p class="sec-note">تُخبز يومياً وتنتهي بنهاية اليوم</p>
+    <div class="item"><div class="info"><div class="name">سان سباستيان</div><p class="desc">تشيز كيك محروق مع صوص لوتس</p><div class="kcal">٤٢٠ سعرة</div></div><div class="price">26 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">كوكيز شوكولاتة</div><p class="desc">قطعة كبيرة، تُقدم دافئة</p><div class="kcal">٣٢٠ سعرة</div></div><div class="price">12 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">كرواسون زبدة</div><p class="desc">زبدة فرنسية</p><div class="kcal">٢٦٠ سعرة</div></div><div class="price">11 <small>ر.س</small></div></div>
+    <div class="item"><div class="info"><div class="name">كيكة التمر <span class="tag">جديد</span></div><p class="desc">بالتمر والدبس، مع صوص تمر</p><div class="kcal">٣٨٠ سعرة</div></div><div class="price">22 <small>ر.س</small></div></div>
+  </section>
+
+  <footer>
+    <div class="info-grid">
+      <div><h3>أوقات الدوام</h3><p>يومياً من ٧ صباحاً إلى ١ بعد منتصف الليل</p></div>
+      <div><h3>الموقع</h3><p>الرياض، حي الياسمين</p></div>
+      <div><h3>للطلب والاستفسار</h3><p class="num">05X XXX XXXX</p></div>
+    </div>
+    <p class="vat">جميع الأسعار بالريال السعودي وشاملة ضريبة القيمة المضافة ١٥٪. احتياج البالغين اليومي ٢٠٠٠ سعرة حرارية في المتوسط.</p>
+    <div class="credit">منيو تجريبي لكافيه وهمي. لطلب منيو مثله لمطعمك أو الكافيه: <b class="num">0559668246</b></div>
+  </footer>
+</main>
+
+<script>
+  // Highlight the chip of the section currently in view.
+  const chips = [...document.querySelectorAll('.chips a')];
+  const byId = Object.fromEntries(chips.map(a => [a.getAttribute('href').slice(1), a]));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      chips.forEach(a => a.classList.remove('active'));
+      const chip = byId[e.target.id];
+      chip.classList.add('active');
+      chip.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    });
+  }, { rootMargin: '-80px 0px -70% 0px' });
+  document.querySelectorAll('main section').forEach(s => obs.observe(s));
+
+  // Show open/closed state from Riyadh time (open 7:00 to 01:00).
+  try {
+    const h = Number(new Intl.DateTimeFormat('en-US', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Asia/Riyadh' }).format(new Date()));
+    const open = h >= 7 || h < 1;
+    document.getElementById('open-state').textContent = open ? 'مفتوح الآن · حتى ١ ص' : 'مغلق الآن · نفتح ٧ ص';
+  } catch (e) {}
+</script>
