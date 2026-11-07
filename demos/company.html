@@ -1,0 +1,349 @@
+<title>رُكن للمقاولات</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+  /* Layout: blueprint-grid hero with key figures, then services grid, project sheets (like drawing title blocks), a 4-step process, and a contact band. */
+  :root {
+    --bg: #f3f2ee;
+    --surface: #ffffff;
+    --ink: #1d2226;
+    --muted: #5f666b;
+    --line: #d9d7d0;
+    --steel: #1f4e79;
+    --sand: #c08a3e;
+    --grid: rgba(31, 78, 121, .08);
+    --font-display: 'Alexandria', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
+    --font-body: 'IBM Plex Sans Arabic', Tahoma, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #13171a; --surface: #1b2024; --ink: #eceae4; --muted: #a2a8ac; --line: #2c3338;
+      --steel: #7fb0dc; --sand: #d9a75e; --grid: rgba(127, 176, 220, .08); color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #13171a; --surface: #1b2024; --ink: #eceae4; --muted: #a2a8ac; --line: #2c3338;
+    --steel: #7fb0dc; --sand: #d9a75e; --grid: rgba(127, 176, 220, .08); color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.7; direction: rtl; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+  .wrap {
+    max-width: 1120px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.3; margin: 0; text-wrap: balance; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--steel); outline-offset: 2px; }
+
+  .demo-bar { background: var(--ink); color: var(--bg); font-size: 13px; text-align: center; padding-block: 6px; }
+
+  nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 800; font-size: 20px; text-decoration: none; }
+  .logo svg { width: 32px; height: 32px; }
+  .links { display: flex; gap: 22px; font-size: 15px; }
+  .links a { text-decoration: none; color: var(--muted); }
+  .links a:hover { color: var(--ink); }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px;
+    padding: 10px 20px; border-radius: 6px; background: var(--steel); color: var(--bg); border: 0; cursor: pointer; font-family: inherit;
+  }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  @media (max-width: 760px) { .links { display: none; } }
+
+  .hero {
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 28px 28px; border-bottom: 1px solid var(--line);
+  }
+  .hero .intro { padding-block: 64px 48px; display: grid; gap: 40px; grid-template-columns: 1.3fr 1fr; align-items: center; }
+  @media (max-width: 860px) { .hero .intro { grid-template-columns: 1fr; padding-block: 40px; } }
+  .eyebrow { color: var(--sand); font-weight: 600; font-size: 14px; letter-spacing: .02em; }
+  .hero h1 { font-size: clamp(32px, 5.4vw, 54px); font-weight: 800; margin-top: 8px; }
+  .hero h1 em { font-style: normal; color: var(--steel); }
+  .hero p { color: var(--muted); max-width: 52ch; margin: 16px 0 24px; font-size: 17px; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero svg.plan { width: 100%; max-width: 420px; justify-self: center; }
+
+  .figures { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .figures div { padding: 22px 12px; border-left: 1px solid var(--line); }
+  .figures div:last-child { border-left: 0; }
+  .figures b { display: block; font-family: var(--font-display); font-size: 30px; color: var(--steel); font-variant-numeric: tabular-nums; }
+  .figures span { color: var(--muted); font-size: 14px; }
+  @media (max-width: 640px) {
+    .figures { grid-template-columns: 1fr 1fr; }
+    .figures div:nth-child(2) { border-left: 0; }
+    .figures div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+
+  section.block { padding-block: 72px; }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+  .head h2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 700; }
+  .head p { color: var(--muted); margin: 6px 0 0; max-width: 52ch; }
+
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (max-width: 860px) { .services { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+  .service { background: var(--surface); padding: 26px 24px; }
+  .service svg { width: 34px; height: 34px; color: var(--steel); }
+  .service h3 { font-size: 18px; font-weight: 700; margin: 12px 0 6px; }
+  .service p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 860px) { .projects { grid-template-columns: 1fr; } }
+  .project { background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .project .art { aspect-ratio: 16 / 10; max-width: 100%; display: block; width: 100%; border-bottom: 1px solid var(--line); }
+  .project .body { padding: 18px 20px 4px; }
+  .project h3 { font-size: 18px; font-weight: 700; }
+  .project .loc { color: var(--muted); font-size: 14px; }
+  .sheet { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); margin-top: 14px; }
+  .sheet div { padding: 10px 12px; border-left: 1px solid var(--line); }
+  .sheet div:last-child { border-left: 0; }
+  .sheet small { display: block; font-size: 11px; color: var(--muted); letter-spacing: .03em; }
+  .sheet b { font-size: 15px; font-variant-numeric: tabular-nums; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: s; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+  .step { border-top: 3px solid var(--sand); padding-top: 14px; }
+  .step::before { counter-increment: s; content: "المرحلة " counter(s, arabic-indic); color: var(--sand); font-size: 13px; font-weight: 600; }
+  .step h3 { font-size: 18px; margin: 4px 0 6px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .contact { background: var(--surface); border-block: 1px solid var(--line); }
+  .contact .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; padding-block: 64px; }
+  @media (max-width: 860px) { .contact .wrap { grid-template-columns: 1fr; } }
+  .contact dl { margin: 20px 0 0; display: grid; gap: 14px; }
+  .contact dt { font-size: 13px; color: var(--muted); }
+  .contact dd { margin: 0; font-weight: 600; }
+  .num { direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  form .full { grid-column: 1 / -1; }
+  @media (max-width: 520px) { form { grid-template-columns: 1fr; } }
+  label { display: grid; gap: 6px; font-size: 14px; font-weight: 500; }
+  input, select, textarea {
+    font: inherit; font-size: 15px; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; width: 100%;
+  }
+  textarea { min-height: 110px; resize: vertical; }
+  .sent { grid-column: 1 / -1; margin: 0; padding: 12px 14px; border-radius: 6px; background: var(--grid); color: var(--steel); font-weight: 500; }
+
+  footer .wrap { padding-block: 28px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+  footer b { color: var(--ink); }
+</style>
+
+<div class="demo-bar">موقع تجريبي لشركة وهمية · لطلب موقع مثله: <b class="num">0559668246</b></div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 28V4h24" fill="none" stroke="var(--steel)" stroke-width="4"/><rect x="14" y="14" width="10" height="10" fill="var(--sand)"/></svg>
+      رُكن
+    </a>
+    <div class="links">
+      <a href="#services">خدماتنا</a>
+      <a href="#projects">مشاريعنا</a>
+      <a href="#process">طريقة العمل</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+    <a class="btn" href="#contact">اطلب عرض سعر</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap intro">
+    <div>
+      <div class="eyebrow">مقاولات عامة · الرياض</div>
+      <h1>نبني مشروعك <em>بالمخطط</em> والموعد اللي اتفقنا عليه</h1>
+      <p>شركة رُكن تنفذ الفلل والمباني التجارية والتشطيبات من التصميم حتى تسليم المفتاح، مع مهندس مقيم في كل موقع وتقرير أسبوعي بالصور.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">اطلب زيارة للموقع</a>
+        <a class="btn ghost" href="#projects">شاهد مشاريعنا</a>
+      </div>
+    </div>
+    <svg class="plan" viewBox="0 0 400 300" aria-hidden="true">
+      <g fill="none" stroke="var(--steel)" stroke-width="3">
+        <rect x="30" y="30" width="340" height="240"/>
+        <path d="M30 150h150M180 30v90M180 160v110M260 150h110M260 150v60"/>
+      </g>
+      <g fill="none" stroke="var(--steel)" stroke-width="1.5">
+        <path d="M180 120a40 40 0 0 1 40 40" /><path d="M260 210a30 30 0 0 0 30 30"/>
+      </g>
+      <g fill="var(--muted)" font-family="IBM Plex Sans Arabic, sans-serif" font-size="13" text-anchor="middle">
+        <text x="105" y="95">مجلس</text><text x="105" y="215">صالة</text>
+        <text x="275" y="95">مطبخ</text><text x="315" y="185">غرفة</text>
+      </g>
+      <g stroke="var(--sand)" stroke-width="1.2" fill="var(--sand)" font-family="IBM Plex Sans Arabic, sans-serif" font-size="12" text-anchor="middle">
+        <path d="M30 290h340M30 285v10M370 285v10"/><text x="200" y="286" stroke="none">١٧٫٥ م</text>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="figures">
+      <div><b>١٤</b><span>سنة في السوق</span></div>
+      <div><b>+١٢٠</b><span>مشروع مُسلَّم</span></div>
+      <div><b>+٨٥ ألف</b><span>م² منفذة</span></div>
+      <div><b>٩٦٪</b><span>مشاريع سُلّمت في موعدها</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head">
+        <div><h2>خدماتنا</h2><p>نغطي كل مراحل البناء، أو تختار المرحلة اللي تحتاجها بس.</p></div>
+      </div>
+      <div class="services">
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+          <h3>بناء الفلل</h3><p>عظم وتشطيب كامل، حسب مخططك أو نصمم لك.</p>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V5h10v16M14 9h6v12M7 9h4M7 13h4M7 17h4M3 21h18"/></svg>
+          <h3>مبانٍ تجارية</h3><p>محلات ومكاتب وعمائر سكنية استثمارية.</p>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v6H4zM12 10v4M8 14h8v6H8z"/></svg>
+          <h3>التشطيبات</h3><p>لياسة، بلاط، دهانات، جبس، وواجهات حجر.</p>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+          <h3>كهرباء وسباكة</h3><p>تمديدات كاملة بمواد معتمدة وضمان.</p>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <h3>ترميم وتأهيل</h3><p>تقوية إنشائية وتجديد المباني القديمة.</p>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M6 20V10M18 20V10M3 10l9-6 9 6M10 20v-5h4v5"/></svg>
+          <h3>إشراف هندسي</h3><p>نتابع مشروعك مع مقاول آخر ونرفع لك تقارير.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div><h2>من مشاريعنا</h2><p>مشاريع مُسلَّمة في الرياض والخرج.</p></div>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <svg class="art" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="var(--grid)"/>
+            <rect x="60" y="80" width="200" height="100" fill="var(--surface)" stroke="var(--steel)" stroke-width="2"/>
+            <rect x="100" y="50" width="120" height="30" fill="var(--surface)" stroke="var(--steel)" stroke-width="2"/>
+            <rect x="140" y="130" width="40" height="50" fill="var(--sand)"/>
+            <g fill="var(--steel)" opacity=".35"><rect x="80" y="100" width="34" height="22"/><rect x="206" y="100" width="34" height="22"/><rect x="130" y="56" width="60" height="18"/></g>
+            <path d="M20 180h280" stroke="var(--ink)" stroke-width="2"/>
+          </svg>
+          <div class="body">
+            <h3>فيلا سكنية دورين</h3>
+            <div class="loc">حي النرجس، الرياض</div>
+            <div class="sheet">
+              <div><small>المساحة</small><b>٤٥٠ م²</b></div>
+              <div><small>المدة</small><b>١١ شهر</b></div>
+              <div><small>النطاق</small><b>تسليم مفتاح</b></div>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <svg class="art" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="var(--grid)"/>
+            <rect x="40" y="110" width="240" height="70" fill="var(--surface)" stroke="var(--steel)" stroke-width="2"/>
+            <g fill="var(--sand)"><rect x="55" y="130" width="45" height="50"/><rect x="115" y="130" width="45" height="50"/><rect x="175" y="130" width="45" height="50"/><rect x="235" y="130" width="35" height="50"/></g>
+            <rect x="40" y="96" width="240" height="14" fill="var(--steel)"/>
+            <path d="M20 180h280" stroke="var(--ink)" stroke-width="2"/>
+          </svg>
+          <div class="body">
+            <h3>مجمع محلات تجارية</h3>
+            <div class="loc">طريق الملك عبدالعزيز، الرياض</div>
+            <div class="sheet">
+              <div><small>المساحة</small><b>١٢٠٠ م²</b></div>
+              <div><small>المدة</small><b>٨ أشهر</b></div>
+              <div><small>النطاق</small><b>عظم وتشطيب</b></div>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <svg class="art" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="var(--grid)"/>
+            <rect x="110" y="30" width="100" height="150" fill="var(--surface)" stroke="var(--steel)" stroke-width="2"/>
+            <g fill="var(--steel)" opacity=".35">
+              <rect x="122" y="45" width="30" height="18"/><rect x="168" y="45" width="30" height="18"/>
+              <rect x="122" y="78" width="30" height="18"/><rect x="168" y="78" width="30" height="18"/>
+              <rect x="122" y="111" width="30" height="18"/><rect x="168" y="111" width="30" height="18"/>
+            </g>
+            <rect x="145" y="145" width="30" height="35" fill="var(--sand)"/>
+            <path d="M20 180h280" stroke="var(--ink)" stroke-width="2"/>
+          </svg>
+          <div class="body">
+            <h3>عمارة سكنية ٤ أدوار</h3>
+            <div class="loc">الخرج</div>
+            <div class="sheet">
+              <div><small>المساحة</small><b>٢١٠٠ م²</b></div>
+              <div><small>المدة</small><b>١٤ شهر</b></div>
+              <div><small>النطاق</small><b>تسليم مفتاح</b></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><div><h2>طريقة العمل</h2><p>أربع مراحل واضحة، وكل مرحلة تُسلَّم بمحضر استلام.</p></div></div>
+      <div class="steps">
+        <div class="step"><h3>زيارة ودراسة</h3><p>نزور الأرض، نراجع المخطط ورخصة البناء، ونحدد احتياجك.</p></div>
+        <div class="step"><h3>عرض سعر مفصّل</h3><p>جدول كميات بالبند والسعر، وجدول زمني مكتوب.</p></div>
+        <div class="step"><h3>التنفيذ</h3><p>مهندس مقيم، وتقرير أسبوعي بالصور على الواتساب.</p></div>
+        <div class="step"><h3>التسليم والضمان</h3><p>استلام نهائي، وضمان ١٠ سنوات على الهيكل الإنشائي.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2 style="font-size:clamp(26px,3.6vw,36px)">اطلب عرض سعر</h2>
+        <p style="color:var(--muted);margin:8px 0 0">نرد عليك خلال يوم عمل، والزيارة الأولى مجانية داخل الرياض.</p>
+        <dl>
+          <div><dt>الجوال</dt><dd class="num">05X XXX XXXX</dd></div>
+          <div><dt>العنوان</dt><dd>طريق أنس بن مالك، حي الملقا، الرياض</dd></div>
+          <div><dt>أوقات العمل</dt><dd>الأحد – الخميس، ٨ ص – ٥ م</dd></div>
+        </dl>
+      </div>
+      <form id="quote-form">
+        <label>الاسم<input id="f-name" required></label>
+        <label>رقم الجوال<input id="f-phone" type="tel" inputmode="tel" required dir="ltr"></label>
+        <label>نوع المشروع
+          <select id="f-type"><option>فيلا سكنية</option><option>مبنى تجاري</option><option>تشطيب فقط</option><option>ترميم</option></select>
+        </label>
+        <label>مساحة الأرض (م²)<input id="f-area" type="number" min="0" inputmode="numeric" dir="ltr"></label>
+        <label class="full">تفاصيل إضافية<textarea id="f-notes" placeholder="الحي، عدد الأدوار، هل عندك مخطط جاهز؟"></textarea></label>
+        <div class="full"><button class="btn" type="submit">أرسل الطلب</button></div>
+        <p class="sent" id="f-sent" hidden>هذا موقع تجريبي، لذلك لم يُرسل الطلب. في الموقع الحقيقي يوصل الطلب لإيميل الشركة أو الواتساب.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© شركة رُكن للمقاولات (اسم وهمي) · مصنّفة في المباني – الدرجة الثالثة</span>
+    <span>تصميم وبرمجة: <b class="num">0559668246</b></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('quote-form').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('f-sent').hidden = false;
+  });
+</script>
