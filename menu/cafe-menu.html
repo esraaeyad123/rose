@@ -2,215 +2,374 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;700&display=swap">
 <style>
-  /* Layout: one narrow column like a printed menu card; sticky category chips; each item a row of name/desc on one side, price on the other. */
+  /* Layout: a dark menu board. Outlined panels (Hot / Cold) with the title cut into the top border;
+     each row = Arabic name | one price cell per cup size | English name. Two panels side by side on wide screens, stacked on phones. */
   :root {
-    --bg: #f6f4ef;
-    --surface: #ffffff;
-    --ink: #22261f;
-    --muted: #6b7064;
-    --line: #e2dfd5;
-    --accent: #3f6b4f;
-    --accent-soft: #e4ece4;
-    --bean: #7a4b2a;
-    --font-display: 'Reem Kufi', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
-    --font-body: 'IBM Plex Sans Arabic', Tahoma, 'Segoe UI', sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #161a16; --surface: #1e231e; --ink: #ecebe4; --muted: #a3a89c;
-      --line: #2f362f; --accent: #8fbf9c; --accent-soft: #263127; --bean: #d4a27a;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #161a16; --surface: #1e231e; --ink: #ecebe4; --muted: #a3a89c;
-    --line: #2f362f; --accent: #8fbf9c; --accent-soft: #263127; --bean: #d4a27a;
+    --page: #1b1b1a;
+    --board: #2a2a28;
+    --ink: #f3f1ec;
+    --muted: #a9a59b;
+    --line: #e9e6df;
+    --gold: #d8b46a;
+    --font: 'Readex Pro', Tahoma, 'Segoe UI', sans-serif;
     color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
   body {
-    background: var(--bg); color: var(--ink);
-    font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    background: var(--page); color: var(--ink);
+    font-family: var(--font); font-size: 15px; line-height: 1.5;
     direction: rtl;
   }
-  body::before {
-    content: ""; position: fixed; inset: 0 0 auto;
-    height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
-  }
-  .wrap {
-    max-width: 640px; margin: 0 auto;
+  .board {
+    max-width: 1180px; margin: 0 auto; background: var(--board);
+    padding-block: 28px 36px;
     padding-left: max(16px, env(safe-area-inset-left, 0px));
     padding-right: max(16px, env(safe-area-inset-right, 0px));
   }
 
-  header { padding-block: 40px 24px; text-align: center; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
   .mark {
-    width: 64px; height: 64px; margin: 0 auto 12px; border-radius: 50%;
-    border: 2px solid var(--accent); display: grid; place-items: center;
-    font-family: var(--font-display); font-size: 30px; color: var(--accent);
+    width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--gold);
+    display: grid; place-items: center; font-size: 24px; font-weight: 700; color: var(--gold);
   }
-  h1 {
-    font-family: var(--font-display); font-weight: 700;
-    font-size: clamp(34px, 9vw, 48px); line-height: 1.2; margin: 0;
-    text-wrap: balance;
-  }
-  .tagline { color: var(--muted); margin: 6px 0 16px; }
-  .meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-  .pill {
-    font-size: 14px; padding: 4px 12px; border-radius: 999px;
-    background: var(--accent-soft); color: var(--accent); font-weight: 500;
-  }
+  h1 { margin: 0; font-size: 26px; font-weight: 700; line-height: 1.2; }
+  .brand small { display: block; direction: ltr; text-align: right; letter-spacing: .18em; font-size: 12px; color: var(--muted); }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pill { font-size: 13px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--muted); color: var(--ink); }
+  .pill.gold { border-color: var(--gold); color: var(--gold); }
 
-  nav {
-    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-    background: var(--bg); border-bottom: 1px solid var(--line);
-  }
-  .chips { display: flex; gap: 8px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
-  .chips::-webkit-scrollbar { display: none; }
-  .chips a {
-    flex: none; text-decoration: none; color: var(--ink);
-    font-size: 15px; font-weight: 500; padding: 6px 16px;
-    border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
-    transition: background .15s, color .15s, border-color .15s;
-  }
-  .chips a.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-  .chips a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 40px 28px; }
+  @media (min-width: 920px) { .grid { grid-template-columns: 1fr 1fr; align-items: start; } }
 
-  section { padding-block: 28px 8px; scroll-margin-top: 64px; }
-  h2 {
-    font-family: var(--font-display); font-weight: 500; font-size: 26px;
-    margin: 0 0 4px; color: var(--bean);
+  .panel {
+    position: relative; border: 2px solid var(--line); border-radius: 22px;
+    padding: 34px 20px 20px; display: flex; flex-direction: column; gap: 26px; min-width: 0;
   }
-  .sec-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .panel.gold { border-color: var(--gold); }
+  .panel > h2 {
+    position: absolute; top: 0; right: 50%; transform: translate(50%, -55%);
+    margin: 0; padding: 0 16px; background: var(--board); white-space: nowrap;
+    font-size: 34px; font-weight: 700; line-height: 1;
+  }
+  .panel > h2 span { font-size: .6em; font-weight: 500; color: var(--muted); }
 
-  .item {
-    display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
-    padding-block: 14px; border-bottom: 1px dashed var(--line);
+  /* Shared row grid: Arabic | sizes | English */
+  .row {
+    display: grid; align-items: center; column-gap: 6px;
+    grid-template-columns: minmax(0, 1.2fr) repeat(var(--n), 3.6rem) minmax(0, 1fr);
   }
-  .item:last-child { border-bottom: 0; }
-  .info { min-width: 0; }
-  .name { font-weight: 600; font-size: 17px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .tag { font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
-  .desc { color: var(--muted); font-size: 14px; margin: 2px 0 0; }
-  .kcal { color: var(--muted); font-size: 13px; margin-top: 2px; font-variant-numeric: tabular-nums; }
-  .price {
-    flex: none; font-weight: 600; font-size: 18px; white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-  }
-  .price small { font-size: 13px; color: var(--muted); font-weight: 400; }
+  .ar, .en { min-width: 0; }
+  .en { direction: ltr; text-align: left; }
+  .en-sub { display: none; }
 
-  footer { padding-block: 32px 40px; margin-top: 24px; border-top: 1px solid var(--line); }
-  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
-  .info-grid h3 { font-size: 13px; letter-spacing: .02em; color: var(--muted); font-weight: 500; margin: 0 0 2px; }
-  .info-grid p { margin: 0; font-weight: 500; }
+  .group-head { margin-bottom: 8px; align-items: end; }
+  .group-head .ar b { display: block; font-size: 24px; font-weight: 700; line-height: 1.2; }
+  .group-head .en b { display: block; font-size: 22px; font-weight: 700; line-height: 1.2; }
+  .group-head .ar small, .group-head .en small { color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+
+  .cup { display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--ink); }
+  .cup svg { width: 24px; height: 32px; }
+  .cup svg text { fill: var(--ink); font: 700 10px var(--font); }
+  .cup span { font-size: 10px; color: var(--muted); direction: ltr; }
+
+  .item { padding-block: 3px; }
+  .item .ar, .item .en { font-size: 14.5px; font-weight: 500; }
+  .item .ar::before { content: "•"; margin-left: 8px; color: var(--muted); }
+  .item .en::before { content: "•"; margin-right: 8px; color: var(--muted); }
+  .price { display: flex; align-items: baseline; justify-content: center; gap: 3px; font-variant-numeric: tabular-nums; direction: ltr; }
+  .price b { color: var(--gold); font-size: 17px; font-weight: 700; }
+  .price small { font-size: 9px; color: var(--muted); white-space: nowrap; }
+
+  .addons { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .addon { display: flex; align-items: center; gap: 16px; }
+  .addon .tag { flex: none; color: var(--gold); font-size: 30px; font-weight: 700; direction: ltr; min-width: 4.2rem; text-align: center; }
+  .addon .tag small { font-size: 13px; }
+  .addon ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 4px 16px; flex: 1; min-width: 0; }
+  .addon li { font-size: 14px; }
+  .addon li small { color: var(--muted); font-size: 11px; direction: ltr; unicode-bidi: isolate; }
+  .addon li::before { content: "•"; margin-left: 6px; color: var(--muted); }
+
+  /* Picture cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 22px 16px; }
+  #mojito .cards { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  #mojito .cbody { flex-direction: column-reverse; }
+  .card { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .cname b { display: block; font-size: 15px; font-weight: 700; line-height: 1.3; }
+  .cname small { display: block; direction: ltr; text-align: right; font-size: 12px; font-weight: 500; color: var(--muted); }
+  .cbody { display: flex; align-items: center; gap: 10px; }
+  .drink { width: 58px; height: 84px; flex: none; }
+  .ctags { display: flex; gap: 10px; direction: ltr; }
+  .ctag { display: grid; justify-items: center; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .ctag b { color: var(--gold); font-size: 20px; font-weight: 700; }
+  .ctag small { font-size: 9px; color: var(--muted); }
+  .cup.mini svg { width: 16px; height: 22px; }
+
+  footer { margin-top: 36px; display: flex; flex-direction: column; gap: 14px; }
+  .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .info h3 { margin: 0; font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: .04em; }
+  .info p { margin: 0; font-weight: 500; }
+  .note { margin: 0; font-size: 12.5px; color: var(--muted); }
   .num { direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
-  .vat { color: var(--muted); font-size: 13px; margin-top: 20px; }
-  .credit {
-    margin-top: 24px; padding: 14px 16px; border-radius: 12px;
-    background: var(--surface); border: 1px solid var(--line);
-    font-size: 14px; color: var(--muted); text-align: center;
-  }
-  .credit b { color: var(--ink); }
+  .credit { padding: 12px 16px; border: 1px dashed var(--muted); border-radius: 12px; font-size: 14px; color: var(--muted); text-align: center; }
+  .credit b { color: var(--gold); }
 
-  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
-  html { scroll-behavior: smooth; }
+  /* Phones: drop the English column, show the English name under the Arabic one, stack price over calories */
+  @media (max-width: 560px) {
+    .row { grid-template-columns: minmax(0, 1fr) repeat(var(--n), 3rem); }
+    .row > .en { display: none; }
+    .en-sub { display: block; direction: ltr; text-align: right; font-size: 11px; color: var(--muted); font-weight: 400; }
+    .item .ar::before { display: none; }
+    .price { flex-direction: column; align-items: center; gap: 0; line-height: 1.15; }
+    .panel { padding-inline: 14px; }
+    .panel > h2 { font-size: 28px; }
+    .addon { align-items: flex-start; }
+    .addon .tag { font-size: 24px; min-width: 3.4rem; }
+  }
 </style>
 
-<div class="wrap">
+<div class="board">
   <header>
-    <div class="mark" aria-hidden="true">ن</div>
-    <h1>كافيه نُوار</h1>
-    <p class="tagline">قهوة مختصة وحلى يومية</p>
+    <div class="brand">
+      <div class="mark" aria-hidden="true">ن</div>
+      <div><h1>كافيه نُوار</h1><small>NAWAR CAFÉ</small></div>
+    </div>
     <div class="meta">
       <span class="pill" id="open-state">يومياً ٧ ص – ١ ص</span>
-      <span class="pill">جلسات داخلية وخارجية</span>
+      <span class="pill gold">الرقم الصغير بجانب السعر = السعرات (kcal)</span>
     </div>
   </header>
-</div>
 
-<nav aria-label="أقسام المنيو">
-  <div class="wrap">
-    <div class="chips">
-      <a href="#hot" class="active">قهوة ساخنة</a>
-      <a href="#cold">قهوة باردة</a>
-      <a href="#other">مشروبات أخرى</a>
-      <a href="#sweets">حلى ومخبوزات</a>
-    </div>
+  <div class="grid">
+    <section class="panel" id="hot"><h2>ساخن <span>Hot</span></h2></section>
+    <section class="panel" id="cold"><h2>بارد <span>Cold</span></h2></section>
+
+    <section class="panel" id="signature"><h2>المميز <span>Signature</span></h2></section>
+    <section class="panel" id="matcha"><h2>ماتشا <span>Matcha</span></h2></section>
+    <section class="panel" id="icedtea"><h2>شاي مثلج <span>Iced Tea</span></h2></section>
+    <section class="panel" id="mojito"><h2>موهيتو <span>Mojito</span></h2></section>
+    <section class="panel" id="sandwich"><h2>ساندويتش <span>Sandwich</span></h2></section>
+
+    <section class="panel gold" id="addons">
+      <h2>الإضافات <span>Add-ons</span></h2>
+      <div class="addons">
+        <div class="addon">
+          <div class="tag">+5 <small>ر.س</small></div>
+          <ul>
+            <li>حليب الشوفان <small>· Oat Milk · 45 kcal</small></li>
+            <li>حليب اللوز <small>· Almond Milk · 30 kcal</small></li>
+            <li>حليب خالي من اللاكتوز <small>· Lactose-Free · 60 kcal</small></li>
+          </ul>
+        </div>
+        <div class="addon">
+          <div class="tag">+3 <small>ر.س</small></div>
+          <ul>
+            <li>شوت إسبريسو <small>· Shot · 5 kcal</small></li>
+            <li>فانيلا <small>· Vanilla · 35 kcal</small></li>
+            <li>كراميل <small>· Caramel · 30 kcal</small></li>
+            <li>بندق <small>· Hazelnut · 30 kcal</small></li>
+            <li>لوتس <small>· Lotus · 50 kcal</small></li>
+            <li>كريمة <small>· Whipped Cream · 80 kcal</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="sweets"><h2>الحلى <span>Sweets</span></h2></section>
   </div>
-</nav>
-
-<main class="wrap">
-  <section id="hot">
-    <h2>قهوة ساخنة</h2>
-    <p class="sec-note">حبوب إثيوبية وكولومبية، تحمّص أسبوعياً</p>
-    <div class="item"><div class="info"><div class="name">قهوة سعودية <span class="tag">الأكثر طلباً</span></div><p class="desc">دلّة تكفي شخصين، بالهيل والزعفران، مع تمر</p><div class="kcal">١٥ سعرة</div></div><div class="price">18 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">إسبريسو</div><p class="desc">شوت مزدوج</p><div class="kcal">٥ سعرات</div></div><div class="price">12 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">أمريكانو</div><p class="desc">إسبريسو مع ماء حار</p><div class="kcal">١٠ سعرات</div></div><div class="price">14 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">كابتشينو</div><p class="desc">إسبريسو مع حليب ورغوة كثيفة</p><div class="kcal">١٣٠ سعرة</div></div><div class="price">17 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">فلات وايت</div><p class="desc">شوت مزدوج مع حليب مخملي</p><div class="kcal">١١٠ سعرات</div></div><div class="price">18 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">V60</div><p class="desc">تقطير يدوي، المحصول يتغير أسبوعياً</p><div class="kcal">٥ سعرات</div></div><div class="price">22 <small>ر.س</small></div></div>
-  </section>
-
-  <section id="cold">
-    <h2>قهوة باردة</h2>
-    <p class="sec-note">متوفرة بحليب الشوفان أو اللوز بدون إضافة</p>
-    <div class="item"><div class="info"><div class="name">آيس لاتيه</div><p class="desc">إسبريسو وحليب على ثلج</p><div class="kcal">١٤٠ سعرة</div></div><div class="price">19 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">آيس سبانش لاتيه <span class="tag">الأكثر طلباً</span></div><p class="desc">بالحليب المكثف المحلى</p><div class="kcal">٢٤٠ سعرة</div></div><div class="price">21 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">كولد برو</div><p class="desc">منقوع ١٨ ساعة</p><div class="kcal">١٠ سعرات</div></div><div class="price">20 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">آيس V60 <span class="tag">جديد</span></div><p class="desc">تقطير مباشر على الثلج</p><div class="kcal">٥ سعرات</div></div><div class="price">23 <small>ر.س</small></div></div>
-  </section>
-
-  <section id="other">
-    <h2>مشروبات أخرى</h2>
-    <div class="item"><div class="info"><div class="name">ماتشا لاتيه</div><p class="desc">ماتشا ياباني مع حليب، حار أو بارد</p><div class="kcal">١٦٠ سعرة</div></div><div class="price">22 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">شاي كرك</div><p class="desc">بالهيل والحليب المبخر</p><div class="kcal">١٨٠ سعرة</div></div><div class="price">10 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">هوت شوكليت</div><p class="desc">شوكولاتة بلجيكية داكنة</p><div class="kcal">٢٨٠ سعرة</div></div><div class="price">19 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">موهيتو ليمون ونعناع</div><p class="desc">منعش وبدون كافيين</p><div class="kcal">١٢٠ سعرة</div></div><div class="price">18 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">مياه معدنية</div><p class="desc">٣٣٠ مل</p><div class="kcal">٠ سعرة</div></div><div class="price">3 <small>ر.س</small></div></div>
-  </section>
-
-  <section id="sweets">
-    <h2>حلى ومخبوزات</h2>
-    <p class="sec-note">تُخبز يومياً وتنتهي بنهاية اليوم</p>
-    <div class="item"><div class="info"><div class="name">سان سباستيان</div><p class="desc">تشيز كيك محروق مع صوص لوتس</p><div class="kcal">٤٢٠ سعرة</div></div><div class="price">26 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">كوكيز شوكولاتة</div><p class="desc">قطعة كبيرة، تُقدم دافئة</p><div class="kcal">٣٢٠ سعرة</div></div><div class="price">12 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">كرواسون زبدة</div><p class="desc">زبدة فرنسية</p><div class="kcal">٢٦٠ سعرة</div></div><div class="price">11 <small>ر.س</small></div></div>
-    <div class="item"><div class="info"><div class="name">كيكة التمر <span class="tag">جديد</span></div><p class="desc">بالتمر والدبس، مع صوص تمر</p><div class="kcal">٣٨٠ سعرة</div></div><div class="price">22 <small>ر.س</small></div></div>
-  </section>
 
   <footer>
-    <div class="info-grid">
+    <div class="info">
       <div><h3>أوقات الدوام</h3><p>يومياً من ٧ صباحاً إلى ١ بعد منتصف الليل</p></div>
       <div><h3>الموقع</h3><p>الرياض، حي الياسمين</p></div>
-      <div><h3>للطلب والاستفسار</h3><p class="num">05X XXX XXXX</p></div>
+      <div><h3>الأحجام</h3><p>Short ٨ أونص · Tall ١٢ أونص · Grande ١٦ أونص</p></div>
     </div>
-    <p class="vat">جميع الأسعار بالريال السعودي وشاملة ضريبة القيمة المضافة ١٥٪. احتياج البالغين اليومي ٢٠٠٠ سعرة حرارية في المتوسط.</p>
+    <p class="note">جميع الأسعار بالريال السعودي وشاملة ضريبة القيمة المضافة ١٥٪. احتياج البالغين اليومي ٢٠٠٠ سعرة حرارية في المتوسط.</p>
     <div class="credit">منيو تجريبي لكافيه وهمي. لطلب منيو مثله لمطعمك أو الكافيه: <b class="num">0559668246</b></div>
   </footer>
-</main>
+</div>
 
 <script>
-  // Highlight the chip of the section currently in view.
-  const chips = [...document.querySelectorAll('.chips a')];
-  const byId = Object.fromEntries(chips.map(a => [a.getAttribute('href').slice(1), a]));
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      chips.forEach(a => a.classList.remove('active'));
-      const chip = byId[e.target.id];
-      chip.classList.add('active');
-      chip.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-    });
-  }, { rootMargin: '-80px 0px -70% 0px' });
-  document.querySelectorAll('main section').forEach(s => obs.observe(s));
+  // Cup sizes: label under the icon and the number printed on the cup.
+  const SIZES = {
+    S: { label: 'Short', mark: '8' },
+    T: { label: 'Tall', mark: '12' },
+    G: { label: 'Grande', mark: '16' },
+    C: { label: 'Cup', mark: '' },
+    P: { label: 'Dallah', mark: '' },
+    R: { label: 'Piece', mark: '' },
+  };
 
-  // Show open/closed state from Riyadh time (open 7:00 to 01:00).
+  // Each item: [Arabic, English, prices per size as [price, kcal] or null]
+  const MENU = {
+    hot: [
+      { ar: 'تقاليد الإسبريسو', arSub: 'إسبريسو', en: 'Espresso', enSub: 'TRADITIONS', sizes: ['S', 'T', 'G'], items: [
+        ['إسبريسو', 'Espresso', [[10, 5], null, null]],
+        ['إسبريسو ماكياتو', 'Espresso Macchiato', [[11, 15], null, null]],
+        ['كورتادو', 'Cortado', [[13, 60], null, null]],
+        ['فلات وايت', 'Flat White', [null, [16, 110], null]],
+        ['أمريكانو', 'Americano', [[11, 5], [13, 10], [15, 15]]],
+        ['كافيه لاتيه', 'Caffe Latte', [[13, 120], [15, 170], [17, 220]]],
+        ['سبانش لاتيه', 'Spanish Latte', [null, [17, 240], [19, 310]]],
+        ['كابتشينو', 'Cappuccino', [[13, 90], [15, 130], [17, 170]]],
+        ['كراميل ماكياتو', 'Caramel Macchiato', [[15, 160], [17, 210], [19, 270]]],
+        ['موكا', 'Caffe Mocha', [[15, 190], [17, 260], [19, 330]]],
+      ]},
+      { ar: 'قهوة سعودية', arSub: 'مع تمر', en: 'Saudi Coffee', enSub: 'WITH DATES', sizes: ['C', 'P'], items: [
+        ['بالهيل', 'Cardamom', [[4, 5], [18, 15]]],
+        ['بالزعفران', 'Saffron', [[5, 5], [22, 15]]],
+      ]},
+      { ar: 'شاي', arSub: 'ومشروبات', en: 'Tea', enSub: '& MORE', sizes: ['S', 'T'], items: [
+        ['شاي كرك', 'Karak Tea', [[8, 140], [10, 180]]],
+        ['شاي أحمر', 'Black Tea', [[5, 2], [7, 3]]],
+        ['شاي أخضر', 'Green Tea', [[5, 2], [7, 3]]],
+        ['هوت شوكليت', 'Hot Chocolate', [[15, 210], [19, 280]]],
+      ]},
+    ],
+    cold: [
+      { ar: 'إسبريسو', arSub: 'مثلج', en: 'Espresso', enSub: 'ICED', sizes: ['T', 'G'], items: [
+        ['آيس أمريكانو', 'Iced Americano', [[14, 10], [16, 15]]],
+        ['آيس لاتيه', 'Iced Latte', [[17, 140], [19, 190]]],
+        ['آيس سبانش لاتيه', 'Iced Spanish Latte', [[19, 240], [21, 320]]],
+        ['آيس موكا', 'Iced Mocha', [[19, 250], [21, 330]]],
+        ['آيس وايت موكا', 'Iced White Mocha', [[19, 300], [21, 400]]],
+        ['كولد برو', 'Cold Brew', [[18, 10], [20, 15]]],
+      ]},
+      { ar: 'فرابيه', arSub: 'ممزوج', en: 'Frappe', enSub: 'BLENDED', sizes: ['T'], items: [
+        ['إسبريسو فرابيه', 'Espresso Frappe', [[19, 230]]],
+        ['كراميل فرابيه', 'Caramel Frappe', [[19, 300]]],
+        ['موكا فرابيه', 'Mocha Frappe', [[19, 330]]],
+        ['فانيلا كريم', 'Vanilla Cream', [[17, 290]]],
+        ['ستروبيري كريم', 'Strawberry Cream', [[17, 270]]],
+      ]},
+      { ar: 'قهوة مفلترة', arSub: 'مختصة', en: 'Brewed', enSub: 'SPECIALTY', sizes: ['T', 'G'], items: [
+        ['آيس V60', 'Iced V60', [[20, 5], [23, 7]]],
+        ['قهوة اليوم', 'Coffee of the Day', [[13, 5], [15, 7]]],
+        ['مياه معدنية', 'Water', [[3, 0], null]],
+      ]},
+    ],
+    sandwich: [
+      { ar: 'ساندويتش', arSub: 'خبز طازج', en: 'Sandwich', enSub: 'FRESH BREAD', sizes: ['R'], items: [
+        ['دجاج شيش طاووق', 'Chicken Shish Tawook', [[17, 330]]],
+        ['حلومي مشوي', 'Grilled Halloumi', [[17, 410]]],
+        ['تونة بالليمون', 'Lemon Tuna', [[17, 360]]],
+        ['دجاج بالفطر', 'Chicken Mushroom', [[17, 365]]],
+      ]},
+      { ar: 'كرواسون', arSub: 'محشي', en: 'Croissant', enSub: 'FILLED', sizes: ['R'], items: [
+        ['جبنة', 'Cheese', [[11, 385]]],
+        ['زعتر وجبنة', 'Zaatar & Cheese', [[12, 340]]],
+        ['تركي وجبنة', 'Turkey & Cheese', [[14, 420]]],
+      ]},
+    ],
+    sweets: [
+      { ar: 'حلى ومخبوزات', arSub: 'تُخبز يومياً', en: 'Bakery', enSub: 'BAKED DAILY', sizes: ['R'], items: [
+        ['سان سباستيان', 'San Sebastián', [[26, 420]]],
+        ['كيكة التمر', 'Date Cake', [[22, 380]]],
+        ['كوكيز شوكولاتة', 'Chocolate Cookie', [[12, 320]]],
+        ['كرواسون زبدة', 'Butter Croissant', [[11, 260]]],
+      ]},
+    ],
+  };
+
+  const cupSvg = mark => `<svg viewBox="0 0 24 32" aria-hidden="true">
+      <path d="M3 6h18l-2.2 24H5.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M2 3.5h20v2.5H2z" fill="currentColor"/>
+      ${mark ? `<text x="12" y="21" text-anchor="middle">${mark}</text>` : ''}
+    </svg>`;
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function renderGroup(g) {
+    const n = g.sizes.length;
+    const head = `<div class="row group-head" style="--n:${n}">
+        <div class="ar"><b>${esc(g.ar)}</b><small>${esc(g.arSub)}</small></div>
+        ${g.sizes.map(s => `<div class="cup">${cupSvg(SIZES[s].mark)}<span>${SIZES[s].label}</span></div>`).join('')}
+        <div class="en"><b>${esc(g.en)}</b><small>${esc(g.enSub)}</small></div>
+      </div>`;
+    const rows = g.items.map(([ar, en, prices]) => `<div class="row item" style="--n:${n}">
+        <div class="ar">${esc(ar)}<span class="en-sub">${esc(en)}</span></div>
+        ${prices.map(p => p ? `<div class="price"><b>${p[0]}</b><small>${p[1]} kcal</small></div>` : '<div></div>').join('')}
+        <div class="en">${esc(en)}</div>
+      </div>`).join('');
+    return `<div class="group">${head}${rows}</div>`;
+  }
+
+  for (const [id, groups] of Object.entries(MENU)) {
+    document.getElementById(id).insertAdjacentHTML('beforeend', groups.map(renderGroup).join(''));
+  }
+
+  // Picture cards: [Arabic, English, drink layers bottom→top, topping, prices as [size, price, kcal]]
+  const CARDS = {
+    signature: [
+      ['سبانش لاتيه', 'Spanish Latte', ['#8a5a34', '#e3c9a4'], null, [['T', 17, 282], ['G', 21, 345]]],
+      ['وايت موكا', 'White Mocha', ['#b98b5a', '#f1e4cf'], null, [['T', 17, 335], ['G', 21, 432]]],
+      ['كراميل ماكياتو', 'Caramel Macchiato', ['#efe0c6', '#c98d4b', '#7a4b2a'], null, [['T', 17, 215], ['G', 21, 275]]],
+      ['بيستاشيو لاتيه', 'Pistachio Latte', ['#a89a5c', '#dfe2b4'], null, [['T', 19, 245], ['G', 23, 305]]],
+    ],
+    matcha: [
+      ['آيس ماتشا كلاسيك', 'Iced Matcha Classic', ['#79a35a', '#cfe3b5'], null, [['T', 17, 165]]],
+      ['آيس ماتشا وايت موكا', 'Iced Matcha White Mocha', ['#8fb36b', '#e9efd5'], null, [['T', 21, 242]]],
+      ['ماتشا فرابيه كلاسيك', 'Matcha Frappe Classic', ['#b5d39a'], '#f4f1e8', [['T', 17, 263]]],
+      ['ماتشا فرابيه وايت موكا', 'Matcha Frappe White Mocha', ['#c8dcae'], '#f4f1e8', [['T', 21, 318]]],
+    ],
+    mojito: [
+      ['كلاسيك', 'Classic', ['#bfe8d2'], null, [['T', 15, 95]]],
+      ['الأزرق', 'Blue', ['#5ec8f0'], null, [['T', 17, 105]]],
+      ['الأصفر', 'Yellow', ['#f2d45c'], null, [['T', 17, 105]]],
+      ['فراولة', 'Strawberry', ['#f27a8a'], null, [['T', 19, 125]]],
+      ['خوخ وكرز', 'Peach & Cherry', ['#c2354f', '#f39a7a'], null, [['T', 17, 125]]],
+      ['كركديه', 'Hibiscus', ['#9e2340'], null, [['T', 17, 100]]],
+    ],
+    icedtea: [
+      ['خوخ', 'Peach', ['#e7924f', '#f6c79a'], null, [['T', 17, 65]]],
+      ['باشن فروت', 'Passion Fruit', ['#d9483a', '#f3934f'], null, [['T', 17, 65]]],
+    ],
+  };
+
+  let clipN = 0;
+  // A clear iced cup filled with colored layers, a dome lid and a straw.
+  function drinkSvg(layers, topping) {
+    const id = 'c' + (++clipN);
+    const top = 22, bottom = 86, h = (bottom - top) / layers.length;
+    const bands = layers.map((c, i) =>
+      `<rect x="0" y="${bottom - h * (i + 1)}" width="64" height="${h + 0.5}" fill="${c}"/>`).join('');
+    const foam = topping ? `<path d="M10 22 Q32 2 54 22 Z" fill="${topping}"/>` : `<path d="M11 22 Q32 8 53 22" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>`;
+    return `<svg class="drink" viewBox="0 0 64 92" aria-hidden="true">
+      <defs><clipPath id="${id}"><path d="M10 22h44l-5 68H15z"/></clipPath></defs>
+      <path d="M40 0l-5 30" stroke="#f3f1ec" stroke-width="3" stroke-linecap="round"/>
+      <g clip-path="url(#${id})">${bands}
+        <rect x="16" y="30" width="9" height="9" rx="2" fill="rgba(255,255,255,.28)"/>
+        <rect x="34" y="40" width="9" height="9" rx="2" fill="rgba(255,255,255,.22)"/>
+        <rect x="12" y="22" width="7" height="68" fill="rgba(255,255,255,.12)"/>
+      </g>
+      <path d="M10 22h44l-5 68H15z" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.2"/>
+      ${foam}
+      <rect x="8" y="20" width="48" height="3.5" rx="1.5" fill="rgba(255,255,255,.7)"/>
+      <text x="32" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="rgba(0,0,0,.28)" font-family="Readex Pro, sans-serif">ن</text>
+    </svg>`;
+  }
+
+  function renderCard([ar, en, layers, topping, prices]) {
+    const tags = prices.map(([s, p, k]) => `<div class="ctag">
+        <div class="cup mini">${cupSvg(SIZES[s].mark)}</div>
+        <b>${p}</b><small>${k} kcal</small>
+      </div>`).join('');
+    return `<div class="card">
+        <div class="cname"><b>${esc(ar)}</b><small>${esc(en)}</small></div>
+        <div class="cbody">${drinkSvg(layers, topping)}<div class="ctags">${tags}</div></div>
+      </div>`;
+  }
+
+  for (const [id, cards] of Object.entries(CARDS)) {
+    document.getElementById(id).insertAdjacentHTML('beforeend', `<div class="cards">${cards.map(renderCard).join('')}</div>`);
+  }
+
+  // Open/closed state from Riyadh time (open 7:00 to 01:00).
   try {
     const h = Number(new Intl.DateTimeFormat('en-US', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Asia/Riyadh' }).format(new Date()));
-    const open = h >= 7 || h < 1;
-    document.getElementById('open-state').textContent = open ? 'مفتوح الآن · حتى ١ ص' : 'مغلق الآن · نفتح ٧ ص';
+    document.getElementById('open-state').textContent = (h >= 7 || h < 1) ? 'مفتوح الآن · حتى ١ ص' : 'مغلق الآن · نفتح ٧ ص';
   } catch (e) {}
 </script>
